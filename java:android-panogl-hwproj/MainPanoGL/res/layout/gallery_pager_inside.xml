@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gallery_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#44444444" />
+
+    <TextView
+        android:id="@+id/gallery_pager_no_images_found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/no_images_found"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/gallery_pano_delete_pano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gallery_pager_no_images_found"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/delete_panorama"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/gallery_pager_prev"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_action_previous_item"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/gallery_pager_next"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_action_next_item"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/gallery_pager_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#33333333"
+        android:text="@string/number_sample"
+        android:textColor="#dddddddd"
+        android:visibility="gone" />
+
+</RelativeLayout>

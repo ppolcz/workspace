@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f2" displayName="Controller" projectFiles="true">
+      <itemPath>PController.cpp</itemPath>
+      <itemPath>PController.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="Data Store" projectFiles="true">
+      <itemPath>PDataStore.cpp</itemPath>
+      <itemPath>PDataStore.h</itemPath>
+      <itemPath>PDataStore_Exception.h</itemPath>
+      <itemPath>PDataStore_Preprocessor.h</itemPath>
+      <itemPath>PDataStore_Types.cpp</itemPath>
+      <itemPath>PDataStore_Types.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f3" displayName="Gui" projectFiles="true">
+      <itemPath>PInputBox.cpp</itemPath>
+      <itemPath>PInputBox.h</itemPath>
+      <itemPath>PInputTranzakcio.cpp</itemPath>
+      <itemPath>PInputTranzakcio.h</itemPath>
+      <itemPath>PTableView.cpp</itemPath>
+      <itemPath>PTableView.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="f4" displayName="Utilities" projectFiles="true">
+      <itemPath>includes_qt.h</itemPath>
+      <itemPath>polpedelop.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>PEmitterThread.cpp</itemPath>
+    <itemPath>PEmitterThread.h</itemPath>
+    <itemPath>PGlobalEmitter.cpp</itemPath>
+    <itemPath>PGlobalEmitter.h</itemPath>
+    <itemPath>POldRecord.cpp</itemPath>
+    <itemPath>POldRecord.h</itemPath>
+    <itemPath>PTableModel.cpp</itemPath>
+    <itemPath>PTableModel.h</itemPath>
+    <itemPath>PThreadController.cpp</itemPath>
+    <itemPath>PThreadController.h</itemPath>
+    <itemPath>PUpdater.cpp</itemPath>
+    <itemPath>PUpdater.h</itemPath>
+    <itemPath>main.cpp</itemPath>
+    <itemPath>python/read_odt.py</itemPath>
+    <itemPath>sql_commands.sql</itemPath>
+    <itemPath>strtk.hpp</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <modules>core gui widgets sql</modules>
+        <mocDir>gen</mocDir>
+        <rccDir>gen</rccDir>
+        <uiDir>gen</uiDir>
+        <defs>
+          <Elem>QMAKE_CXXFLAGS=-std=c++11</Elem>
+        </defs>
+      </qt>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>polcz</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="PController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PDataStore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore_Exception.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore_Preprocessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore_Types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PDataStore_Types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PEmitterThread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PEmitterThread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PGlobalEmitter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PGlobalEmitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PInputBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PInputBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PInputTranzakcio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PInputTranzakcio.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="POldRecord.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="POldRecord.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PTableModel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PTableModel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PTableView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PTableView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PThreadController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PThreadController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PUpdater.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PUpdater.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="includes_qt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="polpedelop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sql_commands.sql" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="strtk.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <buildMode>1</buildMode>
+        <modules>core gui widgets</modules>
+        <mocDir>gen</mocDir>
+        <rccDir>gen</rccDir>
+        <uiDir>gen</uiDir>
+        <defs>
+          <Elem>QMAKE_CXXFLAGS=-std=c++11</Elem>
+        </defs>
+      </qt>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <standard>8</standard>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>polcz</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="PController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PDataStore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore_Exception.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore_Preprocessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PDataStore_Types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PDataStore_Types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PEmitterThread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PEmitterThread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PGlobalEmitter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PGlobalEmitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PInputBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PInputBox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PInputTranzakcio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PInputTranzakcio.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="POldRecord.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="POldRecord.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PTableModel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PTableModel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PTableView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PTableView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PThreadController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PThreadController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PUpdater.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PUpdater.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="includes_qt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="polpedelop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="python/read_odt.py" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sql_commands.sql" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="strtk.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

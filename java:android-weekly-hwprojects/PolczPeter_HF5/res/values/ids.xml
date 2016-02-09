@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="pb_0" type="id"/>
+    <item name="pb_1" type="id"/>
+    <item name="pb_2" type="id"/>
+    <item name="pb_3" type="id"/>
+    <item name="pb_4" type="id"/>
+    <item name="pb_5" type="id"/>
+    <item name="pb_6" type="id"/>
+    <item name="pb_7" type="id"/>
+    <item name="pb_8" type="id"/>
+    <item name="pb_9" type="id"/>
+
+    <item name="ll_container" type="id"/>
+
+    <item name="holder" type="id"/>
+
+</resources>

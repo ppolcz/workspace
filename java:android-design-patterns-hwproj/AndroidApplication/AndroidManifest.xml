@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.napol.koltsegvetes"
+    android:versionCode="1"
+    android:versionName="1.0"
+    tools:ignore="RtlEnabled" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.napol.koltsegvetes.MainActivity3_NoLongPressAction"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 
+        <activity
+            android:name="info.androidhive.slidingmenu.MainActivity"
+            android:label="SliderMenuActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         -->
+        <activity
+            android:name="com.napol.koltsegvetes.TrFormActivity2_UpdateProductInfos"
+            android:label="@string/trformac_name" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/pcz_listview_item_tw_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" 
+        android:text="@string/sample_id"/>
+
+    <TextView
+        android:id="@+id/pcz_listview_item_tw_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/pcz_listview_item_tw_0"
+        android:layout_toRightOf="@+id/pcz_listview_item_tw_0"
+        android:text="@string/sample_short_text"
+        android:textColor="@color/text_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/pcz_listview_item_tw_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pcz_listview_item_tw_1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/pcz_listview_item_tw_1"
+        android:text="@string/sample_date"
+        android:textColor="@color/darkerblue" />
+
+    <TextView
+        android:id="@+id/pcz_listview_item_tw_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pcz_listview_item_tw_0"
+        android:layout_alignStart="@+id/pcz_listview_item_tw_0"
+        android:layout_below="@+id/pcz_listview_item_tw_1"
+        android:text="@string/lorem_ipsum"
+        android:textSize="16sp" />
+
+</RelativeLayout>

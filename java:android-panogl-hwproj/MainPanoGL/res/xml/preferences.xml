@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ListPreference
+        android:defaultValue="1024"
+        android:entries="@array/textureResolutionEntries"
+        android:entryValues="@array/textureResolutionValues"
+        android:key="textureSize"
+        android:summary="@string/summaryTextureSizePref"
+        android:title="@string/titleTextureSizePref" >
+    </ListPreference>
+
+</PreferenceScreen>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition template="/resources/scaffold/pcz_page_template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:param name="pageTitle" value="List of existing clusters" />
+	<ui:define name="header">Clusters</ui:define>
+
+	<ui:define name="main">
+		<h:form id="search">
+
+
+            <p:dataTable id="cllist" value="#{clBean.list}" var="_item" sortMode="multiple">
+                <f:facet name="header">
+                    <p:outputPanel style="line-height:30px">
+                        <h:outputText value="Manage clusters (transaction qualifiers)" />
+                        <p:commandButton id="new_cl" value="Register new cluster" icon="ui-icon-calculator"
+                            ajax="false" style="float:right;line-height:28px" action="#{clBean.create}" />
+                    </p:outputPanel>
+                </f:facet>
+                <p:column headerText="Unique ID" sortBy="#{_item.uid}">
+                    <h:outputText id="uid" value="#{_item.uid}" />
+                </p:column>
+                <p:column headerText="Name" sortBy="#{_item.name}">
+                    <h:outputText id="cl_name" value="#{_item.name}" />
+                </p:column>
+                <!-- 
+                                            <ui:remove>
+                                                <p:column headerText="Description" sortBy="#{_item.desc}">
+                                                    <h:outputText id="cl_desc" value="#{_item.desc}" />
+                                                </p:column> 
+                                            </ui:remove>
+                -->
+                <p:column headerText="Sign" sortBy="#{_item.sgn}">
+                    <h:outputText id="cl_dir" value="#{_item.sgn}" />
+                </p:column>
+                <p:column headerText="Parent" sortBy="#{_item.parent.name}">
+                    <h:outputText id="cl_parent" value="#{_item.parent.name}" />
+                </p:column>
+                
+                <p:column style="width:50px;text-align: center">
+                    <p:commandLink id="edit_cl" value="Edit" ajax="false"
+                        action="#{clBean.edit(_item)}" />
+                </p:column>
+                
+                
+                <p:column style="width:50px;text-align: center" rendered="#{request.isUserInRole('ADMIN') }">
+                    <p:commandLink id="remove" rendered="#{request.isUserInRole('ADMIN') }"
+                        action="#{clBean.remove(_item)}" ajax="false"
+                        onclick="if (! confirm('Really want to do that?')) return false" class="edit_icon">
+                        <h:outputText value="Remove" />
+                    </p:commandLink>
+                </p:column>
+
+            </p:dataTable>
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>

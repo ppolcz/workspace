@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles" displayName="CPP11" projectFiles="true">
+      <itemPath>shared_ptr_demo.cpp</itemPath>
+      <itemPath>shared_ptr_demo.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="patterns" projectFiles="true">
+      <itemPath>patterns/adaptor_pattern.cpp</itemPath>
+      <itemPath>patterns/adaptor_pattern.h</itemPath>
+      <itemPath>pattern_free.cpp</itemPath>
+      <itemPath>pattern_free.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="src" projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="thread" projectFiles="true">
+      <logicalFolder name="f1" displayName="test" projectFiles="true">
+        <itemPath>thread/test/poll_test.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>thread/blocking_queue.h</itemPath>
+      <itemPath>thread/poll.cpp</itemPath>
+      <itemPath>thread/poll.h</itemPath>
+      <itemPath>thread/worker_thread.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="BlockingQueue_Test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/BlockingQueue_Test.cpp</itemPath>
+        <itemPath>tests/BlockingQueue_Test.h</itemPath>
+        <itemPath>tests/BlockingQueue_testrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="Poll_Test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/Poll_Test.cpp</itemPath>
+        <itemPath>tests/Poll_Test.h</itemPath>
+        <itemPath>tests/Poll_testrunner.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <itemPath>nbproject/configurations.xml</itemPath>
+    <itemPath>destruktor_test.h</itemPath>
+    <itemPath>diamond_hierarchy.cpp</itemPath>
+    <itemPath>diamond_hierarchy.h</itemPath>
+    <itemPath>diamond_solution.cpp</itemPath>
+    <itemPath>diamond_solution.h</itemPath>
+    <itemPath>from_vs.cpp</itemPath>
+    <itemPath>static_things.cpp</itemPath>
+    <itemPath>static_things.h</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>-std=c++11 -pthread -Wl,--no-as-needed -I.</commandLine>
+        </ccTool>
+      </compileType>
+      <item path="destruktor_test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="diamond_hierarchy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="diamond_hierarchy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="diamond_solution.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="diamond_solution.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="from_vs.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pattern_free.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pattern_free.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="patterns/adaptor_pattern.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="patterns/adaptor_pattern.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="shared_ptr_demo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="shared_ptr_demo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="static_things.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="static_things.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/BlockingQueue_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/BlockingQueue_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/BlockingQueue_testrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Poll_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Poll_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Poll_testrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thread/blocking_queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thread/poll.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thread/poll.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thread/test/poll_test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thread/worker_thread.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <commandLine>-std=c++11 -pthread -Wl,--no-as-needed -I.</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="destruktor_test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="diamond_hierarchy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="diamond_hierarchy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="diamond_solution.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="diamond_solution.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="from_vs.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pattern_free.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pattern_free.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="patterns/adaptor_pattern.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="patterns/adaptor_pattern.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="shared_ptr_demo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="shared_ptr_demo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="static_things.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="static_things.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/BlockingQueue_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/BlockingQueue_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/BlockingQueue_testrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Poll_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Poll_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Poll_testrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thread/blocking_queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thread/poll.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thread/poll.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thread/test/poll_test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thread/worker_thread.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

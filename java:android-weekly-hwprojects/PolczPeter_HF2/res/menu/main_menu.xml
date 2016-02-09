@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_marvinlabs"
+        android:icon="@drawable/ic_launcher"
+        android:menuCategory="secondary"
+        android:title="@string/run_marvinlabs"
+        android:titleCondensed="@string/marvinlabs_demo"/>
+    <item
+        android:id="@+id/menu_new"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="ifRoom"
+        android:title="@string/new_contact"/>
+    <item
+        android:id="@+id/menu_remove"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/remove_selected"/>
+
+</menu>

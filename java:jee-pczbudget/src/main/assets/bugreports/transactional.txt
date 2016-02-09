@@ -1,0 +1,4 @@
+2016-01-16:19:28:41 
+Removing the first simple transaction after a pivot element. The actual section is not updated,
+however the previous section is recalculated even though it's not needed.
+Possible cause: entity = findFirstSimpleTransactionBefore() will be in the previous section. 

@@ -1,0 +1,51 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery_plantuml.js"></script>
+<!-- rawdeflate.js is implicity used by jquery_plantuml.js -->
+</head>
+
+<body>
+
+<script>
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                var s = unescape(encodeURIComponent(allText));
+
+                if (deflater) {
+                    if (deflater.port && deflater.port.postMessage) {
+                        deflater.port.postMessage(s);
+                    } else {
+                        deflater.postMessage(s);
+                    }
+                } else {
+                    setTimeout(function() {
+                    }, 100);
+                }
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+readTextFile("koltsegvetes3.java")
+
+</script>
+
+<img>
+<!-- <hr>
+<img> -->
+
+</body>
+
+</html> 

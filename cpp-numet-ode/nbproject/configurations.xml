@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>EulerMethod.cpp</itemPath>
+    <itemPath>EulerMethod.h</itemPath>
+    <itemPath>MultiEulerMethod.cpp</itemPath>
+    <itemPath>MultiEulerMethod.h</itemPath>
+    <itemPath>MultiRungeKuttaButcherTable.cpp</itemPath>
+    <itemPath>MultiRungeKuttaButcherTable.h</itemPath>
+    <itemPath>MultiRungeKuttaMethod.cpp</itemPath>
+    <itemPath>MultiRungeKuttaMethod.h</itemPath>
+    <itemPath>MultiVariateMethod.cpp</itemPath>
+    <itemPath>MultiVariateMethod.h</itemPath>
+    <itemPath>NumericalMethod.cpp</itemPath>
+    <itemPath>NumericalMethod.h</itemPath>
+    <itemPath>RungeCuttaMethod.cpp</itemPath>
+    <itemPath>RungeCuttaMethod.h</itemPath>
+    <itemPath>nbproject/configurations.xml</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/eigen3</pElem>
+          </incDir>
+          <commandLine>-std=c++11</commandLine>
+        </ccTool>
+      </compileType>
+      <item path="EulerMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="EulerMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiEulerMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiEulerMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaButcherTable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaButcherTable.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiVariateMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiVariateMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="NumericalMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="NumericalMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="RungeCuttaMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="RungeCuttaMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="EulerMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="EulerMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiEulerMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiEulerMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaButcherTable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaButcherTable.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiRungeKuttaMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="MultiVariateMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="MultiVariateMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="NumericalMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="NumericalMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="RungeCuttaMethod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="RungeCuttaMethod.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

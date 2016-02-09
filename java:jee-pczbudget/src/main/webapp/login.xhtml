@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+    template="/resources/scaffold/pcz_page_template.xhtml">
+
+    <ui:param name="pageTitle" value="Webshop" />
+
+    <ui:define name="header">
+        Bejelentkezés
+    </ui:define>
+
+    <ui:define name="menu">
+
+    </ui:define>
+
+    <ui:define name="main">
+        <h:form id="formid" action="j_security_check"
+            onkeypress="if (event.keyCode == 13) { document.getElementById('formid:loginbutton').click(); return false; }">
+            <h:messages></h:messages>
+
+            <h:panelGrid id="panel" columns="1" columnClasses="label,component,required" width="300">
+                <h:outputLabel for="j_username" value="Felhasználónév" />
+                <h:inputText id="j_username" value="#{loginBean.username}" required="true">
+                </h:inputText>
+                <h:outputLabel for="j_password" value="Jelszó" />
+                <h:inputSecret id="j_password" value="#{loginBean.password}" required="true">
+                </h:inputSecret>
+                <h:outputText value="" />
+            </h:panelGrid>
+
+
+            <h:panelGrid columns="2">
+                <p:commandButton id="loginbutton" value="Login" actionListener="#{loginBean.login}"
+                    ajax="false" widgetVar="submitWidget" />
+                <p:remoteCommand name="remoteTrigger" actionListener="#{loginBean.login}" />
+            </h:panelGrid>
+        </h:form>
+
+        <script>
+            var foo = {bar: "baz", boolean: true, num: 2}
+
+            // print to the console
+            for (i in foo) {
+                //checks to see where to print.
+                if (typeof console === 'object') 
+                    console.log(i + ": " + foo[i]);
+                else if (typeof document === 'object') 
+                    document.write(i + ": " + foo[i]);
+                else 
+                    print(i + ": " + foo[i]);
+            }
+
+            // action listener: on key release
+            window.onkeyup = function(e) {
+                var key = e.keyCode ? e.keyCode : e.which;
+                console.log("keycode = " +  key);
+
+                if (key == 13) // enter is pressed
+                {
+                    // var btn = document.getElementsByTagName('formid:loginbutton');
+                    // console.log(btn);
+                    
+                    // var btn = PF('submitWidget');
+                    // console.log(btn);
+                    
+                    // http://stackoverflow.com/questions/18975746/how-to-call-managed-bean-methods-with-parameters-via-javascript
+                    remoteTrigger();
+                }
+            }
+        </script>
+
+    </ui:define>
+
+</ui:composition>

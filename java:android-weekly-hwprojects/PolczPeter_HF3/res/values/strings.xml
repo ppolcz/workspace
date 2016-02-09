@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolczPeter_HF3</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="photograph">Photograph</string>
+    <string name="my_name">Polcz Peter</string>
+    <string name="my_poet">Arany Janos</string>
+    <string name="map_type_normal">Map Type: Normal</string>
+    <string name="map_type_terrain">Map Type: Terrain</string>
+    <string name="map_type_satellite">Map Type: Satellite</string>
+    <string name="map_type_hybrid">Map Type: Hybrid</string>
+    <string name="kirajzolosdi">Kirajzolosdi</string>
+    <string name="google_maps_hagyomanyosan">Google Maps - hagyomanyosan</string>
+    <string name="google_maps_ahogy_a_stackoverflow_mutatta">Google Maps - ahogy a StackOverflow mutatta</string>
+    <string name="kutya">Kutya</string>
+    <string name="macska">Macka</string>
+    <string name="baratsaga">Baratsaga</string>
+
+</resources>

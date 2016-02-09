@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="laborPU" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:/laborDS</jta-data-source>
+		<class>org.ppke.itk.hj15.model.Film</class>
+		<class>polcz.budget.model.TChargeAccount</class>
+		<class>polcz.budget.model.TCluster</class>
+		<class>polcz.budget.model.TMarket</class>
+		<class>polcz.budget.model.TProductInfo</class>
+		<class>polcz.budget.model.TTransaction</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<property name="hibernate.id.new_generator_mappings" value="false" />
+		</properties>
+	</persistence-unit>
+
+	<!-- -->
+	<persistence-unit name="mysqlPU" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:/mysqlDS</jta-data-source>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jee_budjet" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="budapest" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<!-- <property name="hibernate.id.new_generator_mappings" value="false"/> -->
+		</properties>
+	</persistence-unit>
+
+</persistence>
+
+<!-- <class>org.ppke.itk.hj15.model.Film</class> <class>org.ppke.itk.mysql.model.ChargeAccount</class> 
+	<class>org.ppke.itk.mysql.model.Cluster</class> <class>org.ppke.itk.mysql.model.Market</class> 
+	<class>org.ppke.itk.mysql.model.ProductInfo</class> <class>org.ppke.itk.mysql.model.Transaction</class> -->

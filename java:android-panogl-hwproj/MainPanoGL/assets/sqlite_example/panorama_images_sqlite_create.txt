@@ -1,0 +1,71 @@
+
+create table panorama (
+    p_id integer primary key,
+    p_name text not null
+);
+
+create table image (
+    i_name text not null primary key,
+    i_callibration integer,
+    i_panorama integer,
+    FOREIGN KEY(i_panorama) REFERENCES panorama(p_id)
+);
+
+insert into panorama values(12, "Tizenkettedik");
+insert into panorama values(13, "Tizenharmadik");
+
+insert into image values("elso", 123, 12);
+insert into image values("masodik", 124, 12);
+insert into image values("harmadik", 125, 13);
+insert into image values("negyedik", 123, 13);
+
+select * from image join panorama where image.i_panorama = panorama.p_id;
+    
+----------------------------------------------------------------------------------------------------------------
+
+drop table panoramas;
+drop table images;
+
+create table panoramas ( 
+    p_id integer primary key,
+    p_name text not null,
+    p_dirname text not null,
+    p_date text not null);
+
+create table images (
+    i_filename text not null,
+    i_panorama integer check ( EXISTS(SELECT * FROM panoramas WHERE p_id = i_panorama) ),
+    i_phi real,
+    i_theta real,
+    i_gamma real,
+    FOREIGN KEY(i_panorama) REFERENCES panorama(p_id),
+    PRIMARY KEY(i_filename, i_panorama)
+    );
+
+PRAGMA foreign_keys = ON;
+
+insert into panoramas values(1, "New Panorama", "sdcard/.panogl/panorama1", "1991.03.20");
+insert into panoramas values(2, "New Panorama", "sdcard/.panogl/panorama2", "1991.04.30");
+
+insert into images values("image1", 1, 0.41, 0.51, 0.31);
+insert into images values("image2", 1, 0.42, 0.52, 0.32);
+insert into images values("image1", 2, 0.43, 0.53, 0.33);
+insert into images values("image1", 2, 0.44, 0.54, 0.34);
+insert into images values("image1", 3, 0.44, 0.54, 0.34);
+
+drop table panoramas;
+drop table images;
+    
+-------------------------------------------------------------------------------------------------------
+
+CREATE TABLE artist(
+    artistid    INTEGER PRIMARY KEY, 
+    artistname  TEXT
+);
+
+CREATE TABLE track(
+    trackid     INTEGER, 
+    trackname   TEXT, 
+    trackartist INTEGER,
+    FOREIGN KEY(trackartist) REFERENCES artist(artistid)
+);

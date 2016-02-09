@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f1" displayName="src" projectFiles="true">
+      <logicalFolder name="f1" displayName="thread" projectFiles="true">
+        <itemPath>src/PBlockingQueue.hpp</itemPath>
+        <itemPath>src/PThreadController.cpp</itemPath>
+        <itemPath>src/PThreadController.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="util" projectFiles="true">
+        <itemPath>src/pczexcept.cpp</itemPath>
+        <itemPath>src/pczexcept.h</itemPath>
+      </logicalFolder>
+      <itemPath>src/main.cpp</itemPath>
+      <itemPath>src/poll_test.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="PBlockingQueue_Test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/PBlockingQueue_Test.cpp</itemPath>
+        <itemPath>tests/PBlockingQueue_Test.h</itemPath>
+        <itemPath>tests/PBlockingQueue_testrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="PThreadController_Test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/PThreadController_Test.cpp</itemPath>
+        <itemPath>tests/PThreadController_Test.h</itemPath>
+        <itemPath>tests/PThreadController_testrunner.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="src/PBlockingQueue.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PThreadController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PThreadController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pczexcept.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pczexcept.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/poll_test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PBlockingQueue_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PBlockingQueue_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PBlockingQueue_testrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/PThreadController_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PThreadController_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PThreadController_testrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags` -std=c++11 -pthread -Wl,--no-as-needed -I.</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="src/PBlockingQueue.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PThreadController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PThreadController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pczexcept.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pczexcept.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/poll_test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PBlockingQueue_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PBlockingQueue_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PBlockingQueue_testrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/PThreadController_Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PThreadController_Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PThreadController_testrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

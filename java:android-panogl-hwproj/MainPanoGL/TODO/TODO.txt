@@ -1,0 +1,18 @@
+btnNext, btnPrev - megnyomasra ugorjon a kovetkezo, elozo kepre
+
+FONTOS :
+    - autofocus
+    - flashlight
+    - image resolution
+
+FONTOS :
+    - SQLite-be berakni a kallibracios ertekeket
+
+FONTOS : 
+    cubicPano 6 db kepet mentse el valahova, ne kelljen allandoan kiszamolni, olyan gaz...
+
+HA LESZ IDOM:
+    - a GalleryFullScreenViewActivity design-ja jo lenne, ha megegyezne 
+    a GalleryListActivity preview-janak a design-javal
+
+GlobalConstants-ba belerakni a GalleryListActivity constansjait

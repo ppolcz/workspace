@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="SourceFiles" displayName="glwidgets" projectFiles="true">
+      <itemPath>glwidgets/GL2DWidget.cpp</itemPath>
+      <itemPath>glwidgets/GL2DWidget.h</itemPath>
+      <itemPath>glwidgets/GL3DWidget.cpp</itemPath>
+      <itemPath>glwidgets/GL3DWidget.h</itemPath>
+      <itemPath>glwidgets/pcd_rotation_widget.cpp</itemPath>
+      <itemPath>glwidgets/pcd_rotation_widget.h</itemPath>
+      <itemPath>glwidgets/pcd_widget.cpp</itemPath>
+      <itemPath>glwidgets/pcd_widget.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="HeaderFiles" displayName="include" projectFiles="true">
+      <itemPath>include/cgal_kiegeszito.h</itemPath>
+      <itemPath>include/debug.h</itemPath>
+      <itemPath>include/imageBMP.h</itemPath>
+      <itemPath>include/print.h</itemPath>
+      <itemPath>include/proj_params.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="mainwindow"
+                   projectFiles="true">
+      <itemPath>mainwindow/MainWindow.cpp</itemPath>
+      <itemPath>mainwindow/MainWindow.h</itemPath>
+      <itemPath>mainwindow/MainWindow.ui</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="src" projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f2" displayName="tmp" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>nbproject/configurations.xml</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <modules>core gui widgets opengl</modules>
+        <mocDir>moc</mocDir>
+        <rccDir>rcc</rccDir>
+        <uiDir>ui</uiDir>
+        <defs>
+          <Elem>"QMAKE_CXXFLAGS += -std=c++11"</Elem>
+        </defs>
+      </qt>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/pcl-1.7</pElem>
+            <pElem>/usr/include/eigen3</pElem>
+            <pElem>/usr/include/cminpack-1</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>pcl_apps</linkerLibLibItem>
+            <linkerLibLibItem>pcl_common</linkerLibLibItem>
+            <linkerLibLibItem>pcl_features</linkerLibLibItem>
+            <linkerLibLibItem>pcl_filters</linkerLibLibItem>
+            <linkerLibLibItem>pcl_io</linkerLibLibItem>
+            <linkerLibLibItem>pcl_io_ply</linkerLibLibItem>
+            <linkerLibLibItem>pcl_kdtree</linkerLibLibItem>
+            <linkerLibLibItem>pcl_keypoints</linkerLibLibItem>
+            <linkerLibLibItem>pcl_octree</linkerLibLibItem>
+            <linkerLibLibItem>pcl_outofcore</linkerLibLibItem>
+            <linkerLibLibItem>pcl_people</linkerLibLibItem>
+            <linkerLibLibItem>pcl_recognition</linkerLibLibItem>
+            <linkerLibLibItem>pcl_registration</linkerLibLibItem>
+            <linkerLibLibItem>pcl_sample_consensus</linkerLibLibItem>
+            <linkerLibLibItem>pcl_search</linkerLibLibItem>
+            <linkerLibLibItem>pcl_segmentation</linkerLibLibItem>
+            <linkerLibLibItem>pcl_surface</linkerLibLibItem>
+            <linkerLibLibItem>pcl_tracking</linkerLibLibItem>
+            <linkerLibLibItem>pcl_visualization</linkerLibLibItem>
+            <linkerLibLibItem>CGAL</linkerLibLibItem>
+            <linkerLibLibItem>CGAL_Core</linkerLibLibItem>
+            <linkerLibLibItem>CGAL_ImageIO</linkerLibLibItem>
+            <linkerLibLibItem>CGAL_Qt4</linkerLibLibItem>
+            <linkerLibLibItem>boost_regex</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>boost_thread</linkerLibLibItem>
+            <linkerLibLibItem>GL</linkerLibLibItem>
+            <linkerLibLibItem>GLU</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="glwidgets/GL2DWidget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/GL2DWidget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/GL3DWidget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/GL3DWidget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_rotation_widget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_rotation_widget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_widget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_widget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/cgal_kiegeszito.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/debug.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/imageBMP.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/print.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/proj_params.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="mainwindow/MainWindow.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="mainwindow/MainWindow.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="mainwindow/MainWindow.ui"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <buildMode>1</buildMode>
+        <modules>core gui widgets</modules>
+      </qt>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="glwidgets/GL2DWidget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/GL2DWidget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/GL3DWidget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/GL3DWidget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_rotation_widget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_rotation_widget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_widget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="glwidgets/pcd_widget.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/cgal_kiegeszito.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/debug.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/imageBMP.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/print.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/proj_params.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="mainwindow/MainWindow.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="mainwindow/MainWindow.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="mainwindow/MainWindow.ui"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

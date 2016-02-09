@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolczPeter_HF1</string>
+    <string name="app_name_1">PolczPeter_HF1 Layout nr. 1</string>
+    <string name="app_name_2">PolczPeter_HF1 Layout nr. 2</string>
+    <string name="action_settings">Settings</string>
+    <string name="button1_text">Copy</string>
+    <string name="textview1_text">Hello World, My Activity!</string>
+    <string name="button_layout1">Choose layout 1</string>
+    <string name="button_layout2">Choose layout 2</string>
+    
+</resources>

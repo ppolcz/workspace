@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="polcz.peter.hf5"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="polcz.peter.hf5.masodik.MainActivity"
+            android:label="@string/pp_hf5_masodikmain" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="polcz.peter.hf5.masodik.MediaPlayerActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="polcz.peter.hf5.HaziActivity"
+            android:label="@string/pp_hf5_egyik" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="polcz.peter.hf5.MainActivity"
+            android:label="@string/pp_hf5_indexrol" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="polcz.peter.hf5.DowloaderActivity"
+            android:label="@string/pp_hf5_masik" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="polcz.peter.hf5.services.DemoDownloadService" >
+        </service>
+        <service android:name="polcz.peter.hf5.services.DownloaderService" >
+        </service>
+        <service android:name="polcz.peter.hf5.services.LocalService" >
+        </service>
+        <service android:name="polcz.peter.hf5.services.DownloadService" >
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolczPeter_Accelerometer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="param0">"param 0 = "</string>
+    <string name="param1">"param 1 = "</string>
+    <string name="param2">"param 2 = "</string>
+    <string name="dummy">dummy</string>
+    <string name="accuracy">"Accuracy: "</string>
+    <string name="angle_phi">"Angle phi    = "</string>
+    <string name="angle_theta">"Angle theta = "</string>
+    <string name="angle_gamma">"Angle gamma = "</string>
+    <string name="angle_x">"Angle x = "</string>
+    <string name="angle_y">"Angle y = "</string>
+    <string name="angle_z">"Angle z = "</string>
+    <string name="orientation">"Orientation: "</string>
+
+</resources>

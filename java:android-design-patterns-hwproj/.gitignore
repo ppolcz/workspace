@@ -1,0 +1,3 @@
+*/*.db
+CoreLibrary/src/com/napol/koltsegvetes/db/ESqlLists_Exp.java
+Makefile

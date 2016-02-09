@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="SourceFiles" displayName="glwidgets" projectFiles="true">
+<<<<<<< HEAD
+      <itemPath>glwidgets/GL2DWidget.cpp</itemPath>
+      <itemPath>glwidgets/GL2DWidget.h</itemPath>
+      <itemPath>glwidgets/GL3DWidget.cpp</itemPath>
+      <itemPath>glwidgets/GL3DWidget.h</itemPath>
+      <itemPath>glwidgets/pcd_rotation_widget.cpp</itemPath>
+      <itemPath>glwidgets/pcd_rotation_widget.h</itemPath>
+      <itemPath>glwidgets/pcd_widget.cpp</itemPath>
+      <itemPath>glwidgets/pcd_widget.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="HeaderFiles" displayName="include" projectFiles="true">
+      <itemPath>include/cgal_kiegeszito.h</itemPath>
+      <itemPath>include/debug.h</itemPath>
+      <itemPath>include/imageBMP.h</itemPath>
+      <itemPath>include/print.h</itemPath>
+      <itemPath>include/proj_params.h</itemPath>
+=======
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL2DWidget.cpp</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL2DWidget.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL3DWidget.cpp</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL3DWidget.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_rotation_widget.cpp</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_rotation_widget.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_widget.cpp</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_widget.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="HeaderFiles" displayName="include" projectFiles="true">
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/include/cgal_kiegeszito.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/include/debug.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/include/imageBMP.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/include/print.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/include/proj_params.h</itemPath>
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="mainwindow"
+                   projectFiles="true">
+<<<<<<< HEAD
+      <itemPath>mainwindow/MainWindow.cpp</itemPath>
+      <itemPath>mainwindow/MainWindow.h</itemPath>
+      <itemPath>mainwindow/MainWindow.ui</itemPath>
+=======
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.cpp</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.h</itemPath>
+      <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.ui</itemPath>
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="src" projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f2" displayName="tmp" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+<<<<<<< HEAD
+    <itemPath>nbproject/configurations.xml</itemPath>
+=======
+    <itemPath>/home/polpe/Programming/QtProgramming/Qt5Sample/nbproject/configurations.xml</itemPath>
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <modules>core gui widgets opengl</modules>
+        <mocDir>moc</mocDir>
+        <rccDir>rcc</rccDir>
+        <uiDir>ui</uiDir>
+        <defs>
+          <Elem>"QMAKE_CXXFLAGS += -std=c++11"</Elem>
+        </defs>
+      </qt>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/pcl-1.7</pElem>
+            <pElem>/usr/include/eigen3</pElem>
+            <pElem>/usr/include/cminpack-1</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>pcl_apps</linkerLibLibItem>
+            <linkerLibLibItem>pcl_common</linkerLibLibItem>
+            <linkerLibLibItem>pcl_features</linkerLibLibItem>
+            <linkerLibLibItem>pcl_filters</linkerLibLibItem>
+            <linkerLibLibItem>pcl_io</linkerLibLibItem>
+            <linkerLibLibItem>pcl_io_ply</linkerLibLibItem>
+            <linkerLibLibItem>pcl_kdtree</linkerLibLibItem>
+            <linkerLibLibItem>pcl_keypoints</linkerLibLibItem>
+            <linkerLibLibItem>pcl_octree</linkerLibLibItem>
+            <linkerLibLibItem>pcl_outofcore</linkerLibLibItem>
+            <linkerLibLibItem>pcl_people</linkerLibLibItem>
+            <linkerLibLibItem>pcl_recognition</linkerLibLibItem>
+            <linkerLibLibItem>pcl_registration</linkerLibLibItem>
+            <linkerLibLibItem>pcl_sample_consensus</linkerLibLibItem>
+            <linkerLibLibItem>pcl_search</linkerLibLibItem>
+            <linkerLibLibItem>pcl_segmentation</linkerLibLibItem>
+            <linkerLibLibItem>pcl_surface</linkerLibLibItem>
+            <linkerLibLibItem>pcl_tracking</linkerLibLibItem>
+            <linkerLibLibItem>pcl_visualization</linkerLibLibItem>
+            <linkerLibLibItem>CGAL</linkerLibLibItem>
+            <linkerLibLibItem>CGAL_Core</linkerLibLibItem>
+            <linkerLibLibItem>CGAL_ImageIO</linkerLibLibItem>
+            <linkerLibLibItem>CGAL_Qt4</linkerLibLibItem>
+            <linkerLibLibItem>boost_regex</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>boost_thread</linkerLibLibItem>
+            <linkerLibLibItem>GL</linkerLibLibItem>
+            <linkerLibLibItem>GLU</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+<<<<<<< HEAD
+      <item path="glwidgets/GL2DWidget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL2DWidget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/GL2DWidget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL2DWidget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/GL3DWidget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL3DWidget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/GL3DWidget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL3DWidget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_rotation_widget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_rotation_widget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_rotation_widget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_rotation_widget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_widget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_widget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_widget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_widget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/cgal_kiegeszito.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/cgal_kiegeszito.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/debug.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/debug.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/imageBMP.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/imageBMP.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/print.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/print.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/proj_params.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/proj_params.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="mainwindow/MainWindow.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="mainwindow/MainWindow.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="mainwindow/MainWindow.ui"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.ui"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/nbproject/configurations.xml"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+      </item>
+    </conf>
+    <conf name="Release" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <buildMode>1</buildMode>
+        <modules>core gui widgets</modules>
+      </qt>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+<<<<<<< HEAD
+      <item path="glwidgets/GL2DWidget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL2DWidget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/GL2DWidget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL2DWidget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/GL3DWidget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL3DWidget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/GL3DWidget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/GL3DWidget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_rotation_widget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_rotation_widget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_rotation_widget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_rotation_widget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_widget.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_widget.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="glwidgets/pcd_widget.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/glwidgets/pcd_widget.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/cgal_kiegeszito.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/cgal_kiegeszito.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/debug.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/debug.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/imageBMP.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/imageBMP.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/print.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/print.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="include/proj_params.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/include/proj_params.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="mainwindow/MainWindow.cpp"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.cpp"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="mainwindow/MainWindow.h"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.h"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="mainwindow/MainWindow.ui"
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/mainwindow/MainWindow.ui"
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+<<<<<<< HEAD
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="nbproject/configurations.xml" ex="false" tool="3" flavor2="0">
+=======
+      <item path="/home/polpe/Programming/QtProgramming/Qt5Sample/nbproject/configurations.xml"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+>>>>>>> da82b9257232f2eeaad32c8f05a11aa1027d9f0c
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

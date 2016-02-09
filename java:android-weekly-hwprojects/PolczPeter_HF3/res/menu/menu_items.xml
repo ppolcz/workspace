@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mapnormal"
+          android:title="@string/map_type_normal" />
+    <item android:id="@+id/mapterrain"
+          android:title="@string/map_type_terrain" />
+    <item android:id="@+id/mapsatellite"
+          android:title="@string/map_type_satellite" />
+    <item android:id="@+id/maphybrid"
+          android:title="@string/map_type_hybrid" />
+</menu>
+
+<!-- 
+android:icon="@android:drawable/ic_menu_help"
+@android:drawable/ic_menu_manage
+ -->

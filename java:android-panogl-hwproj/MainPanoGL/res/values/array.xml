@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="textureResolutionEntries">
+        <item>1024px x 1024px</item>
+        <item>2048px x 2048px</item>
+    </string-array>
+    <string-array name="textureResolutionValues">
+        <item>1024</item>
+        <item>2048</item>
+    </string-array>
+    <string-array name="panorama_action_items">
+        <item>@string/view_photos</item>
+        <item>@string/view_panorama</item>
+        <item>@string/delete_panorama</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolczPeter_HF4</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="image">Image</string>
+    <string name="main_edit_text_hint">Open URL</string>
+    <string name="main_button_share_link">Share link</string>
+    <string name="text_message">Text message</string>
+    <string name="send">Send</string>
+    <string name="integer_message">Integer message</string>
+    <string name="array_input_numbers_separated_with_ws_">Array message, eg: asd das asd</string>
+    <string name="send_all">Send all</string>
+
+</resources>

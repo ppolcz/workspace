@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:f="http://java.sun.com/jsf/core" 
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:mycomponents="http://xmlns.jcp.org/jsf/composite/mycomponents" 
+    xmlns:p="http://primefaces.org/ui" 
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <h:panelGrid>
+        <h:outputLabel rendered="#{request.getUserPrincipal()!=null}" 
+            style="width:130px; float:left; text-align:left" 
+            value="#{'Felhasználónév: '.concat(request.getUserPrincipal()==null?'':request.getUserPrincipal().getName()) }"/>
+    </h:panelGrid>
+    
+    <ul>
+        <li>
+            <h:link outcome="/index.xhtml" value="Főoldal"/>
+            <ui:remove>
+                <h:link outcome="/cart/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Kosaram"/>
+                <h:link outcome="/product/view.xhtml" rendered="#{request.isUserInRole('ADMIN') }" value="Termékek kezelése"/>
+                <h:link outcome="/order/view.xhtml" rendered="#{request.isUserInRole('ADMIN') }" value="Rendelések megtekintése"/>
+            </ui:remove>
+            <h:link outcome="/customer/view.xhtml" rendered="#{request.isUserInRole('ADMIN') }" styleClass="admin-access" value="Manage users"/>
+            <h:link outcome="/k_ca/view.xhtml" rendered="#{request.isUserInRole('ADMIN') }" styleClass="admin-access" value="Manage charge accounts"/>
+            <h:link outcome="/k_mk/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Manage markets"/>
+            <h:link outcome="/k_cl/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Manage clusters"/>
+            <h:link outcome="/k_pi/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Product informations"/>
+            <h:link outcome="/k_tr/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Transactions"/>
+        </li>
+    </ul>
+    <h:form id="logout">
+        <p:commandButton action="#{loginBean.redirectToLogin()}" ajax="false" id="loginRedirectbutton" 
+            rendered="#{request.getUserPrincipal()==null }" style="width:130px" value="Bejelentkezés"/>
+        <p:commandButton actionListener="#{loginBean.logout}" ajax="false" id="logoutbutton" 
+            rendered="#{request.getUserPrincipal()!=null }" style="width:130px" value="Kijelentkezés"/>
+        <br />
+        <p:commandButton actionListener="#{dataIntegrityTester.testTransactionService}" ajax="false" id="testbutton" 
+            rendered="#{request.isUserInRole('ADMIN') }" style="width:130px" value="Test"/>
+    </h:form>
+    <ui:remove/>
+
+</ui:composition>

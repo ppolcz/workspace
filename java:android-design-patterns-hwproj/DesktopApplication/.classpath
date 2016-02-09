@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="CoreLibrary"/>
+	<classpathentry exported="true" kind="lib" path="lib/sqlite-jdbc-3.8.5-pre1.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/CoreLibrary"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/MetaUtils"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

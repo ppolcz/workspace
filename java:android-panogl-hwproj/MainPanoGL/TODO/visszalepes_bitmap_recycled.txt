@@ -1,0 +1,14 @@
+
+
+Ez a hiba azota nem jelentkezett - bar mar arra sem emlekszem, hogy kijavitottam-e vagy sem... 
+
+E/AndroidRuntime: java.lang.IllegalArgumentException: bitmap is recycled
+E/AndroidRuntime:       at android.opengl.GLUtils.texImage2D(GLUtils.java:160)
+E/AndroidRuntime:       at polcz.peter.renderer.texture.PhotoCube.loadTexture(PhotoCube.java:160)
+E/AndroidRuntime:       at polcz.peter.renderer.texture.MyGLRenderer.onSurfaceCreated(MyGLRenderer.java:46)
+E/AndroidRuntime:       at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1494)
+E/AndroidRuntime:       at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1240)
+E/EmbeddedLogger: Application Label: TranslucentGLSurfaceView
+E/Trace   : error opening trace file: No such file or directory (2)
+
+A bitmap-et az onDestroy-ban kellene recsiklalni.

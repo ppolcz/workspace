@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/pi_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:hint="@string/trform_amount"
+            android:inputType="numberSigned" />
+
+        <Spinner
+            android:id="@+id/pi_clname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <Button
+            android:id="@+id/pi_remove"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="d"
+            android:layout_weight="0.1" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/pi_what"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/_ll"
+        android:hint="@string/trform_remark" />
+
+</RelativeLayout>

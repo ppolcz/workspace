@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.polpe.panogl"
+    android:versionCode="2"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+
+        <!-- =========================== GALLERY - LAUNCHER =============================== -->
+        <activity
+            android:name="com.polpe.panogl.main.gallery.GalleryListActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- =========================== GALLERY - FULLSCREEN ============================= -->
+        <activity
+            android:name="com.polpe.panogl.main.gallery.GalleryFullScreenViewActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!-- ============================ MY GL DEMO TEXTURE ============================== -->
+        <activity
+            android:name="com.polpe.panogl.demo.camera.GLCameraActivity"
+            android:label="PanoGL DemoCamera"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!-- =========================== PANODROID VIEWER - DEMO ================= -->
+        <activity
+            android:name="com.polpe.panogl.demo.view.PanoViewerActivity"
+            android:label="@string/panogl_demoview"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!-- =========================== PANODROID CAMERA2 - DEMO ================ -->
+        <activity
+            android:name="com.polpe.panogl.main.camera.PanoGLCameraActivity"
+            android:label="@string/panogl_camera2"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!-- =========================== PANODROID CAMERA2 - DEMO ================ -->
+        <activity
+            android:name="com.polpe.panogl.main.camera.PanoGLViewActivity"
+            android:label="@string/panogl_camera2"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppBaseTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

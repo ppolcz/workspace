@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="AndroidApplication">
+        <df name="bin">
+          <df name="classes">
+            <df name="android">
+              <df name="support">
+                <df name="v7">
+                  <df name="appcompat">
+                  </df>
+                </df>
+              </df>
+            </df>
+            <df name="com">
+              <df name="napol">
+                <df name="koltsegvetes">
+                  <df name="db">
+                  </df>
+                  <df name="dbdriver">
+                  </df>
+                  <df name="query">
+                  </df>
+                  <df name="util">
+                  </df>
+                </df>
+              </df>
+            </df>
+            <df name="info">
+              <df name="androidhive">
+                <df name="slidingmenu">
+                  <df name="adapter">
+                  </df>
+                  <df name="model">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="dexedLibs">
+          </df>
+          <df name="res">
+            <df name="crunch">
+              <df name="drawable">
+              </df>
+              <df name="drawable-hdpi">
+              </df>
+              <df name="drawable-mdpi">
+              </df>
+              <df name="drawable-xhdpi">
+              </df>
+              <df name="drawable-xxhdpi">
+              </df>
+            </df>
+          </df>
+          <in>R.txt</in>
+        </df>
+        <df name="gen">
+          <df name="android">
+            <df name="support">
+              <df name="v7">
+                <df name="appcompat">
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="libs">
+        </df>
+        <df name="res">
+          <df name="color">
+          </df>
+          <df name="drawable">
+          </df>
+          <df name="drawable-hdpi">
+          </df>
+          <df name="drawable-mdpi">
+          </df>
+          <df name="drawable-xhdpi">
+          </df>
+          <df name="drawable-xxhdpi">
+          </df>
+          <df name="layout">
+          </df>
+          <df name="menu">
+          </df>
+          <df name="values">
+          </df>
+          <df name="values-v11">
+          </df>
+          <df name="values-v14">
+          </df>
+          <df name="values-w820dp">
+          </df>
+        </df>
+        <df name="src">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="db">
+                </df>
+                <df name="dbdriver">
+                </df>
+                <df name="util">
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="info">
+            <df name="androidhive">
+              <df name="slidingmenu">
+                <df name="adapter">
+                </df>
+                <df name="model">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <in>proguard-project.txt</in>
+      </df>
+      <df name="CoreLibrary">
+        <df name="bin">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="db">
+                </df>
+                <df name="dbdriver">
+                </df>
+                <df name="query">
+                </df>
+                <df name="util">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="db">
+                </df>
+                <df name="dbdriver">
+                </df>
+                <df name="query">
+                </df>
+                <df name="util">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="CoreLibraryTest">
+        <df name="bin">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="db">
+                </df>
+              </df>
+            </df>
+            <df name="polcz">
+              <df name="matchers">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="db">
+                </df>
+              </df>
+            </df>
+            <df name="polcz">
+              <df name="matchers">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="DesktopApplication">
+        <df name="bin">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="combos">
+                </df>
+                <df name="db">
+                </df>
+                <df name="dbdriver">
+                </df>
+                <df name="dboperator">
+                </df>
+                <df name="dialogs">
+                </df>
+                <df name="gui">
+                  <df name="images">
+                  </df>
+                </df>
+                <df name="net">
+                </df>
+                <df name="query">
+                </df>
+                <df name="util">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="lib">
+        </df>
+        <df name="src">
+          <df name="com">
+            <df name="napol">
+              <df name="koltsegvetes">
+                <df name="combos">
+                </df>
+                <df name="dbdriver">
+                </df>
+                <df name="dboperator">
+                </df>
+                <df name="dialogs">
+                </df>
+                <df name="gui">
+                  <df name="images">
+                  </df>
+                </df>
+                <df name="net">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="MetaUtils">
+        <df name="bin">
+          <df name="com">
+            <df name="polcz">
+              <df name="meta">
+                <df name="uml">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <df name="com">
+            <df name="polcz">
+              <df name="meta">
+                <df name="uml">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="OpenDocumentTools">
+        <df name="bin">
+          <df name="android">
+            <df name="os">
+            </df>
+          </df>
+          <df name="com">
+            <df name="polcz">
+              <df name="koltsegvetes">
+                <df name="dbdriver">
+                </df>
+              </df>
+              <df name="odftools">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="lib">
+        </df>
+        <df name="src">
+          <df name="android">
+            <df name="os">
+            </df>
+          </df>
+          <df name="com">
+            <df name="polcz">
+              <df name="koltsegvetes">
+                <df name="dbdriver">
+                </df>
+              </df>
+              <df name="odftools">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="PlantUML">
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

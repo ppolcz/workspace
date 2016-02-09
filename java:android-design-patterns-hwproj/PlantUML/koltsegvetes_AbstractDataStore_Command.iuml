@@ -1,0 +1,293 @@
+@startuml
+
+!define END <b>end</b>
+!define THROW <b>throw</b>
+!define IF <b>if</b>
+!define AND <b>and</b>
+!define OR <b>or</b>
+!define FOR <b>for</b>
+!define RETURN <b>return</b>
+!define TRUE <b>true</b>
+!define FALSE <b>false</b>
+!define COMMENT(comment) <i><color:Gray>comment</color></i>
+!define COMMENT(a,b) <i><color:Gray>a, b</color></i>
+!define COMMENT(a,b,c) <i><color:Gray>a, b, c</color></i>
+!define COMMENT(a,b,c,d) <i><color:Gray>a, b, c, d</color></i>
+!define COMMENT(a,b,c,d,e) <i><color:Gray>a, b, c, d, e</color></i>
+!define COMMENT(a,b,c,d,e,f) <i><color:Gray>a, b, c, d, e, f</color></i>
+
+package CoreLibrary {
+    package CoreLibrary.db {
+        class AbstractDataStore
+        'class Query << former AbstractQuery>>
+        class Query
+        enum EColumnNames
+        enum ETableNames 
+
+        interface ISQLiteHelper
+
+''        class Memento
+
+''        package CoreLibrary.db.command {
+            abstract class Command
+            class UpdateCommand extends Command 
+            class RemoveCommand extends Command
+            class SelectCommand extends Command
+            class InsertCommand extends Command
+''        }
+            
+        hide Query methods
+        hide Query attributes
+
+        package CoreLibrary.db.listeners {
+            interface IOnExecutedListener {
+                + failure(Exception)
+                + undoFailure(Exception, Query before, Query after, 
+                    Query failedRows, Command self)
+            }
+
+            interface IOnInsertedListener extends IOnExecutedListener {
+                + rowIdAvailable(int rowId)
+            }
+            
+            interface IOnSelectedListener extends IOnExecutedListener {
+                + queryAvailable(Query)
+            }
+            
+            hide IOnExecutedListener attributes
+            hide IOnInsertedListener attributes
+            hide IOnSelectedListener attributes
+        }
+
+    }
+}
+
+''class Memento {
+''    + before : Query
+''    + after : Query
+''    '+ {static} INSERT : Operation = 1'
+''    '+ {static} UPDATE : Operation = 2'
+''    '+ {static} REMOVE : Operation = 3'
+''    '..'
+''    '+ affectedRows : Query'
+''    '+ rowsTo : Query'
+''    '+ operation : Operation'
+''}
+''hide Memento methods
+
+class Command {
+    # undoable : bool = True
+    # sqlCommand : String[] = {} COMMENT(-- do, redo)
+    # before, after : Query = null COMMENT(-- undo)
+    .. auxiliary ..
+    # listener : OnExecutedListener
+    __
+    + setOnExecutedListener(OnExecutedListener)
+    ~ do(ISQLiteHelper) : bool
+    ~ undo(ISQLiteHelper) : bool
+}
+''Memento --* Command
+
+class InsertCommand {
+    + InsertCommand(EColumnNames[] cols, Object[] vals)
+    ~ COMMENT(@override) do(ISQLiteHelper) : bool
+}
+
+class UpdateCommand {
+    + UpdateCommand(String where, EColumnNames[] cols, Object[] vals)
+    ~ COMMENT(@override) do(ISQLiteHelper) : bool
+}
+
+class RemoveCommand {
+    + RemoveCommand(ETableNames t, String where)
+    ~ COMMENT(@override) do(ISQLiteHelper) : bool
+}
+
+class SelectCommand {
+    # undoable : bool = False
+    + SelectCommand(EColumnNames[] cols)
+    + SelectCommand(String where, EColumnNames[] cols)
+    + SelectCommand(ETableNames t, String where)
+    ~ COMMENT(@override) do(ISQLiteHelper) : bool
+}
+Query "ins" <.. SelectCommand
+
+abstract class AbstractDataStore {
+    - helper : ISQLiteHelper
+    - commands : List<Command>
+    - actualState : List<Command>.Iterator
+    __
+    + acceptCommand(Command) : Query
+    + undo() : bool 
+    + redo() : bool 
+    + resetRedoList()
+    -- static SQL statement generators --
+    + {static} sqlInsert(EColumnNames[] cols, Object[] vals) : String
+    + {static} sqlRemove(ETableNames table, String where) : String
+    + {static} sqlUpdate(String where, EColumnNames[] cols, Object[] vals) : String
+    + {static} sqlSelect(ETableNames table) : String
+    + {static} sqlSelect(ETableNames table, String where) : String
+    + {static} sqlSelect(EColumnNames[] cols) : String
+    + {static} sqlSelect(String where, EColumnNames[] cols) : String
+}
+AbstractDataStore o--> ISQLiteHelper
+AbstractDataStore "1" o--> "n" Command
+
+interface ISQLiteHelper {
+    + execSQL(String sqlcommand) : bool
+    + execSQL(String sqlcommand, EColumnNames[] cols) : Query
+    + lastInsertRowID() : int
+}
+hide ISQLiteHelper attributes
+
+'== IOnExecutedListener ====================================================='
+
+note left of IOnExecutedListener
+eg. print to the GUI if some failure happened.
+In fact I try to design a model in which data loss
+or inconsistency cannot happen in theory, but we 
+never know... and this type of error is fatal, 
+not easy to handle.
+end note
+
+'== COMMAND ================================================================='
+
+note right of Command
+We must store //before// and ALSO //after// state because if we allow
+an SQL update to modify the primary key (but not an autoincrement key)
+than we cannot recognise which rows were affected by the update istr.
+
+In the case of an SQL remove the //after// state will be empty.
+
+In the case of an SQL insert the //before// state will be empty.
+In the case of an insertion the nr of tuples (rows) in the //after//
+will be equal of the nr of inserted rows.
+
+In order to restore we just have to:
+ 1. remove all rows stored in the //after//
+ 2. insert all rows stored in the //before//
+
+ - //sqlCommand// should be a single SQL instruction
+ - //sqlUndoCommands// depending on the sqlCommand can result in
+multiple SQL statements, hence we approach the problem in another way:
+the Memento will store the rows which should be deleted, and others,
+which should be inserted
+ - //sqlCommand// is an empty string by default, resulting an empty
+sql statement
+' - //sqlUndoCommands// is an empty list of string by default, resulting
+'no operation at all
+
+COMMENT(-- The <b>do</b> method must be decorated and subclasses must generate)
+COMMENT(-- the before/after states in it if necessary.)
+<b>do</b>(ISQLiteHelper helper)
+    COMMENT(-- sqlCommand has to be initialized by subclasses)
+    RETURN helper.execSQL(sqlCommand)
+END
+
+<b>redo</b>(ISQLiteHelper heler)
+    COMMENT(-- before/after states should be initialized by subclasses)
+    IF (!undoable) THROW NotUndoable()
+    Query failedRows = {}
+    IF (after != null)
+        FOR (row : after)
+            IF (!helper.execSQL(toSql(delete row))) failedRows.add(row)
+    IF (before != null)
+        FOR (row : before)
+            IF (!helper.execSQL(toSql(insert row))) failedRows.add(row)
+    IF (!failure.empty) listener.undoFailure(ex, before, after, failedRows, this)
+END
+
+The create table SQL commands could be each a not undoable <b>Command</b>. 
+We shouldn't implement a new class just for create table commands because 
+these are called once in the software's life cycle (when it is first launched).
+These and other initializer commands should be launched by the AbstractDataStore.
+
+Other specialized commands during the software's life cycle (insert, remove) are
+launched by the higher level modules (eg. GUI), because these commands are given by
+the user (who fills in forms and then submit the changes to AbstractDataStore).
+end note
+
+'============================================================================'
+
+note right of UpdateCommand
+ - we assume that the primary key are constant during an
+update statement (especially an autoincrement integer key)
+ - another possibility: 
+    - remove the updated rows
+    - insert the former rows (which are stored in a 'memento')
+end note
+
+'== INSERT =================================================================='
+
+note right of InsertCommand
+<b>InsertCommand</b>(EColumnNames[] cols, Object[] vals)
+    - detect table, in which we have to insert
+    - generate SQLite command string ==> //sqlCommand//
+    COMMENT(we cannot generate memento object yet, since we do not know the rowId)
+END
+
+<b>do</b>(ISQLiteHelper helper)
+    success = super.do(helper) COMMENT(-- execute command using DataStores's helper)
+    IF (!success) 
+        listener.failure(ex)
+        RETURN FALSE
+    END
+    rowId = helper.lastInsertRowID() COMMENT(-- retrieve rowId of the newly inserted row)
+    listener.rowIdAvailable(rowId) COMMENT(-- publish rowId to the sender)
+    generate Memento using the rowId
+    RETURN TRUE
+END
+end note
+
+'=== UPDATE REMOVE =========================================================='
+
+note as updrem_note
+These two commands may result in multiple
+undo SQL instruction since the //where// statement
+can apply multiple SQL tuples
+end note
+RemoveCommand .. updrem_note
+UpdateCommand .. updrem_note
+
+'============================================================================'
+
+note top of AbstractDataStore
+ - commands before the <i>actualState</i> (including it) are all done - able to undo
+ - commands after the <i>actualState</i> (exluding it) are all undone - able to redo
+
+<b>resetRedoList</b>() -- clears all items from command's list after actualState
+because a new change have been made after some undo
+
+<b>acceptCommand</b>(command):
+    COMMENT(-- I store only the undoable commands)
+    IF (command.undoable) 
+        resetRedoList() COMMENT(-- remove all commands which have been undone)
+        commands.add(command) COMMENT(-- add command to the command's list)
+    END
+    COMMENT(-- can be called an a background thread too in the commands' order)
+    redo() 
+END
+
+<b>undo</b>():
+    IF (actualState != commands.begin())
+        actualState->undo(helper) COMMENT(-- call the last command's undo method)
+        actualState->prev() COMMENT(-- go to the previously done command)
+        RETURN TRUE
+    END
+    RETURN FALSE COMMENT(-- no undoable command)
+END
+
+<b>redo</b>():
+    IF (actualState != commands.end())
+        actualState->next() COMMENT(-- once the next command was undone)
+        actualState->do(helper) COMMENT(-- do that command again)
+        RETURN TRUE
+    END
+    RETURN FALSE COMMENT(-- no redoable command)
+END
+end note
+
+hide EColumnNames
+hide ETableNames
+
+@enduml

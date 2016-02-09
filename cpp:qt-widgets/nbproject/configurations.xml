@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<logicalFolder name="TestFiles"
+                       displayName="Test Files"
+                       projectFiles="false"
+                       kind="TEST_LOGICAL_FOLDER">
+        </logicalFolder>-->
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f3" displayName="deprecated" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="f2" displayName="glwidgets" projectFiles="true">
+      <itemPath>glwidgets/demviewer.cpp</itemPath>
+      <itemPath>glwidgets/demviewer.h</itemPath>
+      <itemPath>glwidgets/gltable.cpp</itemPath>
+      <itemPath>glwidgets/gltable.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="layouts" projectFiles="true">
+      <itemPath>layouts/inputslayout.cpp</itemPath>
+      <itemPath>layouts/inputslayout.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="util" displayName="util" projectFiles="true">
+      <itemPath>util/debug.h</itemPath>
+      <itemPath>util/preprocessor.h</itemPath>
+      <itemPath>util/qt_includes.h</itemPath>
+      <itemPath>util/util.cpp</itemPath>
+      <itemPath>util/util.h</itemPath>
+      <itemPath>values.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="src" displayName="widgets" projectFiles="true">
+      <itemPath>widgets/appendablelineedit.cpp</itemPath>
+      <itemPath>widgets/appendablelineedit.h</itemPath>
+      <itemPath>widgets/combobox_expert.cpp</itemPath>
+      <itemPath>widgets/combobox_expert.h</itemPath>
+      <itemPath>widgets/cropdem_box.cpp</itemPath>
+      <itemPath>widgets/cropdem_box.h</itemPath>
+      <itemPath>widgets/croplas_box.cpp</itemPath>
+      <itemPath>widgets/croplas_box.h</itemPath>
+      <itemPath>widgets/droppablelineedit.cpp</itemPath>
+      <itemPath>widgets/droppablelineedit.h</itemPath>
+      <itemPath>widgets/filebrowserview.cpp</itemPath>
+      <itemPath>widgets/filebrowserview.h</itemPath>
+      <itemPath>widgets/formtoolbox.cpp</itemPath>
+      <itemPath>widgets/formtoolbox.h</itemPath>
+      <itemPath>widgets/inputbox.cpp</itemPath>
+      <itemPath>widgets/inputbox.h</itemPath>
+      <itemPath>widgets/inputbox_constrained.cpp</itemPath>
+      <itemPath>widgets/inputbox_constrained.h</itemPath>
+      <itemPath>widgets/line.cpp</itemPath>
+      <itemPath>widgets/line.h</itemPath>
+      <itemPath>widgets/listview.cpp</itemPath>
+      <itemPath>widgets/listview.h</itemPath>
+      <itemPath>widgets/openwidget.cpp</itemPath>
+      <itemPath>widgets/openwidget.h</itemPath>
+      <itemPath>widgets/projectionbox.cpp</itemPath>
+      <itemPath>widgets/projectionbox.h</itemPath>
+      <itemPath>widgets/spinbox_expert.cpp</itemPath>
+      <itemPath>widgets/spinbox_expert.h</itemPath>
+      <itemPath>widgets/treeview.cpp</itemPath>
+      <itemPath>widgets/treeview.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f4" displayName="windows" projectFiles="true">
+      <itemPath>windows/cropdem_main.cpp</itemPath>
+      <itemPath>windows/cropdem_main.h</itemPath>
+    </logicalFolder>
+    <itemPath>.gitignore</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="6">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <modules>core gui widgets opengl xml</modules>
+        <mocDir>moc</mocDir>
+        <rccDir>rcc</rccDir>
+        <uiDir>ui</uiDir>
+        <defs>
+          <Elem>QMAKE_CXXFLAGS += -std=c++11</Elem>
+        </defs>
+      </qt>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>../../Bitbucket/lidar-szakdolgozat/deps</pElem>
+          </incDir>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="glwidgets/demviewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="glwidgets/demviewer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="glwidgets/gltable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="glwidgets/gltable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="layouts/inputslayout.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="layouts/inputslayout.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/debug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/preprocessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/qt_includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/util.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util/util.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="values.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/appendablelineedit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/appendablelineedit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/combobox_expert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/combobox_expert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/cropdem_box.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/cropdem_box.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/croplas_box.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/croplas_box.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/droppablelineedit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/droppablelineedit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/filebrowserview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/filebrowserview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/formtoolbox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/formtoolbox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/inputbox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/inputbox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/inputbox_constrained.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/inputbox_constrained.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/line.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/line.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/listview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/listview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/openwidget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/openwidget.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/projectionbox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/projectionbox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/spinbox_expert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/spinbox_expert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/treeview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/treeview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="windows/cropdem_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="windows/cropdem_main.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="6">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <buildMode>1</buildMode>
+        <modules>core gui widgets</modules>
+      </qt>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="glwidgets/demviewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="glwidgets/demviewer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="glwidgets/gltable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="glwidgets/gltable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="layouts/inputslayout.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="layouts/inputslayout.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/debug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/preprocessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/qt_includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util/util.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util/util.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="values.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/appendablelineedit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/appendablelineedit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/combobox_expert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/combobox_expert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/cropdem_box.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/cropdem_box.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/croplas_box.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/croplas_box.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/droppablelineedit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/droppablelineedit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/filebrowserview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/filebrowserview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/formtoolbox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/formtoolbox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/inputbox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/inputbox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/inputbox_constrained.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/inputbox_constrained.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/line.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/line.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/listview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/listview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/openwidget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/openwidget.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/projectionbox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/projectionbox.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/spinbox_expert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/spinbox_expert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="widgets/treeview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="widgets/treeview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="windows/cropdem_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="windows/cropdem_main.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolczPeter_HF1_Masodik</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="button1_text">Copy</string>
+    <string name="textview1_text">Hello World, My Activity!</string>
+    
+</resources>

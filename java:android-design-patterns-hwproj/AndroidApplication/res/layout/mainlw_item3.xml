@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/tr_clname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/sample_clname"
+        android:textColor="@color/darkerblue"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tr_mkname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tr_amount"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/sample_mkname"
+        android:textColor="@color/darkblue"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tr_caid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tr_clname"
+        android:text="@string/sample_caid"
+        android:textColor="@color/darkgreen" />
+
+    <TextView
+        android:id="@+id/_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tr_caid"
+        android:layout_toEndOf="@+id/tr_caid"
+        android:layout_toRightOf="@+id/tr_caid"
+        android:text="@string/kettospont"
+        android:textColor="@color/darkgreen" />
+
+    <TextView
+        android:id="@+id/tr_newbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tr_caid"
+        android:layout_toEndOf="@+id/_temp"
+        android:layout_toRightOf="@+id/_temp"
+        android:text="@string/sample_short_nr"
+        android:textColor="@color/darkorange" />
+
+    <TextView
+        android:id="@+id/tr_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tr_caid"
+        android:text="@string/sample_short_nr"
+        android:textColor="@color/text_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tr_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tr_amount"
+        android:layout_toEndOf="@+id/tr_amount"
+        android:layout_toRightOf="@+id/tr_amount"
+        android:text="@string/sample_id" />
+
+    <TextView
+        android:id="@+id/tr_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tr_clname"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/sample_date"
+        android:textColor="@color/darkerblue" />
+
+    <TextView
+        android:id="@+id/tr_remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tr_clname"
+        android:layout_alignStart="@+id/tr_clname"
+        android:layout_below="@+id/tr_amount"
+        android:text="@string/lorem_ipsum"
+        android:textSize="16sp" />
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2013-07-08 00:00:00.000+0200', 'potp', 100000, 144000, 'Athelyezes_Innen', 'kivettem penzt + ALBERLET + REZSI (4674) + UPC maradek (10000)', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2013-07-31 00:00:00.000+0200', 'potp', 100000, 43250, 'Athelyezes_Innen', 'kivettem penzt', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2013-08-08 00:00:00.000+0200', 'potp', 100000, 7850, 'Athelyezes_Innen', 'bankbol kivettem penzt – munkadij – elso Maria alberlet', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2013-08-27 00:00:00.000+0200', 'potp', 5000, 2850, 'Athelyezes_Innen', 'sztaki ebéd', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2013-10-10 00:00:00.000+0200', 'potp', 50000, 56400, 'Athelyezes_Innen', 'Aldi + kivetel + 2 havi osztondij', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2013-12-13 00:00:00.000+0100', 'potp', 35000, 19015, 'Athelyezes_Innen', 'kaja konyv', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2014-02-06 00:00:00.000+0100', 'potp', -140000, 227585, 'Athelyezes_Innen', 'Kaja + óra csináltatás', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2014-03-26 00:00:00.000+0100', 'potp', 50000, 116491, 'Athelyezes_Innen', '', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2014-12-18 00:00:00.000+0100', 'potp', 200000, 530227, 'Athelyezes_Innen', '', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2014-12-19 00:00:00.000+0100', 'potp', 60000, 469559, 'Athelyezes_Innen', 'asztali számítógép', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2015-03-04 00:00:00.000+0100', 'potp', 60000, 533918, 'Athelyezes_Innen', 'kaja', null);
+insert into tranzactions (date, caid, amount, balance, cluster, remark, market) values ('2015-03-14 00:00:00.000+0100', 'potp', 80000, 466917, 'Athelyezes_Innen', 'Dori gyakorlo cipo', null);

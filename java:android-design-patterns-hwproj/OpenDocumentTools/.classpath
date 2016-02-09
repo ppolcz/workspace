@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="CoreLibrary"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/DesktopApplication"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/commons-validator-1.3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/odftoolkit-0.6.1-incubating/odfdom-java-0.8.10-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/odftoolkit-0.6.1-incubating/simple-odf-0.8.1-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/odftoolkit-0.6.1-incubating/xslt-runner-1.2.3-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/odftoolkit-0.6.1-incubating/xslt-runner-task-1.2.3-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/com.springsource.org.apache.xerces-2.9.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/java-rdfa-0.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/jena-2.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/iri-0.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="/usr/local/commons-validator-1.4.1/commons-validator-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/usr/local/commons-validator-1.4.1/commons-validator-1.4.1-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/local/mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

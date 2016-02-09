@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">4dp</dimen>
+    <dimen name="activity_vertical_margin">4dp</dimen>
+	<dimen name="list_item_vertical_margin">4dp</dimen>
+	<dimen name="list_item_horizontal_margin">4dp</dimen>
+	<dimen name="list_item_icon_width">52dp</dimen>
+	<dimen name="list_item_icon_height">52dp</dimen>
+	<dimen name="form_port_item_icon_height">160dp</dimen>
+	<dimen name="form_top_margin">16dp</dimen>
+	<dimen name="form_horizontal_margin">4dp</dimen>
+	<dimen name="form_bottom_margin">10dp</dimen>
+	<dimen name="form_port_button_padding">10dp</dimen>
+	<dimen name="form_port_form_padding">30dp</dimen>
+	<dimen name="form_land_item_icon_width">140dp</dimen>
+	<dimen name="form_land_item_icon_height">180dp</dimen>
+	<dimen name="form_land_top">30dp</dimen>
+	
+</resources>

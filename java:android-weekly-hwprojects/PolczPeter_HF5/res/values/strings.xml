@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolczPeter_HF5</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="notification_catalog_downloaded">catalogdownloaded</string>
+    <string name="notification_no_memory">notificationnomemory</string>
+    <string name="notification_error">notificationerror</string>
+    <string name="download">Download</string>
+    <string name="status_">"Status: "</string>
+    <string name="not_started">Not started</string>
+    <string name="downloaded_images_is_show_here">Downloaded images is show here</string>
+    <string name="enter_image_url">Enter image URL</string>
+    <string name="_0_">0%</string>
+    <string name="how_to_download_an_image">How to download an Image</string>
+    <string name="save_to_sd">Save to SD</string>
+    <string name="download_in_background">Download in background</string>
+    <string name="blahblah">BlahBlah</string>
+    <string name="sample_long_name">Sample long name</string>
+    <string name="sample_address">http://www.nemletezem.hu/sample_image.jpg</string>
+    <string name="pp_hf5_masodikmain">PP_HF5 MasodikMain</string>
+    <string name="pp_hf5_indexrol">PP_HF5 Indexrol</string>
+    <string name="pp_hf5_egyik">PP_HF5 egyik</string>
+    <string name="pp_hf5_masik">PP_HF5 masik</string>
+    <string name="id_holder">id_holder_miert_nem_akar_menni</string>
+
+    
+</resources>

@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.napol.koltsegvetes.MainActivity" >
+
+    <item
+        android:id="@+id/action_update"
+        android:orderInCategory="100"
+        android:title="@string/action_update"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_delete"
+        android:orderInCategory="100"
+        android:title="@string/action_delete"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_newtr"
+        android:orderInCategory="100"
+        android:icon="@drawable/dollar_white"
+        android:title="@string/action_newtr"
+        app:showAsAction="ifRoom|withText"/>
+
+</menu>

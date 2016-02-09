@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="polcz.peter.hf3"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Menu Activity - Launch between activities written for the homework -->
+        <activity
+            android:name="polcz.peter.hf3.LauncherActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- HW_1 - Visualizing an arbitrary explicit function with one variable -->
+        <activity
+            android:name="polcz.peter.hf3.DrawerActivity"
+            android:label="@string/kirajzolosdi"
+            android:parentActivityName="polcz.peter.hf3.LauncherActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="polcz.peter.hf3.LauncherActivity" />
+        </activity>
+
+        <!-- HW_2 - Google Maps task - InfoWindowAdapter + LocationManager -->
+        <activity
+            android:name="polcz.peter.hf3.MapsActivityHagyomanyos"
+            android:label="@string/google_maps_hagyomanyosan"
+            android:parentActivityName="polcz.peter.hf3.LauncherActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="polcz.peter.hf3.LauncherActivity" />
+        </activity>
+
+        <!-- HW_2 - Google Maps task - hint from Stackoverflow - InfoWindowAdapter + LocationClient -->
+        <activity
+            android:name="polcz.peter.hf3.MapsActivityStachOverflow"
+            android:label="@string/google_maps_ahogy_a_stackoverflow_mutatta"
+            android:parentActivityName="polcz.peter.hf3.LauncherActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="polcz.peter.hf3.LauncherActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDQTA6r2wKcBYsmSRL1so3lEfOlBfacTzs" />
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_view3D_demo"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/openpanodroid_demo"/>
+    <item
+        android:id="@+id/action_demo_camera"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/camera_activity_demo"/>
+
+    <!-- New panorama, should appear as action button -->
+    <item
+        android:id="@+id/action_new_panorama"
+        android:icon="@drawable/camera"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/create"/>
+
+</menu>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/form_bottom_margin"
+    android:paddingLeft="@dimen/form_horizontal_margin"
+    android:paddingRight="@dimen/form_horizontal_margin"
+    android:paddingTop="@dimen/form_top_margin" >
+
+    <ImageView
+        android:id="@+id/form_iw"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/form_port_item_icon_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/photograph"
+        android:src="@drawable/noface" />
+
+    <!-- 
+    <Button
+        android:id="@+id/form_open_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/form_iw"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/form_iw"
+        android:layout_toRightOf="@+id/form_iw"
+        android:text="@string/form_browse" />
+ 	-->
+    
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/form_fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/form_iw"
+        android:hint="@string/form_first_name" />
+
+    <EditText
+        android:id="@+id/form_lname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/form_fname"
+        android:hint="@string/form_last_name" />
+
+    <EditText
+        android:id="@+id/form_telnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/form_lname"
+        android:hint="@string/form_telephon_number" />
+    
+    <Button 
+		android:id="@+id/form_save"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/form_telnr"
+		android:layout_alignBottom="@+id/form_telnr"
+		android:layout_alignParentRight="true"
+        />
+
+    <Button 
+		android:id="@+id/form_replace"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/form_telnr"
+		android:layout_alignLeft="@+id/form_telnr"
+		android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>
+

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition template="/resources/scaffold/pcz_page_template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:param name="pageTitle" value="List of existing clusters" />
+	<ui:define name="header" value="Clusters" />
+	<ui:define name="main">
+		<h:form id="search">
+			<div class="buttons">
+				<h:commandButton action="#{trAttributeBean.create}"
+					styleClass="btn btn-primary" value="Register new charge account" />
+			</div>
+			<h2>Manage charge accounts</h2>
+			<!-- 			<h:dataTable id="customerList" styleClass="data-table"
+				value="#{trAttributeBean.cls}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description" />
+					</f:facet>
+					<h:outputText id="cl_name" value="#{_item.clName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Code" />
+					</f:facet>
+					<h:outputText id="cl_desc" value="#{_item.clDescription}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Code" />
+					</f:facet>
+					<h:outputText id="cl_dir" value="#{_item.clDirection}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Code" />
+					</f:facet>
+					<h:outputText id="cl_parent" value="#{_item.clParent}" />
+				</h:column>
+				<h:column>
+					<h:commandButton
+						action="#{trAttributeBean.editCl(_item.clName, _item.clDescription, _item.clDirection, _item.clParent)}"
+						styleClass="btn btn-primary" value="Edit" />
+				</h:column>
+			</h:dataTable> -->
+		</h:form>
+	</ui:define>
+</ui:composition>
