@@ -8,10 +8,11 @@
 */bin/
 */gen/*
 
-*/nbproject/*.mk 
-*/nbproject/private/*.mk 
-*/nbproject/*.pro 
-*/nbproject/private/*.pro
+**/nbproject/*.mk 
+**/nbproject/private/*.mk 
+**/nbproject/*.pro 
+**/nbproject/private/*.pro
+**/nbproject/private/private.xml
                           
 **.pre
 
