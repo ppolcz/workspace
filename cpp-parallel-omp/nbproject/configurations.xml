@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>chrono_helper.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -42,13 +43,15 @@
           <commandLine>-std=c++14 -fopenmp -O3</commandLine>
         </ccTool>
       </compileType>
-      <item path="linked.c" ex="false" tool="1" flavor2="0">
+      <item path="chrono_helper.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linked.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="mandel.c" ex="false" tool="1" flavor2="0">
+      <item path="mandel.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="mdlj.c" ex="false" tool="1" flavor2="0">
+      <item path="mdlj.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -72,6 +75,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="chrono_helper.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="linked.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">

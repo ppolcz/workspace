@@ -13,9 +13,7 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <chrono>
-
-using namespace std;
+#include "chrono_helper.hpp"
 
 extern "C"
 {
@@ -34,17 +32,13 @@ int main (int argc, char** argv)
     //    main_mandel();
     //    main_mdlj(argc, argv);
 
-    auto start = std::chrono::high_resolution_clock::now();
-
-    std::cout << chrono::high_resolution_clock::period::den << std::endl;
-    auto start_time = chrono::high_resolution_clock::now();
+    PP_CHRONO_START(summation);
     double temp;
-    for (double i = 0; i < 1000; i++)
-        temp += temp + i * temp/10000;
+    for (double i = 0; i < 1000000000; i++)
+        temp += temp + i * temp / 10000;
     std::cout << temp << std::endl;
-    auto end_time = chrono::high_resolution_clock::now();
-    std::cout << chrono::duration_cast<chrono::seconds>(end_time - start_time).count() << ":";
-    std::cout << chrono::duration_cast<chrono::microseconds>(end_time - start_time).count() << ":";
+    PP_CHRONO_END(summation);
+
     return 0;
 }
 
