@@ -5,14 +5,14 @@
  */
 
 /* 
- * File:   chrono_helper.hpp
+ * File:   pczchrono.h
  * Author: polpe
  *
- * Created on February 14, 2016, 9:07 PM
+ * Created on February 14, 2016, 10:06 PM
  */
 
-#ifndef CHRONO_HELPER_HPP
-#define CHRONO_HELPER_HPP
+#ifndef PCZCHRONO_H
+#define PCZCHRONO_H
 
 #include <chrono>
 #include <cstdio>
@@ -37,8 +37,8 @@ inline void print_elapsed_time (time_point const & start_time)
     else printf("%d [usec]\n", micro);
 }
 
-#define PP_CHRONO_START(id) auto start_time_##id = std::chrono::high_resolution_clock::now()
-#define PP_CHRONO_END(id) print_elapsed_time(start_time_##id);
+#define PCZ_CHRONO_START(id) auto start_time_##id = std::chrono::high_resolution_clock::now()
+#define PCZ_CHRONO_END(id) print_elapsed_time(start_time_##id);
 
-#endif /* CHRONO_HELPER_HPP */
+#endif /* PCZCHRONO_H */
 

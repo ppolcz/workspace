@@ -4,30 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>chrono_helper.hpp</itemPath>
-    </logicalFolder>
-    <logicalFolder name="f1" displayName="pczlib" projectFiles="true" kind="ROOT">
-      <logicalFolder name="cpp-pczlibrary"
-                     displayName="cpp-pczlibrary"
-                     projectFiles="true">
-        <logicalFolder name="src" displayName="src" projectFiles="true">
-          <itemPath>../cpp-pczlibrary/src/pczdebug.cpp</itemPath>
-          <itemPath>../cpp-pczlibrary/src/pczexcept.cpp</itemPath>
-        </logicalFolder>
-        <itemPath>../cpp-pczlibrary/function_traits.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczdebug.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczexcept.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczfenum.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczfstream.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczmeta.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczpp.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczprotocol.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczreflection.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczsstream.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczstd.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczstring.h</itemPath>
-        <itemPath>../cpp-pczlibrary/pczutil.h</itemPath>
-      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -73,44 +49,6 @@
           <commandLine>-std=c++14 -fopenmp -O3</commandLine>
         </ccTool>
       </compileType>
-      <item path="../cpp-pczlibrary/function_traits.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczdebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczexcept.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczfenum.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczfstream.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczmeta.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczpp.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczprotocol.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczreflection.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczsstream.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczstd.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczstring.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczutil.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/src/pczdebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/src/pczexcept.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="chrono_helper.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="linked.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
@@ -141,44 +79,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="../cpp-pczlibrary/function_traits.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczdebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczexcept.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczfenum.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczfstream.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczmeta.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczpp.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczprotocol.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczreflection.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczsstream.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczstd.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczstring.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/pczutil.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/src/pczdebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../cpp-pczlibrary/src/pczexcept.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="chrono_helper.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="linked.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">

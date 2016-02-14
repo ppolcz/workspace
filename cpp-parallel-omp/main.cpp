@@ -13,7 +13,7 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "chrono_helper.hpp"
+#include "pczchrono.h"
 #include "pczutil.h"
 
 extern "C"
@@ -33,14 +33,14 @@ int main (int argc, char** argv)
     //    main_mandel();
     //    main_mdlj(argc, argv);
 
-    PP_CHRONO_START(summation);
+    PCZ_CHRONO_START(summation);
     {
         double temp;
         for (double i = 0; i < 100000000; i++)
             temp += temp + i * temp / 10000;
         std::cout << temp << std::endl;
     }
-    PP_CHRONO_END(summation);
+    PCZ_CHRONO_END(summation);
 
     PCZ_UNUSED(argc, argv);
     return 0;
