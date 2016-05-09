@@ -18,7 +18,7 @@ public class NameDescController<T extends AbstractNameDescEntity> {
 
     public String create(T entity) {
         try {
-            service.create(entity);
+            service.update(entity);
         } catch (Exception ex) {
             return "Error creating the entity: " + ex.toString();
         }

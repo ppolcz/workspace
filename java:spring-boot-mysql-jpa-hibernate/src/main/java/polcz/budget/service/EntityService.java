@@ -11,6 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
 
 import polcz.budget.model.AbstractNameDescEntity;
@@ -23,12 +24,32 @@ public class EntityService {
     @PersistenceContext
     private EntityManager em;
 
-    public void create(Object entity) {
-        em.persist(entity);
+    public <T> T update(T entity) {
+        return em.merge(entity);
     }
 
-    public void update(Object entity) {
-        em.merge(entity);
+    public <T extends AbstractNameDescEntity> T update(T entity, Class<T> entityClass) {
+        Logger logger = Logger.getLogger("PPOLCZ_" + EntityService.class.getSimpleName());
+
+        /* find if this name already exists */
+        logger.infof("find if the name '%s' already exists", entity.getName());
+        T old = findByName(entity.getName(), entityClass);
+
+        if (old != null) {
+            logger.info("an older entity found with this name, its id: " + old.getUid());
+            entity.setUid(old.getUid());
+        } else {
+            logger.info("an existing entry with this name was not found");
+        }
+
+        T ret = null;
+        try {
+            ret = em.merge(entity);
+        } catch (Exception e) {
+            logger.info("Exception");
+            e.printStackTrace();
+        }
+        return ret;
     }
 
     public void remove(Object entity) {
@@ -50,7 +71,7 @@ public class EntityService {
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<T> cq = builder.createQuery(entityClass);
         Root<T> root = cq.from(entityClass);
-        cq.where(builder.like(root.get(TCluster_.name), name));
+        cq.where(builder.equal(root.get(TCluster_.name), name));
         cq.select(root);
         TypedQuery<T> q = em.createQuery(cq);
         q.setMaxResults(1);

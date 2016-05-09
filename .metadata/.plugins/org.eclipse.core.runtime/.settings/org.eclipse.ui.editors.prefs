@@ -1,2 +1,4 @@
+AbstractTextEditor.Color.SelectionBackground=114,159,207
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
 eclipse.preferences.version=1
 overviewRuler_migration=migrated_3.1
