@@ -1,0 +1,25 @@
+package polcz.budget.service;
+
+import javax.annotation.security.RolesAllowed;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+
+import polcz.budget.model.TChargeAccount;
+
+@RolesAllowed({"ADMIN", "CUSTOMER"})
+public class CAService extends AbstractService<TChargeAccount> {
+
+	@PersistenceContext(unitName = "mysqlPU", type = PersistenceContextType.TRANSACTION)
+	private EntityManager em;
+
+	@Override
+	protected EntityManager em() {
+		return em;
+	}
+
+	public CAService() {
+		super(TChargeAccount.class);
+	}
+}
