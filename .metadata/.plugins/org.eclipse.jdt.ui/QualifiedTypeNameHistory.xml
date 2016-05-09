@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="java.lang.Deprecated"/>
+<fullyQualifiedTypeName name="polcz.budget.service.CAService"/>
+<fullyQualifiedTypeName name="polcz.budget.controller.CAController"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="polcz.budget.controller.NameDescController"/>
+<fullyQualifiedTypeName name="javax.persistence.NoResultException"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="polcz.budget.service.OdfLoaderService"/>
+<fullyQualifiedTypeName name="polcz.budget.model.AbstractNameDescEntity"/>
+<fullyQualifiedTypeName name="polcz.budget.model.TChargeAccount"/>
+<fullyQualifiedTypeName name="com.sun.tools.javac.tree.TreeMaker"/>
+<fullyQualifiedTypeName name="polcz.budget.model.TMarket"/>
+<fullyQualifiedTypeName name="org.jboss.logging.Logger"/>
+<fullyQualifiedTypeName name="polcz.budget.service.EntityService"/>
+<fullyQualifiedTypeName name="polcz.budget.model.TCluster"/>
+<fullyQualifiedTypeName name="java.lang.AssertionError"/>
+</qualifiedTypeNameHistroy>

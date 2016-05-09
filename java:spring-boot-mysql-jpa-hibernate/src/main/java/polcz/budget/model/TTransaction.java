@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.junit.Assert;
 
 import polcz.budget.global.R;
@@ -56,6 +57,7 @@ public class TTransaction extends AbstractEntity
     private boolean pivot = false;
 
     @ManyToOne
+    @JsonManagedReference
     @JoinColumn(name = "ca", nullable = false)
     private TChargeAccount ca;
 
