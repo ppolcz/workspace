@@ -3,6 +3,7 @@
 .target/
 .idea/
 .worksheet/
+log/
 bin/
 build/
 dist/

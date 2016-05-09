@@ -1,4 +1,5 @@
-.metadada/*
+.metadata/*
+.recommenders/*
  
 ./cpp-qt-widgets/.gitignore
 */build/

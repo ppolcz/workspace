@@ -1,13 +1,12 @@
 package polcz.budget.controller;
 
-import javax.persistence.NoResultException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import polcz.budget.model.TChargeAccount;
 import polcz.budget.model.TCluster;
 import polcz.budget.service.EntityService;
 
@@ -56,5 +55,10 @@ public class ClusterController extends NameDescController<TCluster> {
     @ResponseBody
     public String update(int id, String name, String desc) {
         return super.update(id, name, desc, TCluster.class);
+    }
+
+    @RequestMapping(value = "/get/{uid}")
+    public @ResponseBody TCluster getByUid(@PathVariable int uid) {
+        return service.find(uid, TCluster.class);
     }
 }

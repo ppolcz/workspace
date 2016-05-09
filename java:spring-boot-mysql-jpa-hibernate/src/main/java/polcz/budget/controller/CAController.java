@@ -56,8 +56,8 @@ public class CAController extends NameDescController<TChargeAccount> {
         return service.find(uid, TChargeAccount.class);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody TChargeAccount sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name) {
-        return new TChargeAccount("kutya", "csoka");
-    }
+    // @RequestMapping(method = RequestMethod.GET)
+    // public @ResponseBody TChargeAccount sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name) {
+    // return new TChargeAccount("kutya", "csoka");
+    // }
 }
