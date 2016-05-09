@@ -1,0 +1,95 @@
+package polcz.budget.service;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import polcz.budget.model.TChargeAccount;
+
+@Repository
+@Transactional
+public class EntityService {
+
+    @PersistenceContext
+    private EntityManager em;
+
+    public void create(Object entity) {
+        em.persist(entity);
+    }
+
+    public void update(Object entity) {
+        em.merge(entity);
+    }
+
+    public void remove(Object entity) {
+        if (em.contains(entity)) {
+            em.remove(entity);
+        } else {
+            em.remove(em.merge(entity));
+        }
+    }
+
+    public Object find(Object id, Class<?> entityClass) {
+        return em.find(entityClass, id);
+    }
+
+    public <T> List<T> findRange(int[] range, Class<T> entityClass) {
+        CriteriaQuery<T> cq = em.getCriteriaBuilder().createQuery(entityClass);
+        cq.select(cq.from(entityClass));
+        TypedQuery<T> q = em.createQuery(cq);
+        q.setMaxResults(range[1] - range[0]);
+        q.setFirstResult(range[0]);
+        return q.getResultList();
+    }
+
+    public List<TChargeAccount> findAll(Class<?> entityClass) {
+        return super.findAll();
+    }
+    
+
+    /**
+     * Find entity by ID.
+     */
+    public T find(Object id) {
+        return em().find(entityClass, id);
+    }
+
+    /**
+     * Return all entities of the table.
+     */
+    public List<T> findAll() {
+        CriteriaQuery<T> cq = em().getCriteriaBuilder().createQuery(entityClass);
+        cq.select(cq.from(entityClass));
+        return em().createQuery(cq).getResultList();
+    }
+
+    /**
+     * Return entities from range[0] to range[1].
+     */
+    public List<T> findRange(int[] range) {
+        CriteriaQuery<T> cq = em().getCriteriaBuilder().createQuery(entityClass);
+        cq.select(cq.from(entityClass));
+        TypedQuery<T> q = em().createQuery(cq);
+        q.setMaxResults(range[1] - range[0]);
+        q.setFirstResult(range[0]);
+        return q.getResultList();
+    }
+
+    /**
+     * Count the number of entities of the table.
+     */
+    public int count() {
+        CriteriaQuery<Long> cq = em().getCriteriaBuilder().createQuery(Long.class);
+        Root<T> rt = cq.from(entityClass);
+        cq.select(em().getCriteriaBuilder().count(rt));
+        TypedQuery<Long> q = em().createQuery(cq);
+        return ((Long) q.getSingleResult()).intValue();
+    }
+}

@@ -1,0 +1,26 @@
+# Database
+db.driver: com.mysql.jdbc.Driver
+db.url: jdbc:mysql://localhost:3306/ppolcz
+db.username: root
+db.password: budapest
+
+# Hibernate
+hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+hibernate.show_sql: true
+hibernate.hbm2ddl.auto: update
+entitymanager.packagesToScan: polcz.budget
+
+# Server
+#server.port = 8080
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+security.ignored=true
+security.basic.enabled=false
+
+logging.level.org.springframework.web=INFO
+logging.level.org.hibernate=INFO
+logging.file=c:/temp/my-log/app.log
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE

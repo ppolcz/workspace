@@ -33,6 +33,7 @@ public class UserService {
 	 */
 	public void create(User user) {
 		em.persist(user);
+		System.out.println(em.hashCode());
 		return;
 	}
 

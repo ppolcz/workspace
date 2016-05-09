@@ -13,4 +13,9 @@ public class MainController {
 		return "Proudly handcrafted by <a href='http://netgloo.com/en'>netgloo</a> :)";
 	}
 
+	@RequestMapping("/load-odf")
+	@ResponseBody
+	public String loadOdf() {
+	    return "Odf spreadsheet loaded!";
+	}
 }

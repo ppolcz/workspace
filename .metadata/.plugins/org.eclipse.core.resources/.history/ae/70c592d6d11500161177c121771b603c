@@ -1,0 +1,18 @@
+package polcz.budget.service;
+
+import javax.persistence.EntityManager;
+
+import polcz.budget.model.TChargeAccount;
+
+public class CAService extends AbstractService<TChargeAccount> {
+
+	@Override
+	protected EntityManager em() {
+		return null;
+	}
+
+	public CAService() {
+		super(TChargeAccount.class);
+	}
+	
+}
