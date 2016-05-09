@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;Greeting.java&apos; to &apos;java:spring-boot-mysql-jpa-hibernate/src/main/java/polcz.budget.model&apos;&#x0A;- Original project: &apos;gs-actuator-service&apos;&#x0A;- Destination element: &apos;java:spring-boot-mysql-jpa-hibernate/src/main/java/polcz.budget.model&apos;&#x0A;- Original element: &apos;hello.Greeting.java&apos;" description="Copy compilation unit" destination="=java:spring-boot-mysql-jpa-hibernate/src\/main\/java&lt;polcz.budget.model" element1="/src\/main\/java&lt;hello{Greeting.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1462823332431" units="1" version="1.0"/>
-</session>
