@@ -9,8 +9,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import javax.annotation.PostConstruct;
-
 import org.jboss.logging.Logger;
 import org.junit.Assert;
 import org.odftoolkit.simple.SpreadsheetDocument;
@@ -25,6 +23,7 @@ import polcz.budget.model.TCluster;
 import polcz.budget.model.TMarket;
 import polcz.budget.model.TTransaction;
 import polcz.budget.model.TTransactionType;
+import polcz.budget.service.helper.TransactionArguments;
 
 @Service
 // @Transactional
@@ -33,8 +32,11 @@ public class OdfLoaderService {
     @Autowired
     EntityService service;
 
-//    @PersistenceContext
-//    EntityManager em;
+    @Autowired
+    TransactionService trService;
+
+    // @PersistenceContext
+    // EntityManager em;
 
     Logger logger;
 
@@ -111,7 +113,6 @@ public class OdfLoaderService {
         marketCorrections.put("M1Gyros", "MoriczGyros"); // TODO
     }
 
-    @PostConstruct
     public void init() {
         logger = R.getJBossLogger(this.getClass());
         logger.info(this.getClass().getSimpleName() + "::init() [@PostConstruct]");
@@ -133,21 +134,22 @@ public class OdfLoaderService {
         pinfo = new TChargeAccount("pinfo"); /* not persisted */
         pinfo.setUid(1931212);
 
-        Utazas = service.findByNameOrCreate(new TCluster("Utazas"),tcl);
-        Lakas_Berendezes = service.findByNameOrCreate(new TCluster("Lakas_Berendezes"),tcl);
-        Ruhazkodas = service.findByNameOrCreate(new TCluster("Ruhazkodas"),tcl);
-        Munkaeszkozok = service.findByNameOrCreate(new TCluster("Munkaeszkozok"),tcl);
-        Szamolas = service.findByNameOrCreate(new TCluster("Szamolas"),tcl);
-        Nem_Adott = service.findByNameOrCreate(new TCluster("Nem_Adott", 0, null),tcl);
-        Athelyezes = service.findByNameOrCreate(new TCluster("Athelyezes", 1, Nem_Adott),tcl);
-        Szukseges = service.findByNameOrCreate(new TCluster("Szukseges"),tcl);
-        Napi_Szukseglet = service.findByNameOrCreate(new TCluster("Napi_Szukseglet"),tcl);
-        Egyeb_Kiadas = service.findByNameOrCreate(new TCluster("Egyeb_Kiadas"),tcl);
+        Utazas = service.findByNameOrCreate(new TCluster("Utazas"), tcl);
+        Lakas_Berendezes = service.findByNameOrCreate(new TCluster("Lakas_Berendezes"), tcl);
+        Ruhazkodas = service.findByNameOrCreate(new TCluster("Ruhazkodas"), tcl);
+        Munkaeszkozok = service.findByNameOrCreate(new TCluster("Munkaeszkozok"), tcl);
+        Szamolas = service.update(new TCluster(R.CLNAME_PIVOT, R.CLSGN_PIVOT, Nem_Adott), tcl);
+        Nem_Adott = service.update(new TCluster(R.CLNAME_NOT_GIVEN, R.CLSGN_NOT_GIVEN, null), tcl);
+        Athelyezes = service.update(new TCluster(R.CLNAME_TRANSFER, R.CLSGN_TRANSFER, Nem_Adott), tcl);
+        Szukseges = service.findByNameOrCreate(new TCluster("Szukseges"), tcl);
+        Napi_Szukseglet = service.findByNameOrCreate(new TCluster("Napi_Szukseglet"), tcl);
+        Egyeb_Kiadas = service.findByNameOrCreate(new TCluster("Egyeb_Kiadas"), tcl);
 
         Market_Not_Applicable = service.findByNameOrCreate(new TMarket("Market_Not_Applicable", ""), tmk);
     }
 
     public void process() {
+        init();
         parse();
     }
 
@@ -234,8 +236,8 @@ public class OdfLoaderService {
         tr.setRemark("initial pivot [the very first]");
         tr.setType(TTransactionType.pivot);
 
-        service.update(tr); // TODO: legyegesen le van egyszerusitve a regihez kepest
-        // trs.makeTransaction(new TransactionArguments(tr, null, R.TR_INSERTION));
+        // service.update(tr); // TODO: legyegesen le van egyszerusitve a regihez kepest
+        trService.makeTransaction(new TransactionArguments(tr, null, R.TR_INSERTION, "initial balance"));
     }
 
     /**
@@ -417,11 +419,11 @@ public class OdfLoaderService {
         }
 
         logger.infof("%s", tr);
-        service.update(tr);
-        // trs.makeTransaction(new TransactionArguments(tr, null, R.TR_INSERTION));
+        // service.update(tr);
+        trService.makeTransaction(new TransactionArguments(tr, null, R.TR_INSERTION, errmsg));
 
-//        Assert.assertFalse(errmsg + "amount shouldn't be zero, cluster: " + tr.getCluster(),
-//                tr.isPivot() && tr.getAmount() == 0);
+        // Assert.assertFalse(errmsg + "amount shouldn't be zero, cluster: " + tr.getCluster(),
+        // tr.isPivot() && tr.getAmount() == 0);
     }
 
     private Date getDate(Row row, int index) {

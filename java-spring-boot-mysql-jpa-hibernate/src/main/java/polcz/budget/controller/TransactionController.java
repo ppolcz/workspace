@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import polcz.budget.model.TCluster;
 import polcz.budget.model.TTransaction;
 import polcz.budget.service.EntityService;
 
@@ -32,5 +33,10 @@ public class TransactionController extends EntityController<TTransaction> {
     @RequestMapping(value = "/get/{from}/{to}")
     public @ResponseBody List<TTransaction> getRange(@PathVariable int from, @PathVariable int to) {
         return service.findRange(new int[] { from, to }, TTransaction.class);
+    }
+    
+    @RequestMapping(value = "/get")
+    public @ResponseBody List<TTransaction> getAll() {
+        return service.findAll(TTransaction.class);
     }
 }

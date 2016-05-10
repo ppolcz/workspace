@@ -17,9 +17,11 @@
 				<tr>
 					<th>Index</th>
 					<th>Uid</th>
+					<th>Date</th>
 					<th>Balance</th>
 					<th>Ammount</th>
 					<th>Account</th>
+					<th>Cluster</th>
 					<th>Market</th>
 					<th>Remark</th>
 				</tr>
@@ -28,9 +30,11 @@
 				<tr ng-repeat="name in names" ng-click="testingClick(name)">
 					<td>{{$index}}</td>
 					<td>{{name.uid}}</td>
-					<td>{{name.amount}}</td>
+					<td>{{name.date}}</td>
 					<td>{{name.balance}}</td>
+					<td>{{name.amount}}</td>
 					<td>{{name.ca.name}}</td>
+					<td>{{name.cluster.name}} ({{name.cluster.sgn}})</td>
 					<td>{{name.market.name}}</td>
 					<td>{{name.remark}}</td>
 				</tr>
