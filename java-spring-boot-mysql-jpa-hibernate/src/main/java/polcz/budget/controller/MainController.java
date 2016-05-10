@@ -13,12 +13,17 @@ public class MainController {
     @Autowired
     OdfLoaderService odfService;
     
-	@RequestMapping("/")
-	@ResponseBody
-	public String index() {
-		return "Proudly handcrafted by <a href='http://netgloo.com/en'>netgloo</a> :)";
-	}
+    // @RequestMapping("/")
+    // @ResponseBody
+    // public String index() {
+    // return "Proudly handcrafted by <a href='http://netgloo.com/en'>netgloo</a> :)";
+    // }
 
+    @RequestMapping("/")
+    public String index() {
+      return "undex.html";
+    }
+    
 	@RequestMapping("/load-odf")
 	@ResponseBody
 	public String loadOdf() {

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="angular-datatables/dist/angular-datatables.min.js"></script>   
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+    </head>
+    <body>
+        <div ng-app="AngularWayApp" ng-controller="AngularWayCtrl">
+            <table datatable="ng" class="demo compact dataTable">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Uid</th>
+                        <th>Balance</th>
+                        <th>Ammount</th>
+                        <th>Account</th>
+                        <th>Market</th>
+                        <th>Remark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="name in names" ng-click="testingClick(name)">
+						<td>{{$index}}</td>
+						<td>{{name.uid}}</td>
+						<td>{{name.amount}}</td>
+						<td>{{name.balance}}</td>
+						<td>{{name.ca.name}}</td>
+						<td>{{name.market.name}}</td>
+						<td>{{name.remark}}</td>
+                      </tr>
+                </tbody>
+            </table>
+
+            <script>
+                var app = angular.module('AngularWayApp', ['datatables']);
+
+                app.controller('AngularWayCtrl', function($scope, $http)
+                {
+                    // $http.get("http://www.w3schools.com/angular/customers_mysql.php").success(function (response)
+                    $http.get("tr/get/1/225").success(function (response)
+                    {
+                        $scope.names = response;
+                    });
+
+                    $scope.testingClick = function(name)
+                    {
+                        console.log(name);
+                    };
+                });
+            </script>
+        </div>
+    </body>
+</html>

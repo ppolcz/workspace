@@ -17,7 +17,7 @@ import org.odftoolkit.simple.SpreadsheetDocument;
 import org.odftoolkit.simple.table.Row;
 import org.odftoolkit.simple.table.Table;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import polcz.budget.global.R;
 import polcz.budget.model.TChargeAccount;
@@ -26,7 +26,7 @@ import polcz.budget.model.TMarket;
 import polcz.budget.model.TTransaction;
 import polcz.budget.model.TTransactionType;
 
-@Repository
+@Service
 // @Transactional
 public class OdfLoaderService {
 

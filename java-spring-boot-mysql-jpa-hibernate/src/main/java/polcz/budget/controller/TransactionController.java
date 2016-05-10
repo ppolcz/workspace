@@ -1,5 +1,7 @@
 package polcz.budget.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,5 +27,10 @@ public class TransactionController extends EntityController<TTransaction> {
     @RequestMapping(value = "/get/{uid}")
     public @ResponseBody TTransaction getByUid(@PathVariable int uid) {
         return service.find(uid, TTransaction.class);
+    }
+
+    @RequestMapping(value = "/get/{from}/{to}")
+    public @ResponseBody List<TTransaction> getRange(@PathVariable int from, @PathVariable int to) {
+        return service.findRange(new int[] { from, to }, TTransaction.class);
     }
 }

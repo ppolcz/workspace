@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>javaee7-angular</title>
+
+<!-- build:css css/third-party.css -->
+<link rel="stylesheet" href="lib/dependencies/css/bootstrap.min.css" />
+<link rel="stylesheet" href="lib/dependencies/css/ng-grid.min.css" />
+
+<!-- build:css css/application.css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- build:js lib/third-party.js -->
+<script src="lib/dependencies/jquery.min.js"></script>
+<script src="lib/dependencies/angular.min.js"></script>
+<script src="lib/dependencies/angular-resource.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="angular-datatables/dist/angular-datatables.min.js"></script>   
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="personCtrl as home" ng-cloak
+		class="ng-cloak">
+
+		<!-- First Name: <input type="text" ng-model="home.firstName"><br>
+		Last Name: <input type="text" ng-model="home.lastName"><br>
+		<br> Full Name: {{home.fullName()}} Full Name: {{home.kutya}}
+
+		<p>The ID is {{home.greeting.id}}</p>
+		<p>The content is {{home.greeting.content}}</p> -->
+
+
+		<table datatable="" class="row-border hover">
+			<thead>
+				<tr>
+					<th></th>
+					<th>ID</th>
+					<th>Remark</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th></th>
+					<th>ID</th>
+					<th>Remark</th>
+				</tr>
+			</tfoot>
+			<!-- <tbody>
+				<tr>
+					<td>Kutya</td>
+					<td>Kutya</td>
+					<td>Kutya</td>
+				</tr>
+			</tbody> -->
+			<tbody ng:repeat="i in home.trlist">
+				<tr>
+					<td>{{$index}}</td>
+					<td>{{i.uid}}</td>
+					<td>{{i.remark}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('personCtrl', function($http) {
+			var self = this;
+			self.firstName = "John";
+			self.lastName = "Doe";
+			self.fullName = function() {
+				return self.firstName + " " + self.lastName;
+			};
+
+			self.kutya = "Kutya";
+			$http.get('http://rest-service.guides.spring.io/greeting').then(
+					function(response) {
+						self.greeting = response.data;
+					});
+
+			$http.get('tr/get/1/225').then(function(respons) {
+				self.trlist = respons.data;
+			});
+		});
+	</script>
+
+</body>
+
+</html>

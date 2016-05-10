@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app>
+<head>
+<title>Hello AngularJS</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src="script/hello-regi.js"></script>
+</head>
+
+<body>
+	<!-- Ez a modszer csak a REGI angular JS-el mukodik -->
+	<div ng-controller="Hello">
+		<p>The ID is {{greeting.uid}}</p>
+		<p>The content is {{greeting.remark}}</p>
+	</div>
+
+	<div ng-controller="Hello">
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>ID</th>
+					<th>Remark</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th></th>
+					<th>ID</th>
+					<th>Remark</th>
+				</tr>
+			</tfoot>
+			<tbody ng:repeat="i in trlist">
+				<tr>
+					<td>{{$index}}</td>
+					<td>{{i.uid}}</td>
+					<td>{{i.remark}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
