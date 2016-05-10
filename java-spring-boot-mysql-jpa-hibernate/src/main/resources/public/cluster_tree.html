@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="angular-datatables/dist/angular-datatables.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+
+<script type="text/javascript" src="angular-treeview/angular.treeview.js"></script>
+<link rel="stylesheet" type="text/css" href="angular-treeview/css/angular.treeview.css">
+
+<script src="js/controller.js"></script>
+</head>
+<body>
+
+	<div ng-app="ClusterTreeApp" ng-controller="ClusterTreeCtrl">
+
+		<div style="margin: 10px 0 5px 0; padding: 10px; background-color: #EEEEEE; border-radius: 5px; font: 12px Tahoma;">
+			<span><b>Selected Node</b> : {{mytree.currentNode.roleName}}</span>
+		</div>
+
+		<div style="margin: 5px 0 10px 0" data-angular-treeview="true" data-tree-id="mytree" data-tree-model="roleList" data-node-id="roleId"
+			data-node-label="roleName" data-node-children="children"></div>
+
+	</div>
+</body>
+</html>
+

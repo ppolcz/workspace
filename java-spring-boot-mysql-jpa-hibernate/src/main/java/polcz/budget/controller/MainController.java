@@ -13,18 +13,22 @@ public class MainController {
     @Autowired
     OdfLoaderService odfService;
     
-    // @RequestMapping("/")
-    // @ResponseBody
-    // public String index() {
-    // return "Proudly handcrafted by <a href='http://netgloo.com/en'>netgloo</a> :)";
-    // }
-
-    @RequestMapping("/")
+    @RequestMapping("/tr-list")
     public String index() {
-      return "undex.html";
+      return "transaction_list.html";
     }
     
-	@RequestMapping("/load-odf")
+    @RequestMapping("/cl-list")
+    public String index2() {
+        return "cluster_list.html";
+    }
+    
+    @RequestMapping("/cl-tree")
+    public String index3() {
+      return "cluster_tree.html";
+    }
+    
+	@RequestMapping("/odf-load")
 	@ResponseBody
 	public String loadOdf() {
 	    odfService.process();

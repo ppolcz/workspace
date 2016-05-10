@@ -119,13 +119,13 @@ public class OdfLoaderService {
         Class<TChargeAccount> tca = TChargeAccount.class;
         Class<TCluster> tcl = TCluster.class;
         Class<TMarket> tmk = TMarket.class;
-        
-        none = service.update(new TChargeAccount("none", "Nem adott"), tca);
-        pkez = service.update(new TChargeAccount("pkez", "Peti kezpenz"), tca);
-        potp = service.update(new TChargeAccount("potp", "Peti OTP Bank"), tca);
-        dkez = service.update(new TChargeAccount("dkez", "Dori kezpenz"), tca);
-        dotp = service.update(new TChargeAccount("dotp", "Dori OTP Bank"), tca);
-        nptc = service.update(new TChargeAccount("nptc", "nagypénztárca"), tca);
+
+        none = service.findByNameOrCreate(new TChargeAccount("none", "Nem adott"), tca);
+        pkez = service.findByNameOrCreate(new TChargeAccount("pkez", "Peti kezpenz"), tca);
+        potp = service.findByNameOrCreate(new TChargeAccount("potp", "Peti OTP Bank"), tca);
+        dkez = service.findByNameOrCreate(new TChargeAccount("dkez", "Dori kezpenz"), tca);
+        dotp = service.findByNameOrCreate(new TChargeAccount("dotp", "Dori OTP Bank"), tca);
+        nptc = service.findByNameOrCreate(new TChargeAccount("nptc", "nagypénztárca"), tca);
 
         info = new TChargeAccount("info"); /* not persisted */
         info.setUid(123123);
@@ -133,18 +133,18 @@ public class OdfLoaderService {
         pinfo = new TChargeAccount("pinfo"); /* not persisted */
         pinfo.setUid(1931212);
 
-        Utazas = service.update(new TCluster("Utazas"),tcl);
-        Lakas_Berendezes = service.update(new TCluster("Lakas_Berendezes"),tcl);
-        Ruhazkodas = service.update(new TCluster("Ruhazkodas"),tcl);
-        Munkaeszkozok = service.update(new TCluster("Munkaeszkozok"),tcl);
-        Szamolas = service.update(new TCluster("Szamolas"),tcl);
-        Nem_Adott = service.update(new TCluster("Nem_Adott", 0, null),tcl);
-        Athelyezes = service.update(new TCluster("Athelyezes", 1, Nem_Adott),tcl);
-        Szukseges = service.update(new TCluster("Szukseges"),tcl);
-        Napi_Szukseglet = service.update(new TCluster("Napi_Szukseglet"),tcl);
-        Egyeb_Kiadas = service.update(new TCluster("Egyeb_Kiadas"),tcl);
+        Utazas = service.findByNameOrCreate(new TCluster("Utazas"),tcl);
+        Lakas_Berendezes = service.findByNameOrCreate(new TCluster("Lakas_Berendezes"),tcl);
+        Ruhazkodas = service.findByNameOrCreate(new TCluster("Ruhazkodas"),tcl);
+        Munkaeszkozok = service.findByNameOrCreate(new TCluster("Munkaeszkozok"),tcl);
+        Szamolas = service.findByNameOrCreate(new TCluster("Szamolas"),tcl);
+        Nem_Adott = service.findByNameOrCreate(new TCluster("Nem_Adott", 0, null),tcl);
+        Athelyezes = service.findByNameOrCreate(new TCluster("Athelyezes", 1, Nem_Adott),tcl);
+        Szukseges = service.findByNameOrCreate(new TCluster("Szukseges"),tcl);
+        Napi_Szukseglet = service.findByNameOrCreate(new TCluster("Napi_Szukseglet"),tcl);
+        Egyeb_Kiadas = service.findByNameOrCreate(new TCluster("Egyeb_Kiadas"),tcl);
 
-        Market_Not_Applicable = service.update(new TMarket("Market_Not_Applicable", ""), tmk);
+        Market_Not_Applicable = service.findByNameOrCreate(new TMarket("Market_Not_Applicable", ""), tmk);
     }
 
     public void process() {
@@ -199,17 +199,17 @@ public class OdfLoaderService {
 
                 /* find parent by its name */
                 TCluster parent = service.findByName(parentname, TCluster.class);
-                
+
                 /* if parent not exists (YET), initialize it (later will be updated) */
-                if (parent == null) parent = service.update(new TCluster(parentname));
-                
+                if (parent == null && !parentname.isEmpty()) parent = service.update(new TCluster(parentname));
+
                 /* insert or update cluster */
                 TCluster cluster = service.update(new TCluster(sqlclname, sgn, parent), TCluster.class);
                 cllist.put(odfclname, cluster);
 
                 // logger.infof("odf = %s, sql = %s ---> %s", odfclname, sqlclname, cluster);
             }
-            
+
             /* parse table Koltsegvetes_Uj */
             logger.info("Kivalasztom a fo tablat");
             Table table = data.getTableByName("Koltsegvetes_Uj");

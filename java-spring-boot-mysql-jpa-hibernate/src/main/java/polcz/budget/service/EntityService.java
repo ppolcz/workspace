@@ -2,6 +2,7 @@ package polcz.budget.service;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -14,6 +15,7 @@ import javax.transaction.Transactional;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
 
+import polcz.budget.model.AbstractEntity;
 import polcz.budget.model.AbstractNameDescEntity;
 import polcz.budget.model.TCluster_;
 
@@ -24,13 +26,30 @@ public class EntityService {
     @PersistenceContext
     private EntityManager em;
 
-    public <T> T update(T entity) {
+    private Logger logger;
+
+    @PostConstruct
+    private void init() {
+        logger = Logger.getLogger("PPOLCZ_" + EntityService.class.getSimpleName());
+    }
+    
+    public <T extends AbstractEntity> T update(T entity) {
         return em.merge(entity);
     }
 
-    public <T extends AbstractNameDescEntity> T update(T entity, Class<T> entityClass) {
-        Logger logger = Logger.getLogger("PPOLCZ_" + EntityService.class.getSimpleName());
+    public <T extends AbstractNameDescEntity> T findByNameOrCreate(T entity, Class<T> entityClass) {
 
+        /* find if this name already exists */
+        T old = findByName(entity.getName(), entityClass);
+
+        if (old != null) {
+            return old;
+        }
+        return em.merge(entity);
+    }
+    
+    public <T extends AbstractNameDescEntity> T update(T entity, Class<T> entityClass) {
+        
         /* find if this name already exists */
         logger.infof("find if the name '%s' already exists", entity.getName());
         T old = findByName(entity.getName(), entityClass);
