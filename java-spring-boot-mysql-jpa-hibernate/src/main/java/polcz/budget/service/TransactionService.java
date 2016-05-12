@@ -4,23 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.transaction.HeuristicMixedException;
-import javax.transaction.HeuristicRollbackException;
-import javax.transaction.NotSupportedException;
-import javax.transaction.RollbackException;
-import javax.transaction.SystemException;
 import javax.transaction.Transactional;
-import javax.transaction.UserTransaction;
 
 import org.jboss.logging.Logger;
 import org.junit.Assert;
@@ -55,12 +47,6 @@ public class TransactionService extends AbstractService<TTransaction> {
     @Autowired
     StartupService ss;
 
-    // @Override
-    // protected EntityManager em()
-    // {
-    // return em;
-    // }
-
     private static class SelectByArguments {
         TChargeAccount ca;
         boolean considerJustSourceCa;
@@ -72,7 +58,7 @@ public class TransactionService extends AbstractService<TTransaction> {
         boolean pivot;
         boolean asc;
         boolean firstResult;
-        // int limit; // TODO
+        // int limit; // TODO: backend-side pagination
 
         public SelectByArguments(
                 TChargeAccount ca, boolean considerJustSourceCa, TChargeAccount cat, TCluster cl, TMarket mk,

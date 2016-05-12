@@ -35,6 +35,9 @@ public class OdfLoaderService {
     @Autowired
     TransactionService trService;
 
+    @Autowired
+    StartupService ss;
+
     // @PersistenceContext
     // EntityManager em;
 
@@ -45,7 +48,7 @@ public class OdfLoaderService {
     private static final int TR_LENGTH = 5; // amount, ca, cluster, market, remark
 
     private static final int IND_DATE = 0;
-    private static final int IND_CAIDS = 2;
+    static final int IND_CAIDS = 2;
     private static final int[] IND_TRS; // { 6, 11, 16, 21, 26, 31, ... };
 
     static {
@@ -70,6 +73,7 @@ public class OdfLoaderService {
     private TChargeAccount info;
     private TChargeAccount pinfo;
 
+    @SuppressWarnings("unused")
     private TCluster Nem_Adott;
     private TCluster Utazas;
     private TCluster Lakas_Berendezes;
@@ -80,6 +84,7 @@ public class OdfLoaderService {
     private TCluster Szukseges;
     private TCluster Napi_Szukseglet;
     private TCluster Egyeb_Kiadas;
+    private TCluster Rezsi;
 
     private TMarket Market_Not_Applicable;
 
@@ -106,27 +111,57 @@ public class OdfLoaderService {
     private static final Set<String> munkaMarkets = new HashSet<>(Arrays.asList(new String[] { "pirex" }));
 
     private static final Map<String, String> marketCorrections;
+    private static final Map<String, String> billMarkets;
 
     static {
         marketCorrections = new HashMap<>();
         marketCorrections.put("Mueller", "Muller");
         marketCorrections.put("M1Gyros", "MoriczGyros"); // TODO
+
+        billMarkets = new HashMap<>();
+        billMarkets.put("Rezsi_Bkv", "BKV");
+        billMarkets.put("Rezsi_Gaz", "FOGAZ");
+        billMarkets.put("Rezsi_Viz", "FOCSM");
+        billMarkets.put("Rezsi_Futes", "FOTAV");
+        billMarkets.put("Rezsi_Elmu", "ELMU");
+        billMarkets.put("Rezsi_Kozosk", "Tarsashaz");
+        billMarkets.put("Rezsi_Upc", "UPC");
+        billMarkets.put("Rezsi_Otp", "OTP_Bank");
+        billMarkets.put("Rezsi_Otp", "OTP_Bank");
+
+        billMarkets.put("Mobil_Peti", "Telenor");
+        billMarkets.put("Mobil_Dori", "TMobil");
+        billMarkets.put("Mobil_Helga", "Telenor");
+
+        billMarkets.put("Hivatalos", "Hivatal");
+        billMarkets.put("Otthon", "PolczOtthon");
+        billMarkets.put("Alberlet", "Lakaskiado");
+        /*
+         * TODO
+         * select date,amount,accounts.name,clusters.name,remark from transactions,accounts,clusters where accounts.uid = ca and market = 1 and clusters.uid =
+         * cluster;
+         */
     }
 
-    public void init() {
+    public void process() {
+        init();
+        parse();
+    }
+
+    private void init() {
         logger = R.getJBossLogger(this.getClass());
         logger.info(this.getClass().getSimpleName() + "::init() [@PostConstruct]");
 
-        Class<TChargeAccount> tca = TChargeAccount.class;
-        Class<TCluster> tcl = TCluster.class;
-        Class<TMarket> tmk = TMarket.class;
+        // Class<TChargeAccount> tca = TChargeAccount.class;
+        // Class<TCluster> tcl = TCluster.class;
+        // Class<TMarket> tmk = TMarket.class;
 
-        none = service.findByNameOrCreate(new TChargeAccount("none", "Nem adott"), tca);
-        pkez = service.findByNameOrCreate(new TChargeAccount("pkez", "Peti kezpenz"), tca);
-        potp = service.findByNameOrCreate(new TChargeAccount("potp", "Peti OTP Bank"), tca);
-        dkez = service.findByNameOrCreate(new TChargeAccount("dkez", "Dori kezpenz"), tca);
-        dotp = service.findByNameOrCreate(new TChargeAccount("dotp", "Dori OTP Bank"), tca);
-        nptc = service.findByNameOrCreate(new TChargeAccount("nptc", "nagypénztárca"), tca);
+        none = ss.none();
+        pkez = ss.pkez();
+        potp = ss.ca(new TChargeAccount("potp", "Peti OTP Bank"));
+        dkez = ss.ca(new TChargeAccount("dkez", "Dori kezpenz"));
+        dotp = ss.ca(new TChargeAccount("dotp", "Dori OTP Bank"));
+        nptc = ss.ca(new TChargeAccount("nptc", "nagypénztárca"));
 
         info = new TChargeAccount("info"); /* not persisted */
         info.setUid(123123);
@@ -134,23 +169,22 @@ public class OdfLoaderService {
         pinfo = new TChargeAccount("pinfo"); /* not persisted */
         pinfo.setUid(1931212);
 
-        Utazas = service.findByNameOrCreate(new TCluster("Utazas"), tcl);
-        Lakas_Berendezes = service.findByNameOrCreate(new TCluster("Lakas_Berendezes"), tcl);
-        Ruhazkodas = service.findByNameOrCreate(new TCluster("Ruhazkodas"), tcl);
-        Munkaeszkozok = service.findByNameOrCreate(new TCluster("Munkaeszkozok"), tcl);
-        Szamolas = service.update(new TCluster(R.CLNAME_PIVOT, R.CLSGN_PIVOT, Nem_Adott), tcl);
-        Nem_Adott = service.update(new TCluster(R.CLNAME_NOT_GIVEN, R.CLSGN_NOT_GIVEN, null), tcl);
-        Athelyezes = service.update(new TCluster(R.CLNAME_TRANSFER, R.CLSGN_TRANSFER, Nem_Adott), tcl);
-        Szukseges = service.findByNameOrCreate(new TCluster("Szukseges"), tcl);
-        Napi_Szukseglet = service.findByNameOrCreate(new TCluster("Napi_Szukseglet"), tcl);
-        Egyeb_Kiadas = service.findByNameOrCreate(new TCluster("Egyeb_Kiadas"), tcl);
+        Szamolas = ss.Szamolas();
+        Nem_Adott = ss.Nem_Adott();
+        Athelyezes = ss.Athelyezes();
+        Szukseges = ss.Szukseges();
+        Napi_Szukseglet = ss.Napi_Szukseglet();
+        Egyeb_Kiadas = ss.Egyeb_Kiadas();
+        Utazas = ss.cluster(new TCluster("Utazas"));
+        Lakas_Berendezes = ss.cluster(new TCluster("Lakas_Berendezes"));
+        Ruhazkodas = ss.cluster(new TCluster("Ruhazkodas"));
+        Munkaeszkozok = ss.cluster(new TCluster("Munkaeszkozok"));
+        Rezsi = ss.cluster(new TCluster("Rezsi"));
 
-        Market_Not_Applicable = service.findByNameOrCreate(new TMarket("Market_Not_Applicable", ""), tmk);
-    }
+        Market_Not_Applicable = ss.Market_Not_Applicable();
 
-    public void process() {
-        init();
-        parse();
+        billMarkets.put(Athelyezes.getName(), Market_Not_Applicable.getName() + "(transfer)");
+        billMarkets.put(Szamolas.getName(), Market_Not_Applicable.getName() + "(pivot)");
     }
 
     /**
@@ -224,7 +258,7 @@ public class OdfLoaderService {
 
     // private Map<TChargeAccount, Integer> balance = new HashMap<>();
 
-    void initialBalance(Date date, TChargeAccount ca, int balance) {
+    private void initialBalance(Date date, TChargeAccount ca, int balance) {
         TTransaction tr = new TTransaction();
         tr.setDate(date);
         tr.setCa(ca);
@@ -286,106 +320,158 @@ public class OdfLoaderService {
 
             /* run throw all transactions of this row */
             for (int t = 0; t < IND_TRS.length; ++t)
-                transaction(row, t, date, errmsg);
+                transaction(new OdfTransactionInterpreter(row, t, date, errmsg));
         }
     }
 
-    public void transaction(Row row, int t, Date date, String errmsg) {
-        errmsg += "trans. nr. " + (t + 1) + ", date: " + sdf.format(date) + ".\n";
+    private class OdfTransactionInterpreter {
+        String errmsg;
+        int index;
+        int amount, balance;
+        String formula;
+        String caname;
+        String clname;
+        String mkname;
+        String remark;
+        String rextra;
+        Date date;
 
-        int o = IND_TRS[t]; /* column offset of transaction nr t. */
-        int amount = getInteger(row, o + 0);
-        String formula = getFormula(row, o + 0);
-        String caname = getString(row, o + 1).toLowerCase();
-        String clname = getString(row, o + 2).toLowerCase();
-        String mkname = getString(row, o + 3);
-        String remark = getString(row, o + 4);
-        String rextra = "tr_" + Integer.toString(t + 1);
-
-        /* [1] resolve charge account */
-        TChargeAccount ca = calist.get(caname);
-        if (ca == null) {
-            try {
-                /* this transaction's form is not filled in */
-                Assert.assertTrue(
-                        errmsg + "ca is NOT info, BUT remark || market || cluster is NOT NULL",
-                        remark.isEmpty() && mkname.isEmpty() && clname.isEmpty());
-            } catch (AssertionError e) {
-                logger.warn(e.getMessage());
-            }
-            return;
-        } else if (ca.equals(info) || ca.equals(pinfo)) {
-            logger.infof(errmsg + "ca = %s, amount = %d, remark = %s",
-                    ca.getName(), amount, remark);
-            return;
-        } else if (ca.equals(pinfo)) {
-            // TODO: TProductInfo
-            return;
-        }
-        Assert.assertNotEquals(errmsg + "Charge account mustn't be none", ca, none);
-
-        /* [ASSERT] For sure: ca != (null | info | pinfo | none) */
-
-        /* [2] resolve remark: decorate the remark with the transaction's amount or its formula */
-        if (!remark.isEmpty())
-            remark += " ";
-        if (!formula.isEmpty())
-            remark += "[" + formula.substring(4) + "] ";
-        remark += "{ " + rextra + " }";
-        remark.trim();
-
-        /* [3] resolve balance (only after the charge account is known) */
-        int balance = getInteger(row, IND_CAIDS + indCa.get(ca));
-
-        /* Avoid errors in the older parts, not applicable any more */
-        // if (mkname.contains("+")) new Exception("Warning:" + row.getRowIndex() + ""
-        // + row.getCellByIndex(o).getCellStyleName() + " mkname contains `+'").printStackTrace();
-
-        /* [4.1] correct misspelled market names */
-        if (marketCorrections.containsKey(mkname))
-            mkname = marketCorrections.get(mkname);
-
-        /* [4.2] resolve market */
-        TMarket market;
-        if (mkname.isEmpty()) {
-            market = Market_Not_Applicable;
-        } else if (mklist.containsKey(mkname)) {
-            market = mklist.get(mkname);
-        } else {
-            market = service.update(new TMarket(mkname, ""), TMarket.class);
-            mklist.put(mkname, market);
-        }
-
-        /* [ASSERT] this transaction is likely to be valid */
+        private Row row;
         TTransaction tr = new TTransaction();
-        tr.setBalance(balance);
-        tr.setCa(ca);
-        tr.setMarket(market);
-        tr.setRemark(remark);
-        tr.setDate(date);
-        tr.setProductInfo(remark.startsWith(R.ODF_PRODUCT_INFO_SUFFIX));
 
-        /* [5] resolve cluster */
-        if (calist.containsKey(clname)) {
-            /* transfer */
-            tr.setCatransfer(calist.get(clname));
-            tr.setCluster(Athelyezes);
-            tr.setPivot(false);
-            tr.setAmount(amount * Athelyezes.getSgn());
-            tr.setType(TTransactionType.transfer);
-        } else {
+        void loadBalance() {
+            balance = getInteger(row, IND_CAIDS + indCa.get(tr.getCa()));
+
+            /* update transaction object */
+            tr.setBalance(balance);
+            tr.setEndofdayBalance(balance);
+        }
+
+        public OdfTransactionInterpreter(Row row, int index, Date date, String errmsg) {
+            this.row = row;
+            this.date = date;
+            this.index = index;
+            this.errmsg = errmsg;
+            load();
+        }
+
+        private void load() {
+            errmsg += "trans. nr. " + (index + 1) + ", date: " + sdf.format(date) + ".\n";
+
+            /* load data from ODF */
+            int o = IND_TRS[index]; /* column offset of transaction nr t. */
+            amount = getInteger(row, o + 0);
+            formula = getFormula(row, o + 0);
+            caname = getString(row, o + 1).toLowerCase();
+            clname = getString(row, o + 2).toLowerCase();
+            mkname = getString(row, o + 3);
+            remark = getString(row, o + 4);
+            rextra = "tr_" + Integer.toString(index + 1);
+
+            /* decorate remark - this can be done anywhere */
+            if (!remark.isEmpty())
+                remark += " ";
+            if (!formula.isEmpty())
+                remark += "[" + formula.substring(4) + "] ";
+            remark += "{ " + rextra + " }";
+            remark.trim();
+
+            /* initialize transaction object */
+            tr.setRemark(remark);
+            tr.setDate(date);
+            tr.setProductInfo(remark.startsWith(R.ODF_PRODUCT_INFO_SUFFIX));
+        }
+
+        public boolean resolveCa() {
+            TChargeAccount ca = calist.get(caname);
+            if (ca == null) {
+                try {
+                    /* this transaction's form is not filled in */
+                    Assert.assertTrue(errmsg + "ca is NOT info, BUT market || cluster is NOT NULL. "
+                            + "Perhaps, this transaction's form is not filled in. tr: " + tr,
+                            mkname.isEmpty() && clname.isEmpty());
+                } catch (AssertionError e) {
+                    logger.warn(e.getMessage());
+                }
+                return false;
+            } else if (ca.equals(info)) {
+                // logger.infof(errmsg + "ca = %s, amount = %d, remark = %s", ca.getName(), amount, remark);
+                return false;
+            } else if (ca.equals(pinfo)) {
+                // TODO: TProductInfo
+                logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
+                return false;
+            }
+            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be null", ca, null);
+            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be none", ca, none);
+            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be pinfo", ca, pinfo);
+            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be info", ca, info);
+
+            /* [ASSERT] For sure: ca != (null | info | pinfo | none) */
+
+            /* update transaction object */
+            tr.setCa(ca);
+
+            /* resolve balance (only after the charge account is known) */
+            loadBalance();
+
+            return true;
+        }
+
+        public void resolveMarket() {
+
+            /* correct misspelled market names */
+            if (marketCorrections.containsKey(mkname))
+                mkname = marketCorrections.get(mkname);
+
+            TMarket market;
+            if (mkname.isEmpty()) {
+                market = Market_Not_Applicable;
+            } else if (mklist.containsKey(mkname)) {
+                market = mklist.get(mkname);
+            } else {
+                market = service.update(new TMarket(mkname, ""), TMarket.class);
+                mklist.put(mkname, market);
+            }
+
+            tr.setMarket(market);
+        }
+
+        public boolean isTransfer() {
+            if (calist.containsKey(clname)) {
+
+                /* this is a transfer transaction */
+                tr.setCatransfer(calist.get(clname));
+                tr.setCluster(Athelyezes);
+                tr.setPivot(false);
+                tr.setType(TTransactionType.transfer);
+                return true;
+
+            }
+
             /* simple or pivot transaction */
             tr.setCatransfer(none);
+            return false;
+        }
 
+        public boolean resolveClusterIfNotTransfer() {
             TCluster cluster = null;
             if (!clname.isEmpty()) {
                 cluster = cllist.get(clname);
             }
 
-            /* Guess cluster knowing the market's name */
+            tr.setCluster(cluster);
+
+            return guessCluster();
+        }
+
+        public boolean guessCluster() {
+            TCluster cluster = tr.getCluster();
+
+            /* Guess cluster knowing the market's name and some predefined rules */
             if (cluster == null) {
                 mkname = mkname.toLowerCase();
-                if (market.equals(Market_Not_Applicable)) {
+                if (tr.getMarket().equals(Market_Not_Applicable)) {
                     cluster = Egyeb_Kiadas;
                 } else if (cluster == null && nMarkets.contains(mkname)) {
                     cluster = Napi_Szukseglet;
@@ -402,25 +488,64 @@ public class OdfLoaderService {
                 }
             }
 
+            tr.setCluster(cluster);
+
             if (cluster == null) {
                 logger.errorf(errmsg + "Cluster is null: clname = %s", clname);
                 logger.errorf("Transaction = %s", tr);
-                return;
+                return false;
             }
 
-            if (cluster.equals(Szamolas)) {
+            return true;
+        }
+
+        public void resolveTrTypeIfNotTransfer() {
+            if (tr.getCluster().equals(Szamolas)) {
                 tr.setPivot(true);
                 tr.setType(TTransactionType.pivot);
             } else
                 tr.setType(TTransactionType.simple);
-
-            tr.setCluster(cluster);
-            tr.setAmount(amount * cluster.getSgn());
         }
 
-        logger.infof("%s", tr);
-        // service.update(tr);
-        trService.makeTransaction(new TransactionArguments(tr, null, R.TR_INSERTION, errmsg));
+        public void finalize() {
+            tr.setAmount(amount * tr.getCluster().getSgn());
+        }
+
+        public void postResolveMarketIfItIsABill() {
+            TCluster parent = tr.getCluster().getParent();
+            Assert.assertNotNull(errmsg + "Each cluster must have a parent, only the root cluster does not have a parent."
+                    + "cluster: " + tr.getCluster(), parent);
+
+            if (parent.equals(Rezsi)) {
+                if (billMarkets.containsKey(tr.getCluster().getName())) {
+                    tr.setMarket(ss.market(new TMarket(billMarkets.get(tr.getCluster().getName()), tr.getCluster().getName())));
+                } else {
+                    logger.warnf(errmsg + "I do not know of this type of bill (rezsi): ", tr.getCluster());
+                }
+            }
+        }
+
+    } /* end of OdfTransactionInterpreter */
+
+    public void transaction(OdfTransactionInterpreter d) {
+
+        if (!d.resolveCa()) return;
+
+        d.resolveMarket();
+
+        if (!d.isTransfer()) {
+
+            if (!d.resolveClusterIfNotTransfer()) return;
+
+            d.resolveTrTypeIfNotTransfer();
+        }
+
+        d.finalize();
+
+        d.postResolveMarketIfItIsABill();
+
+        logger.infof("%s", d.tr);
+        trService.makeTransaction(new TransactionArguments(d.tr, null, R.TR_INSERTION, d.errmsg));
 
         // Assert.assertFalse(errmsg + "amount shouldn't be zero, cluster: " + tr.getCluster(),
         // tr.isPivot() && tr.getAmount() == 0);

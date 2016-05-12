@@ -33,8 +33,7 @@ import polcz.util.Util;
 @NamedQueries(value = {
     @NamedQuery(name = "TTransaction.findOne", query = "SELECT e FROM TTransaction e where e.uid = :uid"),
     @NamedQuery(name = "TTransaction.findAll", query = "SELECT e FROM TTransaction e") })
-public class TTransaction extends AbstractEntity
-{
+public class TTransaction extends AbstractEntity {
     private static final long serialVersionUID = -5174036607489515049L;
     private static final String MSG_PREF = AbstractEntity.class.getSimpleName() + ": ";
 
@@ -43,6 +42,8 @@ public class TTransaction extends AbstractEntity
 
     @Column(nullable = false)
     private int balance = 0;
+
+    private int endofdayBalance = 0;
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
@@ -92,22 +93,19 @@ public class TTransaction extends AbstractEntity
     // }
 
     @PrePersist
-    private void settingsBeforePersist()
-    {
+    private void settingsBeforePersist() {
         validateBeforeMerge();
         // generateInfo();
     }
 
     @PreUpdate
-    private void settingsBeforeUpdate()
-    {
+    private void settingsBeforeUpdate() {
         validateBeforeMerge();
         // generateInfo();
     }
 
     @PostLoad
-    private void settingsAfterLoad()
-    {
+    private void settingsAfterLoad() {
 
         /* [1] setup transient : productInfo */
 
@@ -119,11 +117,11 @@ public class TTransaction extends AbstractEntity
         boolean catransferIsNone = catransfer.getName().equals(R.CANAME_NONE);
 
         Assert.assertEquals(MSG_PREF + "pivot iff cluster = " + R.CLNAME_PIVOT,
-            pivot, cluster.getName().equals(R.CLNAME_PIVOT));
+                pivot, cluster.getName().equals(R.CLNAME_PIVOT));
 
         Assert.assertTrue(MSG_PREF + "RULE: cl=" + R.CLNAME_TRANSFER + " ==> catransfer!=" + R.CANAME_NONE
-            + ";  GOT: " + cluster + ", " + catransfer + ";  clIsTransfer=" + clIsTransfer
-            + " catransferIsNone=" + catransferIsNone, !clIsTransfer || !catransferIsNone);
+                + ";  GOT: " + cluster + ", " + catransfer + ";  clIsTransfer=" + clIsTransfer
+                + " catransferIsNone=" + catransferIsNone, !clIsTransfer || !catransferIsNone);
 
         if (pivot) type = TTransactionType.pivot;
         else if (clIsTransfer) type = TTransactionType.transfer;
@@ -132,24 +130,20 @@ public class TTransaction extends AbstractEntity
 
     }
 
-    private void validateBeforeMerge()
-    {
+    private void validateBeforeMerge() {
         /* If this is also a product info then it's type should be simple */
         Assert.assertTrue(!isProductInfo() || type == TTransactionType.simple);
     }
 
     @SuppressWarnings("unused")
-    private void generateInfo()
-    {
+    private void generateInfo() {
         // if (isProductInfo()) pi = new TProductInfo(this);
         // else pi = null;
     }
 
-    public TTransaction()
-    {}
+    public TTransaction() {}
 
-    public TTransaction(TChargeAccount from, TChargeAccount to, TCluster cl, TMarket mk)
-    {
+    public TTransaction(TChargeAccount from, TChargeAccount to, TCluster cl, TMarket mk) {
         ca = from;
         cluster = cl;
         market = mk;
@@ -157,8 +151,7 @@ public class TTransaction extends AbstractEntity
     }
 
     public TTransaction(int amount, int balance, Date date, String remark, TChargeAccount ca,
-        TCluster cluster, TMarket market, boolean pivot)
-    {
+            TCluster cluster, TMarket market, boolean pivot) {
         this.amount = amount;
         this.balance = balance;
         this.date = date;
@@ -170,143 +163,118 @@ public class TTransaction extends AbstractEntity
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return String.format(
-            "{ %d, %s, %s | %8d, %8d %16.16s (%2d) | from:%s to:%s | mk:%16.16s | remark: %s }", getUid(),
-            Util.SIMPLE_DATE_FORMAT.format(date),
-            pivot ? "PIVOT" : "     ", amount, balance,
-            cluster == null ? null : cluster.getName(),
-            cluster == null ? 0 : cluster.getSgn(),
-            ca == null ? null : ca.getName(),
-            catransfer == null ? null : catransfer.getName(),
-            market == null ? null : market.getName(),
-            remark == null ? null : remark);
+                "{ %d, %s, %s | %8d, %8d %16.16s (%2d) | from:%s to:%s | mk:%16.16s | remark: %s }", getUid(),
+                Util.SIMPLE_DATE_FORMAT.format(date),
+                pivot ? "PIVOT" : "     ", amount, balance,
+                cluster == null ? null : cluster.getName(),
+                cluster == null ? 0 : cluster.getSgn(),
+                ca == null ? null : ca.getName(),
+                catransfer == null ? null : catransfer.getName(),
+                market == null ? null : market.getName(),
+                remark == null ? null : remark);
     }
 
-    public int getAmount()
-    {
+    public int getAmount() {
         return this.amount;
     }
 
-    public void setAmount(int amount)
-    {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public int getBalance()
-    {
+    public int getBalance() {
         return this.balance;
     }
 
-    public void setBalance(int balance)
-    {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 
-    public Date getDate()
-    {
+    public Date getDate() {
         return this.date;
     }
 
-    public void setDate(Date date)
-    {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getRemark()
-    {
+    public String getRemark() {
         return this.remark;
     }
 
-    public void setRemark(String remark)
-    {
+    public void setRemark(String remark) {
         this.remark = remark;
     }
 
-    public List<TProductInfo> getProductInfos()
-    {
+    public List<TProductInfo> getProductInfos() {
         return this.pis;
     }
 
-    public void setProductInfos(List<TProductInfo> TProductInfos)
-    {
-        this.pis = TProductInfos;
+    public void setProductInfos(List<TProductInfo> pi) {
+        this.pis = pi;
     }
 
-    public TProductInfo addProductInfo(TProductInfo TProductInfo)
-    {
-        getProductInfos().add(TProductInfo);
-        TProductInfo.setTTransaction(this);
+    public TProductInfo addProductInfo(TProductInfo pi) {
+        getProductInfos().add(pi);
+        pi.setTTransaction(this);
 
-        return TProductInfo;
+        return pi;
     }
 
-    public TProductInfo removeProductInfo(TProductInfo TProductInfo)
-    {
-        getProductInfos().remove(TProductInfo);
-        TProductInfo.setTTransaction(null);
+    public TProductInfo removeProductInfo(TProductInfo pi) {
+        getProductInfos().remove(pi);
+        pi.setTTransaction(null);
 
-        return TProductInfo;
+        return pi;
     }
 
-    public TChargeAccount getCa()
-    {
+    public TChargeAccount getCa() {
         return this.ca;
     }
 
-    public void setCa(TChargeAccount TChargeAccount)
-    {
-        this.ca = TChargeAccount;
+    public void setCa(TChargeAccount ca) {
+        this.ca = ca;
     }
 
-    public TCluster getCluster()
-    {
+    public TCluster getCluster() {
         return this.cluster;
     }
 
-    public void setCluster(TCluster TCluster)
-    {
-        this.cluster = TCluster;
+    public void setCluster(TCluster cluster) {
+        this.cluster = cluster;
     }
 
-    public TMarket getMarket()
-    {
+    public TMarket getMarket() {
         return this.market;
     }
 
-    public void setMarket(TMarket TMarket)
-    {
-        this.market = TMarket;
+    public void setMarket(TMarket market) {
+        this.market = market;
     }
 
-    public boolean isPivot()
-    {
+    public boolean isPivot() {
         return pivot;
     }
 
-    public void setPivot(boolean pivot)
-    {
+    public void setPivot(boolean pivot) {
         this.pivot = pivot;
     }
 
-    public TChargeAccount getCatransfer()
-    {
+    public TChargeAccount getCatransfer() {
         return catransfer;
     }
 
-    public void setCatransfer(TChargeAccount catransfer)
-    {
+    public void setCatransfer(TChargeAccount catransfer) {
         this.catransfer = catransfer;
     }
 
-    public TTransactionType getType()
-    {
+    public TTransactionType getType() {
         return type;
     }
 
-    public void setType(TTransactionType type)
-    {
+    public void setType(TTransactionType type) {
         this.type = type;
     }
 
@@ -320,13 +288,19 @@ public class TTransaction extends AbstractEntity
     // this.pi = pi;
     // }
 
-    public boolean isProductInfo()
-    {
+    public boolean isProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(boolean productInfo)
-    {
-        this.productInfo = productInfo;
+    public void setProductInfo(boolean pi) {
+        this.productInfo = pi;
+    }
+
+    public int getEndofdayBalance() {
+        return endofdayBalance;
+    }
+
+    public void setEndofdayBalance(int andofdayBalance) {
+        this.endofdayBalance = andofdayBalance;
     }
 }

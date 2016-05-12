@@ -23,7 +23,7 @@ public class StartupService {
     Logger logger = Logger.getLogger("PPOLCZ_" + StartupService.class.getSimpleName());
 
     public TCluster cluster(TCluster c) {
-        logger.infof("%s --> %s", c, c.getParent());
+        // logger.infof("%s --> %s", c, c.getParent());
         return service.findByNameOrCreate(c, TCluster.class);
     }
 
