@@ -314,10 +314,14 @@ public class OdfLoaderService {
                     logger.warn(e.getMessage());
                 }
                 return false;
-            } else if (ca.equals(info)) {
+            }
+
+            if (ca.equals(info)) {
                 // logger.infof(errmsg + "ca = %s, amount = %d, remark = %s", ca.getName(), amount, remark);
                 return false;
-            } else if (ca.equals(pinfo)) {
+            }
+
+            if (ca.equals(pinfo)) {
                 // TODO: TProductInfo
                 logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
                 return false;

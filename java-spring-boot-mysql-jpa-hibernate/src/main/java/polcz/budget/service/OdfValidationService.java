@@ -30,6 +30,9 @@ public class OdfValidationService {
     @Autowired
     StartupService ss;
 
+    @Autowired
+    LoggerService logs;
+
     /* POST PROCESSING RULES */
     private Map<TCluster, TMarket> cluster2market; /* during post-processing */
     private final OdfRule[] postProcessingRules = {
@@ -43,6 +46,41 @@ public class OdfValidationService {
             Assert.assertNotNull(msg + "Each cluster must have a parent, only the root cluster does not have a parent."
                     + "cluster: " + t.getCluster(), t.getCluster().getParent());
         }
+    };
+
+    private final OdfRule[] odfRulesForCa = {
+//        (t, msg) -> {
+//            if (ca == null) {
+//                try {
+//                    /* this transaction's form is not filled in */
+//                    Assert.assertTrue(errmsg + "ca is NOT info, BUT market || cluster is NOT NULL. "
+//                            + "Perhaps, this transaction's form is not filled in. tr: " + tr,
+//                            mkname.isEmpty() && clname.isEmpty());
+//                } catch (AssertionError e) {
+//                    logs.getJBossLogger("odfRulesForCa").warn(e.getMessage());
+//                }
+//                return false;
+//            }
+//        },
+//        (t, msg) -> {
+//            if (ca.equals(info)) {
+//                // logger.infof(errmsg + "ca = %s, amount = %d, remark = %s", ca.getName(), amount, remark);
+//                return false;
+//            }
+//        },
+//        (t, msg) -> {
+//            if (ca.equals(pinfo)) {
+//                // TODO: TProductInfo
+//                logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
+//                return false;
+//            }
+//        },
+//        (t, msg) -> {
+//            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be null", ca, null);
+//            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be none", ca, none);
+//            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be pinfo", ca, pinfo);
+//            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be info", ca, info);
+//        }
     };
 
     /* PREPROCESSING RULES */

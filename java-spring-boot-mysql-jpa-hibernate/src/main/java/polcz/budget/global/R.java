@@ -53,6 +53,10 @@ public class R {
         return Logger.getLogger(LOGGER_PREFIX + c.getSimpleName());
     }
 
+    public static Logger getJBossLogger(String str) {
+        return Logger.getLogger(LOGGER_PREFIX + str);
+    }
+
     public static java.util.logging.Logger getUtilLogger(Class<?> c) {
         return java.util.logging.Logger.getLogger(LOGGER_PREFIX, c.getSimpleName());
     }
