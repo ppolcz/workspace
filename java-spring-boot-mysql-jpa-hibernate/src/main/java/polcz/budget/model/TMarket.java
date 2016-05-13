@@ -19,6 +19,10 @@ public class TMarket extends AbstractNameDescEntity {
 
     public TMarket() {}
 
+    public TMarket(String name) {
+        super(name, null);
+    }
+
     public TMarket(String name, String desc) {
         super(name, desc);
     }

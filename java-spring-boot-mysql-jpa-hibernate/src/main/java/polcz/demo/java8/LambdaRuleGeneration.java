@@ -1,11 +1,8 @@
 package polcz.demo.java8;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
-import polcz.budget.model.AbstractNameDescEntity;
 import polcz.budget.model.TCluster;
 import polcz.budget.model.TMarket;
 import polcz.budget.model.TTransaction;
@@ -35,6 +32,7 @@ public class LambdaRuleGeneration {
 
     interface Consequence {
         void apply(TTransaction tr);
+        // void applyInt(int tr);
     }
 
     class Rule {

@@ -2,8 +2,7 @@ package polcz.budget.global;
 
 import org.jboss.logging.Logger;
 
-public class R
-{
+public class R {
     public static final String JSF_MK_ID = "mk_";
     public static final String JSF_CL_ID = "cl_";
     public static final String JSF_CA_ID = "ca_";
@@ -20,13 +19,14 @@ public class R
     public static final int TR_UPDATE = 3;
 
     public static final String ODF_PRODUCT_INFO_SUFFIX = "PI: ";
-    
+
     /* CHARGE ACCOUNT THINGS */
-    
+
     public static final String CANAME_NONE = "none";
-    
+    public static final String CANAME_PKEZ = "pkez";
+
     /* CLUSTER THINGS */
-    
+
     public static final String CLNAME_NOT_GIVEN = "Nem_Adott";
     public static final String CLNAME_PIVOT = "Szamolas";
     public static final String CLNAME_TRANSFER = "Athelyezes";
@@ -37,23 +37,26 @@ public class R
     public static final int CLSGN_PIVOT = CLSGN_INCOME;
     public static final int CLSGN_TRANSFER = CLSGN_OUTCOME;
 
+    /* MARKET THINGS */
+
+    public static final String MKNAME_NOT_APPLICABLE = "Not_Applicable";
+    public static final String MKNAME_NOT_GIVEN = "Nem_Adott";
+
     /* LOGGER THINGS */
-    
+
     public static final String LOGGER_PREFIX = "PPOLCZ_";
     public static final String LOGGER_SUFFIX = "_PPOLCZ";
-    
+
     public static final boolean LOG_TRANSACTIONAL_LOGIC = false;
 
-    private R()
-    {}
-
-    public static Logger getJBossLogger(Class<?> c)
-    {
+    public static Logger getJBossLogger(Class<?> c) {
         return Logger.getLogger(LOGGER_PREFIX + c.getSimpleName());
     }
 
-    public static java.util.logging.Logger getUtilLogger(Class<?> c)
-    {
+    public static java.util.logging.Logger getUtilLogger(Class<?> c) {
         return java.util.logging.Logger.getLogger(LOGGER_PREFIX, c.getSimpleName());
     }
+
+    private R() {}
+
 }

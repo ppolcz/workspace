@@ -1,13 +1,21 @@
 package polcz.budget.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
+import static polcz.budget.service.OdfValidationService.IND_CAIDS;
+import static polcz.budget.service.OdfValidationService.IND_DATE;
+import static polcz.budget.service.OdfValidationService.IND_TRS;
+import static polcz.budget.service.OdfValidationService.lkbrnMarkets;
+import static polcz.budget.service.OdfValidationService.market2market;
+import static polcz.budget.service.OdfValidationService.munkaMarkets;
+import static polcz.budget.service.OdfValidationService.nMarkets;
+import static polcz.budget.service.OdfValidationService.nptcIntroductionRowNr;
+import static polcz.budget.service.OdfValidationService.ruhaMarkets;
+import static polcz.budget.service.OdfValidationService.sdf;
+import static polcz.budget.service.OdfValidationService.szuksegesMarkets;
+import static polcz.budget.service.OdfValidationService.utazasMarkets;
+
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 
 import org.jboss.logging.Logger;
 import org.junit.Assert;
@@ -23,6 +31,7 @@ import polcz.budget.model.TCluster;
 import polcz.budget.model.TMarket;
 import polcz.budget.model.TTransaction;
 import polcz.budget.model.TTransactionType;
+import polcz.budget.service.helper.OdfRule;
 import polcz.budget.service.helper.TransactionArguments;
 
 @Service
@@ -38,25 +47,13 @@ public class OdfLoaderService {
     @Autowired
     StartupService ss;
 
+    @Autowired
+    OdfValidationService odfs;
+
     // @PersistenceContext
     // EntityManager em;
 
     Logger logger;
-
-    private static final int NR_TRS = 12;
-    private static final int TR_OFFSET = 10;
-    private static final int TR_LENGTH = 5; // amount, ca, cluster, market, remark
-
-    private static final int IND_DATE = 0;
-    static final int IND_CAIDS = 2;
-    private static final int[] IND_TRS; // { 6, 11, 16, 21, 26, 31, ... };
-
-    static {
-        IND_TRS = new int[NR_TRS];
-        for (int i = 0; i < NR_TRS; ++i) {
-            IND_TRS[i] = i * TR_LENGTH + TR_OFFSET;
-        }
-    }
 
     private Map<TChargeAccount, Integer> indCa = new HashMap<>();
 
@@ -64,84 +61,15 @@ public class OdfLoaderService {
     private Map<String, TChargeAccount> calist;
     private Map<String, TMarket> mklist;
 
-    private TChargeAccount none;
-    private TChargeAccount pkez;
-    private TChargeAccount potp;
-    private TChargeAccount dkez;
-    private TChargeAccount dotp;
-    private TChargeAccount nptc;
-    private TChargeAccount info;
-    private TChargeAccount pinfo;
+    /* charge accounts */
+    private TChargeAccount none, pkez, potp, dkez, dotp, nptc, info, pinfo;
 
-    @SuppressWarnings("unused")
-    private TCluster Nem_Adott;
-    private TCluster Utazas;
-    private TCluster Lakas_Berendezes;
-    private TCluster Ruhazkodas;
-    private TCluster Munkaeszkozok;
-    private TCluster Szamolas;
-    private TCluster Athelyezes;
-    private TCluster Szukseges;
-    private TCluster Napi_Szukseglet;
-    private TCluster Egyeb_Kiadas;
-    private TCluster Rezsi;
+    /* clusters */
+    private TCluster /* Nem_Adott, */ Utazas, Lakas_Berendezes, Ruhazkodas, Munkaeszkozok, Szamolas,
+            Athelyezes, Szukseges, Napi_Szukseglet, Egyeb_Kiadas /* , Rezsi */;
 
+    /* markets */
     private TMarket Market_Not_Applicable;
-
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-    // private static final Date nptcIntroductionDate = new GregorianCalendar(2015, Calendar.DECEMBER, 17).getTime();
-    private static final int nptcIntroductionRowNr = 897;
-
-    private static final Set<String> nMarkets = new HashSet<>(Arrays.asList(new String[] {
-        "spar", "interspar", "lidl", "aldi", "tesco", "auchan", "dezsoba", "izlelo", "coop", "rossmann",
-        "groby", "pizzaking", "muller", "cba", "vikinger", "moriczgyros", "allee", "mcdonalds", "florian",
-        "hadik", "oktogonbisztro"
-    }));
-
-    private static final Set<String> szuksegesMarkets = new HashSet<>(Arrays.asList(new String[] {
-        "praterny", "copyguru"
-    }));
-
-    private static final Set<String> ruhaMarkets = new HashSet<>(Arrays.asList(new String[] {
-        "sansha", "c&a", "decathlon"
-    }));
-
-    private static final Set<String> utazasMarkets = new HashSet<>(Arrays.asList(new String[] { "mav", }));
-    private static final Set<String> lkbrnMarkets = new HashSet<>(Arrays.asList(new String[] { "ikea" }));
-    private static final Set<String> munkaMarkets = new HashSet<>(Arrays.asList(new String[] { "pirex" }));
-
-    private static final Map<String, String> marketCorrections;
-    private static final Map<String, String> billMarkets;
-
-    static {
-        marketCorrections = new HashMap<>();
-        marketCorrections.put("Mueller", "Muller");
-        marketCorrections.put("M1Gyros", "MoriczGyros"); // TODO
-
-        billMarkets = new HashMap<>();
-        billMarkets.put("Rezsi_Bkv", "BKV");
-        billMarkets.put("Rezsi_Gaz", "FOGAZ");
-        billMarkets.put("Rezsi_Viz", "FOCSM");
-        billMarkets.put("Rezsi_Futes", "FOTAV");
-        billMarkets.put("Rezsi_Elmu", "ELMU");
-        billMarkets.put("Rezsi_Kozosk", "Tarsashaz");
-        billMarkets.put("Rezsi_Upc", "UPC");
-        billMarkets.put("Rezsi_Otp", "OTP_Bank");
-        billMarkets.put("Rezsi_Otp", "OTP_Bank");
-
-        billMarkets.put("Mobil_Peti", "Telenor");
-        billMarkets.put("Mobil_Dori", "TMobil");
-        billMarkets.put("Mobil_Helga", "Telenor");
-
-        billMarkets.put("Hivatalos", "Hivatal");
-        billMarkets.put("Otthon", "PolczOtthon");
-        billMarkets.put("Alberlet", "Lakaskiado");
-        /*
-         * TODO
-         * select date,amount,accounts.name,clusters.name,remark from transactions,accounts,clusters where accounts.uid = ca and market = 1 and clusters.uid =
-         * cluster;
-         */
-    }
 
     public void process() {
         init();
@@ -150,18 +78,13 @@ public class OdfLoaderService {
 
     private void init() {
         logger = R.getJBossLogger(this.getClass());
-        logger.info(this.getClass().getSimpleName() + "::init() [@PostConstruct]");
-
-        // Class<TChargeAccount> tca = TChargeAccount.class;
-        // Class<TCluster> tcl = TCluster.class;
-        // Class<TMarket> tmk = TMarket.class;
 
         none = ss.none();
         pkez = ss.pkez();
         potp = ss.ca(new TChargeAccount("potp", "Peti OTP Bank"));
         dkez = ss.ca(new TChargeAccount("dkez", "Dori kezpenz"));
         dotp = ss.ca(new TChargeAccount("dotp", "Dori OTP Bank"));
-        nptc = ss.ca(new TChargeAccount("nptc", "nagypénztárca"));
+        nptc = ss.ca(new TChargeAccount("nptc", "nagypenztarca"));
 
         info = new TChargeAccount("info"); /* not persisted */
         info.setUid(123123);
@@ -170,7 +93,7 @@ public class OdfLoaderService {
         pinfo.setUid(1931212);
 
         Szamolas = ss.Szamolas();
-        Nem_Adott = ss.Nem_Adott();
+        // Nem_Adott = ss.Nem_Adott();
         Athelyezes = ss.Athelyezes();
         Szukseges = ss.Szukseges();
         Napi_Szukseglet = ss.Napi_Szukseglet();
@@ -179,12 +102,9 @@ public class OdfLoaderService {
         Lakas_Berendezes = ss.cluster(new TCluster("Lakas_Berendezes"));
         Ruhazkodas = ss.cluster(new TCluster("Ruhazkodas"));
         Munkaeszkozok = ss.cluster(new TCluster("Munkaeszkozok"));
-        Rezsi = ss.cluster(new TCluster("Rezsi"));
+        // Rezsi = ss.cluster(new TCluster("Rezsi"));
 
         Market_Not_Applicable = ss.Market_Not_Applicable();
-
-        billMarkets.put(Athelyezes.getName(), Market_Not_Applicable.getName() + "(transfer)");
-        billMarkets.put(Szamolas.getName(), Market_Not_Applicable.getName() + "(pivot)");
     }
 
     /**
@@ -421,8 +341,8 @@ public class OdfLoaderService {
         public void resolveMarket() {
 
             /* correct misspelled market names */
-            if (marketCorrections.containsKey(mkname))
-                mkname = marketCorrections.get(mkname);
+            if (market2market.containsKey(mkname))
+                mkname = market2market.get(mkname);
 
             TMarket market;
             if (mkname.isEmpty()) {
@@ -512,15 +432,11 @@ public class OdfLoaderService {
         }
 
         public void postResolveMarketIfItIsABill() {
-            TCluster parent = tr.getCluster().getParent();
-            Assert.assertNotNull(errmsg + "Each cluster must have a parent, only the root cluster does not have a parent."
-                    + "cluster: " + tr.getCluster(), parent);
-
-            if (parent.equals(Rezsi)) {
-                if (billMarkets.containsKey(tr.getCluster().getName())) {
-                    tr.setMarket(ss.market(new TMarket(billMarkets.get(tr.getCluster().getName()), tr.getCluster().getName())));
-                } else {
-                    logger.warnf(errmsg + "I do not know of this type of bill (rezsi): ", tr.getCluster());
+            for (OdfRule rule : odfs.getPostProcessingRules()) {
+                try {
+                    rule.apply(tr, errmsg);
+                } catch (AssertionError | Exception ex) {
+                    logger.fatal(ex.getMessage());
                 }
             }
         }

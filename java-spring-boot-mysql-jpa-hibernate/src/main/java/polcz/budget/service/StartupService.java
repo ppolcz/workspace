@@ -59,10 +59,10 @@ public class StartupService {
         Szamolas = cluster(new TCluster(R.CLNAME_PIVOT, R.CLSGN_PIVOT, Nem_Adott));
         Athelyezes = cluster(new TCluster(R.CLNAME_TRANSFER, R.CLSGN_TRANSFER, Nem_Adott));
 
-        Market_Not_Applicable = market(new TMarket("Not_Applicable", null));
+        Market_Not_Applicable = market(new TMarket(R.MKNAME_NOT_APPLICABLE));
 
         none = ca(new TChargeAccount(R.CANAME_NONE, "Not applicable"));
-        pkez = ca(new TChargeAccount("pkez"));
+        pkez = ca(new TChargeAccount(R.CANAME_PKEZ, "Peti kezpenz"));
     }
 
     public TCluster Nem_Adott() {
