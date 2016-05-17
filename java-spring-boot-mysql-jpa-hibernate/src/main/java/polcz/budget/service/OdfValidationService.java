@@ -156,6 +156,7 @@ public class OdfValidationService {
 
     public static final String[][] market2market_str = {
         { "Examlpe", "Example" },
+        { "", "" }
     };
 
     static {

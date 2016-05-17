@@ -92,18 +92,18 @@ public class UgyletService extends AbstractService<Ugylet> {
     // @Resource
     // private UserTransaction utx;
 
-    private boolean makeRollback() {
-        throw new NullPointerException("makeRollback: not implemented yet");
-        // try
-        // {
-        // utx.rollback();
-        // }
-        // catch (IllegalStateException | SecurityException | SystemException e)
-        // {
-        // logger.fatal("PPOLCZ: Rollback failed!");
-        // e.printStackTrace();
-        // }
-    }
+    // private boolean makeRollback() { // rollback should be done implicitly
+    // throw new NullPointerException("makeRollback: not implemented yet");
+    // try
+    // {
+    // utx.rollback();
+    // }
+    // catch (IllegalStateException | SecurityException | SystemException e)
+    // {
+    // logger.fatal("PPOLCZ: Rollback failed!");
+    // e.printStackTrace();
+    // }
+    // }
 
     @Transactional
     public boolean makeTransaction(TransactionArguments args) {
