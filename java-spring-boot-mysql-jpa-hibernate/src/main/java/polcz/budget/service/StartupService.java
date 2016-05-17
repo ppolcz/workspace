@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import polcz.budget.global.R;
-import polcz.budget.model.TChargeAccount;
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TMarket;
+import polcz.budget.model.ChargeAccount;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Market;
 
 @Service
 public class StartupService {
@@ -22,82 +22,82 @@ public class StartupService {
 
     Logger logger = Logger.getLogger("PPOLCZ_" + StartupService.class.getSimpleName());
 
-    public TCluster cluster(TCluster c) {
+    public Cluster cluster(Cluster c) {
         // logger.infof("%s --> %s", c, c.getParent());
-        return service.findByNameOrCreate(c, TCluster.class);
+        return service.findByNameOrCreate(c, Cluster.class);
     }
 
-    public TMarket market(TMarket c) {
-        return service.findByNameOrCreate(c, TMarket.class);
+    public Market market(Market c) {
+        return service.findByNameOrCreate(c, Market.class);
     }
 
-    public TChargeAccount ca(TChargeAccount c) {
-        return service.findByNameOrCreate(c, TChargeAccount.class);
+    public ChargeAccount ca(ChargeAccount c) {
+        return service.findByNameOrCreate(c, ChargeAccount.class);
     }
 
-    private TCluster Nem_Adott;
-    private TCluster Egyeb_Kiadas;
-    private TCluster Szukseges;
-    private TCluster Napi_Szukseglet;
-    private TCluster Szamolas;
-    private TCluster Athelyezes;
+    private Cluster Nem_Adott;
+    private Cluster Egyeb_Kiadas;
+    private Cluster Szukseges;
+    private Cluster Napi_Szukseglet;
+    private Cluster Szamolas;
+    private Cluster Athelyezes;
 
-    private TMarket Market_Not_Applicable;
+    private Market Market_Not_Applicable;
 
-    private TChargeAccount none;
-    private TChargeAccount pkez;
+    private ChargeAccount none;
+    private ChargeAccount pkez;
 
     @PostConstruct
     public void init() {
         System.out.println("Hello World!");
 
         // ezeket mindenkeppen benne szeretnem hagyni az adatbazisban
-        Nem_Adott = cluster(new TCluster(R.CLNAME_NOT_GIVEN, R.CLSGN_NOT_GIVEN, null));
-        Egyeb_Kiadas = cluster(new TCluster("Egyeb_Kiadas", R.CLSGN_OUTCOME, Nem_Adott));
-        Szukseges = cluster(new TCluster("Szukseges", Egyeb_Kiadas));
-        Napi_Szukseglet = cluster(new TCluster("Napi_Szukseglet", Szukseges));
-        Szamolas = cluster(new TCluster(R.CLNAME_PIVOT, R.CLSGN_PIVOT, Nem_Adott));
-        Athelyezes = cluster(new TCluster(R.CLNAME_TRANSFER, R.CLSGN_TRANSFER, Nem_Adott));
+        Nem_Adott = cluster(new Cluster(R.CLNAME_NOT_GIVEN, R.CLSGN_NOT_GIVEN, null));
+        Egyeb_Kiadas = cluster(new Cluster("Egyeb_Kiadas", R.CLSGN_OUTCOME, Nem_Adott));
+        Szukseges = cluster(new Cluster("Szukseges", Egyeb_Kiadas));
+        Napi_Szukseglet = cluster(new Cluster("Napi_Szukseglet", Szukseges));
+        Szamolas = cluster(new Cluster(R.CLNAME_PIVOT, R.CLSGN_PIVOT, Nem_Adott));
+        Athelyezes = cluster(new Cluster(R.CLNAME_TRANSFER, R.CLSGN_TRANSFER, Nem_Adott));
 
-        Market_Not_Applicable = market(new TMarket(R.MKNAME_NOT_APPLICABLE));
+        Market_Not_Applicable = market(new Market(R.MKNAME_NOT_APPLICABLE));
 
-        none = ca(new TChargeAccount(R.CANAME_NONE, "Not applicable"));
-        pkez = ca(new TChargeAccount(R.CANAME_PKEZ, "Peti kezpenz"));
+        none = ca(new ChargeAccount(R.CANAME_NONE, "Not applicable"));
+        pkez = ca(new ChargeAccount(R.CANAME_PKEZ, "Peti kezpenz"));
     }
 
-    public TCluster Nem_Adott() {
+    public Cluster Nem_Adott() {
         return Nem_Adott;
     }
 
-    public TCluster Egyeb_Kiadas() {
+    public Cluster Egyeb_Kiadas() {
         return Egyeb_Kiadas;
     }
 
-    public TCluster Napi_Szukseglet() {
+    public Cluster Napi_Szukseglet() {
         return Napi_Szukseglet;
     }
 
-    public TCluster Szamolas() {
+    public Cluster Szamolas() {
         return Szamolas;
     }
 
-    public TCluster Athelyezes() {
+    public Cluster Athelyezes() {
         return Athelyezes;
     }
 
-    public TCluster Szukseges() {
+    public Cluster Szukseges() {
         return Szukseges;
     }
 
-    public TMarket Market_Not_Applicable() {
+    public Market Market_Not_Applicable() {
         return Market_Not_Applicable;
     }
 
-    public TChargeAccount none() {
+    public ChargeAccount none() {
         return none;
     }
 
-    public TChargeAccount pkez() {
+    public ChargeAccount pkez() {
         return pkez;
     }
 

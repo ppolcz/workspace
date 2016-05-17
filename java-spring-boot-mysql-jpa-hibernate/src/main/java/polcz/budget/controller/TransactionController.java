@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TTransaction;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Ugylet;
 import polcz.budget.service.EntityService;
 
 @Controller
 @RequestMapping(value = "/tr")
-public class TransactionController extends EntityController<TTransaction> {
+public class TransactionController extends EntityController<Ugylet> {
 
     @Autowired
     EntityService service;
@@ -26,17 +26,17 @@ public class TransactionController extends EntityController<TTransaction> {
     }
 
     @RequestMapping(value = "/get/{uid}")
-    public @ResponseBody TTransaction getByUid(@PathVariable int uid) {
-        return service.find(uid, TTransaction.class);
+    public @ResponseBody Ugylet getByUid(@PathVariable int uid) {
+        return service.find(uid, Ugylet.class);
     }
 
     @RequestMapping(value = "/get/{from}/{to}")
-    public @ResponseBody List<TTransaction> getRange(@PathVariable int from, @PathVariable int to) {
-        return service.findRange(new int[] { from, to }, TTransaction.class);
+    public @ResponseBody List<Ugylet> getRange(@PathVariable int from, @PathVariable int to) {
+        return service.findRange(new int[] { from, to }, Ugylet.class);
     }
     
     @RequestMapping(value = "/get")
-    public @ResponseBody List<TTransaction> getAll() {
-        return service.findAll(TTransaction.class);
+    public @ResponseBody List<Ugylet> getAll() {
+        return service.findAll(Ugylet.class);
     }
 }

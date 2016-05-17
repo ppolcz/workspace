@@ -21,10 +21,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "clusters")
 @NamedQueries(value = {
-    @NamedQuery(name = "TCluster.findOne", query = "SELECT e FROM TCluster e where e.uid = :uid"),
-    @NamedQuery(name = "TCluster.findByName", query = "SELECT e FROM TCluster e where e.name = :name"),
-    @NamedQuery(name = "TCluster.findAll", query = "SELECT e FROM TCluster e") })
-public class TCluster extends AbstractNameDescEntity {
+    @NamedQuery(name = "Cluster.findOne", query = "SELECT e FROM Cluster e where e.uid = :uid"),
+    @NamedQuery(name = "Cluster.findByName", query = "SELECT e FROM Cluster e where e.name = :name"),
+    @NamedQuery(name = "Cluster.findAll", query = "SELECT e FROM Cluster e") })
+public class Cluster extends AbstractNameDescEntity {
     private static final long serialVersionUID = 9002723472772706262L;
 
     @Column(nullable = false)
@@ -33,27 +33,27 @@ public class TCluster extends AbstractNameDescEntity {
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "parent")
-    private TCluster parent;
+    private Cluster parent;
 
     @JsonBackReference
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
-    private List<TCluster> children;
+    private List<Cluster> children;
 
-    public TCluster() {}
+    public Cluster() {}
 
-    public TCluster(String name, int sgn, TCluster parent) {
+    public Cluster(String name, int sgn, Cluster parent) {
         this.name = name;
         this.sgn = sgn;
         this.parent = parent;
     }
 
-    public TCluster(String name, TCluster parent) {
+    public Cluster(String name, Cluster parent) {
         this.name = name;
         this.sgn = parent.sgn;
         this.parent = parent;
     }
 
-    public TCluster(String name) {
+    public Cluster(String name) {
         this.name = name;
     }
 
@@ -65,37 +65,37 @@ public class TCluster extends AbstractNameDescEntity {
         this.sgn = sgn;
     }
 
-    public TCluster getParent() {
+    public Cluster getParent() {
         return this.parent;
     }
 
-    public void setParent(TCluster cl) {
+    public void setParent(Cluster cl) {
         this.parent = cl;
     }
 
-    public List<TCluster> getChildren() {
+    public List<Cluster> getChildren() {
         return this.children;
     }
 
-    public void setChildren(List<TCluster> children) {
+    public void setChildren(List<Cluster> children) {
         this.children = children;
     }
 
-    public TCluster addChild(TCluster child) {
+    public Cluster addChild(Cluster child) {
         getChildren().add(child);
         child.setParent(this);
 
         return child;
     }
 
-    public TCluster removeChild(TCluster child) {
+    public Cluster removeChild(Cluster child) {
         getChildren().remove(child);
         child.setParent(null);
 
         return child;
     }
 
-    public TCluster rsetUid(int uid) {
+    public Cluster rsetUid(int uid) {
         setUid(uid);
         return this;
     }

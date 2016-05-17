@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import polcz.budget.model.AbstractEntity;
 import polcz.budget.model.AbstractNameDescEntity;
-import polcz.budget.model.TCluster_;
+import polcz.budget.model.Cluster_;
 
 @Repository
 @Transactional
@@ -32,7 +32,7 @@ public class EntityService {
     private void init() {
         logger = Logger.getLogger("PPOLCZ_" + EntityService.class.getSimpleName());
     }
-    
+
     public <T extends AbstractEntity> T update(T entity) {
         return em.merge(entity);
     }
@@ -42,14 +42,12 @@ public class EntityService {
         /* find if this name already exists */
         T old = findByName(entity.getName(), entityClass);
 
-        if (old != null) {
-            return old;
-        }
+        if (old != null) { return old; }
         return em.merge(entity);
     }
-    
+
     public <T extends AbstractNameDescEntity> T update(T entity, Class<T> entityClass) {
-        
+
         /* find if this name already exists */
         logger.infof("find if the name '%s' already exists", entity.getName());
         T old = findByName(entity.getName(), entityClass);
@@ -90,7 +88,7 @@ public class EntityService {
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<T> cq = builder.createQuery(entityClass);
         Root<T> root = cq.from(entityClass);
-        cq.where(builder.equal(root.get(TCluster_.name), name));
+        cq.where(builder.equal(root.get(Cluster_.name), name));
         cq.select(root);
         TypedQuery<T> q = em.createQuery(cq);
         q.setMaxResults(1);

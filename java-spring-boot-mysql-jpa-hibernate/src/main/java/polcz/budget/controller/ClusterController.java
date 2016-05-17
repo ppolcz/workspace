@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TClusterReverse;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.ClusterTree;
 import polcz.budget.service.EntityService;
 
 @Controller
 @RequestMapping(value = "/cl")
-public class ClusterController extends NameDescController<TCluster> {
+public class ClusterController extends NameDescController<Cluster> {
 
     @Autowired
     EntityService service;
@@ -24,15 +24,15 @@ public class ClusterController extends NameDescController<TCluster> {
         return "list_clusters.html";
     }
 
-    public String create(String name, int sgn, TCluster parent) {
-        return super.create(new TCluster(name, sgn, parent));
+    public String create(String name, int sgn, Cluster parent) {
+        return super.create(new Cluster(name, sgn, parent));
     }
 
     @RequestMapping(value = "/create")
     @ResponseBody
     public String createAlt1(String name, int sgn, String parent) {
         System.out.println("parent = " + parent);
-        TCluster parentCl = service.findByName(parent, TCluster.class);
+        Cluster parentCl = service.findByName(parent, Cluster.class);
         System.out.println("parentCl = " + parentCl);
         return create(name, sgn, parentCl);
     }
@@ -49,27 +49,27 @@ public class ClusterController extends NameDescController<TCluster> {
     @RequestMapping(value = "/remove")
     @ResponseBody
     public String delete(int uid) {
-        return super.delete(new TCluster(), uid);
+        return super.delete(new Cluster(), uid);
     }
 
     @RequestMapping(value = "/update")
     @ResponseBody
     public String update(int id, String name, String desc) {
-        return super.update(id, name, desc, TCluster.class);
+        return super.update(id, name, desc, Cluster.class);
     }
 
     @RequestMapping(value = "/get/{uid}")
-    public @ResponseBody TCluster getByUid(@PathVariable int uid) {
-        return service.find(uid, TCluster.class);
+    public @ResponseBody Cluster getByUid(@PathVariable int uid) {
+        return service.find(uid, Cluster.class);
     }
 
     @RequestMapping(value = "/get")
-    public @ResponseBody List<TCluster> getAll() {
-        return service.findAll(TCluster.class);
+    public @ResponseBody List<Cluster> getAll() {
+        return service.findAll(Cluster.class);
     }
     
     @RequestMapping(value = "/get-tree")
-    public @ResponseBody TClusterReverse getAllTreeView() {
-        return new TClusterReverse(service.findByName("Nem_Adott", TCluster.class));
+    public @ResponseBody ClusterTree getAllTreeView() {
+        return new ClusterTree(service.findByName("Nem_Adott", Cluster.class));
     }
 }

@@ -1,9 +1,9 @@
 package polcz.budget.service.helper;
 
-import polcz.budget.model.TTransaction;
+import polcz.budget.model.Ugylet;
 
 public interface OdfRule {
-    void apply(TTransaction tr, String msg);
+    void apply(Ugylet tr, String msg);
 }
 
 // public class OdfRule {

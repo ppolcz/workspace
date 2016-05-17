@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import polcz.budget.model.TChargeAccount;
+import polcz.budget.model.ChargeAccount;
 import polcz.budget.service.EntityService;
 
 @Controller
 @RequestMapping(value = "/ca")
-public class CAController extends NameDescController<TChargeAccount> {
+public class CAController extends NameDescController<ChargeAccount> {
 
     @Autowired
     EntityService service;
@@ -27,7 +27,7 @@ public class CAController extends NameDescController<TChargeAccount> {
     @RequestMapping(value = "/create")
     @ResponseBody
     public String createAlt1(String name, String desc) {
-        return super.create(new TChargeAccount(name, desc));
+        return super.create(new ChargeAccount(name, desc));
     }
 
     /**
@@ -42,18 +42,18 @@ public class CAController extends NameDescController<TChargeAccount> {
     @RequestMapping(value = "/remove")
     @ResponseBody
     public String delete(int uid) {
-        return super.delete(new TChargeAccount(), uid);
+        return super.delete(new ChargeAccount(), uid);
     }
 
     @RequestMapping(value = "/update")
     @ResponseBody
     public String update(int id, String name, String desc) {
-        return super.update(id, name, desc, TChargeAccount.class);
+        return super.update(id, name, desc, ChargeAccount.class);
     }
 
     @RequestMapping(value = "/get/{uid}")
-    public @ResponseBody TChargeAccount getByUid(@PathVariable int uid) {
-        return service.find(uid, TChargeAccount.class);
+    public @ResponseBody ChargeAccount getByUid(@PathVariable int uid) {
+        return service.find(uid, ChargeAccount.class);
     }
 
     // @RequestMapping(method = RequestMethod.GET)
