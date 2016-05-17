@@ -7,8 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -16,9 +14,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "products")
-@NamedQueries(value = {
-    @NamedQuery(name = "ProductInfo.findOne", query = "SELECT e FROM ProductInfo e where e.uid = :uid"),
-    @NamedQuery(name = "ProductInfo.findAll", query = "SELECT e FROM ProductInfo e") })
+// @NamedQueries(value = {
+// @NamedQuery(name = "ProductInfo.findOne", query = "SELECT e FROM ProductInfo e where e.uid = :uid"),
+// @NamedQuery(name = "ProductInfo.findAll", query = "SELECT e FROM ProductInfo e") })
 public class ProductInfo extends AbstractEntity implements Serializable
 {
     private static final long serialVersionUID = 1L;

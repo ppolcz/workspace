@@ -10,21 +10,21 @@ import polcz.budget.global.R;
 import polcz.budget.model.ChargeAccount;
 import polcz.budget.model.Cluster;
 import polcz.budget.model.Ugylet;
-import polcz.budget.service.TransactionService;
+import polcz.budget.service.UgyletService;
 import polcz.util.Util;
 
 public class TransactionUpdater {
     private ChargeAccount none;
     private Cluster athelyezes;
     private Logger logger;
-    private TransactionService service;
+    private UgyletService service;
     private TransactionArguments args;
 
     /**
      * Ezt abstract metodusokkal elegansabban is megcsinalhattam volna, de nekem
      * igy kenyelmesebb.
      */
-    public TransactionUpdater(TransactionService service, Logger logger, TransactionArguments args,
+    public TransactionUpdater(UgyletService service, Logger logger, TransactionArguments args,
             Cluster athelyezes, ChargeAccount none) {
         this.service = service;
         this.args = args;

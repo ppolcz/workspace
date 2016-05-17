@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,10 +18,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
  */
 @Entity
 @Table(name = "clusters")
-@NamedQueries(value = {
-    @NamedQuery(name = "Cluster.findOne", query = "SELECT e FROM Cluster e where e.uid = :uid"),
-    @NamedQuery(name = "Cluster.findByName", query = "SELECT e FROM Cluster e where e.name = :name"),
-    @NamedQuery(name = "Cluster.findAll", query = "SELECT e FROM Cluster e") })
+// @NamedQueries(value = {
+// @NamedQuery(name = "Cluster.findOne", query = "SELECT e FROM Cluster e where e.uid = :uid"),
+// @NamedQuery(name = "Cluster.findByName", query = "SELECT e FROM Cluster e where e.name = :name"),
+// @NamedQuery(name = "Cluster.findAll", query = "SELECT e FROM Cluster e") })
 public class Cluster extends AbstractNameDescEntity {
     private static final long serialVersionUID = 9002723472772706262L;
 

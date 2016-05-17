@@ -42,7 +42,7 @@ public class OdfLoaderService {
     EntityService service;
 
     @Autowired
-    TransactionService trService;
+    UgyletService trService;
 
     @Autowired
     StartupService ss;
@@ -102,7 +102,7 @@ public class OdfLoaderService {
         Lakas_Berendezes = ss.cluster(new Cluster("Lakas_Berendezes"));
         Ruhazkodas = ss.cluster(new Cluster("Ruhazkodas"));
         Munkaeszkozok = ss.cluster(new Cluster("Munkaeszkozok"));
-        // Rezsi = ss.cluster(new TCluster("Rezsi"));
+        // Rezsi = ss.cluster(new Cluster("Rezsi"));
 
         Market_Not_Applicable = ss.Market_Not_Applicable();
     }
@@ -176,7 +176,7 @@ public class OdfLoaderService {
         logger.info("Minden rendben, lefutottam");
     }
 
-    // private Map<TChargeAccount, Integer> balance = new HashMap<>();
+    // private Map<ChargeAccount, Integer> balance = new HashMap<>();
 
     private void initialBalance(Date date, ChargeAccount ca, int balance) {
         Ugylet tr = new Ugylet();
@@ -322,7 +322,7 @@ public class OdfLoaderService {
             }
 
             if (ca.equals(pinfo)) {
-                // TODO: TProductInfo
+                // TODO: ProductInfo
                 logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
                 return false;
             }

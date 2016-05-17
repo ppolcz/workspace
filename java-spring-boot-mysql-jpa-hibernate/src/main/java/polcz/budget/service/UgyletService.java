@@ -32,9 +32,9 @@ import polcz.budget.service.helper.TransactionUpdater;
 import polcz.util.Util;
 
 @Service
-public class TransactionService extends AbstractService<Ugylet> {
+public class UgyletService extends AbstractService<Ugylet> {
 
-    public TransactionService() {
+    public UgyletService() {
         super(Ugylet.class);
     }
 
@@ -124,7 +124,7 @@ public class TransactionService extends AbstractService<Ugylet> {
                 Ugylet tr = args.getOldtr();
                 args.setOldtr(null);
 
-                // if (tr.getProductInfos() != null)
+                // if (tr.geProductInfos() != null)
                 // {
                 // /* TODO: cascade */
                 // for (TProductInfo pi : tr.getProductInfos())

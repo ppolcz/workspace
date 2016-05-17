@@ -70,7 +70,7 @@ public class OdfValidationService {
 //        },
 //        (t, msg) -> {
 //            if (ca.equals(pinfo)) {
-//                // TODO: TProductInfo
+//                // TODO: ProductInfo
 //                logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
 //                return false;
 //            }

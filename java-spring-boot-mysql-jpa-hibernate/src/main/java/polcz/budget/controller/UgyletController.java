@@ -14,7 +14,7 @@ import polcz.budget.service.EntityService;
 
 @Controller
 @RequestMapping(value = "/tr")
-public class TransactionController extends EntityController<Ugylet> {
+public class UgyletController extends EntityController<Ugylet> {
 
     @Autowired
     EntityService service;
@@ -22,7 +22,7 @@ public class TransactionController extends EntityController<Ugylet> {
     @RequestMapping("/")
     @ResponseBody
     public String test() {
-        return TransactionController.class.getSimpleName() + " works fine!";
+        return UgyletController.class.getSimpleName() + " works fine!";
     }
 
     @RequestMapping(value = "/get/{uid}")

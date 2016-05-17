@@ -30,8 +30,8 @@ import polcz.util.Util;
 @Entity
 @Table(name = "ugyletek")
 // @NamedQueries(value = {
-// @NamedQuery(name = "TTransaction.findOne", query = "SELECT e FROM TTransaction e where e.uid = :uid"),
-// @NamedQuery(name = "TTransaction.findAll", query = "SELECT e FROM TTransaction e") })
+// @NamedQuery(name = "Ugylet.findOne", query = "SELECT e FROM Ugylet e where e.uid = :uid"),
+// @NamedQuery(name = "Ugylet.findAll", query = "SELECT e FROM Ugylet e") })
 public class Ugylet extends AbstractEntity {
     private static final long serialVersionUID = -5174036607489515049L;
     private static final String MSG_PREF = AbstractEntity.class.getSimpleName() + ": ";
@@ -75,7 +75,7 @@ public class Ugylet extends AbstractEntity {
 
     // @OneToOne(cascade = { CascadeType.ALL })
     // @JoinColumn(name = "pi", nullable = true)
-    // private TProductInfo pi;
+    // private ProductInfo pi;
 
     @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ProductInfo> pis;
@@ -125,7 +125,7 @@ public class Ugylet extends AbstractEntity {
         if (pivot) type = UgyletType.pivot;
         else if (clIsTransfer) type = UgyletType.transfer;
         else type = UgyletType.simple;
-        // TODO TTransactionType.exchange
+        // TODO UgyletType.exchange
 
     }
 
@@ -136,7 +136,7 @@ public class Ugylet extends AbstractEntity {
 
     @SuppressWarnings("unused")
     private void generateInfo() {
-        // if (isProductInfo()) pi = new TProductInfo(this);
+        // if (isProductInfo()) pi = new ProductInfo(this);
         // else pi = null;
     }
 
@@ -277,12 +277,12 @@ public class Ugylet extends AbstractEntity {
         this.type = type;
     }
 
-    // public TProductInfo getPi()
+    // public ProductInfo getPi()
     // {
     // return pi;
     // }
     //
-    // public void setPi(TProductInfo pi)
+    // public void setPi(ProductInfo pi)
     // {
     // this.pi = pi;
     // }
