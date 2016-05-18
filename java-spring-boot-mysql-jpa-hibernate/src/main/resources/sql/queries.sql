@@ -53,7 +53,8 @@ select u.* from (select @p1:=30 p) param, UtolsoUgyletek u;
 -- Ez egy nagyon hasznos lekerdezes (Kumulalt szummalva es ertek szerint csokkeno sorrendben - legnagyobb koltseg elol)
 SET @@group_concat_max_len = 120;
 set @sum := 0;
-set @nrdays := 30;
+set @nrmonth := 12;
+set @nrdays := 30 * @nrmonth;
 select date, caname, balance, lpad(format(amount,0), 8, ' ') as amount, clname, mkname, remark, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
 from
 (
@@ -63,7 +64,8 @@ from
         cluster = clusters.uid and market = markets.uid and ca = accounts.uid
         and date between curdate() - interval @nrdays day and curdate()
         and clusters.name not like 'athelyezes'
-    order by amount
+        and clusters.name like 'Rezsi_futes'
+    order by date
 ) as UtolsoUgyletek;
 
 
@@ -107,7 +109,7 @@ from
 ) as UtolsoUgyletek;
 
 
--- Ez egy nagyon hasznos lekerdezes (Ebbol ki lehet szamitani, hogy kb, mennyi kajat veszunk/eszunk egy honapban)
+-- Csak napi_szukseglet az elmult idoben
 SET @@group_concat_max_len = 200;
 set @sum := 0;
 set @nrdays := 90;
@@ -127,3 +129,51 @@ from
 ) as UtolsoUgyletek;
 
 
+
+
+
+
+-- Mennyi rezsit fizettunk atlagosan az elmult `@nrmonth` honapban
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @nrmonth := 12;
+set @nrdays := 30 * @nrmonth + 20;
+select date as 'Mennyi rezsit fizettunk atlagosan az elmult `@nrmonth` honapban',
+    lpad(concat(nr_of_ugyletek,'/',@nrmonth), 5, ' ') as 'count', caname,
+    lpad(format(amount,0), 8, ' ') as amount,
+    lpad(format(amount/@nrmonth,0), 8, ' ') as monthly,
+    clname, mkname, remark, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
+from
+(
+    select
+        group_concat(DISTINCT date order by date ASC separator ', ') as date, count(date) as nr_of_ugyletek,
+        accounts.name as caname, balance, sum(amount*clusters.sgn) as amount, clusters.name as clname, markets.name as mkname,
+        replace(replace(group_concat(DISTINCT remark separator ', '), '{ tr_', 't'), ' }', '') as remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.name like '%rezsi%'
+    group by clusters.uid
+    order by amount
+) as UtolsoUgyletek;
+
+
+
+-- Csak ruhazkodas az elmult idoben
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @nrdays := 90;
+select date, caname, balance, lpad(format(amount,0), 8, ' ') as amount, clname, mkname, remark, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
+from
+(
+    select date, accounts.name as caname, balance, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.name like '%ruha%'
+    order by amount
+) as UtolsoUgyletek;
