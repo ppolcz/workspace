@@ -3,35 +3,35 @@ package polcz.demo.java8;
 import java.util.HashMap;
 import java.util.Map;
 
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TMarket;
-import polcz.budget.model.TTransaction;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Market;
+import polcz.budget.model.Ugylet;
 
 public class LambdaRuleGeneration {
 
     interface TransactionAttribute {
-        Object get(TTransaction tr);
+        Object get(Ugylet tr);
     }
 
-    TransactionAttribute cluster = TTransaction::getCluster;
-    TransactionAttribute ca = TTransaction::getCa;
-    TransactionAttribute market = TTransaction::getMarket;
+    TransactionAttribute cluster = Ugylet::getCluster;
+    TransactionAttribute ca = Ugylet::getCa;
+    TransactionAttribute market = Ugylet::getMarket;
 
-    private TTransaction tr;
-    private TTransaction tr2;
-    private TCluster c1;
-    private TCluster c2;
-    private TMarket m1;
-    private TMarket m2;
-    private TCluster c3;
-    private TMarket m3;
+    private Ugylet tr;
+    private Ugylet tr2;
+    private Cluster c1;
+    private Cluster c2;
+    private Market m1;
+    private Market m2;
+    private Cluster c3;
+    private Market m3;
 
     interface Condition {
-        boolean test(TTransaction tr);
+        boolean test(Ugylet tr);
     }
 
     interface Consequence {
-        void apply(TTransaction tr);
+        void apply(Ugylet tr);
         // void applyInt(int tr);
     }
 
@@ -44,7 +44,7 @@ public class LambdaRuleGeneration {
             this.modifier = modifier;
         }
 
-        public void apply(TTransaction tr) {
+        public void apply(Ugylet tr) {
             if (condition.test(tr)) {
                 modifier.apply(tr);
             }
@@ -53,29 +53,29 @@ public class LambdaRuleGeneration {
 
     public LambdaRuleGeneration() {
 
-        c1 = new TCluster("kutyagumi");
+        c1 = new Cluster("kutyagumi");
         c1.setUid(12);
 
-        c2 = new TCluster("Faroktoll");
+        c2 = new Cluster("Faroktoll");
         c2.setUid(123);
 
-        c3 = new TCluster("kutya");
+        c3 = new Cluster("kutya");
         c3.setUid(4);
 
-        m1 = new TMarket("Kutyamarket", "");
+        m1 = new Market("Kutyamarket", "");
         m1.setUid(321);
 
-        m2 = new TMarket("Kutya2market", "");
+        m2 = new Market("Kutya2market", "");
         m2.setUid(1231);
 
-        m3 = new TMarket("dsasadsda", "");
+        m3 = new Market("dsasadsda", "");
         m3.setUid(7);
 
-        tr = new TTransaction();
+        tr = new Ugylet();
         tr.setPivot(true);
         tr.setCluster(c1);
 
-        tr2 = new TTransaction();
+        tr2 = new Ugylet();
         tr2.setCluster(c2);
         tr2.setMarket(m3);
 
@@ -86,7 +86,7 @@ public class LambdaRuleGeneration {
     public void rulePivot() {
         System.out.println("\nRule: 'pivot'");
 
-        Rule rule = new Rule(a -> a.isPivot(), a -> a.setMarket(new TMarket("Not_applicable_(pivot)", "")));
+        Rule rule = new Rule(a -> a.isPivot(), a -> a.setMarket(new Market("Not_applicable_(pivot)", "")));
 
         System.out.println(tr);
         rule.apply(tr);
@@ -102,7 +102,7 @@ public class LambdaRuleGeneration {
 
         System.out.println("\nRule: 'if cluster -> set market'");
 
-        Map<TCluster, TMarket> map = new HashMap<>();
+        Map<Cluster, Market> map = new HashMap<>();
         map.put(c1, m1);
         map.put(c3, m2);
 

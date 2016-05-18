@@ -4,8 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public abstract class AbstractNameDescEntity extends AbstractEntity
-{
+public abstract class AbstractNameDescEntity extends AbstractEntity {
     private static final long serialVersionUID = 6837319138092942594L;
 
     @Column(name = "description", length = 256)
@@ -14,38 +13,31 @@ public abstract class AbstractNameDescEntity extends AbstractEntity
     @Column(unique = true, nullable = false, length = 45)
     protected String name;
 
-    public AbstractNameDescEntity()
-    {}
+    public AbstractNameDescEntity() {}
 
-    public AbstractNameDescEntity(String name, String desc)
-    {
+    public AbstractNameDescEntity(String name, String desc) {
         this.setName(name);
         this.setDesc(desc);
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return this.getClass().getSimpleName() + "::" + getName();
     }
 
-    public String getDesc()
-    {
+    public String getDesc() {
         return desc;
     }
 
-    public void setDesc(String desc)
-    {
+    public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 }

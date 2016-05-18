@@ -1,6 +1,6 @@
 package polcz.budget.model;
 
-public enum TTransactionType {
+public enum UgyletType {
 	simple,
 	transfer,
 	pivot,

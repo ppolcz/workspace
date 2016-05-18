@@ -9,37 +9,36 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 /**
  * The persistent class for the t_cluster database table.
  */
-public class TClusterReverse extends AbstractNameDescEntity {
+public class ClusterTree extends AbstractNameDescEntity {
     private static final long serialVersionUID = 9002723472772706262L;
 
     private String roleName;
-
     private int sgn;
 
     @JsonBackReference
-    private TClusterReverse parent;
+    private ClusterTree parent;
 
     @JsonManagedReference
-    private List<TClusterReverse> children;
+    private List<ClusterTree> children;
 
-    public TClusterReverse() {}
+    public ClusterTree() {}
 
-    public TClusterReverse(TCluster cl) {
+    public ClusterTree(Cluster cl) {
         sgn = cl.getSgn();
         name = cl.getName();
         roleName = cl.getName() + " (" + sgn + ")";
         if (cl.getChildren() != null)
-            for (TCluster child : cl.getChildren())
-            this.addChild(new TClusterReverse(child));
+            for (Cluster child : cl.getChildren())
+            this.addChild(new ClusterTree(child));
     }
 
-    public TClusterReverse(String name, TClusterReverse parent) {
+    public ClusterTree(String name, ClusterTree parent) {
         this.name = name;
         this.sgn = parent.sgn;
         this.parent = parent;
     }
 
-    public TClusterReverse(String name) {
+    public ClusterTree(String name) {
         this.name = name;
     }
 
@@ -51,38 +50,38 @@ public class TClusterReverse extends AbstractNameDescEntity {
         this.sgn = sgn;
     }
 
-    public TClusterReverse getParent() {
+    public ClusterTree getParent() {
         return this.parent;
     }
 
-    public void setParent(TClusterReverse cl) {
+    public void setParent(ClusterTree cl) {
         this.parent = cl;
     }
 
-    public List<TClusterReverse> getChildren() {
+    public List<ClusterTree> getChildren() {
         if (children == null) children = new LinkedList<>();
         return this.children;
     }
 
-    public void setChildren(List<TClusterReverse> children) {
+    public void setChildren(List<ClusterTree> children) {
         this.children = children;
     }
 
-    public TClusterReverse addChild(TClusterReverse child) {
+    public ClusterTree addChild(ClusterTree child) {
         getChildren().add(child);
         child.setParent(this);
 
         return child;
     }
 
-    public TClusterReverse removeChild(TClusterReverse child) {
+    public ClusterTree removeChild(ClusterTree child) {
         getChildren().remove(child);
         child.setParent(null);
 
         return child;
     }
 
-    public TClusterReverse rsetUid(int uid) {
+    public ClusterTree rsetUid(int uid) {
         setUid(uid);
         return this;
     }

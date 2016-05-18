@@ -7,8 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -16,10 +14,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "products")
-@NamedQueries(value = {
-    @NamedQuery(name = "TProductInfo.findOne", query = "SELECT e FROM TProductInfo e where e.uid = :uid"),
-    @NamedQuery(name = "TProductInfo.findAll", query = "SELECT e FROM TProductInfo e") })
-public class TProductInfo extends AbstractEntity implements Serializable
+// @NamedQueries(value = {
+// @NamedQuery(name = "ProductInfo.findOne", query = "SELECT e FROM ProductInfo e where e.uid = :uid"),
+// @NamedQuery(name = "ProductInfo.findAll", query = "SELECT e FROM ProductInfo e") })
+public class ProductInfo extends AbstractEntity implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
@@ -34,12 +32,12 @@ public class TProductInfo extends AbstractEntity implements Serializable
 
     @ManyToOne(cascade = { CascadeType.ALL })
     @JoinColumn(name = "transaction", nullable = false)
-    private TTransaction transaction;
+    private Ugylet transaction;
 
-    public TProductInfo()
+    public ProductInfo()
     {}
 
-    public TProductInfo(TTransaction tr)
+    public ProductInfo(Ugylet tr)
     {
         amount = tr.getAmount();
         amountOrig = 0;
@@ -77,13 +75,13 @@ public class TProductInfo extends AbstractEntity implements Serializable
         this.desc = desc;
     }
 
-    public TTransaction getTTransaction()
+    public Ugylet getUgylet()
     {
         return this.transaction;
     }
 
-    public void setTTransaction(TTransaction TTransaction)
+    public void setUgylet(Ugylet ugylet)
     {
-        this.transaction = TTransaction;
+        this.transaction = ugylet;
     }
 }

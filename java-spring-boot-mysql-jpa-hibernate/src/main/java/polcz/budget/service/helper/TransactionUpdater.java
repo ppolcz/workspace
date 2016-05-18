@@ -7,25 +7,25 @@ import org.jboss.logging.Logger;
 import org.junit.Assert;
 
 import polcz.budget.global.R;
-import polcz.budget.model.TChargeAccount;
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TTransaction;
-import polcz.budget.service.TransactionService;
+import polcz.budget.model.ChargeAccount;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Ugylet;
+import polcz.budget.service.UgyletService;
 import polcz.util.Util;
 
 public class TransactionUpdater {
-    private TChargeAccount none;
-    private TCluster athelyezes;
+    private ChargeAccount none;
+    private Cluster athelyezes;
     private Logger logger;
-    private TransactionService service;
+    private UgyletService service;
     private TransactionArguments args;
 
     /**
      * Ezt abstract metodusokkal elegansabban is megcsinalhattam volna, de nekem
      * igy kenyelmesebb.
      */
-    public TransactionUpdater(TransactionService service, Logger logger, TransactionArguments args,
-            TCluster athelyezes, TChargeAccount none) {
+    public TransactionUpdater(UgyletService service, Logger logger, TransactionArguments args,
+            Cluster athelyezes, ChargeAccount none) {
         this.service = service;
         this.args = args;
         this.logger = logger;
@@ -33,7 +33,7 @@ public class TransactionUpdater {
         this.none = none;
     }
 
-    private TransactionUpdater recalculate(List<TTransaction> list) {
+    private TransactionUpdater recalculate(List<Ugylet> list) {
         // the first one should not be updated at all (that is a pivot element)
 
         if (list.isEmpty()) {
@@ -50,11 +50,11 @@ public class TransactionUpdater {
         if (offset == list.size()) return this;
 
         int balance = list.get(offset).getBalance();
-        TChargeAccount ca = list.get(offset).getCa();
+        ChargeAccount ca = list.get(offset).getCa();
 
         info("offset = %d, list.size = %d", offset, list.size());
         for (int i = offset + 1; i < list.size(); ++i) {
-            TTransaction t = list.get(i);
+            Ugylet t = list.get(i);
 
             if (t.isPivot()) {
                 t.setAmount(t.getBalance() - balance);
@@ -94,9 +94,9 @@ public class TransactionUpdater {
         return this;
     }
 
-    private List<TTransaction> findDirtyElements(Date from, Date to, TChargeAccount ca) {
-        TTransaction fromPivot = service.findLastPivotBefore(from, ca);
-        TTransaction toPivot = service.findFirstPivotAfter(to, ca);
+    private List<Ugylet> findDirtyElements(Date from, Date to, ChargeAccount ca) {
+        Ugylet fromPivot = service.findLastPivotBefore(from, ca);
+        Ugylet toPivot = service.findFirstPivotAfter(to, ca);
 
         info("from, to PIVOT elements [can be null as well]: ");
         info("%s", fromPivot);
@@ -105,25 +105,25 @@ public class TransactionUpdater {
         Assert.assertTrue(fromPivot == null || toPivot == null ||
                 fromPivot.getDate().getTime() <= toPivot.getDate().getTime());
 
-        List<TTransaction> dirtyElements = service.findElementsBetween(
+        List<Ugylet> dirtyElements = service.findElementsBetween(
                 fromPivot == null ? from : fromPivot.getDate(),
                 toPivot == null ? null : toPivot.getDate(), ca);
 
         info("the dirty list is as follows:");
-        for (TTransaction t : dirtyElements)
+        for (Ugylet t : dirtyElements)
             info("%s", t);
 
         return dirtyElements;
     }
 
-    private void updateDirtyElements(Date from, Date to, TChargeAccount ca) {
-        List<TTransaction> dirtyElements = findDirtyElements(from, to, ca);
+    private void updateDirtyElements(Date from, Date to, ChargeAccount ca) {
+        List<Ugylet> dirtyElements = findDirtyElements(from, to, ca);
         recalculate(dirtyElements);
     }
 
     public void execute() {
-        TTransaction old = args.getOldtr();
-        TTransaction tr = args.getActtr();
+        Ugylet old = args.getOldtr();
+        Ugylet tr = args.getActtr();
 
         Assert.assertNotNull(
                 String.format("tr.catransfer = %s [tr.catransfer shouldn't be null], tr = %s", tr.getCatransfer(), tr),

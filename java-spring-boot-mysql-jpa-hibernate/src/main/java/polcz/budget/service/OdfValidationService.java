@@ -20,8 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import polcz.budget.global.R;
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TMarket;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Market;
 import polcz.budget.service.helper.OdfRule;
 
 @Service
@@ -34,7 +34,7 @@ public class OdfValidationService {
     LoggerService logs;
 
     /* POST PROCESSING RULES */
-    private Map<TCluster, TMarket> cluster2market; /* during post-processing */
+    private Map<Cluster, Market> cluster2market; /* during post-processing */
     private final OdfRule[] postProcessingRules = {
         (t, msg) -> {
             if (cluster2market.containsKey(t.getCluster()) && t.getCluster().equals(ss.Market_Not_Applicable()))
@@ -70,7 +70,7 @@ public class OdfValidationService {
 //        },
 //        (t, msg) -> {
 //            if (ca.equals(pinfo)) {
-//                // TODO: TProductInfo
+//                // TODO: ProductInfo
 //                logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
 //                return false;
 //            }
@@ -91,7 +91,7 @@ public class OdfValidationService {
         logger = R.getJBossLogger(getClass());
         cluster2market = new HashMap<>();
         for (String[] rule : cluster2market_str) {
-            cluster2market.put(ss.cluster(new TCluster(rule[0])), new TMarket(rule[1]));
+            cluster2market.put(ss.cluster(new Cluster(rule[0])), new Market(rule[1]));
         }
     }
 
@@ -156,6 +156,7 @@ public class OdfValidationService {
 
     public static final String[][] market2market_str = {
         { "Examlpe", "Example" },
+        { "", "" }
     };
 
     static {

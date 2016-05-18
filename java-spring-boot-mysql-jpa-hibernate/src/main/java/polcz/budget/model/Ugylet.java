@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PostLoad;
 import javax.persistence.PrePersist;
@@ -26,14 +24,15 @@ import polcz.budget.global.R;
 import polcz.util.Util;
 
 /**
- * The persistent class for the t_transactions database table.
+ * The persistent class for the ugyletek database table.
+ * ``Ugylet'' [HUN] = ``transaction''.
  */
 @Entity
-@Table(name = "transactions")
-@NamedQueries(value = {
-    @NamedQuery(name = "TTransaction.findOne", query = "SELECT e FROM TTransaction e where e.uid = :uid"),
-    @NamedQuery(name = "TTransaction.findAll", query = "SELECT e FROM TTransaction e") })
-public class TTransaction extends AbstractEntity {
+@Table(name = "ugyletek")
+// @NamedQueries(value = {
+// @NamedQuery(name = "Ugylet.findOne", query = "SELECT e FROM Ugylet e where e.uid = :uid"),
+// @NamedQuery(name = "Ugylet.findAll", query = "SELECT e FROM Ugylet e") })
+public class Ugylet extends AbstractEntity {
     private static final long serialVersionUID = -5174036607489515049L;
     private static final String MSG_PREF = AbstractEntity.class.getSimpleName() + ": ";
 
@@ -60,30 +59,30 @@ public class TTransaction extends AbstractEntity {
     @ManyToOne
     @JsonManagedReference
     @JoinColumn(name = "ca", nullable = false)
-    private TChargeAccount ca;
+    private ChargeAccount ca;
 
     @ManyToOne
     @JoinColumn(name = "catransfer", nullable = false)
-    private TChargeAccount catransfer;
+    private ChargeAccount catransfer;
 
     @ManyToOne
     @JoinColumn(name = "cluster", nullable = false)
-    private TCluster cluster;
+    private Cluster cluster;
 
     @ManyToOne
     @JoinColumn(name = "market")
-    private TMarket market;
+    private Market market;
 
     // @OneToOne(cascade = { CascadeType.ALL })
     // @JoinColumn(name = "pi", nullable = true)
-    // private TProductInfo pi;
+    // private ProductInfo pi;
 
     @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TProductInfo> pis;
+    private List<ProductInfo> pis;
 
     // transient fields:
 
-    transient private TTransactionType type;
+    transient private UgyletType type;
 
     transient private boolean productInfo;
 
@@ -123,35 +122,35 @@ public class TTransaction extends AbstractEntity {
                 + ";  GOT: " + cluster + ", " + catransfer + ";  clIsTransfer=" + clIsTransfer
                 + " catransferIsNone=" + catransferIsNone, !clIsTransfer || !catransferIsNone);
 
-        if (pivot) type = TTransactionType.pivot;
-        else if (clIsTransfer) type = TTransactionType.transfer;
-        else type = TTransactionType.simple;
-        // TODO TTransactionType.exchange
+        if (pivot) type = UgyletType.pivot;
+        else if (clIsTransfer) type = UgyletType.transfer;
+        else type = UgyletType.simple;
+        // TODO UgyletType.exchange
 
     }
 
     private void validateBeforeMerge() {
         /* If this is also a product info then it's type should be simple */
-        Assert.assertTrue(!isProductInfo() || type == TTransactionType.simple);
+        Assert.assertTrue(!isProductInfo() || type == UgyletType.simple);
     }
 
     @SuppressWarnings("unused")
     private void generateInfo() {
-        // if (isProductInfo()) pi = new TProductInfo(this);
+        // if (isProductInfo()) pi = new ProductInfo(this);
         // else pi = null;
     }
 
-    public TTransaction() {}
+    public Ugylet() {}
 
-    public TTransaction(TChargeAccount from, TChargeAccount to, TCluster cl, TMarket mk) {
+    public Ugylet(ChargeAccount from, ChargeAccount to, Cluster cl, Market mk) {
         ca = from;
         cluster = cl;
         market = mk;
         catransfer = to;
     }
 
-    public TTransaction(int amount, int balance, Date date, String remark, TChargeAccount ca,
-            TCluster cluster, TMarket market, boolean pivot) {
+    public Ugylet(int amount, int balance, Date date, String remark, ChargeAccount ca,
+            Cluster cluster, Market market, boolean pivot) {
         this.amount = amount;
         this.balance = balance;
         this.date = date;
@@ -208,49 +207,49 @@ public class TTransaction extends AbstractEntity {
         this.remark = remark;
     }
 
-    public List<TProductInfo> getProductInfos() {
+    public List<ProductInfo> getProductInfos() {
         return this.pis;
     }
 
-    public void setProductInfos(List<TProductInfo> pi) {
+    public void setProductInfos(List<ProductInfo> pi) {
         this.pis = pi;
     }
 
-    public TProductInfo addProductInfo(TProductInfo pi) {
+    public ProductInfo addProductInfo(ProductInfo pi) {
         getProductInfos().add(pi);
-        pi.setTTransaction(this);
+        pi.setUgylet(this);
 
         return pi;
     }
 
-    public TProductInfo removeProductInfo(TProductInfo pi) {
+    public ProductInfo removeProductInfo(ProductInfo pi) {
         getProductInfos().remove(pi);
-        pi.setTTransaction(null);
+        pi.setUgylet(null);
 
         return pi;
     }
 
-    public TChargeAccount getCa() {
+    public ChargeAccount getCa() {
         return this.ca;
     }
 
-    public void setCa(TChargeAccount ca) {
+    public void setCa(ChargeAccount ca) {
         this.ca = ca;
     }
 
-    public TCluster getCluster() {
+    public Cluster getCluster() {
         return this.cluster;
     }
 
-    public void setCluster(TCluster cluster) {
+    public void setCluster(Cluster cluster) {
         this.cluster = cluster;
     }
 
-    public TMarket getMarket() {
+    public Market getMarket() {
         return this.market;
     }
 
-    public void setMarket(TMarket market) {
+    public void setMarket(Market market) {
         this.market = market;
     }
 
@@ -262,28 +261,28 @@ public class TTransaction extends AbstractEntity {
         this.pivot = pivot;
     }
 
-    public TChargeAccount getCatransfer() {
+    public ChargeAccount getCatransfer() {
         return catransfer;
     }
 
-    public void setCatransfer(TChargeAccount catransfer) {
+    public void setCatransfer(ChargeAccount catransfer) {
         this.catransfer = catransfer;
     }
 
-    public TTransactionType getType() {
+    public UgyletType getType() {
         return type;
     }
 
-    public void setType(TTransactionType type) {
+    public void setType(UgyletType type) {
         this.type = type;
     }
 
-    // public TProductInfo getPi()
+    // public ProductInfo getPi()
     // {
     // return pi;
     // }
     //
-    // public void setPi(TProductInfo pi)
+    // public void setPi(ProductInfo pi)
     // {
     // this.pi = pi;
     // }

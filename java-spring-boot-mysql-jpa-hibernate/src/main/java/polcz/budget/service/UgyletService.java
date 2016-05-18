@@ -20,22 +20,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import polcz.budget.global.R;
-import polcz.budget.model.TChargeAccount;
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TMarket;
-import polcz.budget.model.TProductInfo;
-import polcz.budget.model.TTransaction;
-import polcz.budget.model.TTransactionType;
-import polcz.budget.model.TTransaction_;
+import polcz.budget.model.ChargeAccount;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Market;
+import polcz.budget.model.ProductInfo;
+import polcz.budget.model.Ugylet;
+import polcz.budget.model.UgyletType;
+import polcz.budget.model.Ugylet_;
 import polcz.budget.service.helper.TransactionArguments;
 import polcz.budget.service.helper.TransactionUpdater;
 import polcz.util.Util;
 
 @Service
-public class TransactionService extends AbstractService<TTransaction> {
+public class UgyletService extends AbstractService<Ugylet> {
 
-    public TransactionService() {
-        super(TTransaction.class);
+    public UgyletService() {
+        super(Ugylet.class);
     }
 
     @PersistenceContext
@@ -48,11 +48,11 @@ public class TransactionService extends AbstractService<TTransaction> {
     StartupService ss;
 
     private static class SelectByArguments {
-        TChargeAccount ca;
+        ChargeAccount ca;
         boolean considerJustSourceCa;
-        TChargeAccount cat;
-        TCluster cl;
-        TMarket mk;
+        ChargeAccount cat;
+        Cluster cl;
+        Market mk;
         Date minDate;
         Date maxDate;
         boolean pivot;
@@ -61,7 +61,7 @@ public class TransactionService extends AbstractService<TTransaction> {
         // int limit; // TODO: backend-side pagination
 
         public SelectByArguments(
-                TChargeAccount ca, boolean considerJustSourceCa, TChargeAccount cat, TCluster cl, TMarket mk,
+                ChargeAccount ca, boolean considerJustSourceCa, ChargeAccount cat, Cluster cl, Market mk,
                 Date minDate, Date maxDate,
                 boolean pivot, boolean asc, boolean firstResult) {
             this.ca = ca;
@@ -83,7 +83,7 @@ public class TransactionService extends AbstractService<TTransaction> {
                 ss.Athelyezes(), ss.none()).execute();
 
         if (args.getActtr().isProductInfo()) {
-            TProductInfo pi = new TProductInfo(args.getActtr());
+            ProductInfo pi = new ProductInfo(args.getActtr());
             service.update(pi);
             // TODO: cascade instead of this fake
         }
@@ -92,22 +92,22 @@ public class TransactionService extends AbstractService<TTransaction> {
     // @Resource
     // private UserTransaction utx;
 
-    private boolean makeRollback() {
-        throw new NullPointerException("makeRollback: not implemented yet");
-        // try
-        // {
-        // utx.rollback();
-        // }
-        // catch (IllegalStateException | SecurityException | SystemException e)
-        // {
-        // logger.fatal("PPOLCZ: Rollback failed!");
-        // e.printStackTrace();
-        // }
-    }
+    // private boolean makeRollback() { // rollback should be done implicitly
+    // throw new NullPointerException("makeRollback: not implemented yet");
+    // try
+    // {
+    // utx.rollback();
+    // }
+    // catch (IllegalStateException | SecurityException | SystemException e)
+    // {
+    // logger.fatal("PPOLCZ: Rollback failed!");
+    // e.printStackTrace();
+    // }
+    // }
 
     @Transactional
     public boolean makeTransaction(TransactionArguments args) {
-        TTransaction entity = args.getActtr();
+        Ugylet entity = args.getActtr();
         validate(entity, args.getType());
         logger.infof("merge or persist: %s ", entity);
 
@@ -121,10 +121,10 @@ public class TransactionService extends AbstractService<TTransaction> {
                 break;
 
             case R.TR_REMOVAL:
-                TTransaction tr = args.getOldtr();
+                Ugylet tr = args.getOldtr();
                 args.setOldtr(null);
 
-                // if (tr.getProductInfos() != null)
+                // if (tr.geProductInfos() != null)
                 // {
                 // /* TODO: cascade */
                 // for (TProductInfo pi : tr.getProductInfos())
@@ -145,40 +145,40 @@ public class TransactionService extends AbstractService<TTransaction> {
     }
 
     @Transactional
-    public void edit(TTransaction tr) {
+    public void edit(Ugylet tr) {
         service.update(tr);
     }
 
-    private TypedQuery<TTransaction> find(SelectByArguments args) {
+    private TypedQuery<Ugylet> find(SelectByArguments args) {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<TTransaction> cq = builder.createQuery(TTransaction.class);
-        Root<TTransaction> root = cq.from(TTransaction.class);
+        CriteriaQuery<Ugylet> cq = builder.createQuery(Ugylet.class);
+        Root<Ugylet> root = cq.from(Ugylet.class);
 
         List<Predicate> preds = new ArrayList<>();
 
         /* build up the predicates */
 
         if (args.ca != null) {
-            if (args.considerJustSourceCa) preds.add(builder.equal(root.get(TTransaction_.ca), args.ca));
+            if (args.considerJustSourceCa) preds.add(builder.equal(root.get(Ugylet_.ca), args.ca));
 
             else preds.add(builder.or(
-                    builder.equal(root.get(TTransaction_.ca), args.ca),
-                    builder.equal(root.get(TTransaction_.catransfer), args.ca)));
+                    builder.equal(root.get(Ugylet_.ca), args.ca),
+                    builder.equal(root.get(Ugylet_.catransfer), args.ca)));
         }
 
-        if (args.cat != null) preds.add(builder.equal(root.get(TTransaction_.catransfer), args.cat));
+        if (args.cat != null) preds.add(builder.equal(root.get(Ugylet_.catransfer), args.cat));
 
-        if (args.cl != null) preds.add(builder.equal(root.get(TTransaction_.cluster), args.cl));
+        if (args.cl != null) preds.add(builder.equal(root.get(Ugylet_.cluster), args.cl));
 
-        if (args.mk != null) preds.add(builder.equal(root.get(TTransaction_.market), args.mk));
+        if (args.mk != null) preds.add(builder.equal(root.get(Ugylet_.market), args.mk));
 
-        if (args.pivot) preds.add(builder.isTrue(root.get(TTransaction_.pivot)));
+        if (args.pivot) preds.add(builder.isTrue(root.get(Ugylet_.pivot)));
 
         if (args.minDate != null)
-            preds.add(builder.greaterThanOrEqualTo(root.get(TTransaction_.date), args.minDate));
+            preds.add(builder.greaterThanOrEqualTo(root.get(Ugylet_.date), args.minDate));
 
         if (args.maxDate != null)
-            preds.add(builder.lessThanOrEqualTo(root.get(TTransaction_.date), args.maxDate));
+            preds.add(builder.lessThanOrEqualTo(root.get(Ugylet_.date), args.maxDate));
 
         /* convert the predicates into a simple array */
         Predicate[] predsArray = new Predicate[preds.size()];
@@ -190,17 +190,17 @@ public class TransactionService extends AbstractService<TTransaction> {
         /* order by statements */
         if (args.asc) {
             cq.orderBy(
-                    builder.asc(root.get(TTransaction_.date)),
-                    builder.asc(root.get(TTransaction_.pivot)),
-                    builder.asc(root.get(TTransaction_.uid)));
+                    builder.asc(root.get(Ugylet_.date)),
+                    builder.asc(root.get(Ugylet_.pivot)),
+                    builder.asc(root.get(Ugylet_.uid)));
         } else {
             cq.orderBy(
-                    builder.desc(root.get(TTransaction_.date)),
-                    builder.desc(root.get(TTransaction_.pivot)),
-                    builder.desc(root.get(TTransaction_.uid)));
+                    builder.desc(root.get(Ugylet_.date)),
+                    builder.desc(root.get(Ugylet_.pivot)),
+                    builder.desc(root.get(Ugylet_.uid)));
         }
 
-        TypedQuery<TTransaction> tq = em.createQuery(cq);
+        TypedQuery<Ugylet> tq = em.createQuery(cq);
 
         if (args.firstResult) tq.setMaxResults(1).setFirstResult(0);
 
@@ -223,8 +223,8 @@ public class TransactionService extends AbstractService<TTransaction> {
      * @param filterMarket
      * @return
      */
-    public List<TTransaction> findAll(TChargeAccount filterCa, TChargeAccount filterCatransfer,
-            TCluster filterCluster, TMarket filterMarket) {
+    public List<Ugylet> findAll(ChargeAccount filterCa, ChargeAccount filterCatransfer,
+            Cluster filterCluster, Market filterMarket) {
         return find(
                 new SelectByArguments(filterCa, false, filterCatransfer, filterCluster, filterMarket,
                         null, null, /* no temporal limitation */
@@ -238,7 +238,7 @@ public class TransactionService extends AbstractService<TTransaction> {
      * @param ca
      * @return
      */
-    public TTransaction findLastPivotBefore(Date date, TChargeAccount ca) {
+    public Ugylet findLastPivotBefore(Date date, ChargeAccount ca) {
         return findSingleOrNull(
                 find(new SelectByArguments(
                         ca, true /* test only source ca [from:ca] */, null, null, null,
@@ -253,7 +253,7 @@ public class TransactionService extends AbstractService<TTransaction> {
      * @param ca
      * @return
      */
-    public TTransaction findFirstPivotAfter(Date date, TChargeAccount ca) {
+    public Ugylet findFirstPivotAfter(Date date, ChargeAccount ca) {
         /**
          * [1]: in case of a pivot element the inequality between tr.date and minDate should be strict, in case of a
          * simple (non-pivot) element, it is enough to use only grater or equal. <br>
@@ -275,7 +275,7 @@ public class TransactionService extends AbstractService<TTransaction> {
      * @param ca
      * @return
      */
-    public List<TTransaction> findElementsBetween(Date first, Date last, TChargeAccount ca) {
+    public List<Ugylet> findElementsBetween(Date first, Date last, ChargeAccount ca) {
         return find(
                 new SelectByArguments(
                         ca, false /* not only source ca but beneficiary ca as well */, null, null, null,
@@ -289,7 +289,7 @@ public class TransactionService extends AbstractService<TTransaction> {
      * @param tr
      * @return
      */
-    public TTransaction findFirstSimpleTransactionBefore(TTransaction tr) {
+    public Ugylet findFirstSimpleTransactionBefore(Ugylet tr) {
         return findSingleOrNull(find(
                 new SelectByArguments(
                         tr.getCa(), true, null, null, null,
@@ -297,11 +297,11 @@ public class TransactionService extends AbstractService<TTransaction> {
                         false /* not only pivot */, true /* ASC */, true /* single result */)));
     }
 
-    public TTransaction findLastPivotBefore(TTransaction tr) {
+    public Ugylet findLastPivotBefore(Ugylet tr) {
         return findLastPivotBefore(tr.getDate(), tr.getCa());
     }
 
-    public TTransaction findFirstPivotAfter(TTransaction tr) {
+    public Ugylet findFirstPivotAfter(Ugylet tr) {
         return findFirstPivotAfter(tr.getDate(), tr.getCa());
     }
 
@@ -310,14 +310,14 @@ public class TransactionService extends AbstractService<TTransaction> {
      * 
      * @param dbTransactionType
      */
-    public TTransaction validate(TTransaction tr, int dbTransactionType) {
+    public Ugylet validate(Ugylet tr, int dbTransactionType) {
         /* this is processed after the JSF validation was done */
 
         /**
          * TODO TODO: ezt egy kicsit szepiteni kellene!!!!!! TODO
          */
 
-        String msg = this.getClass().getSimpleName() + "::validate(TTransaction tr) ";
+        String msg = this.getClass().getSimpleName() + "::validate(Ugylet tr) ";
 
         /*
          * In case when the first row is going to be erased,
@@ -331,7 +331,7 @@ public class TransactionService extends AbstractService<TTransaction> {
 
         /* Check transaction type field */
         boolean needTypePrediction = false;
-        TTransactionType type = tr.getType();
+        UgyletType type = tr.getType();
         if (type == null) {
             logger.warn(msg + "tr.type == null [transaction type will be predicted using the given data]");
             needTypePrediction = true;
@@ -344,36 +344,36 @@ public class TransactionService extends AbstractService<TTransaction> {
         if (tr.getCatransfer() == null) {
             Assert.assertNotEquals(
                     "In transfer mode the catransfer shouldn't be null, check the JSF validator bean (this error should be checked there)",
-                    type, TTransactionType.transfer);
+                    type, UgyletType.transfer);
             logger.warn(msg + "destination charge account is unassigned (null), assumed to be 'none'");
             tr.setCatransfer(ss.none());
         }
 
-        if (type == TTransactionType.transfer || !tr.getCatransfer().equals(ss.none())) {
+        if (type == UgyletType.transfer || !tr.getCatransfer().equals(ss.none())) {
             Assert.assertFalse("In transfer mode the catransfer shouldn't be 'none'",
                     tr.getCatransfer().equals(ss.none()));
             Assert.assertTrue("Type should be: transfer, got: " + type.getName(),
-                    type == null || type == TTransactionType.transfer);
+                    type == null || type == UgyletType.transfer);
             Assert.assertFalse(tr.isPivot());
 
             /* auxiliary settings */
-            type = TTransactionType.transfer;
+            type = UgyletType.transfer;
             tr.setPivot(false);
             tr.setBalance(0);
             tr.setCluster(ss.Athelyezes());
             tr.setMarket(ss.Market_Not_Applicable());
-        } else if (type == TTransactionType.pivot || tr.isPivot() || tr.getCluster().equals(ss.Szamolas())) {
+        } else if (type == UgyletType.pivot || tr.isPivot() || tr.getCluster().equals(ss.Szamolas())) {
             /* These must be satisfied */
             Assert.assertEquals(tr.getCatransfer(), ss.none());
-            Assert.assertTrue(type == null || type == TTransactionType.pivot);
+            Assert.assertTrue(type == null || type == UgyletType.pivot);
 
             /* auxiliary settings */
-            type = TTransactionType.pivot;
+            type = UgyletType.pivot;
             tr.setPivot(true);
             tr.setAmount(0);
             tr.setCluster(ss.Szamolas());
             tr.setMarket(ss.Market_Not_Applicable());
-        } else if (type == TTransactionType.simple) {
+        } else if (type == UgyletType.simple) {
             Assert.assertEquals("The destination charge account should be none in a simple transaction",
                     tr.getCatransfer(), ss.none());
 

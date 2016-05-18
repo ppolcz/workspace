@@ -26,11 +26,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import polcz.budget.global.R;
-import polcz.budget.model.TChargeAccount;
-import polcz.budget.model.TCluster;
-import polcz.budget.model.TMarket;
-import polcz.budget.model.TTransaction;
-import polcz.budget.model.TTransactionType;
+import polcz.budget.model.ChargeAccount;
+import polcz.budget.model.Cluster;
+import polcz.budget.model.Market;
+import polcz.budget.model.Ugylet;
+import polcz.budget.model.UgyletType;
 import polcz.budget.service.helper.OdfRule;
 import polcz.budget.service.helper.TransactionArguments;
 
@@ -42,7 +42,7 @@ public class OdfLoaderService {
     EntityService service;
 
     @Autowired
-    TransactionService trService;
+    UgyletService trService;
 
     @Autowired
     StartupService ss;
@@ -55,21 +55,21 @@ public class OdfLoaderService {
 
     Logger logger;
 
-    private Map<TChargeAccount, Integer> indCa = new HashMap<>();
+    private Map<ChargeAccount, Integer> indCa = new HashMap<>();
 
-    private Map<String, TCluster> cllist;
-    private Map<String, TChargeAccount> calist;
-    private Map<String, TMarket> mklist;
+    private Map<String, Cluster> cllist;
+    private Map<String, ChargeAccount> calist;
+    private Map<String, Market> mklist;
 
     /* charge accounts */
-    private TChargeAccount none, pkez, potp, dkez, dotp, nptc, info, pinfo;
+    private ChargeAccount none, pkez, potp, dkez, dotp, nptc, info, pinfo;
 
     /* clusters */
-    private TCluster /* Nem_Adott, */ Utazas, Lakas_Berendezes, Ruhazkodas, Munkaeszkozok, Szamolas,
+    private Cluster /* Nem_Adott, */ Utazas, Lakas_Berendezes, Ruhazkodas, Munkaeszkozok, Szamolas,
             Athelyezes, Szukseges, Napi_Szukseglet, Egyeb_Kiadas /* , Rezsi */;
 
     /* markets */
-    private TMarket Market_Not_Applicable;
+    private Market Market_Not_Applicable;
 
     public void process() {
         init();
@@ -81,15 +81,15 @@ public class OdfLoaderService {
 
         none = ss.none();
         pkez = ss.pkez();
-        potp = ss.ca(new TChargeAccount("potp", "Peti OTP Bank"));
-        dkez = ss.ca(new TChargeAccount("dkez", "Dori kezpenz"));
-        dotp = ss.ca(new TChargeAccount("dotp", "Dori OTP Bank"));
-        nptc = ss.ca(new TChargeAccount("nptc", "nagypenztarca"));
+        potp = ss.ca(new ChargeAccount("potp", "Peti OTP Bank"));
+        dkez = ss.ca(new ChargeAccount("dkez", "Dori kezpenz"));
+        dotp = ss.ca(new ChargeAccount("dotp", "Dori OTP Bank"));
+        nptc = ss.ca(new ChargeAccount("nptc", "nagypenztarca"));
 
-        info = new TChargeAccount("info"); /* not persisted */
+        info = new ChargeAccount("info"); /* not persisted */
         info.setUid(123123);
 
-        pinfo = new TChargeAccount("pinfo"); /* not persisted */
+        pinfo = new ChargeAccount("pinfo"); /* not persisted */
         pinfo.setUid(1931212);
 
         Szamolas = ss.Szamolas();
@@ -98,11 +98,11 @@ public class OdfLoaderService {
         Szukseges = ss.Szukseges();
         Napi_Szukseglet = ss.Napi_Szukseglet();
         Egyeb_Kiadas = ss.Egyeb_Kiadas();
-        Utazas = ss.cluster(new TCluster("Utazas"));
-        Lakas_Berendezes = ss.cluster(new TCluster("Lakas_Berendezes"));
-        Ruhazkodas = ss.cluster(new TCluster("Ruhazkodas"));
-        Munkaeszkozok = ss.cluster(new TCluster("Munkaeszkozok"));
-        // Rezsi = ss.cluster(new TCluster("Rezsi"));
+        Utazas = ss.cluster(new Cluster("Utazas"));
+        Lakas_Berendezes = ss.cluster(new Cluster("Lakas_Berendezes"));
+        Ruhazkodas = ss.cluster(new Cluster("Ruhazkodas"));
+        Munkaeszkozok = ss.cluster(new Cluster("Munkaeszkozok"));
+        // Rezsi = ss.cluster(new Cluster("Rezsi"));
 
         Market_Not_Applicable = ss.Market_Not_Applicable();
     }
@@ -113,7 +113,7 @@ public class OdfLoaderService {
      */
     private void parse() {
         /* Charge accounts appearing in the ODF document */
-        calist = new HashMap<String, TChargeAccount>();
+        calist = new HashMap<String, ChargeAccount>();
         {
             calist.put("pkez", pkez);
             calist.put("potp", potp);
@@ -154,13 +154,13 @@ public class OdfLoaderService {
                     continue;
 
                 /* find parent by its name */
-                TCluster parent = service.findByName(parentname, TCluster.class);
+                Cluster parent = service.findByName(parentname, Cluster.class);
 
                 /* if parent not exists (YET), initialize it (later will be updated) */
-                if (parent == null && !parentname.isEmpty()) parent = service.update(new TCluster(parentname));
+                if (parent == null && !parentname.isEmpty()) parent = service.update(new Cluster(parentname));
 
                 /* insert or update cluster */
-                TCluster cluster = service.update(new TCluster(sqlclname, sgn, parent), TCluster.class);
+                Cluster cluster = service.update(new Cluster(sqlclname, sgn, parent), Cluster.class);
                 cllist.put(odfclname, cluster);
 
                 // logger.infof("odf = %s, sql = %s ---> %s", odfclname, sqlclname, cluster);
@@ -176,10 +176,10 @@ public class OdfLoaderService {
         logger.info("Minden rendben, lefutottam");
     }
 
-    // private Map<TChargeAccount, Integer> balance = new HashMap<>();
+    // private Map<ChargeAccount, Integer> balance = new HashMap<>();
 
-    private void initialBalance(Date date, TChargeAccount ca, int balance) {
-        TTransaction tr = new TTransaction();
+    private void initialBalance(Date date, ChargeAccount ca, int balance) {
+        Ugylet tr = new Ugylet();
         tr.setDate(date);
         tr.setCa(ca);
         tr.setCluster(Szamolas);
@@ -188,7 +188,7 @@ public class OdfLoaderService {
         tr.setCatransfer(none);
         tr.setMarket(Market_Not_Applicable);
         tr.setRemark("initial pivot [the very first]");
-        tr.setType(TTransactionType.pivot);
+        tr.setType(UgyletType.pivot);
 
         // service.update(tr); // TODO: legyegesen le van egyszerusitve a regihez kepest
         trService.makeTransaction(new TransactionArguments(tr, null, R.TR_INSERTION, "initial balance"));
@@ -208,7 +208,7 @@ public class OdfLoaderService {
             Date date = getDate(row, IND_DATE);
 
             int i = 0;
-            for (TChargeAccount ca : new TChargeAccount[] { potp, pkez, dotp, dkez }) {
+            for (ChargeAccount ca : new ChargeAccount[] { potp, pkez, dotp, dkez }) {
                 indCa.put(ca, i);
                 initialBalance(date, ca, getInteger(row, IND_CAIDS + i));
                 ++i;
@@ -257,7 +257,7 @@ public class OdfLoaderService {
         Date date;
 
         private Row row;
-        TTransaction tr = new TTransaction();
+        Ugylet tr = new Ugylet();
 
         void loadBalance() {
             balance = getInteger(row, IND_CAIDS + indCa.get(tr.getCa()));
@@ -303,7 +303,7 @@ public class OdfLoaderService {
         }
 
         public boolean resolveCa() {
-            TChargeAccount ca = calist.get(caname);
+            ChargeAccount ca = calist.get(caname);
             if (ca == null) {
                 try {
                     /* this transaction's form is not filled in */
@@ -322,7 +322,7 @@ public class OdfLoaderService {
             }
 
             if (ca.equals(pinfo)) {
-                // TODO: TProductInfo
+                // TODO: ProductInfo
                 logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
                 return false;
             }
@@ -348,13 +348,13 @@ public class OdfLoaderService {
             if (market2market.containsKey(mkname))
                 mkname = market2market.get(mkname);
 
-            TMarket market;
+            Market market;
             if (mkname.isEmpty()) {
                 market = Market_Not_Applicable;
             } else if (mklist.containsKey(mkname)) {
                 market = mklist.get(mkname);
             } else {
-                market = service.update(new TMarket(mkname, ""), TMarket.class);
+                market = service.update(new Market(mkname, ""), Market.class);
                 mklist.put(mkname, market);
             }
 
@@ -368,7 +368,7 @@ public class OdfLoaderService {
                 tr.setCatransfer(calist.get(clname));
                 tr.setCluster(Athelyezes);
                 tr.setPivot(false);
-                tr.setType(TTransactionType.transfer);
+                tr.setType(UgyletType.transfer);
                 return true;
 
             }
@@ -379,7 +379,7 @@ public class OdfLoaderService {
         }
 
         public boolean resolveClusterIfNotTransfer() {
-            TCluster cluster = null;
+            Cluster cluster = null;
             if (!clname.isEmpty()) {
                 cluster = cllist.get(clname);
             }
@@ -390,7 +390,7 @@ public class OdfLoaderService {
         }
 
         public boolean guessCluster() {
-            TCluster cluster = tr.getCluster();
+            Cluster cluster = tr.getCluster();
 
             /* Guess cluster knowing the market's name and some predefined rules */
             if (cluster == null) {
@@ -426,9 +426,9 @@ public class OdfLoaderService {
         public void resolveTrTypeIfNotTransfer() {
             if (tr.getCluster().equals(Szamolas)) {
                 tr.setPivot(true);
-                tr.setType(TTransactionType.pivot);
+                tr.setType(UgyletType.pivot);
             } else
-                tr.setType(TTransactionType.simple);
+                tr.setType(UgyletType.simple);
         }
 
         public void finalize() {
