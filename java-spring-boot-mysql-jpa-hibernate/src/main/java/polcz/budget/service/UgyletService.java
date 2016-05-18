@@ -81,7 +81,7 @@ public class UgyletService extends AbstractService<Ugylet> {
         args.validate();
         new TransactionUpdater(this, Logger.getLogger("PPOLCZ_" + TransactionUpdater.class), args,
                 ss.Athelyezes(), ss.none()).execute();
-
+        
         if (args.getActtr().isProductInfo()) {
             ProductInfo pi = new ProductInfo(args.getActtr());
             service.update(pi);

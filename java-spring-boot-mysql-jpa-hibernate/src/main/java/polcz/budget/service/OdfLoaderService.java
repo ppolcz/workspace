@@ -299,7 +299,7 @@ public class OdfLoaderService {
             /* initialize transaction object */
             tr.setRemark(remark);
             tr.setDate(date);
-            tr.setProductInfo(remark.startsWith(R.ODF_PRODUCT_INFO_SUFFIX));
+            // tr.setProductInfo(remark.startsWith(R.ODF_PRODUCT_INFO_SUFFIX)); // TODO
         }
 
         public boolean resolveCa() {
