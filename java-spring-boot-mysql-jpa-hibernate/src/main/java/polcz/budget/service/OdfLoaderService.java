@@ -1,17 +1,6 @@
 package polcz.budget.service;
 
-import static polcz.budget.service.OdfValidationService.IND_CAIDS;
-import static polcz.budget.service.OdfValidationService.IND_DATE;
-import static polcz.budget.service.OdfValidationService.IND_TRS;
-import static polcz.budget.service.OdfValidationService.lkbrnMarkets;
-import static polcz.budget.service.OdfValidationService.market2market;
-import static polcz.budget.service.OdfValidationService.munkaMarkets;
-import static polcz.budget.service.OdfValidationService.nMarkets;
-import static polcz.budget.service.OdfValidationService.nptcIntroductionRowNr;
-import static polcz.budget.service.OdfValidationService.ruhaMarkets;
-import static polcz.budget.service.OdfValidationService.sdf;
-import static polcz.budget.service.OdfValidationService.szuksegesMarkets;
-import static polcz.budget.service.OdfValidationService.utazasMarkets;
+import static polcz.budget.service.OdfValidationService.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -62,7 +51,7 @@ public class OdfLoaderService {
     private Map<String, Market> mklist;
 
     /* charge accounts */
-    private ChargeAccount none, pkez, potp, dkez, dotp, nptc, info, pinfo;
+    private ChargeAccount none, /* pkez, potp, dkez, dotp, */ nptc, info, pinfo;
 
     /* clusters */
     private Cluster /* Nem_Adott, */ Utazas, Lakas_Berendezes, Ruhazkodas, Munkaeszkozok, Szamolas,
@@ -80,10 +69,10 @@ public class OdfLoaderService {
         logger = R.getJBossLogger(this.getClass());
 
         none = ss.none();
-        pkez = ss.pkez();
-        potp = ss.ca(new ChargeAccount("potp", "Peti OTP Bank"));
-        dkez = ss.ca(new ChargeAccount("dkez", "Dori kezpenz"));
-        dotp = ss.ca(new ChargeAccount("dotp", "Dori OTP Bank"));
+        // pkez = ss.pkez();
+        // potp = ss.ca(new ChargeAccount("potp", "Peti OTP Bank"));
+        // dkez = ss.ca(new ChargeAccount("dkez", "Dori kezpenz"));
+        // dotp = ss.ca(new ChargeAccount("dotp", "Dori OTP Bank"));
         nptc = ss.ca(new ChargeAccount("nptc", "nagypenztarca"));
 
         info = new ChargeAccount("info"); /* not persisted */
@@ -113,16 +102,6 @@ public class OdfLoaderService {
      */
     private void parse() {
         /* Charge accounts appearing in the ODF document */
-        calist = new HashMap<String, ChargeAccount>();
-        {
-            calist.put("pkez", pkez);
-            calist.put("potp", potp);
-            calist.put("dkez", dkez);
-            calist.put("dotp", dotp);
-            // calist.put("nptc", nptc);
-            calist.put("info", info);
-            calist.put("pinfo", pinfo);
-        }
 
         // --------------------
 
@@ -135,6 +114,33 @@ public class OdfLoaderService {
 
             logger.info("Kivalasztom a Validity tablat");
             Table valTable = data.getTableByName("Validity");
+            logger.info("Kivalasztom a fo tablat");
+            Table mainTable = data.getTableByName("Koltsegvetes");
+
+            calist = new HashMap<String, ChargeAccount>();
+            {
+
+                Row row = mainTable.getRowByIndex(1);
+                Row rowInit = mainTable.getRowByIndex(startIndex - 1);
+                Date date = getDate(rowInit, IND_DATE);
+                for (int i = IND_CAIDS; i < TR_OFFSET; i++) {
+                    String name = getString(row, i);
+                    ChargeAccount ca = ss.ca(new ChargeAccount(name));
+                    calist.put(name, ca);
+                    logger.info(name);
+
+                    indCa.put(ca, i);
+                    initialBalance(date, ca, getInteger(rowInit, IND_CAIDS + i));
+                }
+                // calist.put("pkez", pkez);
+                // calist.put("potp", potp);
+                // calist.put("dkez", dkez);
+                // calist.put("dotp", dotp);
+                // calist.put("nptc", nptc);
+                calist.put("info", info);
+                calist.put("pinfo", pinfo);
+            }
+
             final int valFirstRow = 1;
 
             cllist = new HashMap<>();
@@ -167,9 +173,7 @@ public class OdfLoaderService {
             }
 
             /* parse table Koltsegvetes_Uj */
-            logger.info("Kivalasztom a fo tablat");
-            Table table = data.getTableByName("Koltsegvetes_Uj");
-            koltsegvetesUj(table, startIndex);
+            koltsegvetesUj(mainTable, startIndex);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -205,14 +209,14 @@ public class OdfLoaderService {
         /* I read the very first row after the header, which contains the first balance */
         {
             Row row = table.getRowByIndex(startIndex - 1);
-            Date date = getDate(row, IND_DATE);
-
-            int i = 0;
-            for (ChargeAccount ca : new ChargeAccount[] { potp, pkez, dotp, dkez }) {
-                indCa.put(ca, i);
-                initialBalance(date, ca, getInteger(row, IND_CAIDS + i));
-                ++i;
-            }
+            // Date date = getDate(row, IND_DATE);
+            //
+            // int i = 0;
+            // for (ChargeAccount ca : new ChargeAccount[] { potp, pkez, dotp, dkez }) {
+            // indCa.put(ca, i);
+            // initialBalance(date, ca, getInteger(row, IND_CAIDS + i));
+            // ++i;
+            // }
 
             /* nptc */
             indCa.put(nptc, 3);
