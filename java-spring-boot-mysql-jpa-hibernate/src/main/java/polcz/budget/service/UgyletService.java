@@ -140,7 +140,8 @@ public class UgyletService extends AbstractService<Ugylet> {
                 // makeRollback();
         }
 
-        if (args.getActtr() != null) executeTransaction(args);
+        // TODO: itt csunyan belenyultam: !args.getActtr().isInfo() [2016-07-30-13-36-46]
+        if (args.getActtr() != null && !args.getActtr().isInfo()) executeTransaction(args);
         return true;
     }
 

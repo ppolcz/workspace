@@ -85,6 +85,7 @@ public class Ugylet extends AbstractEntity {
     transient private UgyletType type;
 
     transient private boolean productInfo;
+    transient private boolean info;
 
     // private boolean isInfo()
     // {
@@ -293,6 +294,14 @@ public class Ugylet extends AbstractEntity {
 
     public void setProductInfo(boolean pi) {
         this.productInfo = pi;
+    }
+
+    public boolean isInfo() {
+        return info;
+    }
+
+    public void setInfo(boolean info) {
+        this.info = info;
     }
 
     public int getEndofdayBalance() {

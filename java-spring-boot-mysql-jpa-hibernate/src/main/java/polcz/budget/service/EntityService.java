@@ -95,10 +95,8 @@ public class EntityService {
 
         try {
             T res = q.getSingleResult();
-            System.out.println("Result = " + res);
             return res;
         } catch (NoResultException ex) {
-            System.out.println("No result");
             return null;
         }
     }

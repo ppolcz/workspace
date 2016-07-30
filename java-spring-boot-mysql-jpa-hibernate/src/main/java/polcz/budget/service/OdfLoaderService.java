@@ -60,7 +60,10 @@ public class OdfLoaderService {
     /* markets */
     private Market Market_Not_Applicable;
 
-    public void process() {
+    private String odfDocumentPath;
+
+    public void process(String odfName) {
+        odfDocumentPath = "/home/ppolcz/Dropbox/" + odfName;
         init();
         parse();
     }
@@ -105,32 +108,36 @@ public class OdfLoaderService {
 
         // --------------------
 
-        String odfDocumentPath = "/home/ppolcz/Dropbox/koltsegvetes.ods";
         int startIndex = 3;
 
         try {
+            /* Load ODF document and its tables */
+
             logger.info("Elkezdtem olvasni a dokumentumot");
             SpreadsheetDocument data = SpreadsheetDocument.loadDocument(odfDocumentPath);
-
+            
             logger.info("Kivalasztom a Validity tablat");
             Table valTable = data.getTableByName("Validity");
+            
             logger.info("Kivalasztom a fo tablat");
             Table mainTable = data.getTableByName("Koltsegvetes");
 
             calist = new HashMap<String, ChargeAccount>();
             {
+                /* build charge accounts list: [1] those, who require update */
 
-                Row row = mainTable.getRowByIndex(1);
-                Row rowInit = mainTable.getRowByIndex(startIndex - 1);
-                Date date = getDate(rowInit, IND_DATE);
+                Row rowAccountNames = mainTable.getRowByIndex(1);
+                Row rowInitialBalance = mainTable.getRowByIndex(startIndex - 1);
+                Date date = getDate(rowInitialBalance, IND_DATE);
                 for (int i = IND_CAIDS; i < TR_OFFSET; i++) {
-                    String name = getString(row, i);
+                    String name = getString(rowAccountNames, i);
                     ChargeAccount ca = ss.ca(new ChargeAccount(name));
                     calist.put(name, ca);
                     logger.info(name);
 
                     indCa.put(ca, i);
-                    initialBalance(date, ca, getInteger(rowInit, IND_CAIDS + i));
+                    logger.info(getString(rowInitialBalance, i));
+                    initialBalance(date, ca, getInteger(rowInitialBalance, i));
                 }
                 // calist.put("pkez", pkez);
                 // calist.put("potp", potp);
@@ -139,6 +146,24 @@ public class OdfLoaderService {
                 // calist.put("nptc", nptc);
                 calist.put("info", info);
                 calist.put("pinfo", pinfo);
+
+                /* build charge accounts list: [2] those, who do not require update (informational transactions) */
+            
+                for (int i = 1; i < 1000; i++) {
+                    Row row = valTable.getRowByIndex(i);
+                    int prop = getInteger(row, VALIDITY_CA_PROP_COL);
+                    String name = getString(row, VALIDITY_CA_NAME_COL).toLowerCase();
+                    String desc = getString(row, VALIDITY_CA_DESC_COL);
+
+                    logger.info(name + " " + desc);
+                    if (prop != 1 && !calist.containsKey(name) && !name.isEmpty()) {
+                        logger.info(name + " " + desc + " [OK]");
+                        ChargeAccount ca = ss.ca(new ChargeAccount(name, desc));
+                        calist.put(name, ca);
+                    }
+                    
+                    if (name.isEmpty()) break;
+                }
             }
 
             final int valFirstRow = 1;
@@ -219,7 +244,7 @@ public class OdfLoaderService {
             // }
 
             /* nptc */
-            indCa.put(nptc, 3);
+            indCa.put(nptc, indCa.get(calist.get("dkez")));
             row = table.getRowByIndex(nptcIntroductionRowNr);
             initialBalance(getDate(row, IND_DATE), nptc, getInteger(row, IND_CAIDS + 3));
         }
@@ -264,7 +289,14 @@ public class OdfLoaderService {
         Ugylet tr = new Ugylet();
 
         void loadBalance() {
-            balance = getInteger(row, IND_CAIDS + indCa.get(tr.getCa()));
+
+            if (tr.getCa() != null && indCa.containsKey(tr.getCa()))
+                balance = getInteger(row, indCa.get(tr.getCa()));
+            else if (tr.getCa() != null && tr.getCa().getName() != null && !tr.getCa().getName().isEmpty()) {
+                balance = 0;
+                remark = "INFO: " + remark;
+                tr.setInfo(true);
+            } else throw new NullPointerException("loadBalance: " + tr.toString());
 
             /* update transaction object */
             tr.setBalance(balance);
@@ -307,9 +339,13 @@ public class OdfLoaderService {
         }
 
         public boolean resolveCa() {
+            // logger.info("resolveCa - debug: caname = " + caname);
             ChargeAccount ca = calist.get(caname);
-            if (ca == null) {
+            if (ca == null || ca.getName().isEmpty() /* for the sake of safety */) {
                 try {
+                    Assert.assertTrue(errmsg + OdfLoaderService.class.getName() + "::resolveCa() - "
+                            + "calist should not contain the empty string!", ca == null);
+
                     /* this transaction's form is not filled in */
                     Assert.assertTrue(errmsg + "ca is NOT info, BUT market || cluster is NOT NULL. "
                             + "Perhaps, this transaction's form is not filled in. tr: " + tr,
@@ -330,7 +366,8 @@ public class OdfLoaderService {
                 logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
                 return false;
             }
-            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be null", ca, null);
+            Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be null or empty string", ca, null);
+            Assert.assertFalse(errmsg + "At this point the charge account mustn't be null or empty string", ca.getName().isEmpty());
             Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be none", ca, none);
             Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be pinfo", ca, pinfo);
             Assert.assertNotEquals(errmsg + "At this point the charge account mustn't be info", ca, info);
@@ -343,6 +380,7 @@ public class OdfLoaderService {
             /* resolve balance (only after the charge account is known) */
             loadBalance();
 
+            logger.infof(errmsg + "transaction = [%s]", tr.toString());
             return true;
         }
 
@@ -477,9 +515,9 @@ public class OdfLoaderService {
 
     private Date getDate(Row row, int index) {
         try {
-            return row.getCellByIndex(IND_DATE).getDateValue().getTime();
+            return row.getCellByIndex(index).getDateValue().getTime();
         } catch (Exception e) {
-            logger.info("Problem");
+            logger.errorf(this.getClass().getSimpleName() + "::getDate(%s,%d)", row.toString(), index);
             return new Date();
         }
     }

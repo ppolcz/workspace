@@ -96,6 +96,9 @@ public class OdfValidationService {
     }
 
     /* SPREADSHEET RULES */
+    public static final int VALIDITY_CA_PROP_COL = 5;
+    public static final int VALIDITY_CA_NAME_COL = 6;
+    public static final int VALIDITY_CA_DESC_COL = 7;
     public static final int NR_TRS = 12;
     public static final int TR_OFFSET = 14;
     public static final int TR_LENGTH = 5; // amount, ca, cluster, market, remark

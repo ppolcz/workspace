@@ -28,10 +28,16 @@ public class MainController {
       return "cluster_tree.html";
     }
     
-	@RequestMapping("/odf-load")
-	@ResponseBody
-	public String loadOdf() {
-	    odfService.process();
-	    return "Odf spreadsheet loaded!";
-	}
+    @RequestMapping("/odf-load")
+    @ResponseBody
+    public String loadOdf() {
+        odfService.process("koltsegvetes.ods");
+        return "Odf spreadsheet loaded!";
+    }
+    @RequestMapping("/odf-test")
+    @ResponseBody
+    public String testOdf() {
+        odfService.process("koltsegvetes-test.ods");
+        return "Odf spreadsheet loaded!";
+    }
 }

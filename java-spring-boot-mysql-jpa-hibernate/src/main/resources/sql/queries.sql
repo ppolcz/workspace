@@ -177,3 +177,15 @@ from
         and clusters.name like '%ruha%'
     order by amount
 ) as UtolsoUgyletek;
+
+
+
+
+-- ESKUVO:
+select date, sum(amount*clusters.sgn) as 'sum of amounts', balance, accounts.name, clusters.name, remark
+from ugyletek, accounts, clusters
+where
+    accounts.uid = ugyletek.ca and clusters.uid = ugyletek.cluster
+    and clusters.name like 'eskuvo%'
+group by cluster
+order by date, ugyletek.uid;
