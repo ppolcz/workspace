@@ -44,7 +44,7 @@ public class OdfLoaderService {
 
     Logger logger;
 
-    private Map<ChargeAccount, Integer> indCa = new HashMap<>();
+    private final Map<ChargeAccount, Integer> indCa = new HashMap<>();
 
     private Map<String, Cluster> cllist;
     private Map<String, ChargeAccount> calist;
@@ -122,7 +122,7 @@ public class OdfLoaderService {
             logger.info("Kivalasztom a fo tablat");
             Table mainTable = data.getTableByName("Koltsegvetes");
 
-            calist = new HashMap<String, ChargeAccount>();
+            calist = new HashMap<>();
             {
                 /* build charge accounts list: [1] those, who require update */
 
@@ -233,7 +233,8 @@ public class OdfLoaderService {
 
         /* I read the very first row after the header, which contains the first balance */
         {
-            Row row = table.getRowByIndex(startIndex - 1);
+            Row row;
+            // row = table.getRowByIndex(startIndex - 1);
             // Date date = getDate(row, IND_DATE);
             //
             // int i = 0;
@@ -285,7 +286,7 @@ public class OdfLoaderService {
         String rextra;
         Date date;
 
-        private Row row;
+        private final Row row;
         Ugylet tr = new Ugylet();
 
         void loadBalance() {
@@ -330,7 +331,7 @@ public class OdfLoaderService {
             if (!formula.isEmpty())
                 remark += "[" + formula.substring(4) + "] ";
             remark += "{ " + rextra + " }";
-            remark.trim();
+            remark = remark.trim();
 
             /* initialize transaction object */
             tr.setRemark(remark);

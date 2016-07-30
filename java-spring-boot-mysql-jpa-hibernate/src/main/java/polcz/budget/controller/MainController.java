@@ -34,6 +34,7 @@ public class MainController {
         odfService.process("koltsegvetes.ods");
         return "Odf spreadsheet loaded!";
     }
+    
     @RequestMapping("/odf-test")
     @ResponseBody
     public String testOdf() {
