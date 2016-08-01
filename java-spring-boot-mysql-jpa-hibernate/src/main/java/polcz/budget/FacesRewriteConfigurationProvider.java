@@ -11,18 +11,16 @@ import org.ocpsoft.rewrite.servlet.config.rule.Join;
 @RewriteConfiguration
 public class FacesRewriteConfigurationProvider extends HttpConfigurationProvider {
 
-	   @Override
-	   public int priority()
-	   {
-	     return 10;
-	   }
+    @Override
+    public int priority() {
+        return 10;
+    }
 
-	   @Override
-	   public Configuration getConfiguration(final ServletContext context)
-	   {
-	     return ConfigurationBuilder.begin()
-	       .addRule(Join.path("/").to("/index.jsf"))
-	       .addRule(Join.path("/book/{id}/").to("/viewBook.jsf"));
-	    }
-	
+    @Override
+    public Configuration getConfiguration(final ServletContext context) {
+        return ConfigurationBuilder.begin()
+                .addRule(Join.path("/").to("/index.jsf"))
+                .addRule(Join.path("/book/{id}/").to("/viewBook.jsf"));
+    }
+
 }
