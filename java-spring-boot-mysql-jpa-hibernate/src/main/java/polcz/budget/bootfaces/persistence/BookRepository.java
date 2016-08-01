@@ -1,6 +1,6 @@
-package com.oakdalesoft.bootfaces.persistence;
+package polcz.budget.bootfaces.persistence;
 
-import com.oakdalesoft.bootfaces.domain.Book;
+import polcz.budget.bootfaces.domain.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

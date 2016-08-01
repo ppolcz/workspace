@@ -1,4 +1,4 @@
-package com.oakdalesoft.bootfaces.domain;
+package polcz.budget.bootfaces.domain;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package com.oakdalesoft.bootfaces.view;
+package polcz.budget.bootfaces.view;
 
-import com.oakdalesoft.bootfaces.domain.Book;
+import polcz.budget.bootfaces.domain.Book;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 

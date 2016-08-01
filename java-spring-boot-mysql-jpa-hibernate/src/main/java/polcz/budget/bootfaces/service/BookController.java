@@ -1,7 +1,7 @@
-package com.oakdalesoft.bootfaces.service;
+package polcz.budget.bootfaces.service;
 
-import com.oakdalesoft.bootfaces.domain.Book;
-import com.oakdalesoft.bootfaces.persistence.BookRepository;
+import polcz.budget.bootfaces.domain.Book;
+import polcz.budget.bootfaces.persistence.BookRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
