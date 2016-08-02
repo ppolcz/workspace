@@ -84,13 +84,13 @@ public class OdfValidationService {
     };
 
     /* PREPROCESSING RULES */
-    public static final Map<String, String> market2market; /* during pre-processing */
+    public static final Map<String, String> MARKET2MARKET; /* during pre-processing */
 
     @PostConstruct
     public void init() {
         logger = R.getJBossLogger(getClass());
         cluster2market = new HashMap<>();
-        for (String[] rule : cluster2market_str) {
+        for (String[] rule : CLUSTER2MARKET_STR) {
             cluster2market.put(ss.cluster(new Cluster(rule[0])), new Market(rule[1]));
         }
     }
@@ -115,29 +115,29 @@ public class OdfValidationService {
         }
     }
 
-    public static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+    public static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
     // public static final Date nptcIntroductionDate = new GregorianCalendar(2015, Calendar.DECEMBER, 17).getTime();
-    public static final int nptcIntroductionRowNr = 897;
+    public static final int NPTC_INIT_ROW_NR = 897;
 
-    public static final Set<String> nMarkets = new HashSet<>(Arrays.asList(new String[] {
+    public static final Set<String> MARKETS_N = new HashSet<>(Arrays.asList(new String[] {
         "spar", "interspar", "lidl", "aldi", "tesco", "auchan", "dezsoba", "izlelo", "coop", "rossmann",
         "groby", "pizzaking", "muller", "cba", "vikinger", "moriczgyros", "allee", "mcdonalds", "florian",
         "hadik", "oktogonbisztro"
     }));
 
-    public static final Set<String> szuksegesMarkets = new HashSet<>(Arrays.asList(new String[] {
+    public static final Set<String> MARKETS_SZUKSEGES = new HashSet<>(Arrays.asList(new String[] {
         "praterny", "copyguru"
     }));
 
-    public static final Set<String> ruhaMarkets = new HashSet<>(Arrays.asList(new String[] {
+    public static final Set<String> MARKETS_RUHA = new HashSet<>(Arrays.asList(new String[] {
         "sansha", "c&a", "decathlon"
     }));
 
-    public static final Set<String> utazasMarkets = new HashSet<>(Arrays.asList(new String[] { "mav", }));
-    public static final Set<String> lkbrnMarkets = new HashSet<>(Arrays.asList(new String[] { "ikea" }));
-    public static final Set<String> munkaMarkets = new HashSet<>(Arrays.asList(new String[] { "pirex" }));
+    public static final Set<String> MARKETS_UTAZAS = new HashSet<>(Arrays.asList(new String[] { "mav", }));
+    public static final Set<String> MARKETS_LKBRN = new HashSet<>(Arrays.asList(new String[] { "ikea" }));
+    public static final Set<String> MARKETS_MUNKA = new HashSet<>(Arrays.asList(new String[] { "pirex" }));
 
-    public static final String[][] cluster2market_str = {
+    public static final String[][] CLUSTER2MARKET_STR = {
         { "Rezsi_Bkv", "BKV" },
         { "Rezsi_Gaz", "FOGAZ" },
         { "Rezsi_Viz", "FOCSM" },
@@ -157,15 +157,15 @@ public class OdfValidationService {
         { CLNAME_PIVOT, MKNAME_NOT_APPLICABLE + "(pivot)" },
     };
 
-    public static final String[][] market2market_str = {
+    public static final String[][] MARKET2MARKET_STR = {
         { "Examlpe", "Example" },
         { "", "" }
     };
 
     static {
-        market2market = new HashMap<>();
-        for (String[] rule : market2market_str) {
-            market2market.put(rule[0], rule[1]);
+        MARKET2MARKET = new HashMap<>();
+        for (String[] rule : MARKET2MARKET_STR) {
+            MARKET2MARKET.put(rule[0], rule[1]);
         }
     }
 

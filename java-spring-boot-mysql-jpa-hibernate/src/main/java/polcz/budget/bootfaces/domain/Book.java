@@ -1,21 +1,42 @@
 package polcz.budget.bootfaces.domain;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
  * Created by Alex on 07/03/2015.
  */
-
 @Entity
 @Table(name = "book")
-public class Book {
+public class Book implements Serializable {
+
+    private static final long serialVersionUID = 29851923847L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long uid;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = true)
+    private Float price;
+
+    @Column(nullable = true)
+    private String description;
+
+    @Column(nullable = true)
+    private Integer nbofpage;
+
+    @Column(nullable = true)
+    private Boolean illustrations;
 
     public Long getId() {
-        return id;
+        return uid;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.uid = id;
     }
 
     public String getTitle() {
@@ -57,19 +78,4 @@ public class Book {
     public void setIllustrations(Boolean illustrations) {
         this.illustrations = illustrations;
     }
-
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    @Column(nullable = false)
-    private String title;
-    @Column(nullable = true)
-    private Float price;
-    @Column(nullable = true)
-    private String description;
-    @Column(nullable = true)
-    private Integer nbofpage;
-    @Column(nullable = true)
-    private Boolean illustrations;
-
 }

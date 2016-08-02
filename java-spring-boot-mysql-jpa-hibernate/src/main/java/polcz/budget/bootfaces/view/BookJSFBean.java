@@ -14,9 +14,9 @@ import java.util.List;
 /**
  * Created by Alex on 07/03/2015.
  */
-@ManagedBean(name = "model", eager = true)
+@ManagedBean(name = "bookBean", eager = true)
 @RequestScoped
-public class BookModel {
+public class BookJSFBean {
 
     public void setBook(BookView book) {
         this.book = book;

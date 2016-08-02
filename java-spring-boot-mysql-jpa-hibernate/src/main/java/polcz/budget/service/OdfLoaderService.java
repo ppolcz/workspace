@@ -246,7 +246,7 @@ public class OdfLoaderService {
 
             /* nptc */
             indCa.put(nptc, indCa.get(calist.get("dkez")));
-            row = table.getRowByIndex(nptcIntroductionRowNr);
+            row = table.getRowByIndex(NPTC_INIT_ROW_NR);
             initialBalance(getDate(row, IND_DATE), nptc, getInteger(row, IND_CAIDS + 3));
         }
 
@@ -254,7 +254,7 @@ public class OdfLoaderService {
 
         /* loop over the rows of the table */
         for (int i = startIndex; i < count; i++) {
-            if (i == nptcIntroductionRowNr) {
+            if (i == NPTC_INIT_ROW_NR) {
                 calist.remove("dkez");
                 calist.put("dkez", nptc);
             }
@@ -313,7 +313,7 @@ public class OdfLoaderService {
         }
 
         private void load() {
-            errmsg += "trans. nr. " + (index + 1) + ", date: " + sdf.format(date) + ".\n";
+            errmsg += "trans. nr. " + (index + 1) + ", date: " + SDF.format(date) + ".\n";
 
             /* load data from ODF */
             int o = IND_TRS[index]; /* column offset of transaction nr t. */
@@ -388,8 +388,8 @@ public class OdfLoaderService {
         public void resolveMarket() {
 
             /* correct misspelled market names */
-            if (market2market.containsKey(mkname))
-                mkname = market2market.get(mkname);
+            if (MARKET2MARKET.containsKey(mkname))
+                mkname = MARKET2MARKET.get(mkname);
 
             Market market;
             if (mkname.isEmpty()) {
@@ -440,17 +440,17 @@ public class OdfLoaderService {
                 mkname = mkname.toLowerCase();
                 if (tr.getMarket().equals(Market_Not_Applicable)) {
                     cluster = Egyeb_Kiadas;
-                } else if (cluster == null && nMarkets.contains(mkname)) {
+                } else if (cluster == null && MARKETS_N.contains(mkname)) {
                     cluster = Napi_Szukseglet;
-                } else if (utazasMarkets.contains(mkname)) {
+                } else if (MARKETS_UTAZAS.contains(mkname)) {
                     cluster = Utazas;
-                } else if (ruhaMarkets.contains(mkname)) {
+                } else if (MARKETS_RUHA.contains(mkname)) {
                     cluster = Ruhazkodas;
-                } else if (lkbrnMarkets.contains(mkname)) {
+                } else if (MARKETS_LKBRN.contains(mkname)) {
                     cluster = Lakas_Berendezes;
-                } else if (szuksegesMarkets.contains(mkname)) {
+                } else if (MARKETS_SZUKSEGES.contains(mkname)) {
                     cluster = Szukseges;
-                } else if (munkaMarkets.contains(mkname)) {
+                } else if (MARKETS_MUNKA.contains(mkname)) {
                     cluster = Munkaeszkozok;
                 }
             }
