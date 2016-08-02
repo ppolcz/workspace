@@ -1,4 +1,4 @@
-package polcz.budget.bootfaces.domain;
+package polcz.budget.demo.jsf.model;
 
 import java.io.Serializable;
 import javax.persistence.*;

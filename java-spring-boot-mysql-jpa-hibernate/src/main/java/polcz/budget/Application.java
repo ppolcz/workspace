@@ -4,6 +4,7 @@ import java.util.EnumSet;
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.DispatcherType;
 import org.ocpsoft.rewrite.servlet.RewriteFilter;
+import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -27,8 +28,6 @@ import org.springframework.context.annotation.ComponentScan;
 public class Application extends SpringBootServletInitializer
 {
 
-//    @Value("${init.json}")
-//    private String init;
     public static void main(String[] args)
     {
         SpringApplication.run(Application.class, args);
@@ -57,6 +56,13 @@ public class Application extends SpringBootServletInitializer
         return rwFilter;
     }
 
+//    /**
+//     * In file ${init.json} I should check the name of the class (polcz.budget....Book),
+//     * otherwise, will not work.
+//     */
+//    @Value("${init.json}")
+//    private String init;
+//
 //    @Bean
 //    public Jackson2RepositoryPopulatorFactoryBean repositoryPopulator() {
 //        Resource sourceData;

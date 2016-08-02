@@ -1,7 +1,7 @@
-package polcz.budget.bootfaces.persistence;
+package polcz.budget.demo.jsf.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import polcz.budget.bootfaces.domain.Book;
+import polcz.budget.demo.jsf.model.Book;
 
 /**
  *

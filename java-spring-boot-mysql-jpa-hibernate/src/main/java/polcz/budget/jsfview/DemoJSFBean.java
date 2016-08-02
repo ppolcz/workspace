@@ -2,13 +2,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polcz.budget.bootfaces.view;
+package polcz.budget.jsfview;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import polcz.budget.bootfaces.persistence.BookRepository;
-import polcz.budget.bootfaces.persistence.ClusterRepository;
+import polcz.budget.demo.jsf.persistence.BookRepository;
+import polcz.budget.service.ClusterRepository;
 import polcz.budget.model.Cluster;
 import polcz.budget.service.EntityService;
 

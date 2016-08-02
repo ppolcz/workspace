@@ -13,6 +13,7 @@ import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import polcz.budget.model.AbstractEntity;
@@ -22,6 +23,14 @@ import polcz.budget.model.Cluster_;
 @Repository
 @Transactional
 public class EntityService {
+
+    /**
+     * TODO 
+     * Demonstration: any project property, which is declared in 
+     * application.properties, can be accessed in this way.
+     */
+    @Value("${polcz.props.demo}")
+    private String demoProperty;
 
     @PersistenceContext
     private EntityManager em;
@@ -42,7 +51,9 @@ public class EntityService {
         /* find if this name already exists */
         T old = findByName(entity.getName(), entityClass);
 
-        if (old != null) { return old; }
+        if (old != null) {
+            return old;
+        }
         return em.merge(entity);
     }
 
@@ -85,6 +96,8 @@ public class EntityService {
     }
 
     public <T extends AbstractNameDescEntity> T findByName(String name, Class<T> entityClass) {
+        logger.info("polcz.budget.service.EntityService.findByName(): demoProperty = " + demoProperty);
+
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<T> cq = builder.createQuery(entityClass);
         Root<T> root = cq.from(entityClass);

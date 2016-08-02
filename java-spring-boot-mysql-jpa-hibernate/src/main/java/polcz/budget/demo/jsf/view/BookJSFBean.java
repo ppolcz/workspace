@@ -1,7 +1,7 @@
-package polcz.budget.bootfaces.view;
+package polcz.budget.demo.jsf.view;
 
-import polcz.budget.bootfaces.domain.Book;
-import polcz.budget.bootfaces.persistence.BookRepository;
+import polcz.budget.demo.jsf.model.Book;
+import polcz.budget.demo.jsf.persistence.BookRepository;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

@@ -1,4 +1,4 @@
-package polcz.budget.bootfaces.persistence;
+package polcz.budget.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import polcz.budget.model.Cluster;
