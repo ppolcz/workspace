@@ -48,6 +48,16 @@ order by amount;
 
 select u.* from (select @p1:=30 p) param, UtolsoUgyletek u;
 
+create view ugyletek_szep as
+select date, balance, accounts.name as caname, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+from ugyletek,markets,clusters,accounts
+where
+    cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+    and clusters.name not like 'athelyezes'
+order by date, ugyletek.uid;
+
+
+select u.* from (select @p1:=30 p) param, UtolsoUgyletek u;
 
 
 -- Ez egy nagyon hasznos lekerdezes (Kumulalt szummalva es ertek szerint csokkeno sorrendben - legnagyobb koltseg elol)

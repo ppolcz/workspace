@@ -364,6 +364,7 @@ public class OdfLoaderService {
 
             if (ca.equals(pinfo)) {
                 // TODO: ProductInfo
+                // TODO: colored output: ... + (char)27 + "[36mbla-bla-bla" - it is working!!
                 logger.warnf(errmsg + "Try handling the product info entries: %s, tr: %s", ca, tr);
                 return false;
             }
@@ -437,6 +438,7 @@ public class OdfLoaderService {
 
             /* Guess cluster knowing the market's name and some predefined rules */
             if (cluster == null) {
+                logger.warnf(errmsg + "Cluster is not defined: " + tr);
                 mkname = mkname.toLowerCase();
                 if (tr.getMarket().equals(Market_Not_Applicable)) {
                     cluster = Egyeb_Kiadas;
