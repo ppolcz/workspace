@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition template="/resources/scaffold/pcz_page_template.xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:mycomponents="http://xmlns.jcp.org/jsf/composite/mycomponents" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:param name="pageTitle" value="Felhasználó létrehozása"/>
+    <ui:define name="header">Felhasználók
+    </ui:define>
+    <ui:define name="subheader">Új felhasználó felvétele
+    </ui:define>
+    <ui:define name="main">
+        <h:form id="search">
+            <h:panelGroup styleClass="search">
+                <mycomponents:editCustomerComp firstName="#{customerBean.firstName}" lastName="#{customerBean.lastName}" password="#{customerBean.password}" role="#{customerBean.role}" userName="#{customerBean.username}"/>
+                <div class="buttons">
+                    <h:commandButton action="#{customerBean.addCustomer()}" styleClass="btn btn-primary" value="Felhasználó létrehozása"/>
+                </div>
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+</ui:composition>

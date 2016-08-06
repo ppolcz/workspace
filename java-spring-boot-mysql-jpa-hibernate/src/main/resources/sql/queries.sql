@@ -199,3 +199,21 @@ where
     and clusters.name like 'eskuvo%'
 group by cluster
 order by date, ugyletek.uid;
+
+
+SET @@group_concat_max_len = 160;
+select date,caname,sum(amount) as 'sum',clname,
+    group_concat(DISTINCT mkname ORDER BY mkname ASC separator ', ') as mkname,
+    group_concat(DISTINCT remark separator ', ') as remark
+from ugyletek_szep
+where
+    clname like 'Eskuvo%'
+group by clname;
+
+drop view v_ugyletek;
+create view v_ugyletek as
+select ugyletek.uid,date,if(pivot,'PIVOT','') as pivot, balance, ca_from.name as ca, amount*clusters.sgn as amount, ca_to.name as catransfer, clusters.name as cluster, markets.name as market, remark
+from ugyletek,markets,clusters,accounts as ca_from, accounts as ca_to
+where
+    cluster = clusters.uid and market = markets.uid and ca = ca_from.uid and catransfer = ca_to.uid
+order by date, ugyletek.uid;

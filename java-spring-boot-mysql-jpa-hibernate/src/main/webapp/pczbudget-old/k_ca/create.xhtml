@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition template="/resources/scaffold/pcz_page_template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:mycomponents="http://xmlns.jcp.org/jsf/composite/mycomponents"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ui:param name="pageTitle" value="Felhasználó létrehozása" />
+	<ui:define name="header">Charge Accounts
+    </ui:define>
+	<ui:define name="subheader">Define a new charge account
+    </ui:define>
+	<ui:define name="main">
+		<h:form id="search">
+			<h:panelGroup styleClass="search">
+                <mycomponents:editNameDescComp
+                    name="#{caBean.entity.name}"
+                    desc="#{caBean.entity.desc}"
+                    max_length="8" />
+                <div class="buttons">
+                    <p:commandButton action="#{caBean.merge()}" ajax="false" value="Submit changes" />
+                </div>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition template="/resources/scaffold/pcz_page_template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" 
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ui:param name="pageTitle" value="List of existing charge accounts" />
+	<ui:define name="header">Charge Accounts
+    </ui:define>
+	<ui:define name="main">
+		<h:form id="search">
+
+
+            <p:dataTable id="calist" value="#{caBean.list}" var="_item" sortMode="multiple">
+                <f:facet name="header">
+                    <p:outputPanel style="line-height:30px">
+                        <h:outputText value="Manage charge accounts" />
+                        <p:commandButton id="new_cl" value="Register new charge account" icon="ui-icon-calculator"
+                            ajax="false" style="float:right;line-height:28px" action="#{caBean.create}" />
+                    </p:outputPanel>
+                </f:facet>
+                
+                <p:column headerText="Unique ID" sortBy="#{_item.uid}">
+                    <h:outputText id="uid" value="#{_item.uid}" />
+                </p:column>
+                
+                <p:column headerText="Name" sortBy="#{_item.name}">
+                    <h:outputText id="ca_name" value="#{_item.name}" />
+                </p:column>
+
+                <p:column headerText="Description">
+                    <h:outputText id="ca_desc" value="#{_item.desc}" />
+                </p:column>
+
+                <p:column style="width:50px;text-align: center">
+                    <p:commandLink id="edit_cl" value="Edit" ajax="false"
+                        action="#{caBean.edit(_item)}" />
+                </p:column>
+                
+                <p:column style="width:50px;text-align: center" rendered="#{request.isUserInRole('ADMIN') }">
+                    <p:commandLink id="remove" rendered="#{request.isUserInRole('ADMIN') }"
+                        action="#{caBean.remove(_item)}" ajax="false"
+                        onclick="if (! confirm('Really want to do that?')) return false" class="edit_icon">
+                        <h:outputText value="Remove" />
+                    </p:commandLink>
+                </p:column>
+
+            </p:dataTable>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<composite:interface>
+	<composite:attribute name="userName" required="true" />
+	<composite:attribute name="lastName" required="true" />
+	<composite:attribute name="firstName" required="true" />
+	<composite:attribute name="role" required="true" />
+	<composite:attribute name="password" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:messages globalOnly="true" styleClass="error" />
+
+	<h:panelGrid columnClasses="label,component,required" columns="3">
+		<h:outputLabel for="userName" value="Felhasználó neve:" />
+		<h:panelGroup>
+			<h:inputText id="userName" required="true"
+				value="#{cc.attrs.userName}">
+				<f:validateRequired />
+			</h:inputText>
+			<h:message for="userName" styleClass="error" />
+		</h:panelGroup>
+		<h:outputText value="*" />
+		<h:outputLabel for="lastName" value="Vezetéknév:" />
+		<h:panelGroup>
+			<h:inputText id="lastName" required="true"
+				value="#{cc.attrs.lastName}" />
+			<h:message for="lastName" styleClass="error" />
+		</h:panelGroup>
+		<h:outputText value="*" />
+		<h:outputLabel for="firstName" value="Keresztnév:" />
+		<h:panelGroup>
+			<h:inputText id="firstName" required="true"
+				value="#{cc.attrs.firstName}" />
+			<h:message for="firstName" styleClass="error" />
+		</h:panelGroup>
+		<h:outputText value="*" />
+		<h:outputLabel for="role" value="Szerepkör:" />
+		<h:panelGroup>
+			<h:selectOneMenu id="role" required="true" value="#{cc.attrs.role}">
+				<f:selectItem itemValue="ADMIN" itemLabel="ADMIN" />
+				<f:selectItem itemValue="GUEST" itemLabel="GUEST" />
+				<f:selectItem itemValue="CUSTOMER" itemLabel="CUSTOMER" />
+			</h:selectOneMenu>
+			<h:message for="role" styleClass="error" />
+		</h:panelGroup>
+		<h:outputText value="*" />
+		<h:outputLabel for="password" value="Jelszó:" />
+		<h:panelGroup>
+			<h:inputSecret id="password" required="true"
+				value="#{cc.attrs.password}">
+				<f:validateRequired />
+				<f:validator validatorId="passwordValidator" />
+			</h:inputSecret>
+			<h:message for="password" styleClass="error" />
+		</h:panelGroup>
+		<h:outputText value="*" />
+	</h:panelGrid>
+</composite:implementation>
+</html>

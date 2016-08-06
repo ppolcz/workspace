@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:f="http://java.sun.com/jsf/core" 
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:mycomponents="http://xmlns.jcp.org/jsf/composite/mycomponents" 
+    xmlns:p="http://primefaces.org/ui" 
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <h:form>
+		<p:menubar styleClass="pcz-navbar">
+
+            <p:menuitem outcome="/customer/view.xhtml" rendered="#{request.isUserInRole('ADMIN') }" styleClass="admin-access" value="Manage users"/>
+            <p:menuitem outcome="/k_ca/view.xhtml" rendered="#{request.isUserInRole('ADMIN') }" styleClass="admin-access" value="Manage charge accounts"/>
+            <p:menuitem outcome="/k_mk/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Manage markets"/>
+            <p:menuitem outcome="/k_cl/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Manage clusters"/>
+            <p:menuitem outcome="/k_pi/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Product informations"/>
+            <p:menuitem outcome="/k_tr/view.xhtml" rendered="#{request.isUserInRole('CUSTOMER') or request.isUserInRole('ADMIN') }" value="Transactions"/>
+
+            <ui:remove>
+            <p:menuitem outcome="/customer/view.xhtml" styleClass="admin-access" value="Manage users" />
+            <p:menuitem outcome="/k_ca/view.xhtml" styleClass="admin-access" value="Manage charge accounts" />
+            <p:menuitem outcome="/k_mk/view.xhtml" value="Manage markets" />
+            <p:menuitem outcome="/k_cl/view.xhtml" value="Manage clusters" />
+            <p:menuitem outcome="/k_pi/view.xhtml" value="Product informations" />
+            <p:menuitem outcome="/k_tr/view.xhtml" value="Transactions" />
+            </ui:remove>
+
+            <f:facet name="options">
+                <h:outputLabel
+                    value="Felhasználónév: #{request.getUserPrincipal().getName() }"
+                    style="white-space:nowrap; width:auto; padding-top:5px"
+                    rendered="#{request.getUserPrincipal()!=null}" />
+                <p:commandButton action="#{loginBean.redirectToLogin()}"
+                    ajax="false" id="loginRedirectbutton"
+                    rendered="#{request.getUserPrincipal()==null }"
+                    value="Bejelentkezés" icon="ui-icon-home" />
+                <p:commandButton actionListener="#{loginBean.logout}" ajax="false"
+                    id="logoutbutton" rendered="#{request.getUserPrincipal()!=null }"
+                    value="Kijelentkezés" icon="ui-icon-extlink" />
+            </f:facet>
+            
+		</p:menubar>
+	</h:form>
+
+</ui:composition>
