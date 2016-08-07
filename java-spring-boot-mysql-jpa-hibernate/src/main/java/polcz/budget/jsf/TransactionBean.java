@@ -39,13 +39,13 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
     private final int ID = new Random(System.currentTimeMillis()).nextInt();
 
     /// @formatter:off
-    @ManagedProperty(value = "startupService")
+    @ManagedProperty(value = "#{startupService}")
     private StartupService ss;
 
-    @ManagedProperty(value = "entityService")
+    @ManagedProperty(value = "#{entityService}")
     private EntityService service;
 
-    @ManagedProperty(value = "ugyletService")
+    @ManagedProperty(value = "#{ugyletService}")
     private UgyletService ugyletService;
 	/// @formatter:on
 
@@ -83,7 +83,7 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
     {
         super.init();
         // filterCa = ss.pkez();
-        Assert.assertNotNull(ss.none());
+        Assert.assertNotNull(getSs().none());
     }
 
     public UgyletType[] getTypes()
@@ -95,7 +95,7 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
     {
         String ret = super.create();
 
-        entity = new Ugylet(ss.pkez(), ss.none(), ss.Napi_Szukseglet(), ss.Market_Not_Applicable());
+        entity = new Ugylet(getSs().pkez(), getSs().none(), getSs().Napi_Szukseglet(), getSs().Market_Not_Applicable());
         entity.setType(UgyletType.simple);
 
         logger.infof("trDate = %s", new SimpleDateFormat("yyyy-MM-dd").format(entity.getDate()));
@@ -115,14 +115,13 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
 
         if (entity.isPivot())
         {
-            Assert.assertTrue(
-                String.format("in pivot case, the catransfer should be 'none'. " + "Expected: %s, got %s",
-                    ss.none(), entity.getCatransfer()),
-                ss.none().equals(entity.getCatransfer()));
+            Assert.assertTrue(String.format("in pivot case, the catransfer should be 'none'. " + "Expected: %s, got %s",
+                    getSs().none(), entity.getCatransfer()),
+                getSs().none().equals(entity.getCatransfer()));
 
             entity.setType(UgyletType.pivot);
         }
-        else if (entity.getCatransfer().equals(ss.none()))
+        else if (entity.getCatransfer().equals(getSs().none()))
         {
             entity.setType(UgyletType.simple);
         }
@@ -153,7 +152,7 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
     public List<Ugylet> updateList()
     {
         // TODO: egy ido utan ez egy kicsit lassu lesz (ha sok sora lesz)
-        list = ugyletService.findAll(filterCa, filterCatransfer, filterCluster, filterMarket);
+        list = getUgyletService().findAll(filterCa, filterCatransfer, filterCluster, filterMarket);
         logger.infof(this.getClass().getSimpleName() + "::updateList(), length = " + list.size());
         logger.infof(String.format("ca = %s, mk = %s, cl = %s", filterCa, filterMarket, filterCluster));
         return list;
@@ -161,7 +160,7 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
 
     private String merge(TransactionArguments args)
     {
-        ugyletService.makeTransaction(args);
+        getUgyletService().makeTransaction(args);
         return updateView();
     }
 
@@ -181,10 +180,10 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
     {
         logger.infof("WILL BE REMOVED: %s", removable);
 
-        Ugylet tr = ugyletService.findFirstSimpleTransactionBefore(removable);
+        Ugylet tr = getUgyletService().findFirstSimpleTransactionBefore(removable);
         logger.infof("FIRST SIMPLE TRANSACTION BEFORE THE REMOVABLE: %s", tr);
 
-        ugyletService.makeTransaction(new TransactionArguments(tr, removable, R.TR_REMOVAL));
+        getUgyletService().makeTransaction(new TransactionArguments(tr, removable, R.TR_REMOVAL));
         return updateView();
     }
 
@@ -205,7 +204,7 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
         int activeRow = table.getRowIndex();
 
         logger.infof(list.get(activeRow).getRemark());
-        ugyletService.edit(list.get(activeRow));
+        getUgyletService().edit(list.get(activeRow));
     }
 
     public void onCancel(RowEditEvent event)
@@ -295,4 +294,39 @@ public class TransactionBean extends AbstractEntityBean<Ugylet> implements Seria
     // {
     // this.mecBean = mecBean;
     // }
+
+    /**
+     * @return the ss
+     */
+    public StartupService getSs() {
+        return ss;
+    }
+
+    /**
+     * @param ss the ss to set
+     */
+    public void setSs(StartupService ss) {
+        this.ss = ss;
+    }
+
+    /**
+     * @param service the service to set
+     */
+    public void setService(EntityService service) {
+        this.service = service;
+    }
+
+    /**
+     * @return the ugyletService
+     */
+    public UgyletService getUgyletService() {
+        return ugyletService;
+    }
+
+    /**
+     * @param ugyletService the ugyletService to set
+     */
+    public void setUgyletService(UgyletService ugyletService) {
+        this.ugyletService = ugyletService;
+    }
 }

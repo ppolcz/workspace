@@ -21,7 +21,7 @@ public class ChargeAccountBean extends AbstractMapEntityBean<ChargeAccount> impl
     }
 
 //    @EJB
-    @ManagedProperty(value = "entityService")
+    @ManagedProperty(value = "#{entityService}")
     private EntityService service;
 
     @Override
@@ -35,4 +35,9 @@ public class ChargeAccountBean extends AbstractMapEntityBean<ChargeAccount> impl
     {
         return new ChargeAccount();
     }
+
+    public void setService(EntityService service) {
+        this.service = service;
+    }
+    
 }

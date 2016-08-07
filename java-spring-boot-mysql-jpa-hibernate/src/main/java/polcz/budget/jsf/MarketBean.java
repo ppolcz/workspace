@@ -22,7 +22,7 @@ public class MarketBean extends AbstractMapEntityBean<Market> implements Seriali
     private static final long serialVersionUID = 2286250981768653297L;
 
 //    @EJB
-    @ManagedProperty(value = "entityService")
+    @ManagedProperty(value = "#{entityService}")
     private EntityService service;
 
     @Override
@@ -35,5 +35,12 @@ public class MarketBean extends AbstractMapEntityBean<Market> implements Seriali
     protected Market createNewEntity()
     {
         return new Market();
+    }
+
+    /**
+     * @param service the service to set
+     */
+    public void setService(EntityService service) {
+        this.service = service;
     }
 }

@@ -21,6 +21,7 @@ import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.junit.Assert;
 
 import polcz.budget.global.R;
+import polcz.budget.service.OdfValidationService;
 import polcz.util.Util;
 
 /**
@@ -194,6 +195,10 @@ public class Ugylet extends AbstractEntity {
 
     public Date getDate() {
         return this.date;
+    }
+
+    public String getDateString() {
+        return OdfValidationService.SDF.format(this.date);
     }
 
     public void setDate(Date date) {

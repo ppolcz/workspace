@@ -76,7 +76,7 @@ public abstract class AbstractEntityBean<T extends AbstractEntity>
     public void init()
     {
         updateList();
-        logger.info(AbstractEntityBean.class.getSimpleName() + "::init() @PostConstruct");
+        logger.error(AbstractEntityBean.class.getSimpleName() + "::init() @PostConstruct");
     }
 
     public List<T> updateList()
@@ -122,9 +122,11 @@ public abstract class AbstractEntityBean<T extends AbstractEntity>
         return "outcome";
     }
 
+    @Override
     public List<T> getList()
     {
-        return list;
+        if (list.isEmpty()) init();
+        return list; 
     }
 
     public T getEntity()

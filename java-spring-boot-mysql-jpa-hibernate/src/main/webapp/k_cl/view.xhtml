@@ -48,6 +48,7 @@
                 </p:column>
                 
                 
+                <ui:remove>
                 <p:column style="width:50px;text-align: center" rendered="#{request.isUserInRole('ADMIN') }">
                     <p:commandLink id="remove" rendered="#{request.isUserInRole('ADMIN') }"
                         action="#{clBean.remove(_item)}" ajax="false"
@@ -55,6 +56,7 @@
                         <h:outputText value="Remove" />
                     </p:commandLink>
                 </p:column>
+                </ui:remove>
 
             </p:dataTable>
 

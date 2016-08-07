@@ -9,8 +9,8 @@
 <f:view>
     <ui:composition template="layout.xhtml">
         <f:metadata>
-            <f:viewParam name="id" value="#{model.book.id}"/>
-            <f:viewAction action="#{model.doFindBookById()}"/>
+            <f:viewParam name="id" value="#{bookBean.book.id}"/>
+            <f:viewAction action="#{bookBean.doFindBookById()}"/>
         </f:metadata>
         <ui:define name="title">View a book</ui:define>
         <ui:define name="content">

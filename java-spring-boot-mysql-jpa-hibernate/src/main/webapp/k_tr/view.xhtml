@@ -1,12 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html
-  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
-  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+    PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <ui:composition template="/resources/scaffold/pcz_page_template.xhtml"
-    xmlns:of="http://omnifaces.org/functions" xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core" 
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui" 
+                xmlns:ui="http://java.sun.com/jsf/facelets">
 
+    <!-- xmlns:of="http://omnifaces.org/functions" -->
     <ui:define name="header">Transactions</ui:define>
 
     <ui:define name="main">
@@ -20,7 +23,7 @@
                 <h2></h2>
 
                 <h:outputText value="Filter by&nbsp;&nbsp;&nbsp;&nbsp;"
-                    style="font-weight:bold; font-size: 16px" />
+                              style="font-weight:bold; font-size: 16px" />
 
                 <h:outputText value="Charge account:&nbsp;&nbsp;" />
                 <h:selectOneMenu id="ca_uid" value="#{transactionBean.filterCa}" converter="#{mecBean}">
@@ -42,11 +45,11 @@
 
                 <h:outputText value="&nbsp;&nbsp;&nbsp;&nbsp;" />
                 <p:commandButton action="#{transactionBean.updateView}" value="Search" id="SearchButton"
-                    icon="ui-icon-search" ajax="false" />
+                                 icon="ui-icon-search" ajax="false" />
 
                 <h:outputText value="&nbsp;&nbsp;&nbsp;&nbsp;" />
                 <p:commandButton action="#{transactionBean.create}" style="float:right"
-                    value="New transaction" id="NewTrButton" icon="ui-icon-plus" />
+                                 value="New transaction" id="NewTrButton" icon="ui-icon-plus" />
             </ui:remove>
 
             <!-- editable="true" editMode="cell" -->
@@ -58,55 +61,56 @@
                 rows="#{paginatorBean.rowCountOnPage}" paginator="true" editable="true"
                 rowsPerPageTemplate="25,50,100" sortMode="multiple"
                 rowStyleClass="#{_item.pivot ? 'pivot' : 
-                (_item.cluster.name.equals('Athelyezes') ? 'athelyezes' : null)}"
-                resizableColumns="true"
-                widgetVar="tableWidget" binding="#{paginatorBean.dataTable}"
-                first="#{paginatorBean.firstRowOnLastPage}"
-                
-                rows="#{tableBean.rows}" rowsPerPageTemplate="#{tableBean.rowsTemplate}"
-                first="#{tableBean.firstOnLast()}" binding="#{tableBean.dataTable}"
-                paginator="#{tableBean.paginator}" editable="true" sortMode="multiple"
-                rowStyleClass="#{tableBean.rowStyleClass(_item)}" resizableColumns="true"
-             -->
+                                 (_item.cluster.name.equals('Athelyezes') ? 'athelyezes' : null)}"
+                                 resizableColumns="true"
+                                 widgetVar="tableWidget" binding="#{paginatorBean.dataTable}"
+                                 first="#{paginatorBean.firstRowOnLastPage}"
+                                 
+                                 rows="#{tableBean.rows}" rowsPerPageTemplate="#{tableBean.rowsTemplate}"
+                                 first="#{tableBean.firstOnLast()}" binding="#{tableBean.dataTable}"
+                                 paginator="#{tableBean.paginator}" editable="true" sortMode="multiple"
+                                 rowStyleClass="#{tableBean.rowStyleClass(_item)}" resizableColumns="true"
+                -->
             </ui:remove>
             <p:dataTable id="trlist" styleClass="data-table" value="#{transactionBean.list}" var="_item"
-                paginatorTemplate="#{tableBean.paginator}" rows="#{tableBean.rowCountOnPage}" paginator="true"
-                editable="true" rowsPerPageTemplate="25,50,100" sortMode="multiple"
-                rowStyleClass="#{tableBean.rowStyleClass(_item)}" resizableColumns="true"
-                widgetVar="tableWidget" binding="#{tableBean.dataTable}" first="#{tableBean.firstOnLast()}">
+                         paginatorTemplate="#{tableBean.paginator}" rows="#{tableBean.rowCountOnPage}" paginator="true"
+                         editable="true" rowsPerPageTemplate="25,50,100" sortMode="multiple"
+                         rowStyleClass="#{tableBean.rowStyleClass(_item)}" resizableColumns="true"
+                         widgetVar="tableWidget" binding="#{tableBean.dataTable}" first="#{tableBean.firstOnLast()}"
+                         >
 
                 <f:facet name="header">
                     <p:outputPanel id="headerPanel" style="line-height:28px">
                         <p:selectOneMenu id="ca_uid" value="#{transactionBean.filterCa}"
-                            converter="#{mecBean}" style="float:left">
+                                         converter="#{mecBean}" style="float:left">
                             <f:selectItem itemLabel="Filter by charge account [from]" itemValue="#{null}" />
                             <f:selectItems value="#{caBean.items}" />
                         </p:selectOneMenu>
                         <p:selectOneMenu id="ca_transfer_uid" value="#{transactionBean.filterCatransfer}"
-                            converter="#{mecBean}" style="float:left">
+                                         converter="#{mecBean}" style="float:left">
                             <f:selectItem itemLabel="Filter by charge account [to]" itemValue="#{null}" />
                             <f:selectItems value="#{caBean.items}" />
                         </p:selectOneMenu>
                         <p:selectOneMenu id="cl_uid" value="#{transactionBean.filterCluster}"
-                            converter="#{mecBean}" style="float:left">
+                                         converter="#{mecBean}" style="float:left">
                             <f:selectItem itemLabel="Filter by cluster" itemValue="#{null}" />
                             <f:selectItems value="#{clBean.items}" />
                         </p:selectOneMenu>
                         <p:selectOneMenu id="mk_filter_uid" value="#{transactionBean.filterMarket}"
-                            converter="#{mecBean}" style="float:left">
+                                         converter="#{mecBean}" style="float:left">
                             <f:selectItem itemLabel="Filter by market" itemValue="#{null}" />
                             <f:selectItems value="#{mkBean.items}" />
                         </p:selectOneMenu>
                         <p:commandButton action="#{transactionBean.updateView}" value="Search"
-                            id="SearchButton2" icon="ui-icon-search" ajax="false"
-                            style="float:left; height:28px;font-size:0.9em" />
+                                         id="SearchButton2" icon="ui-icon-search" ajax="false"
+                                         style="float:left; height:28px;font-size:0.9em" />
 
                         <p:commandButton id="NewTrButton" style="float:right;height:28px;font-size:0.9em"
-                            action="#{transactionBean.create}" value="New transaction" icon="ui-icon-plus" ajax="false" />
+                                         action="#{transactionBean.create}" value="New transaction" icon="ui-icon-plus" ajax="false" />
 
                         <p:commandButton id="LoadODFButton" style="float:right;height:28px;font-size:0.9em"
-                            action="#{transactionBean.loadOdf()}" value="Load ODF document"
-                            icon="ui-icon-plus" ajax="false" />
+                                         action="#{transactionBean.loadOdf()}" value="Load ODF document"
+                                         icon="ui-icon-plus" ajax="false" />
 
                         <!-- Erre azert van szukseg, hogy a header megtartsa a magassagat (fura ez a css) -->
                         <h:outputText value="&nbsp;&nbsp;&nbsp;&nbsp;" />
@@ -121,7 +125,7 @@
                 </p:column>
 
                 <p:column style="width:  70px;text-align:center" headerText="Date" sortBy="#{_item.date}">
-                    <h:outputText id="tr_date" value="#{of:formatDate(_item.date, 'yyyy-MM-dd')}" />
+                    <h:outputText id="tr_date" value="#{_item.dateString}" />
                 </p:column>
 
                 <p:column style="width:  80px;text-align:right" headerText="Amount" sortBy="#{_item.amount}">
@@ -141,18 +145,18 @@
                 </p:column>
 
                 <p:column style="width:  70px;text-align:center" headerText="To"
-                    sortBy="#{_item.catransfer.name}">
+                          sortBy="#{_item.catransfer.name}">
                     <h:outputText id="catransfer" value="#{_item.catransfer.name}" />
                 </p:column>
 
                 <p:column style="width: 170px;text-align:center" headerText="Cluster"
-                    sortBy="#{_item.cluster.name}">
+                          sortBy="#{_item.cluster.name}">
                     <h:outputText id="cluster" value="#{_item.cluster.name}" />
                 </p:column>
 
                 <p:column style="width: 170px;text-align:center" headerText="Market">
                     <h:outputText id="market" value="#{_item.market.name}"
-                        rendered="#{_item.pivot or _item.cluster.name.equals('Athelyezes')}" />
+                                  rendered="#{_item.pivot or _item.cluster.name.equals('Athelyezes')}" />
 
                     <p:cellEditor
                         rendered="#{not _item.pivot and not _item.cluster.name.equals('Athelyezes')}">
@@ -161,9 +165,9 @@
                         </f:facet>
                         <f:facet name="input">
                             <h:selectOneMenu id="mk_uid" value="#{_item.market}"
-                                style="width:100%;padding:0px;margin:0px;" converter="#{mecBean}">
+                                             style="width:100%;padding:0px;margin:0px;" converter="#{mecBean}">
                                 <f:selectItems value="#{mkBean.items}" var="mkitem"
-                                    itemLabel="#{mkitem.value}" itemValue="#{mkitem}" />
+                                               itemLabel="#{mkitem.value}" itemValue="#{mkitem}" />
                             </h:selectOneMenu>
                         </f:facet>
                     </p:cellEditor>
@@ -178,7 +182,7 @@
                         </f:facet>
                         <f:facet name="input">
                             <h:inputText value="#{_item.remark}" id="remark"
-                                style="width:100%;padding:0px;margin:0px;" />
+                                         style="width:100%;padding:0px;margin:0px;" />
                         </f:facet>
                     </p:cellEditor>
                 </p:column>
@@ -192,13 +196,17 @@
                         <h:outputText value="Edit" />
                     </p:commandLink>
                 </p:column>
-                <p:column style="width:  50px;text-align: center" rendered="#{request.isUserInRole('ADMIN') }">
-                    <p:commandLink id="remove" rendered="#{request.isUserInRole('ADMIN') }"
-                        action="#{transactionBean.remove(_item)}" ajax="false"
-                        onclick="if (! confirm('Really want to do that?')) return false" class="edit_icon">
-                        <h:outputText value="Remove" />
-                    </p:commandLink>
-                </p:column>
+
+                <ui:remove>
+                    <p:column style="width:  50px;text-align: center" rendered="#{request.isUserInRole('ADMIN') }">
+                        <p:commandLink id="remove" rendered="#{request.isUserInRole('ADMIN') }"
+                                       action="#{transactionBean.remove(_item)}" ajax="false"
+                                       onclick="if (!confirm('Really want to do that?'))
+                                                   return false" class="edit_icon">
+                            <h:outputText value="Remove" />
+                        </p:commandLink>
+                    </p:column>
+                </ui:remove>
 
                 <p:column style="width:32px" rendered="true">
                     <p:rowEditor />

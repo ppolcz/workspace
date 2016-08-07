@@ -22,7 +22,7 @@ public class ClusterBean extends AbstractMapEntityBean<Cluster> implements Seria
     private static final long serialVersionUID = 8237279798736467461L;
 
 //    @EJB
-    @ManagedProperty(value = "entityService")
+    @ManagedProperty(value = "#{entityService}")
     private EntityService service;
 
     @Override
@@ -35,5 +35,12 @@ public class ClusterBean extends AbstractMapEntityBean<Cluster> implements Seria
     protected Cluster createNewEntity()
     {
         return new Cluster();
+    }
+
+    /**
+     * @param service the service to set
+     */
+    public void setService(EntityService service) {
+        this.service = service;
     }
 }
