@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pcz_page_template.xhtml">
+
+
+
+	<ui:param name="pageTitle" value="Felhasználó létrehozása"/>
+
+	<ui:define name="header">
+		Felhasználók
+	</ui:define>
+
+	<ui:define name="subheader">
+		Új felhasználó felvétele
+	</ui:define>
+
+
+	<ui:define name="main">
+			<h:form id="search">	
+				<h:panelGroup styleClass="search">
+				     
+						<div class="buttons">
+								<h:commandButton value="Új elem létrehozása a SimpleTable-ben" action="#{simpleBeanEntity.insertSimpleEntry()}"  styleClass="btn btn-primary"/> 
+						</div>
+		
+				</h:panelGroup>
+			</h:form> 
+		
+			
+	</ui:define>
+
+</ui:composition>

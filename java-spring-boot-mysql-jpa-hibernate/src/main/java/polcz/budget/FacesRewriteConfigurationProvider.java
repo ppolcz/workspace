@@ -19,8 +19,9 @@ public class FacesRewriteConfigurationProvider extends HttpConfigurationProvider
     @Override
     public Configuration getConfiguration(final ServletContext context) {
         return ConfigurationBuilder.begin()
-                .addRule(Join.path("/").to("/index.jsf"))
-                .addRule(Join.path("/book/{id}/").to("/viewBook.jsf"));
+            .addRule(Join.path("/").to("/index.jsf"))
+            .addRule(Join.path("/budget/").to("/old/index.jsf"))
+            .addRule(Join.path("/book/{id}/").to("/viewBook.jsf"));
     }
 
 }

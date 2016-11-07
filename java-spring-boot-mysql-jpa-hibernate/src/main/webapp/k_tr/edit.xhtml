@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<ui:composition template="/resources/scaffold/pcz_page_template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" xmlns:mycomponents="http://xmlns.jcp.org/jsf/composite/mycomponents"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:define name="header">Transactions</ui:define>
+    <ui:define name="subheader">Edit transaction</ui:define>
+
+    <ui:define name="main">
+        <h:form id="search">
+            <h:panelGroup styleClass="search">
+
+                <mycomponents:editTransactionComp id="component" entity="#{transactionBean.entity}" />
+
+                <div class="buttons">
+                    <p:commandButton action="#{transactionBean.merge()}" icon="ui-icon-check"
+                        value="Submit changes" ajax="false" widgetVar="submitWidget" />
+                </div>
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+</ui:composition>

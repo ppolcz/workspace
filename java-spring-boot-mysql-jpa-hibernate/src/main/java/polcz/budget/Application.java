@@ -4,7 +4,7 @@ import java.util.EnumSet;
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.DispatcherType;
 import org.ocpsoft.rewrite.servlet.RewriteFilter;
-import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -21,35 +21,27 @@ import org.springframework.context.annotation.ComponentScan;
 
 //@SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(
-{
-    "polcz.budget"
-})
-public class Application extends SpringBootServletInitializer
-{
+@ComponentScan({"polcz.budget"})
+public class Application extends SpringBootServletInitializer {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
-    {
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(Application.class, Initializer.class);
     }
 
     @Bean
-    public ServletRegistrationBean servletRegistrationBean()
-    {
+    public ServletRegistrationBean servletRegistrationBean() {
         FacesServlet servlet = new FacesServlet();
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(servlet, "*.jsf");
         return servletRegistrationBean;
     }
 
     @Bean
-    public FilterRegistrationBean rewriteFilter()
-    {
+    public FilterRegistrationBean rewriteFilter() {
         FilterRegistrationBean rwFilter = new FilterRegistrationBean(new RewriteFilter());
         rwFilter.setDispatcherTypes(EnumSet.of(DispatcherType.FORWARD, DispatcherType.REQUEST, DispatcherType.ASYNC, DispatcherType.ERROR));
         rwFilter.addUrlPatterns("/*");
