@@ -100,7 +100,7 @@ public class OdfValidationService {
     public static final int VALIDITY_CA_NAME_COL = 6;
     public static final int VALIDITY_CA_DESC_COL = 7;
     public static final int NR_TRS = 12;
-    public static final int TR_OFFSET = 14;
+    public static final int TR_OFFSET = 15;
     public static final int TR_LENGTH = 5; // amount, ca, cluster, market, remark
 
     public static final int IND_DATE = 0;
