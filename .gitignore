@@ -1,22 +1,22 @@
 nbproject/*
 .metadata*
 .recommenders/*
- 
+
 ./cpp-qt-widgets/.gitignore
 */build/
 */dist/
 */moc/
 */rcc/
-*/ui/ 
+*/ui/
 */bin/
 */gen/*
 
-**/nbproject/*.mk 
-**/nbproject/private/*.mk 
-**/nbproject/*.pro 
+**/nbproject/*.mk
+**/nbproject/private/*.mk
+**/nbproject/*.pro
 **/nbproject/private/*.pro
 **/nbproject/private/private.xml
-                          
+
 **.pre
 
 
@@ -24,3 +24,5 @@ nbproject/*
 */.classpath
 */.project
 */.tern-project
+
+.ipynb_checkpoints
