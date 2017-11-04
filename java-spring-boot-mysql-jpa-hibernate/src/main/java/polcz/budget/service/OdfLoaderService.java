@@ -63,7 +63,7 @@ public class OdfLoaderService {
     private String odfDocumentPath;
 
     public void process(String odfName) {
-        odfDocumentPath = "/home/ppolcz/Dropbox/" + odfName;
+        odfDocumentPath = "/home/ppolcz/Dropbox/Peti/Desktop/" + odfName;
         init();
         parse();
     }
@@ -115,10 +115,10 @@ public class OdfLoaderService {
 
             logger.info("Elkezdtem olvasni a dokumentumot");
             SpreadsheetDocument data = SpreadsheetDocument.loadDocument(odfDocumentPath);
-            
+
             logger.info("Kivalasztom a Validity tablat");
             Table valTable = data.getTableByName("Validity");
-            
+
             logger.info("Kivalasztom a fo tablat");
             Table mainTable = data.getTableByName("Koltsegvetes");
 
@@ -148,7 +148,7 @@ public class OdfLoaderService {
                 calist.put("pinfo", pinfo);
 
                 /* build charge accounts list: [2] those, who do not require update (informational transactions) */
-            
+
                 for (int i = 1; i < 1000; i++) {
                     Row row = valTable.getRowByIndex(i);
                     int prop = getInteger(row, VALIDITY_CA_PROP_COL);
@@ -161,7 +161,7 @@ public class OdfLoaderService {
                         ChargeAccount ca = ss.ca(new ChargeAccount(name, desc));
                         calist.put(name, ca);
                     }
-                    
+
                     if (name.isEmpty()) break;
                 }
             }

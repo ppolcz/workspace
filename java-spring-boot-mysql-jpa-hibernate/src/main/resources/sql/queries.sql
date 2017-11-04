@@ -87,7 +87,27 @@ from
 ) as utolso_ugyletek;
 
 
-
+-- 2017.11.04. (november 4, szombat), 13:26 [sql_mode=only_full_group_by]
+-- Ez egy nagyon hasznos lekerdezes (Klaszterek szerint csoportositva az elmult par nap)
+SET @@group_concat_max_len = 400;
+set @sum := 0;
+set @nrdays := 365;
+select lpad(format(amount,0), 8, ' ') as amount, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum, clname, mkname, remark
+from
+(
+    select sum(amount*clusters.sgn) as amount, clusters.name as clname,
+        group_concat(DISTINCT markets.name ORDER BY markets.name ASC separator ', ') as mkname,
+        group_concat(DISTINCT remark separator ', ') as remark
+    from ugyletek,markets,clusters
+    where
+        cluster = clusters.uid and market = markets.uid
+        and ugyletek.date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+    group by clusters.uid
+    order by amount
+) as utolso_ugyletek;
+--
+-- REGI VERZIO - sql_mode=only_full_group_by miatt nem is mukodik
 -- Ez egy nagyon hasznos lekerdezes (Klaszterek szerint csoportositva az elmult par nap)
 SET @@group_concat_max_len = 120;
 set @sum := 0;
@@ -107,6 +127,48 @@ from
     order by amount
 ) as utolso_ugyletek;
 
+
+-- 2017.11.04. (november 4, szombat), 13:25
+-- Ez egy nagyon hasznos lekerdezes (Klaszterek és számla szerint csoportositva az elmult par nap, csak bevetel) [UJ - 2017.11.04. (november 4, szombat), 13:05 - only_full_groupby]
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @nrdays := 365;
+select lpad(format(amount,0), 8, ' ') as amount, lpad(format((@sum := @sum + amount),0), 9, ' ') as cumsum, caname, clname, mkname, remark
+from
+(
+    select accounts.name as caname, sum(amount*clusters.sgn) as amount, clusters.name as clname,
+        group_concat(DISTINCT markets.name ORDER BY markets.name ASC separator ', ') as mkname,
+        group_concat(DISTINCT remark separator ', ') as remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and ugyletek.date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.sgn > 0 and amount*clusters.sgn > 0
+    group by clusters.uid, accounts.uid
+    order by amount
+) as utolso_ugyletek;
+
+
+-- 2017.11.04. (november 4, szombat), 13:25
+-- Ez egy nagyon hasznos lekerdezes (Klaszterek és számla szerint csoportositva az elmult par nap) [UJ - 2017.11.04. (november 4, szombat), 13:05 - only_full_groupby]
+SET @@group_concat_max_len = 400;
+set @sum := 0;
+set @nrdays := 365;
+select lpad(format(amount,0), 8, ' ') as amount, lpad(format((@sum := @sum + amount),0), 10, ' ') as cumsum, caname, clname, mkname, remark
+from
+(
+    select accounts.name as caname, sum(amount*clusters.sgn) as amount, clusters.name as clname,
+        group_concat(DISTINCT markets.name ORDER BY markets.name ASC separator ', ') as mkname,
+        group_concat(DISTINCT remark separator ', ') as remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and ugyletek.date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+    group by clusters.uid, accounts.uid
+    order by amount
+) as utolso_ugyletek;
 
 
 -- Ez egy nagyon hasznos lekerdezes (Kumulalt szummalva es ertek szerint csokkeno sorrendben - legnagyobb koltseg elol - Csak Napi_Szukseglet)
