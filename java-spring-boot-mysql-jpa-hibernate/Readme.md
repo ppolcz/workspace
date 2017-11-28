@@ -9,3 +9,6 @@ mvn clean spring-boot:run
 
 wget localhost:8080/odf-load
 
+<!-- ~/Dropbox/Peti/Others/Config/scripts/export_mysql.sh -->
+<!-- Run this command to export the contents of the database -->
+export_mysql.sh
