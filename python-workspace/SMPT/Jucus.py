@@ -43,7 +43,7 @@ gmail_pwd = 'G_Esztergom991'
 # verbenyi.maria@gmail.com
 
 nevek = [
-    (u"Polcz Doró"        , u"kicsi feleségecském" , "jozsadorci@gmail.com"          , +1 ),
+    (u"Polcz Doró"        , u"kicsi feleségecském" , "polcz.dorottya@gmail.com "     , +1 ),
     (u"Polcz Peti"        , u"Petúr"               , "ppolcz@gmail.com"              , -1 ),
     (u"Kriston Ági"       , u"Ágóca"               , "kristonagnes21@gmail.com"      , +1 ),
     (u"Zsigmond Iringó"   , u"Iringócskácska"      , "zsim99@gmail.com"              , +1 ),

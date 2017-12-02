@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"aja",
+				"ajandekozo_mail"
+			],
+			[
+				"leg",
+				"legkisebb_realis"
+			],
+			[
+				"legki",
+				"legkisebb_mertek"
+			],
+			[
+				"legkis",
+				"legkisebb_realis"
+			],
+			[
 				"cl",
 				"class\tAttr"
 			],
@@ -498,27 +514,20 @@
 			[
 				"b",
 				"b\tTag"
-			],
-			[
-				"meta",
-				"metaData"
-			],
-			[
-				"url",
-				"urlencode"
-			],
-			[
-				"pde_m",
-				"pde_minimal_surface_unit_disc-tidy2"
-			],
-			[
-				"a",
-				"a\tTag"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "SMPT/Jucus.py",
+			"settings":
+			{
+				"buffer_size": 4318,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -1109,10 +1118,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace/SMPT"
 	],
 	"file_history":
 	[
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace/SMPT/Jucus.py",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace/Make",
 		"/home/ppolcz/TDK_2018_ITK.txt",
 		"/home/ppolcz/tab.m",
@@ -1239,8 +1250,7 @@
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/oktatas/anal3/4_pde/html/hullamegyenlet_gyenge_megoldasok_v1.html",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/equipotation_lines_of_electric_field_17_08_27_Time033947_runID1878.php",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/pages/honlap.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/templates/szerkesztes.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/pages/lidar.php"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/templates/szerkesztes.php"
 	],
 	"find":
 	{
@@ -1258,11 +1268,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\", *\"",
+			", *u",
+			",         u",
+			"legkisebb",
+			"j",
+			"True",
+			"),",
+			"\", \"",
+			", u",
+			"),",
+			"jozsadorci",
+			"false",
+			"nemok",
+			"true",
+			"false",
+			"true"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
 		],
@@ -1270,13 +1296,45 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "SMPT/Jucus.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1151,
+								1151
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1512222524.18,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 278.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
