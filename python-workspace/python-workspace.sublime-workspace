@@ -5,7 +5,15 @@
 		[
 			[
 				"aja",
-				"ajandekozo_mail"
+				"ajandekozott_nev"
+			],
+			[
+				"gmai",
+				"gmail_user"
+			],
+			[
+				"gma",
+				"gmail_user"
 			],
 			[
 				"leg",
@@ -506,55 +514,11 @@
 			[
 				"path",
 				"pathinfo"
-			],
-			[
-				"ol",
-				"ol\tTag"
-			],
-			[
-				"b",
-				"b\tTag"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "SMPT/Jucus.py",
-			"settings":
-			{
-				"buffer_size": 4318,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/ppolcz/Dropbox/Peti/PhD/Oktatas/00_Temavezetes/Uzonyi_Adam/Recommendation_Letter.tex",
-			"settings":
-			{
-				"buffer_size": 2351,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "Dear [Name of Employer or Graduate School Committe"
-			}
-		},
-		{
-			"file": "/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Oktatas/00_Temavezetes/Uzonyi_Adam/Recommendation_Letter.tex",
-			"settings":
-			{
-				"buffer_size": 2351,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "%\n% \n% author  Peter Polcz (ppolcz@gmail.com)\n% date    2017-12-03 00:05:07\n% version $Id$\n%\n\n\\documentclass[a4paper,intlimits]{article}\n\\usepackage[paperwidth=215mm,paperheight=324mm,top=2cm,bottom=2cm,left=2.5cm,right=2.5cm]{geometry}\n\\usepackage[ccsgyak,thmhu]{polcz}\n\n\\usepackage{fancyhdr} % lfoot, rfoot, cfoot, stb...\n\\pagestyle{fancy}\n\\renewcommand{\\headrulewidth}{0pt}\n\n% DEBUG PACKAGES\n% \\usepackage{showframe}\n\\usepackage{lipsum}\n\n% DEFAULT PACKAGES\n\\usepackage[magyar, english]{babel}\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amsmath,amsfonts,xcolor,mathtools}\n\\usepackage{xparse}\n% \\usepackage[colorlinks=true]{hyperref}\n\\usepackage[hyperfootnotes=false,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,anchorcolor=blue,pagebackref=false]{hyperref}\n% \\everymath{\\displaystyle}\n\n% \\usepackage{listings}\n\\usepackage{graphicx,wrapfig}\n\n\\usepackage{titling}\n\\usepackage[yyyymmdd,hhmmss]{datetime}\n\\renewcommand{\\dateseparator}{.}\n\n\\renewcommand{\\headrulewidth}{0pt}\n\\renewcommand{\\footrulewidth}{0.4pt}\n\\lhead{}\n\\chead{}\n\\rhead{}\n\\lfoot{\\thedate}\n\\rfoot{\\theauthor}\n\\cfoot{\\thepage}\n\n\\let\\dsp\\displaystyle\n\\let\\vector\\vec\n\\let\\vec\\boldsymbol\n% \\let\\vec\\mathbf\n\\let\\epsilon\\varepsilon\n\\let\\eps\\varepsilon\n\\let\\rm\\mathrm\n\\providecommand\\vx{\\vec x}\n\\providecommand\\jel{\\overset{\\text{jel}}{=}}\n\n\\usepackage{sectsty}\n\n\\sectionfont{\\fontsize{14}{17}\\selectfont}\n\\renewcommand{\\thesection}{\\Alph{section}}\n\\renewcommand{\\thesubsection}{\\thesection.\\arabic{subsection}}\n\n\\makeatletter\n\\g@addto@macro\\normalsize{%\n  \\setlength\\abovedisplayskip{4pt}\n  \\setlength\\belowdisplayskip{4pt}\n  \\setlength\\abovedisplayshortskip{4pt}\n  \\setlength\\belowdisplayshortskip{4pt}\n}\n\\makeatother\n\n\\begin{document}\n\\title{}\n\\author{}\n\\date{verzió: {\\today.} -- {\\currenttime}}\n% \\maketitle\n% \\tableofcontents\n\n\\end{document}",
-			"settings":
-			{
-				"buffer_size": 1841,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -1145,12 +1109,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace/SMPT"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace"
 	],
 	"file_history":
 	[
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Oktatas/00_Temavezetes/Uzonyi_Adam/Recommendation_Letter.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/include/python/SMPT/Jucus.py",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace/SMPT/Jucus.py",
+		"/home/ppolcz/Dropbox/Peti/PhD/Oktatas/00_Temavezetes/Uzonyi_Adam/Recommendation_Letter.tex",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/workspace/python-workspace/Make",
 		"/home/ppolcz/TDK_2018_ITK.txt",
 		"/home/ppolcz/tab.m",
@@ -1274,10 +1240,7 @@
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/pages/z_mysql_config.php",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/pages/tenzor.php",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/oktatas/anal3/4_pde/html/hullamegyenlet_gyenge_megoldasok_v1_output.html",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/oktatas/anal3/4_pde/html/hullamegyenlet_gyenge_megoldasok_v1.html",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/equipotation_lines_of_electric_field_17_08_27_Time033947_runID1878.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/pages/honlap.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/templates/szerkesztes.php"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/oktatas/anal3/4_pde/html/hullamegyenlet_gyenge_megoldasok_v1.html"
 	],
 	"find":
 	{
@@ -1295,6 +1258,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ajandekozo_nev",
+			"ajandekozo_mail",
+			"template",
+			"mail",
+			"gma",
+			"send_email",
+			"template",
+			"verbenyi",
+			"kjulcsi98",
+			"gorellanna",
+			"kingasz128",
+			"Kinga",
+			"his",
+			"excelent",
+			"Your",
+			"and",
+			"example",
 			"hyperr",
 			"polcz",
 			"\", *\"",
@@ -1330,130 +1310,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "SMPT/Jucus.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4318,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1151,
-								1151
-							]
-						],
-						"settings":
-						{
-							"markdonw_live_preview_last_run": 1512222524.18,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 278.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/ppolcz/Dropbox/Peti/PhD/Oktatas/00_Temavezetes/Uzonyi_Adam/Recommendation_Letter.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1210,
-								1210
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Dear [Name of Employer or Graduate School Committe",
-							"markdonw_live_preview_last_run": 1512262194.55,
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Oktatas/00_Temavezetes/Uzonyi_Adam/Recommendation_Letter.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								2351
-							]
-						],
-						"settings":
-						{
-							"markdonw_live_preview_last_run": 1512262098.07,
-							"spell_check": true,
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 223.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1841,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1841,
-								1841
-							]
-						],
-						"settings":
-						{
-							"default_dir": null,
-							"syntax": ""
-						},
-						"translation.x": 0.0,
-						"translation.y": 390.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1672,7 +1530,7 @@
 		[
 			[
 				"",
-				"~/Repositories/Bitbucket/control-systems/users/public_html/files/targyak/anal3/szorgalmi/anal3_szorgalmi.sublime-project"
+				"~/Repositories/Bitbucket/control-systems/users/public_html/files/targyak/ccs_2017fall/ccs_2017fall.sublime-project"
 			]
 		],
 		"width": 1500.0
