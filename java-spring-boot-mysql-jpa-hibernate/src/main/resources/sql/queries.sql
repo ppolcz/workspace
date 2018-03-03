@@ -46,9 +46,6 @@ where
     and clusters.name not like 'athelyezes'
 order by amount;
 
-
-select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
-
 create view ugyletek_mind as
 select date, balance, `from`.name as ca, amount*clusters.sgn as amount, `to`.name as catransfer, clusters.name as cluster, markets.name as market, remark
 from ugyletek,markets,clusters,accounts as `from`, accounts as `to`
@@ -64,9 +61,17 @@ where
     and clusters.name not like 'athelyezes'
 order by date, ugyletek.uid;
 
+select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
 
 select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
 
+
+-- Burgundi lekérdezés
+-- 2018.03.03. (március  3, szombat), 15:38
+select * from ugyletek_mind where (cluster like 'Burgundi' or catransfer like 'dkez') and date > '2017.09.01' order by date;
+
+
+select sum(amount), cluster from ugyletek_mind where (cluster like 'Burgundi' or catransfer like 'dkez') and date > '2017.09.01' group by cluster;
 
 -- Ez egy nagyon hasznos lekerdezes (Kumulalt szummalva es ertek szerint csokkeno sorrendben - legnagyobb koltseg elol)
 SET @@group_concat_max_len = 120;

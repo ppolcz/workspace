@@ -117,7 +117,7 @@ public class OdfValidationService {
 
     public static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
     // public static final Date nptcIntroductionDate = new GregorianCalendar(2015, Calendar.DECEMBER, 17).getTime();
-    public static final int NPTC_INIT_ROW_NR = 897;
+    // public static final int NPTC_INIT_ROW_NR = 897;
 
     public static final Set<String> MARKETS_N = new HashSet<>(Arrays.asList(new String[] {
         "spar", "interspar", "lidl", "aldi", "tesco", "auchan", "dezsoba", "izlelo", "coop", "rossmann",

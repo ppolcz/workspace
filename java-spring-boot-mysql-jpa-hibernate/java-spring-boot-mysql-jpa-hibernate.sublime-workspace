@@ -1,0 +1,1607 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"SOP",
+				"eq:SOP_inequality"
+			],
+			[
+				"Isid",
+				"1982_Isidori.Krener: On feedback equivalence of nonlinear systems"
+			],
+			[
+				"mf",
+				"mf\t. : ℝ^. -> ℝ^.."
+			],
+			[
+				"defin",
+				"definition"
+			],
+			[
+				"fig",
+				"fig/fig_K.pdf"
+			],
+			[
+				"mini",
+				"minipage\tminipage 2"
+			],
+			[
+				"f",
+				"fig/genblockscheme/fig_K.pdf"
+			],
+			[
+				"bl",
+				"black\t\\black"
+			],
+			[
+				"fi",
+				"fig/18_02_17_Time174448_runID0404_Figure1-trimmed.png"
+			],
+			[
+				"Boy",
+				"Boyd.ElGhaoui.etal_1994_Linear_Matrix_Inequalities_in_System_and_Control_Theory: Linear matrix inequalities in system and control theory"
+			],
+			[
+				"Isi",
+				"1982_Isidori.Krener: On feedback equivalence of nonlinear systems"
+			],
+			[
+				"mi",
+				"minipage\tminipage 2"
+			],
+			[
+				"eps",
+				"varepsilon\t\\varepsilon"
+			],
+			[
+				"fel",
+				"callitas\tcfel full"
+			],
+			[
+				"enum",
+				"enumerate"
+			],
+			[
+				"si",
+				"fig/sim1_scope.jpg"
+			],
+			[
+				"al",
+				"al\taligned"
+			],
+			[
+				"Na",
+				"eq:Na2_sajat"
+			],
+			[
+				"Ca",
+				"eq:Ca2_alepha2"
+			],
+			[
+				"eq:Ca",
+				"eq:Ca7_alepha7"
+			],
+			[
+				"Nb",
+				"eq:Nb7_sajat"
+			],
+			[
+				"Rnn",
+				"Rnn\tℝ^.."
+			],
+			[
+				"eq",
+				"eqal\tequation aligned"
+			],
+			[
+				"eq:N",
+				"eq:Nb2_sajat"
+			],
+			[
+				"O",
+				"O\tΩ"
+			],
+			[
+				"LFR",
+				"2006_Magni_LFR: Linear fractional representation toolbox (version 2.0) for use with"
+			],
+			[
+				"fig:vdpu",
+				"fig:vdpu_t"
+			],
+			[
+				"ISS",
+				"eq:vdp_ISS_P"
+			],
+			[
+				"vd",
+				"fig:vdp_ISS"
+			],
+			[
+				"norm",
+				"Normal"
+			],
+			[
+				"l",
+				"label\tlabel eq:"
+			],
+			[
+				"Mkk",
+				"MKK_Logo.pdf"
+			],
+			[
+				"use",
+				"use"
+			],
+			[
+				"P16",
+				"eq:P16_a"
+			],
+			[
+				"USERS_RE",
+				"USERS_REMOTE_ADDRESS"
+			],
+			[
+				"USERS_SYNC_",
+				"USERS_SYNC_UP"
+			],
+			[
+				"USERS_",
+				"USERS_SYNC_DOWN"
+			],
+			[
+				"USER",
+				"USERS_LOCAL"
+			],
+			[
+				"US",
+				"USERS_LOCAL"
+			],
+			[
+				"RS",
+				"RSYNC_EGREP"
+			],
+			[
+				"RSY",
+				"RSYNC_FLAGS"
+			],
+			[
+				"rann",
+				"eq:prop_rann_N_hat"
+			],
+			[
+				"Fin",
+				"eq:Finsler_1"
+			],
+			[
+				"Rn",
+				"Rn\tℝ^."
+			],
+			[
+				"label",
+				"label\tlabel eq:"
+			],
+			[
+				"ali",
+				"al\taligned"
+			],
+			[
+				"Lya",
+				"eq:Lyapunov_form"
+			],
+			[
+				"fun",
+				"functions"
+			],
+			[
+				"lf",
+				"sys:lfr_lin"
+			],
+			[
+				"eq:Lya",
+				"eq:Lyapunov_form"
+			],
+			[
+				"Lyap",
+				"eq:Lyapunov_hat"
+			],
+			[
+				"la",
+				"label\tlabel eq:"
+			],
+			[
+				"corresp",
+				"corresponding"
+			],
+			[
+				"correspon",
+				"correspondingly"
+			],
+			[
+				"dimen",
+				"dimension"
+			],
+			[
+				"observ",
+				"observability"
+			],
+			[
+				"con",
+				"cont_sch-eps-converted-to.pdf"
+			],
+			[
+				"cont_sch",
+				"cont_sch-eps-converted-to.pdf"
+			],
+			[
+				"x1_n",
+				"x1_numd"
+			],
+			[
+				"sec",
+				"sec:LFT"
+			],
+			[
+				"befo",
+				"before_link"
+			],
+			[
+				"R_",
+				"R_DEMONSTRATIONS"
+			],
+			[
+				"If",
+				"IfBooleanTF"
+			],
+			[
+				"DeclareDocument",
+				"DeclareDocumentCommand"
+			],
+			[
+				"Re",
+				"RequirePackage"
+			],
+			[
+				"t",
+				"trigger\tCreate new trigger"
+			],
+			[
+				"input",
+				"input-to-state"
+			],
+			[
+				"in",
+				"infty"
+			],
+			[
+				"sub",
+				"subl\tsubequations with label"
+			],
+			[
+				"c",
+				"cout"
+			],
+			[
+				"main",
+				"main\tmain()"
+			],
+			[
+				"subse",
+				"subseteq"
+			],
+			[
+				"trajecto",
+				"trajectories"
+			],
+			[
+				"unc",
+				"eq:unc1_centered"
+			],
+			[
+				"Sec",
+				"Sec_Uncertain_levelset"
+			],
+			[
+				"LMI",
+				"lmi:dV"
+			],
+			[
+				"conse",
+				"consequence"
+			],
+			[
+				"poly",
+				"polytope"
+			],
+			[
+				"equival",
+				"equivalence"
+			],
+			[
+				"en",
+				"en:iii"
+			],
+			[
+				"lyap",
+				"eq:Lyapunov_conditions_def"
+			],
+			[
+				"enu",
+				"enum\tEnumerate"
+			],
+			[
+				"L",
+				"LN\tL_N(..)"
+			],
+			[
+				"math",
+				"mathfrak"
+			],
+			[
+				"eq:GMI",
+				"eq:GMIq"
+			],
+			[
+				"equiv",
+				"equivalence"
+			],
+			[
+				"satis",
+				"satisfy"
+			],
+			[
+				"em",
+				"em"
+			],
+			[
+				"hi",
+				"Hibas\t\\Hibas"
+			],
+			[
+				"algr",
+				"algebraic"
+			],
+			[
+				"mat",
+				"mathcal"
+			],
+			[
+				"aligne",
+				"al\taligned"
+			],
+			[
+				"equiva",
+				"equivalent"
+			],
+			[
+				"GMI",
+				"eq:GMI_F"
+			],
+			[
+				"E",
+				"Eq."
+			],
+			[
+				"o",
+				"o\tω"
+			],
+			[
+				"xd",
+				"xd\t\\xd"
+			],
+			[
+				"bm",
+				"bm\t[...]"
+			],
+			[
+				"br",
+				"br"
+			],
+			[
+				"tri",
+				"trigger\tCreate new trigger"
+			],
+			[
+				"m",
+				"mf\tℝ^. -> ℝ^.."
+			],
+			[
+				"oo",
+				"oo"
+			],
+			[
+				"eqal",
+				"eqall\tequation aligned with label"
+			],
+			[
+				"trig",
+				"trigger\tCreate new trigger"
+			],
+			[
+				"tr",
+				"trigger"
+			],
+			[
+				"defi",
+				"deficient"
+			],
+			[
+				"Finler",
+				"finslerIICore"
+			],
+			[
+				"php",
+				"php\t<?php … ?>"
+			],
+			[
+				"text",
+				"text-success"
+			],
+			[
+				"cl",
+				"class\tAttr"
+			],
+			[
+				"FOR",
+				"FOREACH_COMMIT"
+			],
+			[
+				"COMM",
+				"COMMIT"
+			],
+			[
+				"ana3",
+				"anal3_3_16.pdf"
+			],
+			[
+				"Bastin",
+				"Bastin1990line: On-line estimation and adaptive control of bioreactors"
+			],
+			[
+				"auto",
+				"autonomous"
+			],
+			[
+				"ld",
+				"ldots"
+			],
+			[
+				"anni",
+				"annihilatorV"
+			],
+			[
+				"cen",
+				"centering"
+			],
+			[
+				"lv2_v1",
+				"fig/lv2_v1/Lyap_2.pdf"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"To",
+				"ToC"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"max-di",
+				"max-width"
+			],
+			[
+				"ASA",
+				"ASA\tHTML Pre Code"
+			],
+			[
+				"h",
+				"h1\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/main/java/polcz/budget/service/OdfLoaderService.java",
+			"settings":
+			{
+				"buffer_size": 19934,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/Polcz/run_script.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/LaTeXTools.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/Polcz/run_script.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/LaTeXTools.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Polcz/run_script.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/LaTeXTools.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/LaTeXTools.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Polcz/run_script.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Polcz/run_script.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "clear",
+		"selected_items":
+		[
+			[
+				"clear",
+				"LaTeXTools: Clear current bibliography cache"
+			],
+			[
+				"view pdf",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"view",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"insert",
+				"Snippet: Insert a LaTeX environment"
+			],
+			[
+				"run",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"build",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"color",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"bui",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"buil",
+				"Build With: LaTeX"
+			],
+			[
+				"pr",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"polcz",
+				"Polcz: Sublime Commands (JSON)"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"open in ",
+				"File: Open In Browser - Testing Server"
+			],
+			[
+				"scope",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"Polcz: LaTeX Document Templates"
+			],
+			[
+				"Polcz",
+				"Polcz: Sublime Commands (Python)"
+			],
+			[
+				"\\",
+				"Snippet: Pre/Code HTML tag"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"package contr",
+				"Package Control: Remove Package"
+			],
+			[
+				"latex templ",
+				"Polcz: LaTeX Document Templates"
+			],
+			[
+				"prvo",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"prv o",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"olcz",
+				"Polcz: Users Websources (pages)"
+			],
+			[
+				"template",
+				"Polcz: Users Websources (templates)"
+			],
+			[
+				"JSON",
+				"Set Syntax: JSON"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"syntax sum",
+				"Set Syntax: SublimeClangErrorPanel"
+			],
+			[
+				"syntax JS",
+				"Set Syntax: JSON"
+			],
+			[
+				"commands",
+				"Preferences: Commands - User"
+			],
+			[
+				"Preferences",
+				"Preferences: Commands - Default"
+			],
+			[
+				"Prefences",
+				"Preferences: Commands - User"
+			],
+			[
+				"Preference",
+				"Preferences: Browse Packages"
+			],
+			[
+				"open file",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"colo",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"tmpl",
+				"Tmpl: Create Latex Simple"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"focus",
+				"LaTeXTools: Toggle focus (PDF/editor)"
+			],
+			[
+				"foc",
+				"LaTeXTools: Toggle focus (PDF/editor)"
+			],
+			[
+				"focu",
+				"LaTeXTools: Toggle focus (PDF/editor)"
+			]
+		],
+		"width": 461.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import os; path=sublime.packages_path(); (os.makedirs(path) if not os.path.exists(path) else None); window.run_command('exec', {'cmd': ['git', 'clone', 'https://github.com/twolfson/sublime-edit-command-palette', 'Edit Command Palette'], 'working_dir': path})"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget/service"
+	],
+	"file_history":
+	[
+		"/tmp/mozilla_ppolcz0/S0005109801000280.bib",
+		"/tmp/mozilla_ppolcz0/S0895717702000626.bib",
+		"/tmp/mozilla_ppolcz0/10.2307_1940591.txt",
+		"/tmp/mozilla_ppolcz0/000510988290070X.bib",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
+		"/home/ppolcz/Dropbox/Dori/01_Pazmany/2_Felev/04_Bev_prog_2/1_hazi_feladat/main.cpp",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/blockdiag/fig1.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/genblockscheme/fig.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/genblockscheme/fig_without_G.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/Manuscript.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.2_Passivity.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.2_Fermentor.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.1_Simple_LPV.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.4_LF_for_zdyn.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.1_Problem_statement.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1.0_Introduction.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.2_Block_scheme.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.3_Inversion",
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Merestech0_minta/main.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Apps/ShareLaTeX/Merestech0_minta/main.tex",
+		"/home/ppolcz/.bash_aliases",
+		"/home/ppolcz/Templates/control-systems/Makefile",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/tbxmanager/tbxmanager.m",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/References.bbl",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/References.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-tikz.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz_v3.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/PassivityBIB.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/Manuscript.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/5.0_Conclusions.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.2_Fermentor.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.1_Simple_LPV.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.0_Application.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.5_Inversion_method.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.4_LF_for_zdyn.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.3_LMI_Stable_zdyn.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.2_Block_scheme.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.1_Problem_statement.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.0_Passivity_based_observer.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.3_Inversion.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.2_Passivity.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.1_Basic_notions.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.0_Background_known_concepts.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/14_ISS_LFR_trafo/LFR_trafo.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LTI.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v1.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v2.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1.0_Introduction.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1.1_Motivation.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/References.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v3.tex",
+		"/home/ppolcz/Dropbox/Dori/EFOP/mondoka",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1_Introduction.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/Makefile",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2018_01_10_LPV_inversion/d2018_01_10_LPV_inversion.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/.gitignore",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/gitignore",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/Manuscript.bbl",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2018_01_31_K_prelim_L_codesign_v5_rhofuggoBL_min.m",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/clear.sh",
+		"/home/ppolcz/Dropbox/Peti/PhD/Oktatas/10_Linalg/jegyzet/LA1-2_jegyzet.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Projects_Grants/16_EFOP/publikacios_lista.txt",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/templates/header.php",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_17_Time231010_runID0328.php",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/python/matlab_html_sanitizer.py",
+		"/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty",
+		"/usr/share/texlive/texmf-dist/tex/latex/xymtex/base/bondcolor.sty",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_17_Time163717_runID0324.php",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_25_Time093427_runID0335.php",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_18_Time125914_runID0329.php",
+		"/home/ppolcz/Dropbox/Dori/01_Pazmany/1_felev/03Bev_prog_1/C++/Beugrok/beugro.cpp",
+		"/home/ppolcz/Dropbox/Dori/01_Pazmany/1_felev/03Bev_prog_1/C++/Beugrok/beugro_2017gyakorlo_b.cpp",
+		"/home/ppolcz/Dropbox/Dori/01_Pazmany/1_felev/03Bev_prog_1/C++/Beugrok/beugro_2017gyakorlo_a.cpp",
+		"/home/ppolcz/.cache/.fr-KU084m/gyakorlas_vizsga/beugro_a.cpp",
+		"/home/ppolcz/.cache/.fr-BmMA2i/gyakorlas_vizsga/beugro_a.cpp",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_17_Time224636_runID0327.php",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v3.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2018_01_09_K_prelim_L_codesign_v4.m",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_10_LPV_inversion_18_01_10_Time212204_runID0294.php",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/Others/Config/install_software.sh",
+		"/home/ppolcz/Documents/2017_Iervolino.etal.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/References.bib",
+		"/home/ppolcz/Downloads/scopus.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/References.bib",
+		"/home/ppolcz/.java/.userPrefs/net/sf/jabref/prefs.xml",
+		"/home/ppolcz/Downloads/S0005109803000232.bib",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz_v3.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/LMI_tricks_17_11_21_Time114850_runID0076.php",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_19_MIMO_LTI_passivity_test_VEDETT/d2017_11_19_MIMO_LTI_passivity.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2017_11_19_K_prelim_L_codesign_MIN_v3.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_19_MIMO_LTI_passivity_test/d2017_11_19_MIMO_LTI_passivity.m",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v2.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2017_11_13_K_prelim_L_codesign.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2017_11_14_K_prelim_L_codesign_MIN.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/LTI_observer.m",
+		"/home/ppolcz/Dropbox/Peti/Others/Documents/koltsegvetes_export/2017_10_eves_nyilvantartas.txt",
+		"/home/ppolcz/Dropbox/Peti/Mitokondrium/dokumentáció_2/Svab_Gergely_thesis_en.tex",
+		"/tmp/mozilla_ppolcz0/scopus-2.bib",
+		"/home/ppolcz/Dropbox/Peti/Desktop/TEENDO",
+		"/tmp/mozilla_ppolcz0/scopus.bib",
+		"/tmp/mozilla_ppolcz0/scopus-1.bib",
+		"/home/ppolcz/Dropbox/Peti/Desktop/output_selection.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/PassivityOSLTI.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/preliminary_analysis.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity_analysis.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/polcz.sty",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/References.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Examples2.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Examples.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Manuscript_passivity_LTI.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/server-itk/Makefile",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/rsync-backup/2017-11-06-08-24/login.txt",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Manuscript_passivity_LTI.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/fig/augmented_model_no_fault-tikz.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/.gitignore",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/unpublished/anal3_diffgeom_tenzor_polar_1_17_08_16_Time221942_runID2143.php",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/.gitignore",
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/dictionary.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Tanulas/00_Angol/Gerund_Infinitive.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.sty",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex",
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/glossary.sty",
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/main.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/matlab/pcz_integral_slopes.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz_update.sh"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"nptc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/main/java/polcz/budget/service/OdfLoaderService.java",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 19934,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8684,
+								8684
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1520086878.02,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3343.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 323.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 289.0
+	},
+	"output.scopehunter.results":
+	{
+		"height": 88.0
+	},
+	"output.textarea":
+	{
+		"height": 234.0
+	},
+	"pinned_build_system": "",
+	"project": "java-spring-boot-mysql-jpa-hibernate.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"08_output_selection_passivity/latex_Box/3.1_Problem_statement.tex"
+			],
+			[
+				"saniter",
+				"~/Repositories/Bitbucket/control-systems/demonstrations/lib/python/matlab_html_sanitizer.py"
+			],
+			[
+				"dipl",
+				"12_Manuscripts_2016_osz/Diplomaterv_atirat.tex"
+			],
+			[
+				"phd_pr",
+				"~/Dropbox/PhD/Dokumentaciok/13_PhD_Proceedings_2017/phd_proceedings_2017.tex"
+			],
+			[
+				"publikac",
+				"~/All/Dropbox/Peti/PhD/Ugyintezes/201617_II_felev/KAP_publikacios_lista/PolczP_publikacios_lista.tex"
+			],
+			[
+				"polczpeter",
+				"~/All/Dropbox/Peti/PhD/Dokumentaciok/04_OTDK/Presentation/PolczPeter_TDK2015.tex"
+			],
+			[
+				"publik",
+				"~/All/Dropbox/Peti/PhD/Ugyintezes/201617_II_felev/KAP_publikacios_lista/PolczP_publikacios_lista.tex"
+			],
+			[
+				"dip",
+				"12_Manuscripts_2016_osz/Diplomaterv_atirat.tex"
+			],
+			[
+				"introdu",
+				"12_Manuscripts_2016_osz/Sec_Introduction.tex"
+			],
+			[
+				"refere",
+				"12_Manuscripts_2016_osz/References.bib"
+			],
+			[
+				"se",
+				"12_Manuscripts_2016_osz/Sec_Conclusions.tex"
+			],
+			[
+				"polcz",
+				"~/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.sty"
+			],
+			[
+				"int",
+				"12_Manuscripts_2016_osz/Input_to_state_stability.tex"
+			],
+			[
+				"sec",
+				"12_Manuscripts_2016_osz/Sec_Conclusions.tex"
+			],
+			[
+				"chee",
+				"~/All/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/latex/templates/cheat_sheet.tex"
+			],
+			[
+				"defs",
+				"~/Dropbox/PhD/Dokumentaciok/04_OTDK/PolczPeter_otdk_defs.tex"
+			],
+			[
+				"anni",
+				"~/All/Dropbox/Peti/PhD/Dokumentaciok/04_OTDK/annihilator_theorem.tex"
+			],
+			[
+				"cheet",
+				"~/All/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/latex/templates/cheat_sheet.tex"
+			],
+			[
+				"che",
+				"~/All/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/latex/templates/cheat_sheet.tex"
+			],
+			[
+				"otdk",
+				"~/Dropbox/PhD/Dokumentaciok/04_OTDK/Technial_report.tex"
+			],
+			[
+				"bior",
+				"~/Repositories/users_webpage/application/views/pages/bioreactor.php"
+			],
+			[
+				"anal1",
+				"~/Repositories/users_webpage/application/views/pages/anal1.php"
+			],
+			[
+				"header",
+				"~/Repositories/users_webpage/application/views/templates/header.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 900.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/Peti/PhD/Dokumentaciok/15_MathMod_2018_feb/15_MathMod.sublime-project"
+			],
+			[
+				"okt",
+				"~/All/Dropbox/Peti/PhD/Oktatas/Oktatas.sublime-project"
+			],
+			[
+				"ok",
+				"~/All/Dropbox/Peti/PhD/Oktatas/Oktatas.sublime-project"
+			],
+			[
+				"\\",
+				"~/Dropbox/PhD/Workspace/User_WebPage.sublime-project"
+			]
+		],
+		"width": 1500.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Section: Finding the maximal level set for a given polytope"
+			]
+		],
+		"width": 1148.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 312.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

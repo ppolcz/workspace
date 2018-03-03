@@ -51,7 +51,7 @@ public class OdfLoaderService {
     private Map<String, Market> mklist;
 
     /* charge accounts */
-    private ChargeAccount none, /* pkez, potp, dkez, dotp, */ nptc, info, pinfo;
+    private ChargeAccount none, /* pkez, potp, dkez, dotp, nptc, */ info, pinfo;
 
     /* clusters */
     private Cluster /* Nem_Adott, */ Utazas, Lakas_Berendezes, Ruhazkodas, Munkaeszkozok, Szamolas,
@@ -76,7 +76,7 @@ public class OdfLoaderService {
         // potp = ss.ca(new ChargeAccount("potp", "Peti OTP Bank"));
         // dkez = ss.ca(new ChargeAccount("dkez", "Dori kezpenz"));
         // dotp = ss.ca(new ChargeAccount("dotp", "Dori OTP Bank"));
-        nptc = ss.ca(new ChargeAccount("nptc", "nagypenztarca"));
+        // nptc = ss.ca(new ChargeAccount("nptc", "nagypenztarca"));
 
         info = new ChargeAccount("info"); /* not persisted */
         info.setUid(123123);
@@ -245,19 +245,19 @@ public class OdfLoaderService {
             // }
 
             /* nptc */
-            indCa.put(nptc, indCa.get(calist.get("dkez")));
-            row = table.getRowByIndex(NPTC_INIT_ROW_NR);
-            initialBalance(getDate(row, IND_DATE), nptc, getInteger(row, IND_CAIDS + 3));
+            // indCa.put(nptc, indCa.get(calist.get("dkez")));
+            // row = table.getRowByIndex(NPTC_INIT_ROW_NR);
+            // initialBalance(getDate(row, IND_DATE), nptc, getInteger(row, IND_CAIDS + 3));
         }
 
         Date today = new Date();
 
         /* loop over the rows of the table */
         for (int i = startIndex; i < count; i++) {
-            if (i == NPTC_INIT_ROW_NR) {
-                calist.remove("dkez");
-                calist.put("dkez", nptc);
-            }
+            // if (i == NPTC_INIT_ROW_NR) {
+            // calist.remove("dkez");
+            // calist.put("dkez", nptc);
+            // }
 
             String errmsg = "Problem: row nr. " + (i + 1) + ", ";
 
