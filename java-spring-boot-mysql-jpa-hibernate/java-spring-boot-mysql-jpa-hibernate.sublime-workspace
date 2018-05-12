@@ -520,10 +520,11 @@
 	"buffers":
 	[
 		{
-			"file": "src/main/java/polcz/budget/service/OdfLoaderService.java",
+			"file": "src/main/resources/sql/queries.sql",
 			"settings":
 			{
-				"buffer_size": 19934,
+				"buffer_size": 13292,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -1186,10 +1187,13 @@
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget/service"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget/service",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources/sql"
 	],
 	"file_history":
 	[
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources/sql/queries.sql",
 		"/tmp/mozilla_ppolcz0/S0005109801000280.bib",
 		"/tmp/mozilla_ppolcz0/S0895717702000626.bib",
 		"/tmp/mozilla_ppolcz0/10.2307_1940591.txt",
@@ -1316,12 +1320,11 @@
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex",
 		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/glossary.sty",
 		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/main.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/matlab/pcz_integral_slopes.m",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz_update.sh"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/matlab/pcz_integral_slopes.m"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -1335,6 +1338,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Esku",
+			"{ tr_",
 			"nptc"
 		],
 		"highlight": true,
@@ -1358,30 +1363,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/main/java/polcz/budget/service/OdfLoaderService.java",
-					"semi_transient": true,
+					"file": "src/main/resources/sql/queries.sql",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19934,
+						"buffer_size": 13292,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8684,
-								8684
+								12034,
+								12034
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1520086878.02,
-							"syntax": "Packages/Java/Java.sublime-syntax",
+							"markdonw_live_preview_last_run": 1526149376.31,
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3343.0,
+						"translation.y": 3094.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1561,7 +1566,7 @@
 		[
 			[
 				"",
-				"~/Dropbox/Peti/PhD/Dokumentaciok/15_MathMod_2018_feb/15_MathMod.sublime-project"
+				"~/Dropbox/Peti/PhD/Dokumentaciok/16_Manuscript_LFR_Pia_DT_ISS_2017_osz/16_Manuscript_LFR_Pia_DT_ISS_2017_osz.sublime-project"
 			],
 			[
 				"okt",

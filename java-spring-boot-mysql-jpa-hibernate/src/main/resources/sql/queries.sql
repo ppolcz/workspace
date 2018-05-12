@@ -266,7 +266,7 @@ from
 
 
 
--- ESKUVO:
+-- ESKUVO: - NEM MUKODIK, UJRA KELLENE CSINALNI!
 select date, sum(amount*clusters.sgn) as 'sum of amounts', balance, accounts.name, clusters.name, remark
 from ugyletek, accounts, clusters
 where
@@ -292,3 +292,10 @@ from ugyletek,markets,clusters,accounts as ca_from, accounts as ca_to
 where
     cluster = clusters.uid and market = markets.uid and ca = ca_from.uid and catransfer = ca_to.uid
 order by date, ugyletek.uid;
+
+
+
+-- PPKE_ITK-tol kapott fizetesek az elmult napokban
+select u.date,u.amount,u.remark from (select @p1:=140 p) param, utolso_ugyletek u
+where caname like 'potp' and mkname like 'PPKE_ITK' and amount > 0
+order by date;
