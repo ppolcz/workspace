@@ -1,40 +1,5 @@
 
 
--- +-----------------------+
--- | Tables_in_ppolcz      |
--- +-----------------------+
--- | accounts              |
--- | clusters              |
--- | market_not_applicable |
--- | markets               |
--- | products              |
--- | sum_by_market         |
--- | transactions          |
--- | ugyletek              |
--- | users                 |
--- +-----------------------+
-
--- +-----------------+--------------+------+-----+---------+----------------+
--- | Field           | Type         | Null | Key | Default | Extra          |
--- +-----------------+--------------+------+-----+---------+----------------+
--- | uid             | int(11)      | NO   | PRI | NULL    | auto_increment |
--- | amount          | int(11)      | NO   |     | NULL    |                |
--- | balance         | int(11)      | NO   |     | NULL    |                |
--- | date            | date         | NO   |     | NULL    |                |
--- | endofdayBalance | int(11)      | NO   |     | NULL    |                |
--- | pivot           | tinyint(1)   | NO   |     | NULL    |                |
--- | remark          | varchar(255) | YES  |     | NULL    |                |
--- | ca              | int(11)      | NO   | MUL | NULL    |                |
--- | catransfer      | int(11)      | NO   | MUL | NULL    |                |
--- | cluster         | int(11)      | NO   | MUL | NULL    |                |
--- | market          | int(11)      | YES  | MUL | NULL    |                |
--- +-----------------+--------------+------+-----+---------+----------------+
-
--- INTO OUTFILE '/tmp/Eskuvo_koltsegei.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
-
--- drop table products, ugyletek, transactions, clusters, markets;
-
-
 create function p1() returns INTEGER DETERMINISTIC NO SQL return @p1;
 
 create view utolso_ugyletek as
@@ -60,6 +25,26 @@ where
     cluster = clusters.uid and market = markets.uid and ca = accounts.uid
     and clusters.name not like 'athelyezes'
 order by date, ugyletek.uid;
+
+-- Skoda benzin, remark: <liter>, <egysegar>, <kmallas>, <helyszin - remark>
+create view Sk_Benzin as select
+    date,
+    amount,
+    substring_index(remark,',',1) + 0.0 as `liter`,
+    substring_index(substring_index(remark,',',2),',',-1) + 0.0 as `egysegar`,
+    substring_index(substring_index(remark,',',3),',',-1) + 0 as `kmallas`,
+    mkname,
+    ltrim(substring_index(substring_index(remark,',',4),',',-1)) as `remark`,
+    balance,
+    caname,
+    clname
+from ugyletek_szep where clname like 'Sk_Benzin';
+
+
+-- INTO OUTFILE '/tmp/Eskuvo_koltsegei.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+
+-- drop table products, ugyletek, transactions, clusters, markets;
+
 
 select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
 
@@ -299,3 +284,115 @@ order by date, ugyletek.uid;
 select u.date,u.amount,u.remark from (select @p1:=140 p) param, utolso_ugyletek u
 where caname like 'potp' and mkname like 'PPKE_ITK' and amount > 0
 order by date;
+
+
+-- 2018.05.27. (május 27, vasárnap), 14:40
+-- Balázsnak rezsikimutatás egyenkent
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @i :=0;
+set @nrmonth := 36;
+set @nrdays := 30 * @nrmonth + 15;
+-- date_add(date,interval 3 day)
+select @i := @i + 1 as nr, date, concat(year(date), ', ', monthname(date)) as 'honap', lpad(format(amount,0), 8, ' ') as amount, clname, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
+from
+(
+    select date, accounts.name as caname, balance, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.name like 'Rezsi_Futes'
+    order by date
+) as ugyletek_szep;
+
+
+-- 2018.05.27. (május 27, vasárnap), 14:40
+-- Balázsnak rezsikimutatás egyenkent
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @i :=0;
+set @nrmonth := 36;
+set @nrdays := 30 * @nrmonth + 40;
+-- date_add(date,interval 3 day)
+select @i := @i + 1 as nr, date, concat(year(date), ', ', monthname(date)) as 'honap', lpad(format(amount,0), 8, ' ') as amount, clname, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
+from
+(
+    select date, accounts.name as caname, balance, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.name like 'Rezsi_Gaz'
+    order by date
+) as ugyletek_szep;
+
+-- 2018.05.27. (május 27, vasárnap), 14:40
+-- Balázsnak rezsikimutatás egyenkent
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @i :=0;
+set @nrmonth := 24;
+set @nrdays := 30 * @nrmonth + 15;
+-- date_add(date,interval 3 day)
+select @i := @i + 1 as nr, date, concat(year(date), ', ', monthname(date)) as 'honap', lpad(format(amount,0), 8, ' ') as amount, clname, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
+from
+(
+    select date, accounts.name as caname, balance, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.name like 'Rezsi_Kozosk'
+    order by date
+) as ugyletek_szep;
+
+-- 2018.05.27. (május 27, vasárnap), 14:40
+-- Balázsnak rezsikimutatás egyenkent
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @i :=0;
+set @nrmonth := 36;
+set @nrdays := 30 * @nrmonth + 15;
+-- date_add(date,interval 3 day)
+select @i := @i + 1 as nr, date, concat(year(date), ', ', monthname(date)) as 'honap', lpad(format(amount,0), 8, ' ') as amount, clname, lpad(format((@sum := @sum + amount),0), 8, ' ') as cumsum
+from
+(
+    select date, accounts.name as caname, balance, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and clusters.name like 'Rezsi_Elmu'
+        and amount < 28000
+    order by date
+) as ugyletek_szep;
+
+-- Rezsi_Bkv Rezsi_Elmu Rezsi_Futes Rezsi_Gaz Rezsi_Kozosk Rezsi_Upc
+
+
+-- 2018.05.27. (május 27, vasárnap), 14:40
+-- Balázsnak rezsikimutatás osszsitve
+SET @@group_concat_max_len = 120;
+set @sum := 0;
+set @i :=0;
+set @nrmonth := 36;
+set @nrdays := 30 * @nrmonth + 20;
+-- date_add(date,interval 3 day)
+select @i := @i + 1 as nr, intervallum as 'idointervallum, fizetesek szama', lpad(format(amount,0), 8, ' ') as amount, clname
+from
+(
+    select concat(min(date), " - ", max(date), ', ', count(date)) as intervallum, sum(amount*clusters.sgn) as amount, clusters.name as clname
+    from ugyletek,markets,clusters,accounts
+    where
+        cluster = clusters.uid and market = markets.uid and ca = accounts.uid
+        and date between curdate() - interval @nrdays day and curdate()
+        and clusters.name not like 'athelyezes'
+        and ( clusters.name like 'Rezsi_Elmu' or clusters.name like 'Rezsi_Futes' or clusters.name like 'Rezsi_Gaz' or clusters.name like 'Rezsi_Kozosk' )
+    group by clname
+) as ugyletek_szep;
+

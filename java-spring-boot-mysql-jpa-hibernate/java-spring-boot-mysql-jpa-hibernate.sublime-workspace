@@ -523,13 +523,13 @@
 			"file": "src/main/resources/sql/queries.sql",
 			"settings":
 			{
-				"buffer_size": 13292,
+				"buffer_size": 16936,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"build_system_choices":
 	[
 		[
@@ -752,6 +752,90 @@
 				],
 				[
 					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
 					""
 				]
 			],
@@ -1193,13 +1277,15 @@
 	],
 	"file_history":
 	[
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
+		"/tmp/mozilla_ppolcz0/polcz.sty",
+		"/home/ppolcz/Dropbox/Peti/Others/Documents/koltsegvetes_export/2015_2018_Rezsi.txt",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources/sql/queries.sql",
 		"/tmp/mozilla_ppolcz0/S0005109801000280.bib",
 		"/tmp/mozilla_ppolcz0/S0895717702000626.bib",
 		"/tmp/mozilla_ppolcz0/10.2307_1940591.txt",
 		"/tmp/mozilla_ppolcz0/000510988290070X.bib",
 		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
 		"/home/ppolcz/Dropbox/Dori/01_Pazmany/2_Felev/04_Bev_prog_2/1_hazi_feladat/main.cpp",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/blockdiag/fig1.tex",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/genblockscheme/fig.tex",
@@ -1318,9 +1404,7 @@
 		"/home/ppolcz/Dropbox/Peti/PhD/Tanulas/00_Angol/Gerund_Infinitive.tex",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.sty",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex",
-		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/glossary.sty",
-		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/main.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/matlab/pcz_integral_slopes.m"
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/glossary.sty"
 	],
 	"find":
 	{
@@ -1338,6 +1422,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"polc",
+			"interval",
+			"date",
+			"Rezsi_",
+			"date_add(date,interval 3 day)",
+			"10",
+			"days",
+			"sum",
 			"Esku",
 			"{ tr_",
 			"nptc"
@@ -1367,26 +1459,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13292,
+						"buffer_size": 16936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12034,
-								12034
+								7621,
+								7621
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1526149376.31,
+							"markdonw_live_preview_last_run": 1527425534.56,
 							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3094.0,
+						"translation.y": 1755.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1603,7 +1695,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 312.0,
 	"status_bar_visible": true,
 	"template_settings":
