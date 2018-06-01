@@ -23,6 +23,18 @@ import polcz.budget.model.UgyletType;
 import polcz.budget.service.helper.OdfRule;
 import polcz.budget.service.helper.TransactionArguments;
 
+// 2018.06.01. (június  1, péntek), 06:42
+// How to create entity to an SQL view
+// https://stackoverflow.com/questions/21255016/how-to-create-call-a-sql-view-in-hibernate?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+// <database-object>
+//     <create><![CDATA[CREATE VIEW docView
+//      AS
+//      SELECT * from document;
+//      GO]]></create>
+//     <drop>DROP VIEW docView</drop>
+//     <dialect-scope name='org.hibernate.dialect.SQLServerDialect' />
+// </database-object>
+
 @Service
 // @Transactional
 public class OdfLoaderService {
