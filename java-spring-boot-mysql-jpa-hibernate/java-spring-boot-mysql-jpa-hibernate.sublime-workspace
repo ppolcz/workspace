@@ -523,7 +523,7 @@
 			"file": "src/main/resources/sql/queries.sql",
 			"settings":
 			{
-				"buffer_size": 16936,
+				"buffer_size": 17061,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1277,6 +1277,7 @@
 	],
 	"file_history":
 	[
+		"/tmp/mozilla_ppolcz0/vCard.vcf",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
 		"/tmp/mozilla_ppolcz0/polcz.sty",
 		"/home/ppolcz/Dropbox/Peti/Others/Documents/koltsegvetes_export/2015_2018_Rezsi.txt",
@@ -1403,12 +1404,11 @@
 		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/dictionary.tex",
 		"/home/ppolcz/Dropbox/Peti/PhD/Tanulas/00_Angol/Gerund_Infinitive.tex",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.sty",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex",
-		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/glossary.sty"
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -1422,6 +1422,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Fly",
 			"polc",
 			"interval",
 			"date",
@@ -1459,26 +1460,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16936,
+						"buffer_size": 17061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7621,
-								7621
+								1335,
+								1335
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1527425534.56,
+							"markdonw_live_preview_last_run": 1529948023.33,
 							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1755.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
