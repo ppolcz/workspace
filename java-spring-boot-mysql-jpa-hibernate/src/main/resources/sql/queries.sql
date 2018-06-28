@@ -49,6 +49,7 @@ from ugyletek_szep where clname like 'Sk_Benzin';
 select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
 
 -- OTP-vel valo osszevetes vegett az utolso 30 nap
+-- 2018.06.28. (június 28, csütörtök), 21:30
 select u.* from (select @p1:=30 p) param, utolso_ugyletek u where caname like 'potp' and not clname like 'Szamolas' order by date asc;
 
 
