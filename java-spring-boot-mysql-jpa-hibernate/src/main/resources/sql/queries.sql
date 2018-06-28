@@ -26,12 +26,12 @@ where
     and clusters.name not like 'athelyezes'
 order by date, ugyletek.uid;
 
--- Skoda benzin, remark: <liter>, <egysegar>, <kmallas>, <helyszin - remark>
+-- Skoda benzin, remark: <egysegar>, <liter>, <kmallas>, <helyszin - remark>
 create view Sk_Benzin as select
     date,
     amount,
-    substring_index(remark,',',1) + 0.0 as `liter`,
-    substring_index(substring_index(remark,',',2),',',-1) + 0.0 as `egysegar`,
+    substring_index(remark,',',1) + 0.0 as `egysegar`,
+    substring_index(substring_index(remark,',',2),',',-1) + 0.0 as `liter`,
     substring_index(substring_index(remark,',',3),',',-1) + 0 as `kmallas`,
     mkname,
     ltrim(substring_index(substring_index(remark,',',4),',',-1)) as `remark`,
@@ -48,7 +48,8 @@ from ugyletek_szep where clname like 'Sk_Benzin';
 
 select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
 
-select u.* from (select @p1:=30 p) param, utolso_ugyletek u;
+-- OTP-vel valo osszevetes vegett az utolso 30 nap
+select u.* from (select @p1:=30 p) param, utolso_ugyletek u where caname like 'potp' and not clname like 'Szamolas' order by date asc;
 
 
 -- Burgundi lekérdezés

@@ -523,7 +523,7 @@
 			"file": "src/main/resources/sql/queries.sql",
 			"settings":
 			{
-				"buffer_size": 16936,
+				"buffer_size": 17061,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1460,15 +1460,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16936,
+						"buffer_size": 17061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								0,
 								0
+=======
+								1335,
+								1335
+>>>>>>> ffbc20359d22e678c34486431a24ad0edc3ca147
 							]
 						],
 						"settings":
