@@ -18,7 +18,7 @@
     </parent>
 
     <dependencies>
-        
+
         <!--Spring Boot Actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -78,7 +78,7 @@
         </dependency>
 
         <!--EZEK KERULTEK BELE UJONNAN-->
-        
+
         <dependency>
             <groupId>org.apache.myfaces.core</groupId>
             <artifactId>myfaces-impl</artifactId>
@@ -135,7 +135,7 @@
         </dependency>
 
         <!-- Omnifaces (JSF utilities - available only if a CDI context is available) -->
-        <!--	
+        <!--
         <dependency>
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>
