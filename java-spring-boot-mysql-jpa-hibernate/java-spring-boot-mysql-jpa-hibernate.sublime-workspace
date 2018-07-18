@@ -4,72 +4,56 @@
 		"selected_items":
 		[
 			[
-				"SOP",
-				"eq:SOP_inequality"
+				"Sk_",
+				"Sk_Szerviz"
 			],
 			[
-				"Isid",
-				"1982_Isidori.Krener: On feedback equivalence of nonlinear systems"
+				"L2",
+				"eq:L2gain_def_2"
 			],
 			[
-				"mf",
-				"mf\t. : ℝ^. -> ℝ^.."
+				"sub",
+				"eqsub\tsubequations aligned with labels"
 			],
 			[
-				"defin",
-				"definition"
+				"LMI",
+				"eq:LMI_a"
 			],
 			[
-				"fig",
-				"fig/fig_K.pdf"
-			],
-			[
-				"mini",
-				"minipage\tminipage 2"
-			],
-			[
-				"f",
-				"fig/genblockscheme/fig_K.pdf"
-			],
-			[
-				"bl",
-				"black\t\\black"
-			],
-			[
-				"fi",
-				"fig/18_02_17_Time174448_runID0404_Figure1-trimmed.png"
-			],
-			[
-				"Boy",
-				"Boyd.ElGhaoui.etal_1994_Linear_Matrix_Inequalities_in_System_and_Control_Theory: Linear matrix inequalities in system and control theory"
-			],
-			[
-				"Isi",
-				"1982_Isidori.Krener: On feedback equivalence of nonlinear systems"
-			],
-			[
-				"mi",
-				"minipage\tminipage 2"
-			],
-			[
-				"eps",
-				"varepsilon\t\\varepsilon"
-			],
-			[
-				"fel",
-				"callitas\tcfel full"
-			],
-			[
-				"enum",
-				"enumerate"
-			],
-			[
-				"si",
-				"fig/sim1_scope.jpg"
+				"Rn",
+				"Rn\tℝ^."
 			],
 			[
 				"al",
-				"al\taligned"
+				"al\talign"
+			],
+			[
+				"technique",
+				"techniques"
+			],
+			[
+				"gr",
+				"gray\t\\gray"
+			],
+			[
+				"item",
+				"item\tItemize"
+			],
+			[
+				"F",
+				"fset\tF"
+			],
+			[
+				"em",
+				"emph"
+			],
+			[
+				"fig",
+				"fig/fault_detection.png"
+			],
+			[
+				"fi",
+				"fig/sim_LTI_MIMO_fault_detection.pdf"
 			],
 			[
 				"Na",
@@ -176,10 +160,6 @@
 				"eq:Finsler_1"
 			],
 			[
-				"Rn",
-				"Rn\tℝ^."
-			],
-			[
 				"label",
 				"label\tlabel eq:"
 			],
@@ -272,12 +252,12 @@
 				"input-to-state"
 			],
 			[
-				"in",
-				"infty"
+				"f",
+				"eq:f"
 			],
 			[
-				"sub",
-				"subl\tsubequations with label"
+				"in",
+				"infty"
 			],
 			[
 				"c",
@@ -302,10 +282,6 @@
 			[
 				"Sec",
 				"Sec_Uncertain_levelset"
-			],
-			[
-				"LMI",
-				"lmi:dV"
 			],
 			[
 				"conse",
@@ -350,10 +326,6 @@
 			[
 				"satis",
 				"satisfy"
-			],
-			[
-				"em",
-				"em"
 			],
 			[
 				"hi",
@@ -422,6 +394,10 @@
 			[
 				"tr",
 				"trigger"
+			],
+			[
+				"enum",
+				"enum\tEnumerate"
 			],
 			[
 				"defi",
@@ -514,22 +490,72 @@
 			[
 				"h",
 				"h1\tTag"
+			],
+			[
+				"subl",
+				"sublimeplugin"
+			],
+			[
+				"try",
+				"try\tTry/Except"
+			],
+			[
+				"subli",
+				"sublime_plugin"
+			],
+			[
+				"ada",
+				"adaptive_content_controller"
+			],
+			[
+				"p",
+				"p\tTag"
+			],
+			[
+				"id",
+				"id\tAttr"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 387,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ppolcz/.bash_aliases",
+			"settings":
+			{
+				"buffer_size": 3455,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/resources/import.sql",
+			"settings":
+			{
+				"buffer_size": 625,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/main/resources/sql/queries.sql",
 			"settings":
 			{
-				"buffer_size": 17061,
+				"buffer_size": 17861,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"build_system": "",
 	"build_system_choices":
 	[
 		[
@@ -1003,6 +1029,54 @@
 		[
 			[
 				[
+					"Packages/Polcz/spring-boot-run.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Polcz/spring-boot-run.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
 					"Packages/Python/Python.sublime-build",
 					""
 				],
@@ -1057,16 +1131,20 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "clear",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"clear",
+				"",
+				"About"
+			],
+			[
+				"clear cache",
 				"LaTeXTools: Clear current bibliography cache"
 			],
 			[
-				"view pdf",
-				"LaTeXTools: View PDF"
+				"clear ca",
+				"LaTeXTools: Clear current bibliography cache"
 			],
 			[
 				"view",
@@ -1249,7 +1327,7 @@
 	},
 	"console":
 	{
-		"height": 126.0,
+		"height": 160.0,
 		"history":
 		[
 			"import os; path=sublime.packages_path(); (os.makedirs(path) if not os.path.exists(path) else None); window.run_command('exec', {'cmd': ['git', 'clone', 'https://github.com/twolfson/sublime-edit-command-palette', 'Edit Command Palette'], 'working_dir': path})"
@@ -1266,153 +1344,150 @@
 	},
 	"expanded_folders":
 	[
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget/service",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources/sql"
 	],
 	"file_history":
 	[
-		"/tmp/mozilla_ppolcz0/vCard.vcf",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
-		"/tmp/mozilla_ppolcz0/polcz.sty",
-		"/home/ppolcz/Dropbox/Peti/Others/Documents/koltsegvetes_export/2015_2018_Rezsi.txt",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources/sql/queries.sql",
-		"/tmp/mozilla_ppolcz0/S0005109801000280.bib",
-		"/tmp/mozilla_ppolcz0/S0895717702000626.bib",
-		"/tmp/mozilla_ppolcz0/10.2307_1940591.txt",
-		"/tmp/mozilla_ppolcz0/000510988290070X.bib",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/17_Jedlik_LTI_outpass/Polcz_Jedlik_report.tex",
-		"/home/ppolcz/Dropbox/Dori/01_Pazmany/2_Felev/04_Bev_prog_2/1_hazi_feladat/main.cpp",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/blockdiag/fig1.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/genblockscheme/fig.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/fig/genblockscheme/fig_without_G.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/Manuscript.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.2_Passivity.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.2_Fermentor.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.1_Simple_LPV.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.4_LF_for_zdyn.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.1_Problem_statement.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1.0_Introduction.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.2_Block_scheme.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.3_Inversion",
-		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Merestech0_minta/main.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Apps/ShareLaTeX/Merestech0_minta/main.tex",
+		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/C++/C++ Single File.sublime-build",
+		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/spring-boot-run.sublime-build",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/pom.xml",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/Readme.md",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/Makefile",
 		"/home/ppolcz/.bash_aliases",
-		"/home/ppolcz/Templates/control-systems/Makefile",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/tbxmanager/tbxmanager.m",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/References.bbl",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/References.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-tikz.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz_v3.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/PassivityBIB.bib",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/Manuscript.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/5.0_Conclusions.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.2_Fermentor.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.1_Simple_LPV.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/4.0_Application.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.5_Inversion_method.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.4_LF_for_zdyn.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.3_LMI_Stable_zdyn.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.2_Block_scheme.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.1_Problem_statement.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/3.0_Passivity_based_observer.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.3_Inversion.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.2_Passivity.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.1_Basic_notions.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/2.0_Background_known_concepts.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/22_Hinf_norm/Hinf_norm_PoC.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/2.1_Basic_notions.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/1.0_Introduction.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/22_Hinf_norm/References.bib",
+		"/home/ppolcz/OwnCloud/Documents/22_Hinf_norm/Hinf_norm_PoC.tex",
+		"/home/ppolcz/Downloads/1_3.-feladat-pillangok.txt",
+		"/home/ppolcz/Downloads/2_1.-feladat-fenykep-retusalas.txt",
+		"/home/ppolcz/Downloads/2_2.-feladat.txt",
+		"/home/ppolcz/Downloads/1_1.-feladat-homersekleg-1.txt",
+		"/home/ppolcz/Downloads/1_2.-feladat-szenzorok.txt",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/16_Manuscript_LFR_Pia_DT_ISS_2017_osz/manuscript-2018-04-07-discrete/DT_DOA.tex",
+		"/tmp/mozilla_ppolcz0/S2405896318300077.bib",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/1_PhD_projects/22_Hinf_norm/proof_of_concepts_simple_v3.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/1_PhD_projects/99_sta/chemical_3D/sim_1_analysis.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/1_PhD_projects/99_sta/brm_lfr/brm_lfr_proba_1.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/1_PhD_projects/22_Hinf_norm/proof_of_concepts_simple_v2.m",
+		"/tmp/mozilla_ppolcz0/S000510980000176X.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/16_Manuscript_LFR_Pia_DT_ISS_2017_osz/manuscript-2018-04-07-discrete/DT_DOA.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/15_MathMod_2018_feb/1_submission-v1.1-2018-01-14-accepted-corrected/MathMod-submission-v1-black.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/DOA_manuscript_accepted_corrected.tex",
+		"/home/ppolcz/OwnCloud/Documents/21_PhD_Proceedings_2018/phd_proc.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/20_Reglermote_2018/Reglermote_v2/Sec0_Abstract.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/20_Reglermote_2018/Reglermote_v2/Reglermote.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/20_Reglermote_2018/Reglermote_v2/Sec1_Introduction.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/References.bib",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/14_ISS_LFR_trafo/LFR_trafo.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LTI.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v1.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v2.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1.0_Introduction.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1.1_Motivation.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/References.bib",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v3.tex",
-		"/home/ppolcz/Dropbox/Dori/EFOP/mondoka",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/1_Introduction.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/Makefile",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2018_01_10_LPV_inversion/d2018_01_10_LPV_inversion.m",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/.gitignore",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/gitignore",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/Manuscript.bbl",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2018_01_31_K_prelim_L_codesign_v5_rhofuggoBL_min.m",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex_Box/clear.sh",
-		"/home/ppolcz/Dropbox/Peti/PhD/Oktatas/10_Linalg/jegyzet/LA1-2_jegyzet.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Projects_Grants/16_EFOP/publikacios_lista.txt",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/templates/header.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_17_Time231010_runID0328.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/python/matlab_html_sanitizer.py",
-		"/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty",
-		"/usr/share/texlive/texmf-dist/tex/latex/xymtex/base/bondcolor.sty",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_17_Time163717_runID0324.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_25_Time093427_runID0335.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_18_Time125914_runID0329.php",
-		"/home/ppolcz/Dropbox/Dori/01_Pazmany/1_felev/03Bev_prog_1/C++/Beugrok/beugro.cpp",
-		"/home/ppolcz/Dropbox/Dori/01_Pazmany/1_felev/03Bev_prog_1/C++/Beugrok/beugro_2017gyakorlo_b.cpp",
-		"/home/ppolcz/Dropbox/Dori/01_Pazmany/1_felev/03Bev_prog_1/C++/Beugrok/beugro_2017gyakorlo_a.cpp",
-		"/home/ppolcz/.cache/.fr-KU084m/gyakorlas_vizsga/beugro_a.cpp",
-		"/home/ppolcz/.cache/.fr-BmMA2i/gyakorlas_vizsga/beugro_a.cpp",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_09_K_prelim_L_codesign_v4_18_01_17_Time224636_runID0327.php",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v3.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2018_01_09_K_prelim_L_codesign_v4.m",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/d2018_01_10_LPV_inversion_18_01_10_Time212204_runID0294.php",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/Others/Config/install_software.sh",
-		"/home/ppolcz/Documents/2017_Iervolino.etal.txt",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/References.bib",
-		"/home/ppolcz/Downloads/scopus.bib",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/References.bib",
-		"/home/ppolcz/.java/.userPrefs/net/sf/jabref/prefs.xml",
-		"/home/ppolcz/Downloads/S0005109803000232.bib",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz_v3.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/scripts/LMI_tricks_17_11_21_Time114850_runID0076.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_19_MIMO_LTI_passivity_test_VEDETT/d2017_11_19_MIMO_LTI_passivity.m",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2017_11_19_K_prelim_L_codesign_MIN_v3.m",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_19_MIMO_LTI_passivity_test/d2017_11_19_MIMO_LTI_passivity.m",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/fig/equivalent_model_no_fault-LPV-tikz.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/latex/Manuscript_passivity_LPV_v2.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2017_11_13_K_prelim_L_codesign.m",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/d2017_11_14_K_prelim_L_codesign_MIN.m",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/2017_11_13_lpv_passivity/LTI_observer.m",
-		"/home/ppolcz/Dropbox/Peti/Others/Documents/koltsegvetes_export/2017_10_eves_nyilvantartas.txt",
-		"/home/ppolcz/Dropbox/Peti/Mitokondrium/dokumentáció_2/Svab_Gergely_thesis_en.tex",
-		"/tmp/mozilla_ppolcz0/scopus-2.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/Reviewer_comments.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/DOA_manuscript_accepted_corrected.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/DOA_manuscript_rev1.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/16_Manuscript_LFR_Pia_DT_ISS_2017_osz/RNC-2018-02-25/DT_DOA.tex",
+		"/media/ppolcz/Toshiba_2TB/loop/sc2_setup_readme.txt",
+		"/media/ppolcz/Toshiba_2TB/[RePack] Full version Game - by FGrL [4,8 GB Compressed]/Password and Instructions.txt",
+		"/media/ppolcz/Péter/este van este van kiki nyugalomban 201213.txt",
+		"/media/ppolcz/Toshiba_2TB/StarCraft.Remastered.PC/Lisez Moi.txt",
+		"/media/ppolcz/Toshiba_2TB/StarCraft.Remastered.PC/Screenshots/ReadMe.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/References.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/15_MathMod_2018_feb/1_submission-v1/ifacconf.tex",
+		"/tmp/mozilla_ppolcz0/tandf_gdea2024_68.bib",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/clear.sh",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/notes.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/reference_list.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-10-17-accepted-manuscript/submitted_material/cover_letter_revised.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/server-itk/Makefile",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/include/pcz_egrep.sh",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/DOA_manuscript_rev1.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/_fig/fig_44/fig.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/15_MathMod_2018_feb/1_submission-v1/MathMod-submission-v1.tex",
+		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/15_MathMod_2018_feb/1_submission-v1/MathMod-submission-v1.tex",
 		"/home/ppolcz/Dropbox/Peti/Desktop/TEENDO",
-		"/tmp/mozilla_ppolcz0/scopus.bib",
-		"/tmp/mozilla_ppolcz0/scopus-1.bib",
-		"/home/ppolcz/Dropbox/Peti/Desktop/output_selection.txt",
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Orarend_2017-18-1felev/main.tex",
+		"/home/DB/Dropbox/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/DOA_manuscript_rev1.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/DOA_manuscript.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/Reviewer_comments.bbl",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/00_matlab_results/projects/2_sta/algo_P_models/trof3D_v2/text/script_16_11_08_Time193550_runID2338",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/00_matlab_results/projects/2_sta/algo_P_models/trof3D_v5/text/script_17_01_23_Time173240_runID6936",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/00_matlab_results/projects/2_sta/algo_P_models/trof3D_v1/text/script_16_11_08_Time181206_runID6901",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/reference_list.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/polcz.sty",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/Manuscript_mod.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/Sec_Annihilator.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/Sec_Illustrative_examples.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/EJC-2017-08-18-minor-review/Sec_Introduction.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/Gabor_mod_EJC/Sec_Illustrative_examples.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/Gabor_mod_EJC/Sec_Introduction.tex",
+		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/latex/templates/cheet_sheet_tikz.tex",
+		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/latex/templates/cheat_sheet.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/Gabor_mod_EJC/Sec_Annihilator.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/Gabor_mod_EJC/Manuscript_mod.tex",
+		"/home/ppolcz/Dropbox/Peti/Desktop/Development.txt",
+		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/FOTszobeli/main.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/10_PhD_Workshop/Presentation_PhDWksh.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Manuscript.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Annihilator.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Illustrative_examples.tex",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Introduction.tex",
+		"/home/ppolcz/Dropbox/Peti/Others/Development/ujevi_ima.txt",
+		"/home/ppolcz/Dropbox/Peti/Development/Ericssonrol/ujevi_ima.txt",
+		"/home/ppolcz/Dropbox/Peti/Development/Ericssonrol/MINDEN.txt",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/13_PhD_Proceedings_2017/phd_proceedings_presentation_v2.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/13_PhD_Proceedings_2017/phd_proceedings_2017.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Introduction.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.sty",
+		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/polcz.sty",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/PassivityOSLTI.tex",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/preliminary_analysis.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity_analysis.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/polcz.sty",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/References.bib",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Examples2.tex",
 		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Examples.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Manuscript_passivity_LTI.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/server-itk/Makefile",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/rsync-backup/2017-11-06-08-24/login.txt",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/Manuscript_passivity_LTI.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/fig/augmented_model_no_fault-tikz.tex",
-		"/media/ppolcz/Toshiba_2TB/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/.gitignore",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/application/views/unpublished/anal3_diffgeom_tenzor_polar_1_17_08_16_Time221942_runID2143.php",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/.gitignore",
-		"/home/ppolcz/Dropbox/Apps/ShareLaTeX/Glossary/dictionary.tex",
-		"/home/ppolcz/Dropbox/Peti/PhD/Tanulas/00_Angol/Gerund_Infinitive.tex",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.sty",
-		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/lib/latex/polcz/polcz.tex"
+		"/home/ppolcz/All/Dropbox/Peti/Desktop/output_selection.txt",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_39/fig.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_38/fig.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_36/fig.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/PassivityOSLTI.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Tanulas/09_Array_Signal_Processing/tantargyleiras.txt",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Introduction.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Illustrative_examples.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Manuscript.tex",
+		"/home/ppolcz/Dropbox/PhD/Projects_Grants/11_KAP_2017jun/Vida_Katinka_email.txt",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_44/fig.tex",
+		"/home/ppolcz/Dropbox/Others/Eskuvo/Dorottya_Peter_eskuvoi_meghivo_forrasok/2_oldal.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/08_output_selection_passivity/Passivity/latex/preliminary_analysis.tex",
+		"/home/ppolcz/All/Dropbox/Peti/Desktop/lelkiseg.php",
+		"/home/ppolcz/Templates/user036/tesztverseny/valaszok.txt",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/00_matlab_results/projects/3_outsel/dynamic_observer_2017-03-18/Strict_outputpassivity_observer_LTI_BMI_SISO_review/text/script_17_06_01_Time184301_runID4948",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/00_matlab_results/projects/3_outsel/dynamic_observer_2017-03-18/Strict_outputpassivity_observer_LTI_BMI_SISO_review/text/script_17_06_01_Time184701_runID9656",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/files/scripts/pcz_MIMO_to_minphase_r1_using_observer_17_06_05_Time221824_runID6374/pcz_MIMO_to_minphase_r1_using_observer.html",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/projects/3_outsel/dynamic_observer_2017-03-18/Strict_outputpassivity_observer_LTI_BMI_SISO_review.m",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/files/scripts/pcz_SISO_to_minphase_r1_using_observer_17_06_04_Time225517_runID4039/pcz_SISO_to_minphase_r1_using_observer.html",
+		"/home/ppolcz/Dropbox/PhD/Oktatas/06_CCS_2017/CCS_2017/dolgozatok/2017_potzh.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Oktatas/06_CCS_2017/CCS_2017/dolgozatok/2017_potzh.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Biralatok/2016_17_tavasz_diplomaterv_Galai_Bence/biralat_Galai_Bence.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_40/fig.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_41/fig.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_42/fig.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/demonstrations/Matlab/biralat/Galai_Bence/forgatasi_matrix.m",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_43/fig.tex",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/files/scripts/Strict_outputpassivity_observer_LTI_BMI_SISO_review_17_06_01_Time124552_runID2143/Strict_outputpassivity_observer_LTI_BMI_SISO_review.html",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/files/scripts/Schur_complement_17_06_01_Time112945_runID8332/Schur_complement.html",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_37/fig.tex",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Annihilator.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Illustrative_examples.tex",
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Manuscript.bbl",
+		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/elsarticle-template-num.tex"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 238.0,
 		"where_history":
 		[
 		]
@@ -1422,18 +1497,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"Fly",
-			"polc",
-			"interval",
-			"date",
-			"Rezsi_",
-			"date_add(date,interval 3 day)",
-			"10",
-			"days",
-			"sum",
-			"Esku",
-			"{ tr_",
-			"nptc"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1451,34 +1514,116 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/main/resources/sql/queries.sql",
+					"file": "Makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17061,
+						"buffer_size": 387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-<<<<<<< HEAD
-								0,
-								0
-=======
-								1335,
-								1335
->>>>>>> ffbc20359d22e678c34486431a24ad0edc3ca147
+								51,
+								51
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1529948023.33,
+							"markdonw_live_preview_last_run": 1531839503.24,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/ppolcz/.bash_aliases",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								737,
+								737
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1531897535.28,
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/main/resources/import.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1531839794.29,
+							"syntax": "Packages/SQL/SQL.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/main/resources/sql/queries.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1227,
+								1227
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1531839810.96,
 							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -1495,11 +1640,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 24.0
 	},
 	"input":
 	{
-		"height": 38.0
+		"height": 82.0
 	},
 	"layout":
 	{
@@ -1538,7 +1683,7 @@
 	},
 	"output.latextools":
 	{
-		"height": 289.0
+		"height": 283.0
 	},
 	"output.scopehunter.results":
 	{
@@ -1552,7 +1697,7 @@
 	"project": "java-spring-boot-mysql-jpa-hibernate.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1561,14 +1706,6 @@
 		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"",
-				"08_output_selection_passivity/latex_Box/3.1_Problem_statement.tex"
-			],
-			[
-				"saniter",
-				"~/Repositories/Bitbucket/control-systems/demonstrations/lib/python/matlab_html_sanitizer.py"
-			],
 			[
 				"dipl",
 				"12_Manuscripts_2016_osz/Diplomaterv_atirat.tex"
@@ -1580,6 +1717,10 @@
 			[
 				"publikac",
 				"~/All/Dropbox/Peti/PhD/Ugyintezes/201617_II_felev/KAP_publikacios_lista/PolczP_publikacios_lista.tex"
+			],
+			[
+				"",
+				"~/All/Dropbox/Peti/PhD/Dokumentaciok/04_OTDK/Presentation/PolczPeter_TDK2015.tex"
 			],
 			[
 				"polczpeter",
@@ -1664,7 +1805,15 @@
 		[
 			[
 				"",
-				"~/Repositories/Bitbucket/control-systems/users/public_html/Users-Web-Page.sublime-project"
+				"~/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/java-spring-boot-mysql-jpa-hibernate.sublime-project"
+			],
+			[
+				"anal",
+				"~/Repositories/Bitbucket/control-systems/users/public_html/files/targyak/anal3/szorgalmi/Analizis_kozos.sublime-project"
+			],
+			[
+				"ashar",
+				"~/Dropbox/Apps/ShareLaTeX/ShareLaTeX.sublime-project"
 			],
 			[
 				"okt",
@@ -1701,8 +1850,8 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 312.0,
+	"side_bar_visible": true,
+	"side_bar_width": 360.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
