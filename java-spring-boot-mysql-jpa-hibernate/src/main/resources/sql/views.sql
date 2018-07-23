@@ -81,7 +81,7 @@ create view Sk as (select * from Sk_Benzin) union all (select * from Sk_Szerviz)
 -- Km allas vasarlaskor
 drop view if exists Sk_kmallas_vasarlaskor;
 create view Sk_kmallas_vasarlaskor as select min(kmallas) as `kmallas_vasarlaskor` from Sk;
-select * from Sk;
+-- select * from Sk;
 
 -- 2018.07.18. (július 18, szerda), 22:13
 -- Skoda km kulonbsegek is benne vannak
@@ -139,4 +139,4 @@ union all
     '' as `clname`
     from Sk_diff group by clname
 );
-select * from Sk_fancy;
+-- select * from Sk_fancy;

@@ -8,6 +8,8 @@ JAVA_HOME:
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 
 clean:
+	rm odf-load
+	rm odf-load.*
 	mvn clean
 
 
@@ -29,7 +31,10 @@ mysql:
 sql: mysql
 
 sql-views:
-	mysql -u root -p --database ppolcz < src/main/resources/sql/views.sql --table
+	mysql -u root -p --database=ppolcz < src/main/resources/sql/views.sql --table
 
 
 load: odf-load sql-views
+
+Sk_fancy Sk:
+	mysql -u root -p --database=ppolcz --execute="select * from $@" --table

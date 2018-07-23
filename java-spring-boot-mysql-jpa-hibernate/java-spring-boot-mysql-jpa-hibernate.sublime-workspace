@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"sql",
+				"sql-views"
+			],
+			[
+				"utolso",
+				"utolso_ugyletek"
+			],
+			[
 				"Sk_",
 				"Sk_Szerviz"
 			],
@@ -506,14 +514,6 @@
 			[
 				"ada",
 				"adaptive_content_controller"
-			],
-			[
-				"p",
-				"p\tTag"
-			],
-			[
-				"id",
-				"id\tAttr"
 			]
 		]
 	},
@@ -523,7 +523,16 @@
 			"file": "Makefile",
 			"settings":
 			{
-				"buffer_size": 387,
+				"buffer_size": 593,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/pres.tex",
+			"settings":
+			{
+				"buffer_size": 1571,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -549,13 +558,22 @@
 			"file": "src/main/resources/sql/queries.sql",
 			"settings":
 			{
-				"buffer_size": 17861,
+				"buffer_size": 15364,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/resources/sql/views.sql",
+			"settings":
+			{
+				"buffer_size": 4764,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"build_system_choices":
 	[
 		[
@@ -918,6 +936,102 @@
 				],
 				[
 					"Packages/User/glpsol.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/Polcz/spring-boot-run.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/glpsol.sublime-build",
+					""
+				],
+				[
+					"Packages/User/OpenInBrowser.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_eps.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUml_pdf.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PlantUML_png.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python3.sublime-build",
 					""
 				]
 			],
@@ -1352,6 +1466,7 @@
 	],
 	"file_history":
 	[
+		"/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/Reglermote_Polcz_presentation.tex",
 		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/C++/C++ Single File.sublime-build",
 		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/spring-boot-run.sublime-build",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/pom.xml",
@@ -1478,8 +1593,7 @@
 		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_37/fig.tex",
 		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Annihilator.tex",
 		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Illustrative_examples.tex",
-		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Manuscript.bbl",
-		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/elsarticle-template-num.tex"
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Manuscript.bbl"
 	],
 	"find":
 	{
@@ -1497,6 +1611,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"includegraphics",
+			"include",
+			"Sk_kmallas_vasarlaskor"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1514,7 +1631,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1523,20 +1640,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 387,
+						"buffer_size": 593,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
+								515,
+								515
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531839503.24,
+							"markdonw_live_preview_last_run": 1531910965.74,
 							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -1548,6 +1665,35 @@
 				},
 				{
 					"buffer": 1,
+					"file": "/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/pres.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1571,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1305,
+								1305
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1532162128.86,
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "/home/ppolcz/.bash_aliases",
 					"semi_transient": false,
 					"settings":
@@ -1565,18 +1711,18 @@
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531897535.28,
+							"markdonw_live_preview_last_run": 1531910965.95,
 							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "src/main/resources/import.sql",
 					"semi_transient": false,
 					"settings":
@@ -1594,8 +1740,39 @@
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531839794.29,
+							"markdonw_live_preview_last_run": 1531910965.95,
 							"syntax": "Packages/SQL/SQL.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/main/resources/sql/queries.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15364,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1531910965.95,
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1605,34 +1782,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/main/resources/sql/queries.sql",
+					"buffer": 5,
+					"file": "src/main/resources/sql/views.sql",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17861,
+						"buffer_size": 4764,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1227,
-								1227
+								3091,
+								3091
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531839810.96,
 							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1170.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1805,7 +1981,7 @@
 		[
 			[
 				"",
-				"~/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/java-spring-boot-mysql-jpa-hibernate.sublime-project"
+				"~/Repositories/Bitbucket/control-systems/users/public_html/Users-Web-Page.sublime-project"
 			],
 			[
 				"anal",
@@ -1850,7 +2026,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 360.0,
 	"status_bar_visible": true,
 	"template_settings":
