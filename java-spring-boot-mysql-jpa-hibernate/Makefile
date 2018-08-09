@@ -1,15 +1,15 @@
 
 
 
-run: init-mysql clean
+run step_1_run: init-mysql clean
 	( mvn spring-boot:run & )
 
 JAVA_HOME:
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 
 clean:
-	rm odf-load
-	rm odf-load.*
+	rm -f odf-load
+	rm -f odf-load.*
 	mvn clean
 
 
@@ -36,5 +36,5 @@ sql-views:
 
 load: odf-load sql-views
 
-Sk_fancy Sk:
+Sk_fancy Sk_Szerviz Sk Sk_Tankolas Sk_Benzin Sk_diff Sk_fancy_min:
 	mysql -u root -p --database=ppolcz --execute="select * from $@" --table
