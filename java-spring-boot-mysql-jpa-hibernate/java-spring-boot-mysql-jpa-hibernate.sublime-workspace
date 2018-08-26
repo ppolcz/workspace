@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"init",
+				"initializeAccounts"
+			],
+			[
+				"koli",
+				"koliTable"
+			],
+			[
+				"Charge",
+				"ChargeAccount"
+			],
+			[
 				"sql",
 				"sql-views"
 			],
@@ -502,18 +514,6 @@
 			[
 				"subl",
 				"sublimeplugin"
-			],
-			[
-				"try",
-				"try\tTry/Except"
-			],
-			[
-				"subli",
-				"sublime_plugin"
-			],
-			[
-				"ada",
-				"adaptive_content_controller"
 			]
 		]
 	},
@@ -523,16 +523,24 @@
 			"file": "Makefile",
 			"settings":
 			{
-				"buffer_size": 593,
+				"buffer_size": 692,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/pres.tex",
+			"file": "src/main/java/polcz/budget/service/OdfValidationService.java",
 			"settings":
 			{
-				"buffer_size": 1571,
+				"buffer_size": 6667,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/java/polcz/budget/service/OdfLoaderService.java",
+			"settings":
+			{
+				"buffer_size": 21759,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -567,9 +575,18 @@
 			"file": "src/main/resources/sql/views.sql",
 			"settings":
 			{
-				"buffer_size": 4764,
+				"buffer_size": 7733,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "+------------+---------+--------+--------+------------------+----------------+-------------------------------------------------------------------------------------------------------------+-------+\n| date       | balance | caname | amount | clname           | mkname         | remark                                                                                                      | pivot |\n+------------+---------+--------+--------+------------------+----------------+-------------------------------------------------------------------------------------------------------------+-------+\n| 2018-07-06 |  389750 | Koli   |      0 | Szamolas         | Not_Applicable | initial pivot [the very first]                                                                              |     1 |\n| 2018-07-23 |  342022 | Koli   | -47728 | Rezsi_Elmu       | Not_Applicable | 2018-06-23, 2018-07-22, 2018-08-03 { tr_1 }                                                                 |     0 |\n| 2018-07-23 |  335899 | Koli   |  -6123 | Rezsi_Upc        | Not_Applicable | 11, 809566378, 2018-07-11, 2018-08-03 { tr_2 }                                                              |     0 |\n| 2018-07-24 |  288166 | Koli   | -47733 | Rezsi_Elmu       | Not_Applicable | 2018-07-23, 2018-08-22, 2018-09-05 { tr_1 }                                                                 |     0 |\n| 2018-07-30 |  238166 | Koli   | -50000 | Takaritas        | #takaritas1    | takarítás (konyha, konyha melletti budi, h?t?szekrény) { tr_2 }                                             |     0 |\n| 2018-07-30 |  236640 | Koli   |  -1526 | Tisztitoszer     | dm             | Denkmit surolotej 75 (400), profissimo fémedénysúroló (350), sosav 1L (380) { tr_3 }                        |     0 |\n| 2018-07-31 |  137855 | Koli   | -98785 | Rezsi_Kozosk     | Tarsashaz      | augusztusi kozoskoltseg { tr_2 }                                                                            |     0 |\n| 2018-07-31 |   87855 | Koli   | -50000 | Takaritas        | #takaritas1    | takarítás (szoba 1, 4, 5, mosdo 2, 4, erkely) { tr_3 }                                                      |     0 |\n+------------+---------+--------+--------+------------------+----------------+-------------------------------------------------------------------------------------------------------------+-------+\n| 2018-07-31 |   87855 | Koli   |      0 | Szamolas         | Not_Applicable | [236640-[.C27]] { tr_1 }                                                                                    |     1 |\n| 2018-08-01 |   87070 | Koli   |   -785 | Tisztitoszer     | dm             | Sosav 2L { tr_2 }                                                                                           |     0 |\n| 2018-08-13 |   74578 | Koli   | -12492 | Lakas_Berendezes | OBI            | hangyairto, szilikonpaszta es pisztoly (WC-hez), 2es furdobe csuszasgatlo, csavarok es tipli, WD40 { tr_2 } |     0 |\n| 2018-08-21 |  212328 | Koli   |  -2250 | Tisztitoszer     | HHQ_Family     | 3 db Bref WC-be logato { tr_2 }                                                                             |     0 |\n| 2018-08-22 |  144828 | Koli   | -67500 | Elektr_Cikk      | DigiTronik     | Hutoszekreny a fiuknak { tr_2 }                                                                             |     0 |\n| 2018-08-22 |   94828 | Koli   | -50000 | Takaritas        | #takaritas1    | takarítás (szoba 1, 4, 5, mosdo 2, 4, erkely) { tr_3 }                                                      |     0 |\n+------------+---------+--------+--------+------------------+----------------+-------------------------------------------------------------------------------------------------------------+-------+\n| 2018-08-23 |   95530 | Koli   |    702 | Szamolas         | Not_Applicable | [2030+93500-[.C50]] { tr_1 }                                                                                |     1 |\n| 2018-08-27 |   45530 | Koli   | -50000 | Takaritas        | #takaritas1    | [TERV] { tr_2 }                                                                                             |     0 |\n| 2018-08-29 |   25530 | Koli   | -20000 | Tisztitoszer     | Not_Applicable | [TERV] { tr_2 }                                                                                             |     0 |\n| 2018-08-30 |   19414 | Koli   |  -6116 | Rezsi_Upc        | UPC            | [TERV] internetszamla { tr_2 }                                                                              |     0 |\n| 2018-08-31 |  -50586 | Koli   | -70000 | Elektr_Cikk      | DigiTronik     | [TERV] hutoszekreny { tr_2 }                                                                                |     0 |\n| 2018-09-01 | -149371 | Koli   | -98785 | Rezsi_Kozosk     | Tarsashaz      | [TERV] szeptemberi kozoskoltseg { tr_2 }                                                                    |     0 |\n+------------+---------+--------+--------+------------------+----------------+-------------------------------------------------------------------------------------------------------------+-------+\n",
+			"settings":
+			{
+				"buffer_size": 5122,
+				"line_ending": "Unix",
+				"name": "+------------+---------+--------+--------+--------"
 			}
 		}
 	],
@@ -1461,11 +1478,16 @@
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget",
+		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/java/polcz/budget/service",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources",
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate/src/main/resources/sql"
 	],
 	"file_history":
 	[
+		"/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/pres.tex",
 		"/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/Reglermote_Polcz_presentation.tex",
 		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/C++/C++ Single File.sublime-build",
 		"/home/ppolcz/Dropbox/Peti/Others/Config/_indep/config/sublime-text-3/Packages/Polcz/spring-boot-run.sublime-build",
@@ -1592,8 +1614,7 @@
 		"/home/ppolcz/Repositories/Bitbucket/control-systems/users/public_html/files/scripts/Schur_complement_17_06_01_Time112945_runID8332/Schur_complement.html",
 		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/_fig/fig_37/fig.tex",
 		"/home/ppolcz/Dropbox/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Annihilator.tex",
-		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Illustrative_examples.tex",
-		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Manuscript.bbl"
+		"/home/ppolcz/All/Dropbox/Peti/PhD/Dokumentaciok/12_Manuscripts_2016_osz/KIADOTT-EJC-2017-05-29/Sec_Illustrative_examples.tex"
 	],
 	"find":
 	{
@@ -1611,6 +1632,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ENCLOSED",
+			"Sk_fancy",
+			"pivot",
+			"d",
+			"today",
+			"daysToAdd",
+			"mainTable",
+			"koltsegvetesUj",
+			"name",
 			"includegraphics",
 			"include",
 			"Sk_kmallas_vasarlaskor"
@@ -1631,7 +1661,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1640,60 +1670,93 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 593,
+						"buffer_size": 692,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								515,
-								515
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531910965.74,
+							"markdonw_live_preview_last_run": 1535104939.92,
 							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/ppolcz/Dropbox/Peti/PhD/Oktatas/01_CCS_közös/PhD_Workshop_Veszprem_2018/1nap_gyak/pres.tex",
+					"file": "src/main/java/polcz/budget/service/OdfValidationService.java",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1571,
+						"buffer_size": 6667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1305,
-								1305
+								3804,
+								3804
 							]
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1532162128.86,
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+							"markdonw_live_preview_last_run": 1535105145.36,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 264.0,
+						"translation.y": 924.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "src/main/java/polcz/budget/service/OdfLoaderService.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10692,
+								10692
+							]
+						],
+						"settings":
+						{
+							"markdonw_live_preview_last_run": 1535105159.78,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3696.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "/home/ppolcz/.bash_aliases",
 					"semi_transient": false,
 					"settings":
@@ -1711,18 +1774,18 @@
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531910965.95,
+							"markdonw_live_preview_last_run": 1535104939.91,
 							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "src/main/resources/import.sql",
 					"semi_transient": false,
 					"settings":
@@ -1740,18 +1803,18 @@
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531910965.95,
+							"markdonw_live_preview_last_run": 1535104939.92,
 							"syntax": "Packages/SQL/SQL.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "src/main/resources/sql/queries.sql",
 					"semi_transient": false,
 					"settings":
@@ -1769,7 +1832,7 @@
 						],
 						"settings":
 						{
-							"markdonw_live_preview_last_run": 1531910965.95,
+							"markdonw_live_preview_last_run": 1535104939.92,
 							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -1778,37 +1841,67 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "src/main/resources/sql/views.sql",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4764,
+						"buffer_size": 7733,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3091,
-								3091
+								7221,
+								7221
 							]
 						],
 						"settings":
 						{
+							"markdonw_live_preview_last_run": 1535104939.92,
 							"syntax": "Packages/SQL/SQL.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1170.0,
+						"translation.y": 2395.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3939,
+								3939
+							]
+						],
+						"settings":
+						{
+							"auto_name": "+------------+---------+--------+--------+--------",
+							"default_dir": "/home/ppolcz/Repositories/Bitbucket/control-systems/5_workspace/java-spring-boot-mysql-jpa-hibernate",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1816,7 +1909,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -1882,6 +1975,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"quer",
+				"src/main/resources/sql/queries.sql"
+			],
 			[
 				"dipl",
 				"12_Manuscripts_2016_osz/Diplomaterv_atirat.tex"
