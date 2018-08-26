@@ -25,12 +25,12 @@ order by date, ugyletek.uid;
 
 drop view if exists ugyletek_szep;
 create view ugyletek_szep as
-select date, balance, accounts.name as caname, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark
+select date, balance, accounts.name as caname, amount*clusters.sgn as amount, clusters.name as clname, markets.name as mkname, remark, pivot
 from ugyletek,markets,clusters,accounts
 where
     cluster = clusters.uid and market = markets.uid and ca = accounts.uid
     and clusters.name not like 'athelyezes'
-order by date, ugyletek.uid;
+order by date, pivot, ugyletek.uid;
 
 
 
@@ -196,3 +196,31 @@ drop view if exists Sk_fancy_min;
 create view Sk_fancy_min as select
     date, amount_Ft, egysegar_Ft, egysegar, valuta, liter, mkname, kmallas, kmdiff, kmdifftank, fogyasztas, kmdiffcum, remark, clname
 from Sk_fancy;
+
+
+
+
+
+-- KOLI
+
+drop view if exists Koli;
+create view Koli as
+select * from ugyletek_szep where caname like 'Koli' or clname like 'Koli';
+
+-- select * from Koli
+-- INTO OUTFILE '/var/lib/mysql-files/orders.csv'
+-- FIELDS TERMINATED BY ','
+-- ENCLOSED BY '"'
+-- LINES TERMINATED BY '\n';
+
+
+-- set @sql_text =
+--    concat (
+--        "select * from ugyletek_szep where caname like 'Koli' into outfile '/var/lib/mysql-files/"
+--        , DATE_FORMAT( NOW(), 'Kolis-koltsegvetes_%Y-%m-%d')
+--        , ".csv' fields terminated by ',' enclosed by '\"' lines terminated by '\n'"
+--     );
+
+-- PREPARE s1 FROM @sql_text;
+-- EXECUTE s1;
+-- DROP PREPARE s1;

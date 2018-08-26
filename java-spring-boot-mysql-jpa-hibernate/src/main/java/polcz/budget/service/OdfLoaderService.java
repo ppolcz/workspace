@@ -111,6 +111,27 @@ public class OdfLoaderService {
         Market_Not_Applicable = ss.Market_Not_Applicable();
     }
 
+    private void initializeAccounts(Table table, int startIndex)
+    {
+        Row rowAccountNames = table.getRowByIndex(1);
+        Row rowInitialBalance = table.getRowByIndex(startIndex - 1);
+        Date date = getDate(rowInitialBalance, IND_DATE);
+        for (int i = IND_CAIDS; i < TR_OFFSET; i++) {
+            String name = getString(rowAccountNames, i);
+
+            if (!name.isEmpty())
+            {
+                ChargeAccount ca = ss.ca(new ChargeAccount(name));
+                calist.put(name, ca);
+                logger.info(name);
+
+                indCa.put(ca, i);
+                logger.info(getString(rowInitialBalance, i));
+                initialBalance(date, ca, getInteger(rowInitialBalance, i));
+            }
+        }
+    }
+
     /**
      * @param odfDocumentPath
      * @param startIndex
@@ -134,23 +155,30 @@ public class OdfLoaderService {
             logger.info("Kivalasztom a fo tablat");
             Table mainTable = data.getTableByName("Koltsegvetes");
 
+            logger.info("Kivalasztom a koli tablat");
+            Table koliTable = data.getTableByName("Koli");
+
             calist = new HashMap<>();
             {
                 /* build charge accounts list: [1] those, who require update */
 
-                Row rowAccountNames = mainTable.getRowByIndex(1);
-                Row rowInitialBalance = mainTable.getRowByIndex(startIndex - 1);
-                Date date = getDate(rowInitialBalance, IND_DATE);
-                for (int i = IND_CAIDS; i < TR_OFFSET; i++) {
-                    String name = getString(rowAccountNames, i);
-                    ChargeAccount ca = ss.ca(new ChargeAccount(name));
-                    calist.put(name, ca);
-                    logger.info(name);
+                initializeAccounts(mainTable, startIndex);
+                initializeAccounts(koliTable, startIndex);
 
-                    indCa.put(ca, i);
-                    logger.info(getString(rowInitialBalance, i));
-                    initialBalance(date, ca, getInteger(rowInitialBalance, i));
-                }
+                // Row rowAccountNames = mainTable.getRowByIndex(1);
+                // Row rowInitialBalance = mainTable.getRowByIndex(startIndex - 1);
+                // Date date = getDate(rowInitialBalance, IND_DATE);
+                // for (int i = IND_CAIDS; i < TR_OFFSET; i++) {
+                //     String name = getString(rowAccountNames, i);
+                //     ChargeAccount ca = ss.ca(new ChargeAccount(name));
+                //     calist.put(name, ca);
+                //     logger.info(name);
+
+                //     indCa.put(ca, i);
+                //     logger.info(getString(rowInitialBalance, i));
+                //     initialBalance(date, ca, getInteger(rowInitialBalance, i));
+                // }
+
                 // calist.put("pkez", pkez);
                 // calist.put("potp", potp);
                 // calist.put("dkez", dkez);
@@ -158,6 +186,7 @@ public class OdfLoaderService {
                 // calist.put("nptc", nptc);
                 calist.put("info", info);
                 calist.put("pinfo", pinfo);
+                // calist.put("Koli", ss.ca(new ChargeAccount("Koli")));
 
                 /* build charge accounts list: [2] those, who do not require update (informational transactions) */
 
@@ -211,6 +240,7 @@ public class OdfLoaderService {
 
             /* parse table Koltsegvetes_Uj */
             koltsegvetesUj(mainTable, startIndex);
+            koltsegvetesUj(koliTable, startIndex);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -262,7 +292,11 @@ public class OdfLoaderService {
             // initialBalance(getDate(row, IND_DATE), nptc, getInteger(row, IND_CAIDS + 3));
         }
 
-        Date today = new Date();
+        Date stopDate = new Date();
+
+        long daysToAdd = 30;
+        long secondsToAdd = daysToAdd*(1000*60*60*24);
+        stopDate.setTime(stopDate.getTime() + secondsToAdd);
 
         /* loop over the rows of the table */
         for (int i = startIndex; i < count; i++) {
@@ -277,7 +311,7 @@ public class OdfLoaderService {
             Date date = getDate(row, IND_DATE);
 
             /* stop when we have left the actual date */
-            if (date.after(today))
+            if (date.after(stopDate))
                 break;
 
             /* run throw all transactions of this row */

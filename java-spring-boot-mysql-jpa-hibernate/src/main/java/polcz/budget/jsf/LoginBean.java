@@ -1,4 +1,4 @@
-package polcz.budget.session;
+package polcz.budget.jsf;
 
 import java.io.IOException;
 import java.io.Serializable;
