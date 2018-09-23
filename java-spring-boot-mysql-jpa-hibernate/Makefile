@@ -38,3 +38,8 @@ load: odf-load sql-views
 
 Sk_fancy Sk_Szerviz Sk Sk_Tankolas Sk_Benzin Sk_diff Sk_fancy_min:
 	mysql -u root -p --database=ppolcz --execute="select * from $@" --table
+
+
+kill:
+	# for PID in $(ps -A | egrep java | awk '{print $1}') ; do kill $PID ; done
+	kill -SIGTERM $(shell pidof java)
