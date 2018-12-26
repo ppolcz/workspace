@@ -169,24 +169,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- <wro4j.version>1.7.9</wro4j.version> -->
         <start-class>polcz.budget.Application</start-class>
-        <java.version>1.11</java.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <build>
         <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
         <plugins>
 
-            <!-- Use Java 11, 2018.12.24. (december 24, hétfő), 16:15 -->
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <version>3.8.0</version>
-			    <configuration>
-			        <release>11</release>
-			    </configuration>
-			</plugin>
-<!--             
-			<plugin>
+            <!-- Use Java 8 -->
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
@@ -195,7 +186,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
- -->
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
