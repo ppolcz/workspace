@@ -31,7 +31,23 @@ public class MainController {
     @RequestMapping("/odf-load")
     @ResponseBody
     public String loadOdf() {
-        odfService.process("koltsegvetes.ods");
+        odfService.process("koltsegvetes-2019.ods");
+        return "Odf spreadsheet loaded!";
+    }
+    
+    @RequestMapping("/koli-load")
+    @ResponseBody
+    public String loadKoliOdf() {
+        odfService.process("koli-2019.ods");
+        return "Odf spreadsheet loaded!";
+    }
+    
+    @RequestMapping("/load-all")
+    @ResponseBody
+    public String loadRegiOdf() {
+        odfService.process("koltsegvetes-2013-2018.ods");
+        odfService.process("koltsegvetes-2019.ods");
+        odfService.process("koli-2019.ods");
         return "Odf spreadsheet loaded!";
     }
     

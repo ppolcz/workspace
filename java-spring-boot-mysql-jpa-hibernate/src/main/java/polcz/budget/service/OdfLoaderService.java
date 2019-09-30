@@ -75,7 +75,7 @@ public class OdfLoaderService {
     private String odfDocumentPath;
 
     public void process(String odfName) {
-        odfDocumentPath = "/home/ppolcz/Dropbox/Peti/Desktop/" + odfName;
+        odfDocumentPath = "/home/ppolcz/T/Dropbox/Peti/Desktop/Koltsegvetes/" + odfName;
         init();
         parse();
     }
@@ -153,17 +153,13 @@ public class OdfLoaderService {
             Table valTable = data.getTableByName("Validity");
 
             logger.info("Kivalasztom a fo tablat");
-            Table mainTable = data.getTableByName("Koltsegvetes");
-
-            logger.info("Kivalasztom a koli tablat");
-            Table koliTable = data.getTableByName("Koli");
+            Table mainTable = data.getTableByName("Main");
 
             calist = new HashMap<>();
             {
                 /* build charge accounts list: [1] those, who require update */
 
                 initializeAccounts(mainTable, startIndex);
-                initializeAccounts(koliTable, startIndex);
 
                 // Row rowAccountNames = mainTable.getRowByIndex(1);
                 // Row rowInitialBalance = mainTable.getRowByIndex(startIndex - 1);
@@ -240,7 +236,6 @@ public class OdfLoaderService {
 
             /* parse table Koltsegvetes_Uj */
             koltsegvetesUj(mainTable, startIndex);
-            koltsegvetesUj(koliTable, startIndex);
         } catch (Exception e) {
             e.printStackTrace();
         }

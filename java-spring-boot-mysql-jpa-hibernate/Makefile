@@ -2,7 +2,7 @@
 
 
 run step_1_run: init-mysql clean
-	( mvn spring-boot:run & )
+	( mvn -f pom-ThinkPad-2019-09-30-java8.xml spring-boot:run -e & )
 
 JAVA_HOME:
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
@@ -10,7 +10,7 @@ JAVA_HOME:
 clean:
 	rm -f odf-load
 	rm -f odf-load.*
-	mvn clean
+	mvn -f pom-ThinkPad-2019-09-30-java8.xml clean
 
 
 odf-load: force

@@ -14,3 +14,9 @@ wget localhost:8080/odf-load
 <!-- Run this command to export the contents of the database -->
 export_mysql.sh
 
+
+
+<!-- ThinkPad Java-8 -->
+<!-- 2019.09.30. (szeptember 30, hétfő), 08:48 -->
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+mvn -f pom-ThinkPad-2019-09-30-java8.xml clean spring-boot:run -e
